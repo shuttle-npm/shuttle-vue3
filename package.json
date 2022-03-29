@@ -9,8 +9,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "build:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css",
     "watch:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css --watch",
-    "build:docs": "vitepress build docs",
-    "serve:docs": "vitepress serve docs",
+    "build:docs": "npm run build:css && npm run build:css-docs && vitepress build docs",
+    "serve:docs": "npm run build:css && npm run build:css-docs && vitepress serve docs",
     "build:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css",
     "watch:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css --watch "
   },

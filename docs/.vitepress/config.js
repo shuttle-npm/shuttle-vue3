@@ -18,6 +18,7 @@ module.exports = (async () => {
       },
     },
 
+    base: '/shuttle-vue3/',
     lang: 'en-US',
     title: 'Shuttle Vue',
     description: 'Shuttle Vue 3 UI components built with Tailwind.',
