@@ -2,15 +2,17 @@
   "name": "shuttle-vue3",
   "version": "0.0.0",
   "scripts": {
-    "dev": "npm run build:css && vitepress dev demo",
+    "dev": "npm run build:css && npm run build:css-docs && vitepress dev docs",
     "build": "npm run build:css && vite build",
     "preview": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "build:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css",
     "watch:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css --watch",
-    "build:css-demo": "postcss ./demo/.vitepress/theme/tailwind.css --config ./demo/.vitepress/theme --output ./demo/.vitepress/theme/demo.css",
-    "watch:css-demo": "postcss ./demo/.vitepress/theme/tailwind.css --config ./demo/.vitepress/theme --output ./demo/.vitepress/theme/demo.css --watch "
+    "build:docs": "vitepress build docs",
+    "serve:docs": "vitepress serve docs",
+    "build:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css",
+    "watch:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css --watch "
   },
   "peerDependencies": {
     "vue": "^3.2.31"
