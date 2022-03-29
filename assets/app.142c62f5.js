@@ -5324,7 +5324,7 @@ function normalizeContainer(container) {
   }
   return container;
 }
-var serializedSiteData = '{"lang":"en-US","title":"Shuttle Vue","description":"Shuttle Vue 3 UI components built with Tailwind.","base":"/","head":[],"themeConfig":{"socialLinks":[{"icon":"github","link":"https://github.com/shuttle-npm/shuttle-vue3"}],"nav":[{"text":"Components","activeMatch":"^/components/","link":"/components/overview"}],"sidebar":{"/components/":[{"text":"Components","items":[{"text":"Alerts","link":"/components/alerts"}]}]}},"locales":{},"langs":{},"scrollOffset":90}';
+var serializedSiteData = '{"lang":"en-US","title":"Shuttle Vue","description":"Shuttle Vue 3 UI components built with Tailwind.","base":"/shuttle-vue3/","head":[],"themeConfig":{"socialLinks":[{"icon":"github","link":"https://github.com/shuttle-npm/shuttle-vue3"}],"nav":[{"text":"Components","activeMatch":"^/components/","link":"/components/overview"}],"sidebar":{"/components/":[{"text":"Components","items":[{"text":"Alerts","link":"/components/alerts"}]}]}},"locales":{},"langs":{},"scrollOffset":90}';
 const EXTERNAL_URL_RE = /^https?:/i;
 const inBrowser$1 = typeof window !== "undefined";
 function findMatchRoot(route, roots) {
@@ -5425,7 +5425,7 @@ function pathToFile(path) {
   }
   {
     if (inBrowser$1) {
-      const base = "/";
+      const base = "/shuttle-vue3/";
       pagePath = pagePath.slice(base.length).replace(/\//g, "_") + ".md";
       const pageHash = __VP_HASH_MAP__[pagePath.toLowerCase()];
       pagePath = `${base}assets/${pagePath}.${pageHash}.js`;
@@ -6575,7 +6575,7 @@ const _hoisted_5$6 = /* @__PURE__ */ createBaseVNode("span", { class: "DocSearch
 const _sfc_main$w = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const { theme } = useData();
-    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.f64f8981.js"));
+    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.9f28194e.js"));
     const loaded = ref(false);
     const metaKey = ref();
     onMounted(() => {
