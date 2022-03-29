@@ -1,23 +1,26 @@
 <template>
     <div :class="useClass('sv-alert', props)">
-        <BeakerIcon class="icon"/>
-        <div class="message">
-            {{ message }}
-        </div>
-        <XCircleIcon class="icon-close" v-on:click="emit('remove', alert)" />
+        <component :is="icon()" class="icon" />
+        <div class="message">{{ message }}</div>
+        <XCircleIcon v-if="dismissable" class="icon icon-close" v-on:click="emit('remove', alert)" />
     </div>
 </template>
 
 <script setup>
 import { useClass } from "@/composables/useClass";
-import { BeakerIcon, XCircleIcon } from '@heroicons/vue/outline'
+import { XCircleIcon } from "@heroicons/vue/outline";
 
 const props = defineProps({
     name: String,
     type: String,
     message: String,
-    classes: [String, Object]
+    dismissable: Boolean,
+    icon: null
 })
 
 const emit = defineEmits(["remove"]);
+
+const icon = () => {
+    return props.icon ? props.icon: undefined;
+}
 </script>

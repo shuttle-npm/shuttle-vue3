@@ -19,6 +19,10 @@
         @apply cursor-default border-gray-200 bg-gray-100 text-gray-400 dark:border-gray-700 dark:bg-gray-600 dark:text-gray-900;
     }
 
+    .icon {
+        @apply h-5 w-5;
+    }
+
     /* Alert */
     .sv-alert {
         @apply sv-rounded sv-border sv-padding flex flex-row;
@@ -26,7 +30,7 @@
 
     .sv-alert .icon, 
     .sv-alert .icon-close {
-        @apply h-5 w-5 mt-1;
+        @apply mt-1;
     }
 
     .sv-alert .icon-close {
