@@ -1,41 +1,54 @@
 {
-  "name": "shuttle-vue3",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "npm run build:css && npm run build:css-docs && vitepress dev docs",
-    "build": "npm run build:css && vite build",
-    "preview": "vite preview --port 5050",
-    "test:unit": "vitest --environment jsdom",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "build:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css",
-    "watch:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css --watch",
-    "build:docs": "npm run build:css && npm run build:css-docs && vitepress build docs",
-    "serve:docs": "npm run build:css && npm run build:css-docs && vitepress serve docs",
-    "build:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css",
-    "watch:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css --watch "
-  },
-  "peerDependencies": {
-    "vue": "^3.2.31"
-  },
-  "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.0",
-    "@vitejs/plugin-vue": "^2.2.2",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-rc.18",
-    "autoprefixer": "^10.4.4",
-    "eslint": "^8.5.0",
-    "eslint-plugin-vue": "^8.2.0",
-    "jsdom": "^19.0.0",
-    "postcss": "^8.4.12",
-    "postcss-cli": "^9.1.0",
-    "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.23",
-    "vite": "^2.8.4",
-    "vitepress": "^0.22.3",
-    "vitest": "^0.5.0"
-  },
-  "dependencies": {
-    "@heroicons/vue": "^1.0.6",
-    "shuttle-theme": "^1.0.10"
-  }
+    "name": "shuttle-vue3",
+    "files": [
+        "dist"
+    ],
+    "version": "0.0.2",
+    "main": "./dist/shuttle-vue3.umd.js",
+    "module": "./dist/shuttle-vue3.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/shuttle-vue3.es.js",
+            "require": "./dist/shuttle-vue3.umd.js"
+        },
+        "./dist/style.css": "./dist/style.css"
+    },
+    "scripts": {
+        "dev": "npm run build:css && npm run build:css-docs && vitepress dev docs",
+        "build:vite": "npm run build:css && vite build",
+        "build": "rollup -c",
+        "preview": "vite preview --port 5050",
+        "test:unit": "vitest --environment jsdom",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+        "build:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css",
+        "watch:css": "postcss ./src/tailwind.css --output ./src/styles/shuttle.css --watch",
+        "build:docs": "npm run build:css && npm run build:css-docs && vitepress build docs",
+        "serve:docs": "npm run build:css && npm run build:css-docs && vitepress serve docs",
+        "build:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css",
+        "watch:css-docs": "postcss ./docs/.vitepress/theme/tailwind.css --config ./docs/.vitepress/theme --output ./docs/.vitepress/theme/docs.css --watch "
+    },
+    "peerDependencies": {
+        "vue": "^3.2.31"
+    },
+    "devDependencies": {
+        "@rushstack/eslint-patch": "^1.1.0",
+        "@vitejs/plugin-vue": "^2.2.2",
+        "@vue/eslint-config-prettier": "^7.0.0",
+        "@vue/test-utils": "^2.0.0-rc.18",
+        "autoprefixer": "^10.4.4",
+        "eslint": "^8.5.0",
+        "eslint-plugin-vue": "^8.2.0",
+        "jsdom": "^19.0.0",
+        "postcss": "^8.4.12",
+        "postcss-cli": "^9.1.0",
+        "prettier": "^2.5.1",
+        "tailwindcss": "^3.0.23",
+        "vite": "^2.8.4",
+        "vitepress": "^0.22.3",
+        "vitest": "^0.5.0"
+    },
+    "dependencies": {
+        "@heroicons/vue": "^1.0.6",
+        "shuttle-theme": "^1.0.10"
+    }
 }
