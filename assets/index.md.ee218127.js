@@ -1,4 +1,4 @@
-import { _ as _export_sfc, o as openBlock, b as createElementBlock, d as createBaseVNode, a as createVNode, F as Fragment, p as pushScopeId, i as popScopeId, j as createStaticVNode } from "./app.142c62f5.js";
+import { _ as _export_sfc, o as openBlock, b as createElementBlock, d as createBaseVNode, a as createVNode, F as Fragment, p as pushScopeId, k as popScopeId, j as createStaticVNode } from "./app.52a74e23.js";
 const _sfc_main$2 = {};
 const _hoisted_1$1 = {
   class: "logo",
@@ -24,7 +24,7 @@ const _withScopeId = (n) => (pushScopeId("data-v-1547d4a0"), n = n(), popScopeId
 const _hoisted_1 = { id: "hero" };
 const _hoisted_2 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("h1", { class: "tagline" }, "Shuttle Vue", -1));
 const _hoisted_3 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("p", { class: "description" }, "Vue 3 UI components built using Tailwind CSS and Headless UI.", -1));
-const _hoisted_4 = /* @__PURE__ */ createStaticVNode("", 1);
+const _hoisted_4 = /* @__PURE__ */ createStaticVNode('<section id="highlights" class="vt-box-container" data-v-1547d4a0><div class="vt-box" data-v-1547d4a0><h2 data-v-1547d4a0>Components</h2><div data-v-1547d4a0>The most common use-cases are covered.</div></div><div class="vt-box" data-v-1547d4a0><h2 data-v-1547d4a0>Why?</h2><div data-v-1547d4a0>These components are for developing Shuttle based web applications. You are welcome to use them and assist in extending the framework.</div></div><div class="vt-box" data-v-1547d4a0><h2 data-v-1547d4a0>Open Source</h2><div data-v-1547d4a0> These packages are free open source software licensed under the <a href="https://opensource.org/licenses/BSD-3-Clause" data-v-1547d4a0>3-Clause BSD License</a>. Pull requests are welcome. </div></div></section>', 1);
 const _sfc_main$1 = {
   setup(__props) {
     return (_ctx, _cache) => {

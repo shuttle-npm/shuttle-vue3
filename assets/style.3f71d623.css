@@ -3232,6 +3232,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
 /* Alert */
 .sv-alert {
   padding: 0.5rem;
@@ -3242,8 +3246,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .sv-alert .icon, .sv-alert .icon-close {
   margin-top: 0.25rem;
-  height: 1.25rem;
-  width: 1.25rem;
 }
 .sv-alert .icon-close {
   cursor: pointer;

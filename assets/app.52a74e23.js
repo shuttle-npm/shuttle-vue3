@@ -6575,7 +6575,7 @@ const _hoisted_5$6 = /* @__PURE__ */ createBaseVNode("span", { class: "DocSearch
 const _sfc_main$w = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const { theme } = useData();
-    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.9f28194e.js"));
+    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.205d8456.js"));
     const loaded = ref(false);
     const metaKey = ref();
     onMounted(() => {
@@ -8255,4 +8255,4 @@ if (inBrowser$1) {
     app.mount("#app");
   });
 }
-export { Fragment as F, _export_sfc as _, createVNode as a, createElementBlock as b, createBlock as c, createApp, createBaseVNode as d, createCommentVNode as e, createTextVNode as f, renderSlot as g, ref as h, popScopeId as i, createStaticVNode as j, defineComponent as k, useData as l, mergeProps as m, normalizeClass as n, openBlock as o, pushScopeId as p, useRoute as q, renderList as r, useRouter as s, toDisplayString as t, unref as u, onMounted as v };
+export { Fragment as F, _export_sfc as _, createVNode as a, createElementBlock as b, createBlock as c, createApp, createBaseVNode as d, createCommentVNode as e, renderList as f, createTextVNode as g, renderSlot as h, ref as i, createStaticVNode as j, popScopeId as k, defineComponent as l, mergeProps as m, normalizeClass as n, openBlock as o, pushScopeId as p, useData as q, resolveDynamicComponent as r, useRoute as s, toDisplayString as t, unref as u, useRouter as v, onMounted as w };
