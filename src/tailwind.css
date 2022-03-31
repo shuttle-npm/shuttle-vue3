@@ -16,7 +16,7 @@
     }
 
     .disabled {
-        @apply cursor-default border-gray-200 bg-gray-100 text-gray-400 dark:border-gray-700 dark:bg-gray-600 dark:text-gray-900;
+        @apply border-gray-200 bg-gray-100 text-gray-400 dark:border-gray-700 dark:bg-gray-600 dark:text-gray-900;
     }
 
     .icon {
@@ -121,71 +121,70 @@
 
     /* Button */
     .sv-btn {
-        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit;
+        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit content-center justify-center px-3;
+    }
+
+    .sv-btn .icon {
+        @apply mt-1 mr-2
+    }
+
+    .sv-btn.disabled {
+        @apply cursor-default;
     }
 
     .sv-btn-primary {
         @apply border-blue-200 bg-blue-100 hover:bg-blue-200 dark:border-blue-700 dark:bg-blue-600 hover:dark:bg-blue-700;
     }
 
-    .sv-btn-primary .icon, 
-    .sv-btn-primary .icon-close {
+    .sv-btn-primary .icon {
         @apply text-blue-400 dark:text-blue-900;
     }
 
-    .sv-btn-primary .icon-close {
-        @apply hover:text-blue-300 hover:dark:text-blue-800;
-    }
-        
     .sv-btn-secondary {
-        @apply border-neutral-200 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-600;
+        @apply border-neutral-200 bg-neutral-100 hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-600 hover:dark:bg-neutral-700;
     }
 
-    .sv-btn-secondary .icon, 
-    .sv-btn-secondary .icon-close {
+    .sv-btn-secondary .icon {
         @apply text-neutral-400 dark:text-neutral-900;
-    }
-
-    .sv-btn-secondary .icon-close {
-        @apply hover:text-neutral-300 hover:dark:text-neutral-800;
     }
         
     .sv-btn-success {
-        @apply border-green-200 bg-green-100 dark:border-green-700 dark:bg-green-600;
+        @apply border-green-200 bg-green-100 hover:bg-green-200 dark:border-green-700 dark:bg-green-600 hover:dark:bg-green-700;
     }
 
-    .sv-btn-success .icon, 
-    .sv-btn-success .icon-close {
+    .sv-btn-success .icon {
         @apply text-green-400 dark:text-green-900;
     }
 
-    .sv-btn-success .icon-close {
-        @apply hover:text-green-300 hover:dark:text-green-800;
-    }
-        
     .sv-btn-danger {
-        @apply border-red-200 bg-red-100 dark:border-red-700 dark:bg-red-600;
+        @apply border-red-200 bg-red-100 hover:bg-red-200 dark:border-red-700 dark:bg-red-600 hover:dark:bg-red-700;
     }
 
-    .sv-btn-danger .icon, 
-    .sv-btn-danger .icon-close {
+    .sv-btn-danger .icon {
         @apply text-red-400 dark:text-red-900;
-    }
-
-    .sv-btn-danger .icon-close {
-        @apply hover:text-red-300 hover:dark:text-red-800;
     }
         
     .sv-btn-warning {
-        @apply border-yellow-200 bg-yellow-100 dark:border-yellow-700 dark:bg-yellow-600;
+        @apply border-yellow-200 bg-yellow-100 hover:bg-yellow-200 dark:border-yellow-700 dark:bg-yellow-600 hover:dark:bg-yellow-700;
     }
 
-    .sv-btn-warning .icon, 
-    .sv-btn-warning .icon-close {
+    .sv-btn-warning .icon {
         @apply text-yellow-400 dark:text-yellow-900;
     }
 
-    .sv-btn-warning .icon-close {
-        @apply hover:text-yellow-300 hover:dark:text-yellow-800;
+    .sv-btn-info {
+        @apply border-cyan-200 bg-cyan-100 hover:bg-cyan-200 dark:border-cyan-700 dark:bg-cyan-600 hover:dark:bg-cyan-700;
+    }
+
+    .sv-btn-info .icon {
+        @apply text-cyan-400 dark:text-cyan-900;
+    }
+        
+    .sv-btn-link {
+        @apply border-0 underline hover:no-underline;
+    }
+
+    .sv-btn-link .icon {
+        @apply text-cyan-400 dark:text-cyan-900;
     }
 }

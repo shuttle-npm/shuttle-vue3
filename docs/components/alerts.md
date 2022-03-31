@@ -44,7 +44,7 @@ const alertsReference = [
     }
 ];
 
-var alerts = ref([...alertsReference]);
+const alerts = ref([...alertsReference]);
 
 const remove = (alert) => {
     const index = alerts.value.findIndex(item => item.name === alert.name);
@@ -63,7 +63,7 @@ const reset = () => {
 
 # Alerts
 
-## Standard (dismissable)
+## Examples (dismissable)
 
 <Button @click="reset" content="Reset" class="mb-2" :disabled="alerts.length >= alertsReference.length"></Button>
 <Alerts :alerts="alerts" @remove="remove" alert-class="mb-2"/>
@@ -84,3 +84,21 @@ const reset = () => {
 | `message` | `String` | (required) | The message to display for the alert. |
 | `dismissable` | `Boolean` | `false` | Whether a close icon will be displayed with will emit the `remove` event when clicked. |
 | `icon` | `Component` | `undefined` | Displays the given icon in front of the message. |
+
+## Events
+
+| Name | Description |
+| --- | --- |
+| `remove` | Called when the dismissable element is clicked. |
+
+## Classes
+
+`sv-alert` `sv-alert-{type}`
+
+## Container
+
+```vue
+<Alerts :alerts="alerts" @remove="remove" />
+```
+
+Where `alerts` contains an array of objects that have the same properties as an `Alert`.

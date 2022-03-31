@@ -1,5 +1,6 @@
 <template>
     <div :class="useClass('sv-btn', props)" @click="click">
+        <component :is="icon()" class="icon" />
         {{props.content}}
         <slot></slot>
     </div>
@@ -12,7 +13,9 @@ const emit = defineEmits(["click"]);
 
 const props = defineProps({
     content: String,
-    disabled: Boolean
+    type: String,
+    disabled: Boolean,
+    icon: null
 })
 
 const click = () => {
@@ -21,5 +24,9 @@ const click = () => {
     }
 
     emit("click");
+}
+
+const icon = () => {
+    return props.icon ? props.icon: undefined;
 }
 </script>
