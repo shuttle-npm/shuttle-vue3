@@ -67,6 +67,18 @@ module.exports = (async () => {
                                 text: 'Buttons',
                                 link: '/components/buttons'
                             },
+                            {
+                                text: 'Dropdown',
+                                link: '/components/dropdowns'
+                            },
+                            {
+                                text: 'Input',
+                                link: '/components/input'
+                            },
+                            {
+                                text: 'Listbox',
+                                link: '/components/listbox'
+                            },
                         ]
                     },
                 ],

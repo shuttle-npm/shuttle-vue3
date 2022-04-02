@@ -1,8 +1,8 @@
 <template>
     <div :class="useClass('sv-alert', props)">
-        <component :is="icon()" class="icon" />
+        <component :is="icon()" class="sv-alert-icon" />
         <div class="message">{{ message }}</div>
-        <XCircleIcon v-if="dismissable" class="icon icon-close" v-on:click="emit('remove', alert)" />
+        <XCircleIcon v-if="dismissable" class="sv-alert-icon-close" v-on:click="emit('remove', alert)" />
     </div>
 </template>
 

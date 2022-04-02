@@ -44,7 +44,7 @@ const click = (type) => {
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `type` | `String` | `primary` | The type of alert:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
+| `type` | `String` | `primary` | The type of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
 | `icon` | `Component` | `undefined` | Displays the given icon in front of the content. |
 
 ## Events
@@ -55,4 +55,4 @@ const click = (type) => {
 
 ## Classes
 
-`sv-btn` `sv-btn-{type}`
+`sv-button` `sv-button-{type}`

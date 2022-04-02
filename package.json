@@ -48,7 +48,8 @@
         "vitest": "^0.5.0"
     },
     "dependencies": {
+        "@headlessui/vue": "^1.5.0",
         "@heroicons/vue": "^1.0.6",
-        "shuttle-theme": "^1.0.10"
+        "shuttle-theme": "^1.0.11"
     }
 }

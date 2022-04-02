@@ -11,16 +11,15 @@ const prefixedSafelist = (prefix) => {
 }
 
 prefixedSafelist('sv-alert');
-prefixedSafelist('sv-btn');
+prefixedSafelist('sv-button');
 
 module.exports = {
     darkMode: "class",
     content: [
         "./src/**/*.{vue,js,ts,jsx,tsx}",
-    ], 
+    ],
     theme: {
-        extend: {
-        },
+        extend: {},
     },
     plugins: [],
     safelist: safelist
