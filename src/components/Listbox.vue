@@ -2,7 +2,7 @@
     <Listbox v-model="selectedOption">
         <div :class="getClasses()">
             <ListboxButton class="sv-listbox__button">
-                <span class="sv-listbox__selected-option">{{ selectedOption.name }}</span>
+                <span class="sv-listbox__selected-option">{{ !!selectedOption ? selectedOption[displayProperty] ?? displayProperty : placeholder }}</span>
                 <span class="sv-listbox__icon-container">
                     <SelectorIcon class="sv-listbox__icon" aria-hidden="true" />
                 </span>
@@ -16,9 +16,9 @@
                 <ListboxOptions class="sv-listbox__options">
                     <ListboxOption
                         v-slot="{ active, selected }"
-                        v-for="person in options"
-                        :key="person.name"
-                        :value="person"
+                        v-for="option in options"
+                        :key="option[valueProperty] ?? option[displayProperty]"
+                        :value="option"
                         as="template"
                     >
                         <li
@@ -28,7 +28,7 @@
                                 :class="[
                                     selected ? 'sv-listbox__option-text--selected' : 'sv-listbox__option-text--not-selected', 'sv-listbox__option-text',
                                 ]"
-                            >{{ person.name }}</span>
+                            >{{ option[displayProperty] ?? displayProperty }}</span>
                             <span
                                 v-if="selected"
                                 class="sv-listbox__option-icon-container--selected"
@@ -54,20 +54,35 @@ import {
 } from '@headlessui/vue'
 import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
 
-const options = [
-    { name: 'Wade Cooper' },
-    { name: 'Arlene Mccoy' },
-    { name: 'Devon Webb' },
-    { name: 'Tom Cook' },
-    { name: 'Tanya Fox' },
-    { name: 'Hellen Schmidt' },
-]
+const props = defineProps({
+    options: {
+        type: Array,
+        default: undefined
+    },
+    displayProperty: {
+        type: String,
+        default: "text"
+    },
+    valueProperty: {
+        type: String,
+        default: "value"
+    },
+    placeholder: {
+        type: String,
+        default: "Please select..."
+    }
+})
 
-const selectedOption = ref(options[0])
+const options = props.options ?? [];
+
+const selectedOption = ref();
 
 const getClasses = () => {
     return {
         "sv-listbox": true
     };
 }
+
+const displayProperty = props.displayProperty ?? "text";
+const valueProperty = props.valueProperty ?? "value";
 </script>

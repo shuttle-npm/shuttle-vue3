@@ -1,6 +1,15 @@
 <script setup>
 import { ref } from "vue";
 import { Listbox } from "@/components";
+
+const options = [
+    { text: 'Wade Cooper' },
+    { text: 'Arlene Mccoy' },
+    { text: 'Devon Webb' },
+    { text: 'Tom Cook' },
+    { text: 'Tanya Fox' },
+    { text: 'Hellen Schmidt' },
+]
 </script>
 
 <style>
@@ -13,4 +22,4 @@ import { Listbox } from "@/components";
 
 ## Examples
 
-<Listbox />
+<Listbox :options="options"/>
