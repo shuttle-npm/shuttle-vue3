@@ -36,9 +36,20 @@ const click = (type) => {
 <Button type="link">Link</Button>
 ```
 
-## Custom Icon
+---
+<div class="flex flex-row">
+<Button :icon="PlayIcon">Custom Icon</Button>
+<Button :disabled="true" class="ml-2">Disabled</Button>
+</div>
+
+```vue
+<script setup>
+import { PlayIcon } from '@heroicons/vue/outline'
+</script>
 
 <Button :icon="PlayIcon">Custom Icon</Button>
+<Button :disabled="true">Disabled</Button>
+```
 
 ## Properties
 

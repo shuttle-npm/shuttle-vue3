@@ -10,17 +10,17 @@ export function useClass(prefix, props) {
         result[prefix] = true;
 
         if (!disabled) {
-            result[prefix + '-primary'] = prefixType === "primary";
-            result[prefix + '-secondary'] = prefixType === "secondary";
-            result[prefix + '-success'] = prefixType === "success";
-            result[prefix + '-danger'] = prefixType === "danger";
-            result[prefix + '-warning'] = prefixType === "warning";
-            result[prefix + '-info'] = prefixType === "info";
-            result[prefix + '-link'] = prefixType === "link";
+            result[prefix + "--primary"] = prefixType === "primary";
+            result[prefix + "--secondary"] = prefixType === "secondary";
+            result[prefix + "--success"] = prefixType === "success";
+            result[prefix + "--danger"] = prefixType === "danger";
+            result[prefix + "--warning"] = prefixType === "warning";
+            result[prefix + "--info"] = prefixType === "info";
+            result[prefix + "--link"] = prefixType === "link";
         }
     }
 
-    result["disabled"] = disabled;
+    result[prefix + "--disabled"] = disabled;
 
     return result;
 

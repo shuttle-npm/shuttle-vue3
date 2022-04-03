@@ -1,7 +1,8 @@
 <template>
     <div :class="getClasses()">
-        <label v-if="!!props.label" class="sv-input-label">{{ props.label }}</label>
+        <label v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</label>
         <input
+            class="sv-input__input"
             type="text"
             :value="props.modelValue"
             @input="emit('update:modelValue', $event.target.value)"
@@ -37,8 +38,16 @@ const getLayout = () => {
 const getClasses = () => {
     return {
         "sv-input": true,
-        "sv-input-inline": getLayout() === "inline",
-        "sv-input-block": getLayout() === "block",
+        "sv-input--inline": getLayout() === "inline",
+        "sv-input--block": getLayout() === "block",
+    };
+}
+
+const getLabelClasses = () => {
+    return {
+        "sv-input__label": true,
+        "sv-input__label--inline": getLayout() === "inline",
+        "sv-input__label--block": getLayout() === "block",
     };
 }
 

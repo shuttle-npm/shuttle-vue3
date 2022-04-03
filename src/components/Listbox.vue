@@ -1,12 +1,10 @@
 <template>
-    <Listbox v-model="selectedPerson">
-        <div class="relative mt-1">
-            <ListboxButton
-                class="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
-            >
-                <span class="block truncate">{{ selectedPerson.name }}</span>
-                <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                    <SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+    <Listbox v-model="selectedOption">
+        <div :class="getClasses()">
+            <ListboxButton class="sv-listbox__button">
+                <span class="sv-listbox__selected-option">{{ selectedOption.name }}</span>
+                <span class="sv-listbox__icon-container">
+                    <SelectorIcon class="sv-listbox__icon" aria-hidden="true" />
                 </span>
             </ListboxButton>
 
@@ -15,33 +13,27 @@
                 leave-from-class="opacity-100"
                 leave-to-class="opacity-0"
             >
-                <ListboxOptions
-                    class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
-                >
+                <ListboxOptions class="sv-listbox__options">
                     <ListboxOption
                         v-slot="{ active, selected }"
-                        v-for="person in people"
+                        v-for="person in options"
                         :key="person.name"
                         :value="person"
                         as="template"
                     >
                         <li
-                            :class="[
-                                active ? 'text-amber-900 bg-amber-100' : 'text-gray-900',
-                                'cursor-default select-none relative py-2 pl-10 pr-4',
-                            ]"
+                            :class="[active ? 'sv-listbox__option--active' : 'sv-listbox__option--inactive', 'sv-listbox__option']"
                         >
                             <span
                                 :class="[
-                                    selected ? 'font-medium' : 'font-normal',
-                                    'block truncate',
+                                    selected ? 'sv-listbox__option-text--selected' : 'sv-listbox__option-text--not-selected', 'sv-listbox__option-text',
                                 ]"
                             >{{ person.name }}</span>
                             <span
                                 v-if="selected"
-                                class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                                class="sv-listbox__option-icon-container--selected"
                             >
-                                <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                                <CheckIcon class="sv-listbox__option-icon--selected" aria-hidden="true" />
                             </span>
                         </li>
                     </ListboxOption>
@@ -62,7 +54,7 @@ import {
 } from '@headlessui/vue'
 import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
 
-const people = [
+const options = [
     { name: 'Wade Cooper' },
     { name: 'Arlene Mccoy' },
     { name: 'Devon Webb' },
@@ -70,5 +62,12 @@ const people = [
     { name: 'Tanya Fox' },
     { name: 'Hellen Schmidt' },
 ]
-const selectedPerson = ref(people[0])
+
+const selectedOption = ref(options[0])
+
+const getClasses = () => {
+    return {
+        "sv-listbox": true
+    };
+}
 </script>

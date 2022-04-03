@@ -1,6 +1,6 @@
 <template>
     <div :class="useClass('sv-button', props)" @click="click" tabindex="0">
-        <component :is="icon()" class="icon" />
+        <component :is="icon()" class="sv-button__icon" />
         {{props.content}}
         <slot></slot>
     </div>
