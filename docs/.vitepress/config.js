@@ -68,16 +68,20 @@ module.exports = (async () => {
                                 link: '/components/buttons'
                             },
                             {
-                                text: 'Dropdown',
-                                link: '/components/dropdowns'
-                            },
-                            {
                                 text: 'Input',
                                 link: '/components/input'
                             },
                             {
                                 text: 'Listbox',
                                 link: '/components/listbox'
+                            },
+                            {
+                                text: 'Navbar',
+                                link: '/components/navbar'
+                            },
+                            {
+                                text: 'Navigation',
+                                link: '/components/navigation'
                             },
                         ]
                     },

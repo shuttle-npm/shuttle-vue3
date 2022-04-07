@@ -192,19 +192,6 @@
         @apply text-cyan-400 dark:text-cyan-900;
     }
 
-    /* Dropdown */
-    .sv-dropdown {
-        @apply rounded border-neutral-200 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-600 relative inline-block text-left z-50;
-    }
-
-    .sv-dropdown-items {
-        @apply mt-5;
-    }
-
-    .sv-dropdown-item {
-        @apply py-2 whitespace-nowrap cursor-pointer;
-    }
-
     /* Input */
 
     .sv-input {
@@ -236,23 +223,46 @@
 
     /* Listbox */
     .sv-listbox {
-        @apply relative 
+        @apply relative;
+    }
+
+    .sv-listbox__container {
+        @apply flex;
+    }
+
+    .sv-listbox__container--block {
+        @apply flex-col;
+    }
+
+    .sv-listbox__container--inline {
+        @apply flex-row items-center;
+    }
+
+    .sv-listbox__label {
+        @apply whitespace-nowrap mr-2 font-medium text-gray-900 dark:text-gray-300;
+    }
+
+    .sv-listbox__label--block {
+        @apply mb-2;
+    }
+
+    .sv-listboxt__label--inline {
     }
 
     .sv-listbox__button {
-        @apply sv-focus sv-rounded sv-border sv-padding w-full text-left block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white bg-gray-100 border border-gray-300 text-gray-900 ;
+        @apply sv-focus sv-rounded sv-border sv-padding w-full text-left flex flex-row items-center dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white bg-gray-100 border border-gray-300 text-gray-900;
     }
 
     .sv-listbox__options {
-        @apply absolute w-full py-1 mt-1 overflow-auto text-base rounded shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 bg-gray-100 border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+        @apply z-50 absolute w-full py-1 mt-1 overflow-auto text-base rounded shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 bg-gray-100 border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
     }
 
     .sv-listbox__selected-option {
-        @apply block truncate;
+        @apply block truncate w-full;
     }
 
     .sv-listbox__icon-container {
-        @apply absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none;
+        @apply inset-y-0 right-0 pr-2 pointer-events-none;
     }
 
     .sv-listbox__icon {
@@ -272,11 +282,11 @@
     }
 
     .sv-listbox__option-text--selected {
-        @apply font-semibold
+        @apply font-semibold;
     }
 
     .sv-listbox__option-text--not-selected {
-        @apply font-normal
+        @apply font-normal;
     }
 
     .sv-listbox__option-text {
@@ -284,10 +294,71 @@
     }
 
     .sv-listbox__option-icon-container--selected {
-        @apply absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600
+        @apply absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600;
     }
 
     .sv-listbox__option-icon--selected {
         @apply sv-icon text-blue-600;
+    }
+
+    /* Navigation */
+    .sv-navigation {
+        @apply w-full flex items-center;
+    }
+
+    .sv-navigation__item--minimal {
+        @apply w-full;
+    }
+
+    .sv-navigation__item--normal {
+        @apply relative ml-3;
+    }
+
+    .sv-navigation__button {
+        @apply flex items-center h-12 py-0 cursor-pointer text-gray-900 dark:text-white hover:bg-gray-300 hover:dark:bg-gray-600;
+    }
+
+    .sv-navigation__button--minimal {
+        @apply w-full p-0;
+    }
+
+    .sv-navigation__button--normal {
+        @apply px-3;
+    }
+
+    .sv-navigation__button-text--minimal {
+        @apply px-3;
+    }
+
+    .sv-navigation__button-icon {
+        @apply w-5 h-5 ml-1;
+    }
+
+    .sv-navigation__link {
+        @apply px-3 flex items-center h-12 py-0 cursor-pointer whitespace-nowrap text-gray-900 dark:text-white hover:bg-gray-300 hover:dark:bg-gray-600;
+    }
+
+    .sv-navigation__link--minimal {
+        @apply w-full p-0;
+    }
+
+    .sv-navigation__link--disabled {
+        @apply text-gray-400 dark:text-gray-400;
+    }
+
+    .sv-navigation__divider {
+        @apply h-2 mt-2 border-0 border-t border-solid border-gray-300 dark:border-gray-600;
+    }
+
+    .sv-navigation__dropdown {
+        @apply sv-rounded sv-border origin-top-left left-0 shadow-lg py-1 focus:outline-none z-[1000] mt-2 ring-black ring-opacity-5 bg-gray-100 border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+    }
+
+    .sv-navigation__dropdown--minimal {
+        @apply relative;
+    }
+
+    .sv-navigation__dropdown--normal {
+        @apply absolute;
     }
 }

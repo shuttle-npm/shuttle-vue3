@@ -1,12 +1,17 @@
 <template>
     <Listbox v-model="selectedOption">
         <div :class="getClasses()">
-            <ListboxButton class="sv-listbox__button">
-                <span class="sv-listbox__selected-option">{{ !!selectedOption ? selectedOption[displayProperty] ?? displayProperty : placeholder }}</span>
-                <span class="sv-listbox__icon-container">
-                    <SelectorIcon class="sv-listbox__icon" aria-hidden="true" />
-                </span>
-            </ListboxButton>
+            <div :class="getContainerClasses()">
+                <ListboxLabel v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</ListboxLabel>
+                <ListboxButton :class="getButtonClasses()">
+                    <span
+                        class="sv-listbox__selected-option"
+                    >{{ !!selectedOption ? selectedOption[displayProperty] ?? displayProperty : placeholder }}</span>
+                    <span class="sv-listbox__icon-container">
+                        <SelectorIcon class="sv-listbox__icon" aria-hidden="true" />
+                    </span>
+                </ListboxButton>
+            </div>
 
             <transition
                 leave-active-class="transition duration-100 ease-in"
@@ -20,6 +25,7 @@
                         :key="option[valueProperty] ?? option[displayProperty]"
                         :value="option"
                         as="template"
+                        :onclick="emit('update:modelValue', option)"
                     >
                         <li
                             :class="[active ? 'sv-listbox__option--active' : 'sv-listbox__option--inactive', 'sv-listbox__option']"
@@ -33,7 +39,10 @@
                                 v-if="selected"
                                 class="sv-listbox__option-icon-container--selected"
                             >
-                                <CheckIcon class="sv-listbox__option-icon--selected" aria-hidden="true" />
+                                <CheckIcon
+                                    class="sv-listbox__option-icon--selected"
+                                    aria-hidden="true"
+                                />
                             </span>
                         </li>
                     </ListboxOption>
@@ -53,8 +62,17 @@ import {
     ListboxOption,
 } from '@headlessui/vue'
 import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
+import { useCoreClass } from "@/composables/useCoreClass";
 
 const props = defineProps({
+    layout: {
+        type: String,
+        default: "block"
+    },
+    label: {
+        type: String,
+        default: ""
+    },
     options: {
         type: Array,
         default: undefined
@@ -70,19 +88,57 @@ const props = defineProps({
     placeholder: {
         type: String,
         default: "Please select..."
-    }
+    },
+    modelValue: {
+        type: undefined
+    },
+    svClass: {
+        type: Object
+    },
 })
+
+const getLayout = () => {
+    return (props.layout ?? "block").toLowerCase();
+}
 
 const options = props.options ?? [];
 
 const selectedOption = ref();
 
 const getClasses = () => {
-    return {
-        "sv-listbox": true
-    };
+    return [
+        useCoreClass("sv-listbox", props.svClass, true),
+        useCoreClass("sv-listbox--inline", props.svClass, getLayout() === "inline"),
+        useCoreClass("sv-listbox--block", props.svClass, getLayout() === "block"),
+    ];
+}
+
+const getContainerClasses = () => {
+    return [
+        useCoreClass("sv-listbox__container", props.svClass, true),
+        useCoreClass("sv-listbox__container--inline", props.svClass, getLayout() === "inline"),
+        useCoreClass("sv-listbox__container--block", props.svClass, getLayout() === "block"),
+    ];
+}
+
+const getButtonClasses = () => {
+    return [
+        useCoreClass("sv-listbox__button", props.svClass, true),
+        useCoreClass("sv-listbox__button--inline", props.svClass, getLayout() === "inline"),
+        useCoreClass("sv-listbox__button--block", props.svClass, getLayout() === "block"),
+    ];
+}
+
+const getLabelClasses = () => {
+    return [
+        useCoreClass("sv-listbox__label", props.svClass, true),
+        useCoreClass("sv-listbox__label--inline", props.svClass, getLayout() === "inline"),
+        useCoreClass("sv-listbox__label--block", props.svClass, getLayout() === "block"),
+    ];
 }
 
 const displayProperty = props.displayProperty ?? "text";
 const valueProperty = props.valueProperty ?? "value";
+
+const emit = defineEmits(["update:modelValue"]);
 </script>

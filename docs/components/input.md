@@ -35,8 +35,8 @@ Value: {{ value }}
 
 Added to theh `div` container:
 
-`sv-input` (`sv-input-block` | `sv-input-inline`)
+`sv-input` (`sv-input--block` | `sv-input--inline`)
 
 Added to the `label`:
 
-`sv-input-label`
+`sv-input__label` (`sv-input__label--block` | `sv-input__label--inline`)
