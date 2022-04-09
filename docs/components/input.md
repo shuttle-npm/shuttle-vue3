@@ -25,18 +25,19 @@ Value: {{ value }}
 
 ## Properties
 
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| `label` | `String` | "" | The label to display for the input. |
-| `layout` | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline` |
-| `placeholder` | `String` | "" | The placeholder to display for the input. |
+| Name          | Type     | Default | Description                                                                                                        |
+| ------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `label`       | `String` | ""      | The label to display for the input.                                                                                |
+| `layout`      | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
+| `placeholder` | `String` | ""      | The placeholder to display for the input.                                                                          |
+| `sv-class`    | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Classes
 
-Added to theh `div` container:
+- `sv-input` 
+  - `--block` 
+  - `--inline`
 
-`sv-input` (`sv-input--block` | `sv-input--inline`)
-
-Added to the `label`:
-
-`sv-input__label` (`sv-input__label--block` | `sv-input__label--inline`)
+- `sv-input__label`
+  - `--block` 
+  - `--inline`

@@ -1,0 +1,49 @@
+<script setup>
+import { ref } from "vue";
+import { Checkbox } from "@/components";
+
+const value = ref(false);
+</script>
+
+# Checkbox
+
+## Examples
+
+Value: {{ value }}
+
+<Checkbox v-model="value" />
+
+### Label
+
+<Checkbox v-model="value" label="Use express delivery?" />
+
+```vue
+<Checkbox v-model="value" label="Use express delivery?" />
+```
+
+## Properties
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `label` | `String` | "" | The label to display for the input. |
+| `layout` | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline` |
+| `placeholder` | `String` | "" | The placeholder to display for the input. |
+| `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.             |
+
+## Classes
+
+- `sv-checkbox`
+  - `sv-checkbox--checked`
+  - `sv-checkbox--unchecked`
+
+- `sv-checkbox__icon-container`
+  - `sv-checkbox__icon-container--checked`
+  - `sv-checkbox__icon-container--unchecked`
+
+- `sv-checkbox__icon`
+  - `sv-checkbox__icon--checked`
+  - `sv-checkbox__icon--unchecked`
+
+- `sv-checkbox__label`
+  - `sv-checkbox__label--checked`
+  - `sv-checkbox__label--unchecked`

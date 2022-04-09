@@ -534,6 +534,16 @@
     --tw-text-opacity: 1;
     color: rgb(22 78 99 / var(--tw-text-opacity))
 }
+/* Checkbox */
+.sv-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+.sv-checkbox__icon {
+    height: 1.25rem;
+    width: 1.25rem
+}
 /* Input */
 .sv-input {
     display: flex
@@ -865,6 +875,10 @@
     padding: 0px
 }
 .sv-navigation__button--normal {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem
+}
+.sv-navigation__button-text--minimal {
     padding-left: 0.75rem;
     padding-right: 0.75rem
 }

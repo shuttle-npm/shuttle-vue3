@@ -68,6 +68,10 @@ module.exports = (async () => {
                                 link: '/components/buttons'
                             },
                             {
+                                text: 'Checkbox',
+                                link: '/components/checkbox'
+                            },
+                            {
                                 text: 'Input',
                                 link: '/components/input'
                             },
@@ -82,6 +86,15 @@ module.exports = (async () => {
                             {
                                 text: 'Navigation',
                                 link: '/components/navigation'
+                            },
+                        ]
+                    },
+                    {
+                        text: 'Essentials',
+                        items: [
+                            {
+                                text: 'Core Class Objects',
+                                link: '/components/core-class'
                             },
                         ]
                     },

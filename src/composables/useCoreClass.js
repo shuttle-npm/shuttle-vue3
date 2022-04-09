@@ -1,9 +1,25 @@
-export function useCoreClass(svBem, svClass, include) {
+export function useCoreClass(svBem, options) {
     const result = {};
+    const o = options ?? {};
+    const svClass = o.svClass;
+    const disabled = o.disabled ?? false;
+    const variant = !!o.variant ? o.variant.toLowerCase() : undefined;
+    const include = o.include ?? false;
 
     result[svBem] = include;
+    result[svBem + "--disabled"] = disabled;
 
-    if (!!svClass[svBem] && include) {
+    if (!!variant && !disabled) {
+        result[svBem + "--primary"] = variant === "primary";
+        result[svBem + "--secondary"] = variant === "secondary";
+        result[svBem + "--success"] = variant === "success";
+        result[svBem + "--danger"] = variant === "danger";
+        result[svBem + "--warning"] = variant === "warning";
+        result[svBem + "--info"] = variant === "info";
+        result[svBem + "--link"] = variant === "link";
+    }
+
+    if (!!svClass && !!svClass[svBem] && include) {
         if (Array.isArray(svClass[svBem])) {
             svClass[svBem].forEach(item => {
                 result[item] = true;

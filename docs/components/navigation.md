@@ -1,5 +1,5 @@
 <script setup>
-import { Alert, Navigation } from "@/components";
+import { Alert, Checkbox, Navigation } from "@/components";
 import { ref } from "vue";
 
 const items = ref([
@@ -114,8 +114,8 @@ const items = ref([
 | Name       | Type      | Default | Description                                                                                                                                                     |
 | ---------- | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `items`    | `Array`   | `[]`    | The items that should be rendered in the navigation menu,                                                                                                       |
-| `sv-class` | `Object`  | `{}`    | The core class object that will render classes along with the corresponding BEM entries.                                                                        |
 | `minimal`  | `Boolean` | `false` | If `true` the navigation menu has the `--minimal` class modifiers applied.  This is typically applied when the screen size is small, such as on mobile devices. |
+| `sv-class` | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.                                                                        |
 
 ### Items
 

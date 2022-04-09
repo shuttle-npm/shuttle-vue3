@@ -1,16 +1,35 @@
 <template>
-    <div v-if="alerts" class="sv-alerts">
-        <Alert v-for="alert in alerts" v-bind="alert" @remove="emit('remove', alert)" :class="props.alertClass"/>
+    <div v-if="alerts" :class="getClasses()">
+        <Alert
+            v-for="alert in alerts"
+            v-bind="alert"
+            @remove="emit('remove', alert)"
+            :sv-class="props.svClass"
+        />
     </div>
 </template>
 
 <script setup>
 import Alert from "./Alert.vue";
+import { useCoreClass } from "@/composables/useCoreClass";
 
 const props = defineProps({
-    alerts: Array,
-    alertClass: [String, Object]
+    alerts: {
+        type: Array
+    },
+    svClass: {
+        type: Object
+    },
 });
 
 const emit = defineEmits(['remove']);
+
+const getClasses = () => {
+    return [
+        useCoreClass("sv-alerts", {
+            svClass: props.svClass,
+            include: true
+        }),
+    ];
+}
 </script>

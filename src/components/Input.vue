@@ -12,6 +12,8 @@
 </template>
 
 <script setup>
+import { useCoreClass } from "@/composables/useCoreClass";
+
 const props = defineProps({
     layout: {
         type: String,
@@ -28,7 +30,10 @@ const props = defineProps({
     modelValue: {
         type: [String, Number, Date],
         default: ""
-    }
+    },
+    svClass: {
+        type: Object
+    },
 })
 
 const getLayout = () => {
@@ -36,19 +41,19 @@ const getLayout = () => {
 }
 
 const getClasses = () => {
-    return {
-        "sv-input": true,
-        "sv-input--inline": getLayout() === "inline",
-        "sv-input--block": getLayout() === "block",
-    };
+    return [
+        useCoreClass("sv-input", props.svClass, true),
+        useCoreClass("sv-input--inline", props.svClass, getLayout() === "inline"),
+        useCoreClass("sv-input--block", props.svClass, getLayout() === "block"),
+    ];
 }
 
 const getLabelClasses = () => {
-    return {
-        "sv-input__label": true,
-        "sv-input__label--inline": getLayout() === "inline",
-        "sv-input__label--block": getLayout() === "block",
-    };
+    return [
+        useCoreClass("sv-input__label", props.svClass, true),
+        useCoreClass("sv-input__label--inline", props.svClass, getLayout() === "inline"),
+        useCoreClass("sv-input__label--block", props.svClass, getLayout() === "block"),
+    ];
 }
 
 const emit = defineEmits(["update:modelValue"]);

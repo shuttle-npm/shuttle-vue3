@@ -1,6 +1,6 @@
 const safelist = [];
 
-const prefixedSafelist = (prefix) => {
+const bemSafelist = (prefix) => {
     safelist.push(prefix + '--primary');
     safelist.push(prefix + '--secondary');
     safelist.push(prefix + '--success');
@@ -11,8 +11,9 @@ const prefixedSafelist = (prefix) => {
     safelist.push(prefix + '--disabled');
 }
 
-prefixedSafelist('sv-alert');
-prefixedSafelist('sv-button');
+bemSafelist('sv-alert');
+bemSafelist('sv-alerts');
+bemSafelist('sv-button');
 
 module.exports = {
     darkMode: "class",

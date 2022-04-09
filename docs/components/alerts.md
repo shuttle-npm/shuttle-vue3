@@ -9,37 +9,37 @@ const alertsReference = [
     {
         name: "Primary",
         message: "A simple primary alert.",
-        type: "primary",
+        variant: "primary",
         dismissable: true
     },
     {
         name: "Secondary",
         message: "A simple secondary alert.",
-        type: "secondary",
+        variant: "secondary",
         dismissable: true
     },
     {
         name: "Success",
         message: "A simple success alert.",
-        type: "success",
+        variant: "success",
         dismissable: true
     },
     {
         name: "Danger",
         message: "A simple danger alert.",
-        type: "danger",
+        variant: "danger",
         dismissable: true
     },
     {
         name: "Warning",
         message: "A simple warning alert.",
-        type: "warning",
+        variant: "warning",
         dismissable: true
     },
     {
         name: "Information",
         message: "A simple information alert.",
-        type: "info",
+        variant: "info",
         dismissable: true
     }
 ];
@@ -66,7 +66,7 @@ const reset = () => {
 ## Examples (dismissable)
 
 <Button @click="reset" content="Reset" class="mb-2" :disabled="alerts.length >= alertsReference.length"></Button>
-<Alerts :alerts="alerts" @remove="remove" alert-class="mb-2"/>
+<Alerts :alerts="alerts" @remove="remove" :sv-class="{ 'sv-alert': 'mb-2' }"/>
 
 ## Custom Icon
 
@@ -77,23 +77,31 @@ const reset = () => {
 
 ## Properties
 
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| `name` | `String` | (empty) | A name to uniquely identify the alert. |
-| `type` | `String` | `primary` | The type of alert:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info` |
-| `message` | `String` | (required) | The message to display for the alert. |
-| `dismissable` | `Boolean` | `false` | Whether a close icon will be displayed with will emit the `remove` event when clicked. |
-| `icon` | `Component` | `undefined` | Displays the given icon in front of the message. |
+| Name          | Type        | Default     | Description                                                                                                        |
+| ------------- | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| `name`        | `String`    | (empty)     | A name to uniquely identify the alert.                                                                             |
+| `type`        | `String`    | `primary`   | The type of alert:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`   |
+| `message`     | `String`    | (required)  | The message to display for the alert.                                                                              |
+| `dismissable` | `Boolean`   | `false`     | Whether a close icon will be displayed with will emit the `remove` event when clicked.                             |
+| `icon`        | `Component` | `undefined` | Displays the given icon in front of the message.                                                                   |
+| `sv-class`    | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
+| Name     | Description                                     |
+| -------- | ----------------------------------------------- |
 | `remove` | Called when the dismissable element is clicked. |
 
 ## Classes
 
-`sv-alert` `sv-alert-{type}`
+- `sv-alert`
+  - `--{variant}`
+- `sv-alert__icon`
+  - `--{variant}`
+- `sv-alert__icon-close`
+  - `--{variant}`
+- `sv-alert__message`
+  - `--{variant}`
 
 ## Container
 
@@ -101,4 +109,4 @@ const reset = () => {
 <Alerts :alerts="alerts" @remove="remove" />
 ```
 
-Where `alerts` contains an array of objects that have the same properties as an `Alert`.
+Where `alerts` contains an array of objects that have the same properties as an `Alert`.  Will redner with class `sv-alerts` and supports the `:sv-class` [core class object](/components/core-class) property.
