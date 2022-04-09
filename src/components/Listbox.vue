@@ -105,35 +105,42 @@ const options = props.options ?? [];
 
 const selectedOption = ref();
 
+const getOptions = (include) => {
+    return {
+        svClass: props.svClass,
+        include: include
+    };
+}
+
 const getClasses = () => {
     return [
-        useCoreClass("sv-listbox", props.svClass, true),
-        useCoreClass("sv-listbox--inline", props.svClass, getLayout() === "inline"),
-        useCoreClass("sv-listbox--block", props.svClass, getLayout() === "block"),
+        useCoreClass("sv-listbox", getOptions(true)),
+        useCoreClass("sv-listbox--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-listbox--block", getOptions(getLayout() === "block")),
     ];
 }
 
 const getContainerClasses = () => {
     return [
-        useCoreClass("sv-listbox__container", props.svClass, true),
-        useCoreClass("sv-listbox__container--inline", props.svClass, getLayout() === "inline"),
-        useCoreClass("sv-listbox__container--block", props.svClass, getLayout() === "block"),
+        useCoreClass("sv-listbox__container", getOptions(true)),
+        useCoreClass("sv-listbox__container--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-listbox__container--block", getOptions(getLayout() === "block")),
     ];
 }
 
 const getButtonClasses = () => {
     return [
-        useCoreClass("sv-listbox__button", props.svClass, true),
-        useCoreClass("sv-listbox__button--inline", props.svClass, getLayout() === "inline"),
-        useCoreClass("sv-listbox__button--block", props.svClass, getLayout() === "block"),
+        useCoreClass("sv-listbox__button", getOptions(true)),
+        useCoreClass("sv-listbox__button--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-listbox__button--block", getOptions(getLayout() === "block")),
     ];
 }
 
 const getLabelClasses = () => {
     return [
-        useCoreClass("sv-listbox__label", props.svClass, true),
-        useCoreClass("sv-listbox__label--inline", props.svClass, getLayout() === "inline"),
-        useCoreClass("sv-listbox__label--block", props.svClass, getLayout() === "block"),
+        useCoreClass("sv-listbox__label", getOptions(true)),
+        useCoreClass("sv-listbox__label--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-listbox__label--block", getOptions(getLayout() === "block")),
     ];
 }
 

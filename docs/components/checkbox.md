@@ -21,14 +21,23 @@ Value: {{ value }}
 <Checkbox v-model="value" label="Use express delivery?" />
 ```
 
+### Disabled
+
+<Checkbox v-model="value" label="Is this disabled?" :disabled="true" />
+
+```vue
+<Checkbox v-model="value" label="Is this disabled?" :disabled="true" />
+```
+
 ## Properties
 
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| `label` | `String` | "" | The label to display for the input. |
-| `layout` | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline` |
-| `placeholder` | `String` | "" | The placeholder to display for the input. |
-| `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.             |
+| Name          | Type      | Default | Description                                                                                                        |
+| ------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `label`       | `String`  | ""      | The label to display for the input.                                                                                |
+| `layout`      | `String`  | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
+| `placeholder` | `String`  | ""      | The placeholder to display for the input.                                                                          |
+| `disabled`    | `Boolean` | `false` | Indicates whether the checkbox is in a disabled state.                                                             |
+| `sv-class`    | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Classes
 
@@ -39,6 +48,7 @@ Value: {{ value }}
 - `sv-checkbox__icon-container`
   - `sv-checkbox__icon-container--checked`
   - `sv-checkbox__icon-container--unchecked`
+  - `sv-checkbox__icon-container--disabled`
 
 - `sv-checkbox__icon`
   - `sv-checkbox__icon--checked`
@@ -47,3 +57,4 @@ Value: {{ value }}
 - `sv-checkbox__label`
   - `sv-checkbox__label--checked`
   - `sv-checkbox__label--unchecked`
+  - `sv-checkbox__label--disabled`

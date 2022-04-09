@@ -197,8 +197,24 @@
         @apply flex flex-row items-center;
     }
 
+    .sv-checkbox__icon-container {
+        @apply sv-rounded sv-border h-5 w-5 cursor-pointer bg-gray-100 border-gray-200 dark:bg-gray-700 dark:border-gray-800;
+    }
+
+    .sv-checkbox__icon-container--disabled {
+        @apply cursor-default bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900;
+    }
+
     .sv-checkbox__icon {
         @apply sv-icon;
+    }
+
+    .sv-checkbox__label {
+        @apply ml-2 cursor-pointer;
+    }
+
+    .sv-checkbox__label--disabled {
+        @apply cursor-default text-gray-300 dark:text-gray-500;
     }
 
     /* Input */

@@ -65,69 +65,76 @@ const getItemType = (item) => {
 const minimal = props.minimal ?? false;
 const normal = !minimal;
 
+const getOptions = (include) => {
+    return {
+        svClass: props.svClass,
+        include: include
+    };
+}
+
 const getClasses = () => {
     return [
-        useCoreClass("sv-navigation", props.svClass, true),
-        useCoreClass("sv-navigation--minimal", props.svClass, minimal),
-        useCoreClass("sv-navigation--normal", props.svClass, normal),
+        useCoreClass("sv-navigation", getOptions(true)),
+        useCoreClass("sv-navigation--minimal", getOptions(minimal)),
+        useCoreClass("sv-navigation--normal", getOptions(normal)),
     ];
 }
 
 const getItemClasses = () => {
     return [
-        useCoreClass("sv-navigation__item", props.svClass, true),
-        useCoreClass("sv-navigation__item--minimal", props.svClass, minimal),
-        useCoreClass("sv-navigation__item--normal", props.svClass, normal),
+        useCoreClass("sv-navigation__item", getOptions(true)),
+        useCoreClass("sv-navigation__item--minimal", getOptions(minimal)),
+        useCoreClass("sv-navigation__item--normal", getOptions(normal)),
     ];
 }
 
 const getButtonClasses = (item) => {
     return [
-        useCoreClass("sv-navigation__button", props.svClass, true),
-        useCoreClass("sv-navigation__button--minimal", props.svClass, minimal),
-        useCoreClass("sv-navigation__button--normal", props.svClass, normal),
-        useCoreClass("sv-navigation__button--disabled", props.svClass, item?.disabled ?? false),
+        useCoreClass("sv-navigation__button", getOptions(true)),
+        useCoreClass("sv-navigation__button--minimal", getOptions(minimal)),
+        useCoreClass("sv-navigation__button--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__button--disabled", getOptions(item?.disabled ?? false)),
     ];
 }
 
 const getButtonTextClasses = () => {
     return [
-        useCoreClass("sv-navigation__button-text", props.svClass, true),
-        useCoreClass("sv-navigation__button-text--minimal", props.svClass, minimal),
-        useCoreClass("sv-navigation__button-text--normal", props.svClass, normal),
+        useCoreClass("sv-navigation__button-text", getOptions(true)),
+        useCoreClass("sv-navigation__button-text--minimal", getOptions(minimal)),
+        useCoreClass("sv-navigation__button-text--normal", getOptions(normal)),
     ];
 }
 
 const getButtonIconClasses = () => {
     return [
-        useCoreClass("sv-navigation__button-icon", props.svClass, true),
-        useCoreClass("sv-navigation__button-icon--minimal", props.svClass, minimal),
-        useCoreClass("sv-navigation__button-icon--normal", props.svClass, normal),
+        useCoreClass("sv-navigation__button-icon", getOptions(true)),
+        useCoreClass("sv-navigation__button-icon--minimal", getOptions(minimal)),
+        useCoreClass("sv-navigation__button-icon--normal", getOptions(normal)),
     ];
 }
 
 const getLinkClasses = (item, active) => {
     return [
-        useCoreClass("sv-navigation__link", props.svClass, true),
-        useCoreClass("sv-navigation__link--minimal", props.svClass, minimal),
-        useCoreClass("sv-navigation__link--normal", props.svClass, normal),
-        useCoreClass("sv-navigation__link--active", props.svClass, active),
-        useCoreClass("sv-navigation__link--inactive", props.svClass, !active),
-        useCoreClass("sv-navigation__link--disabled", props.svClass, item?.disabled ?? false),
+        useCoreClass("sv-navigation__link", getOptions(true)),
+        useCoreClass("sv-navigation__link--minimal", getOptions(minimal)),
+        useCoreClass("sv-navigation__link--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__link--active", getOptions(active)),
+        useCoreClass("sv-navigation__link--inactive", getOptions(!active)),
+        useCoreClass("sv-navigation__link--disabled", getOptions(item?.disabled ?? false)),
     ];
 }
 
 const getDividerClasses = (active) => {
     return [
-        useCoreClass("sv-navigation__divider", props.svClass, true),
+        useCoreClass("sv-navigation__divider", getOptions(true)),
     ];
 }
 
 const getDropdownClasses = () => {
     return [
-        useCoreClass("sv-navigation__dropdown", props.svClass, true),
-        useCoreClass("sv-navigation__dropdown--minimal", props.svClass, minimal),
-        useCoreClass("sv-navigation__dropdown--normal", props.svClass, normal),
+        useCoreClass("sv-navigation__dropdown", getOptions(true)),
+        useCoreClass("sv-navigation__dropdown--minimal", getOptions(minimal)),
+        useCoreClass("sv-navigation__dropdown--normal", getOptions(normal)),
     ];
 }
 </script>    

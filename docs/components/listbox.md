@@ -56,15 +56,27 @@ const value = ref();
 
 ## Properties
 
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| `label` | `String` | "" | The label to display for the input. |
-| `layout` | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline` |
-| `placeholder` | `String` | "" | The placeholder to display for the input. |
+| Name          | Type     | Default | Description                                                                                                        |
+| ------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `label`       | `String` | ""      | The label to display for the input.                                                                                |
+| `layout`      | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
+| `placeholder` | `String` | ""      | The placeholder to display for the input.                                                                          |
+| `sv-class`    | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Classes
 
-`sv-listbox` (`sv-listbox--block` | `sv-listbox--inlined`)
-`sv-listbox__container` (`sv-listbox__container--block` | `sv-listbox__container--inline`)
-`sv-listbox__button` (`sv-listbox__button--block` | `sv-listbox__button--inline`)
-`sv-listbox__label` (`sv-label--block` | `sv-label--inline`)
+- `sv-listbox`
+  - `--block`
+  - `--inline`
+
+- `sv-listbox__container`
+  - `--block` 
+  - `--inline`
+
+- `sv-listbox__button`
+  - `--block` 
+  - `--inline`
+
+- `sv-listbox__label`
+  - `--block` 
+  - `--inline`

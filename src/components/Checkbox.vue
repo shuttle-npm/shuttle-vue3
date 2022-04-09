@@ -25,6 +25,10 @@ const props = defineProps({
     uncheckedIcon: {
         type: null
     },
+    disabled: {
+        type: Boolean,
+        default: false
+    },
     svClass: {
         type: Object
     },
@@ -33,6 +37,10 @@ const props = defineProps({
 const emit = defineEmits(["update:modelValue"]);
 
 const click = () => {
+    if (props.disabled) {
+        return;
+    }
+
     emit("update:modelValue", !props.modelValue);
 }
 
@@ -42,35 +50,44 @@ const getIcon = () => {
         : !!props.uncheckedIcon ? props.uncheckedIcon : null;
 }
 
+const getOptions = (include) => {
+    return {
+        svClass: props.svClass,
+        include: include
+    };
+}
+
 const getClasses = () => {
     return [
-        useCoreClass("sv-checkbox", props.svClass, true),
-        useCoreClass("sv-checkbox--checked", props.svClass, props.modelValue),
-        useCoreClass("sv-checkbox--unchecked", props.svClass, !props.modelValue),
+        useCoreClass("sv-checkbox", getOptions(true)),
+        useCoreClass("sv-checkbox--checked", getOptions(props.modelValue)),
+        useCoreClass("sv-checkbox--unchecked", getOptions(!props.modelValue)),
     ];
 }
 
 const getIconContainerClasses = () => {
     return [
-        useCoreClass("sv-checkbox__icon-container", props.svClass, true),
-        useCoreClass("sv-checkbox__icon-container--checked", props.svClass, props.modelValue),
-        useCoreClass("sv-checkbox__icon-container--unchecked", props.svClass, !props.modelValue),
+        useCoreClass("sv-checkbox__icon-container", getOptions(true)),
+        useCoreClass("sv-checkbox__icon-container--disabled", getOptions(props.disabled)),
+        useCoreClass("sv-checkbox__icon-container--checked", getOptions(props.modelValue)),
+        useCoreClass("sv-checkbox__icon-container--unchecked", getOptions(!props.modelValue)),
     ];
 }
 
 const getIconClasses = () => {
     return [
-        useCoreClass("sv-checkbox__icon", props.svClass, true),
-        useCoreClass("sv-checkbox__icon--checked", props.svClass, props.modelValue),
-        useCoreClass("sv-checkbox__icon--unchecked", props.svClass, !props.modelValue),
+        useCoreClass("sv-checkbox__icon", getOptions(true)),
+        useCoreClass("sv-checkbox__icon--checked", getOptions(props.modelValue)),
+        useCoreClass("sv-checkbox__icon--unchecked", getOptions(!props.modelValue)),
     ];
 }
 
 const getLabelClasses = () => {
     return [
-        useCoreClass("sv-checkbox__label", props.svClass, true),
-        useCoreClass("sv-checkbox__label--checked", props.svClass, props.modelValue),
-        useCoreClass("sv-checkbox__label--unchecked", props.svClass, !props.modelValue),
+        useCoreClass("sv-checkbox__label", getOptions(true)),
+        useCoreClass("sv-checkbox__label--disabled", getOptions(props.disabled)),
+        useCoreClass("sv-checkbox__label--checked", getOptions(props.modelValue)),
+        useCoreClass("sv-checkbox__label--unchecked", getOptions(!props.modelValue)),
     ];
 }
 </script>

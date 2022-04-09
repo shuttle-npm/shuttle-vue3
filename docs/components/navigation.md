@@ -115,7 +115,7 @@ const items = ref([
 | ---------- | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `items`    | `Array`   | `[]`    | The items that should be rendered in the navigation menu,                                                                                                       |
 | `minimal`  | `Boolean` | `false` | If `true` the navigation menu has the `--minimal` class modifiers applied.  This is typically applied when the screen size is small, such as on mobile devices. |
-| `sv-class` | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.                                                                        |
+| `sv-class` | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.                                              |
 
 ### Items
 
@@ -146,18 +146,36 @@ The items represent a menu that is one level deep:
 
 ## Classes
 
-`sv-navigation` (`sv-navigation--normal` | `sv-navigation--minimal`)
+- `sv-navigation`
+  - `--normal`
+  - `--minimal`
 
-`sv-navigation__item` (`sv-navigation__item--normal` | `sv-navigation__item--minimal`)
+- `sv-navigation__item`
+  - `--normal`
+  - `--minimal`
 
-`sv-navigation__button` `sv-navigation__button--disabled` (`sv-navigation__button--normal` | `sv-navigation__button--minimal`)
+- `sv-navigation__button`
+  - `--normal`
+  - `--minimal`
+  - `--disabled`
 
-`sv-navigation__button-text` (`sv-navigation__button-text--normal` | `sv-navigation__button-text--minimal`)
+- `sv-navigation__button-text` 
+  - `--normal`
+  - `--minimal`
 
-`sv-navigation__button-icon` (`sv-navigation__button-icon--normal` | `sv-navigation__button-icon--minimal`)
+- `sv-navigation__button-icon`
+  - `--normal`
+  - `--minimal`
 
-`sv-navigation__link` `sv-navigation__link--disabled` (`sv-navigation__link--normal` | `sv-navigation__link--minimal`) (`sv-navigation__link--active` | `sv-navigation__link--inactive`)
+- `sv-navigation__link`
+  - `--normal`
+  - `--minimal`
+  - `--disabled`
+  - `--active`
+  - `--inactive`
 
-`sv-navigation__divider`
+- `sv-navigation__divider`
 
-`sv-navigation__dropdown` (`sv-navigation__dropdown--normal` | `sv-navigation__dropdown--minimal`)
+- `sv-navigation__dropdown` 
+  - `--normal`
+  - `--minimal`

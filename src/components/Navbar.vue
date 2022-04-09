@@ -17,13 +17,12 @@
                     </div>
                     <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-start'>
                         <div className='flex-shrink-0 flex items-center'>
-                            <img className='block h-[30px] w-auto' src={touchSideLogo} alt='Touchsides' />
+                            <!-- image -->
                         </div>
                         <div className='items-center hidden sm:flex'>
                             <Navigation />
                         </div>
                     </div>
-                    {props.user && (
                     <div
                         className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
                         <Menu as='div' className='ml-3 relative'>
@@ -56,7 +55,6 @@
                             </Transition>
                         </Menu>
                     </div>
-                    )}
                 </div>
             </div>
 
@@ -65,7 +63,6 @@
                     <Navigation />
                 </div>
             </DisclosurePanel>
-            )}
         </Disclosure>
     </div>
 </template>

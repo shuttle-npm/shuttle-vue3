@@ -2,7 +2,7 @@
     <div :class="getClasses()">
         <label v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</label>
         <input
-            class="sv-input__input"
+            :class="getInputClasses()"
             type="text"
             :value="props.modelValue"
             @input="emit('update:modelValue', $event.target.value)"
@@ -40,19 +40,34 @@ const getLayout = () => {
     return (props.layout ?? "block").toLowerCase();
 }
 
+const getOptions = (include) => {
+    return {
+        svClass: props.svClass,
+        include: include
+    };
+}
+
 const getClasses = () => {
     return [
-        useCoreClass("sv-input", props.svClass, true),
-        useCoreClass("sv-input--inline", props.svClass, getLayout() === "inline"),
-        useCoreClass("sv-input--block", props.svClass, getLayout() === "block"),
+        useCoreClass("sv-input", getOptions(true)),
+        useCoreClass("sv-input--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-input--block", getOptions(getLayout() === "block"))
     ];
 }
 
 const getLabelClasses = () => {
     return [
-        useCoreClass("sv-input__label", props.svClass, true),
-        useCoreClass("sv-input__label--inline", props.svClass, getLayout() === "inline"),
-        useCoreClass("sv-input__label--block", props.svClass, getLayout() === "block"),
+        useCoreClass("sv-input__label", getOptions(true)),
+        useCoreClass("sv-input__label--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-input__label--block", getOptions(getLayout() === "block")),
+    ];
+}
+
+const getInputClasses = () => {
+    return [
+        useCoreClass("sv-input__input", getOptions(true)),
+        useCoreClass("sv-input__input--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-input__input--block", getOptions(getLayout() === "block")),
     ];
 }
 
