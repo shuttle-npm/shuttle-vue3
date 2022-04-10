@@ -194,14 +194,14 @@
 
     /* Checkbox */
     .sv-checkbox {
-        @apply flex flex-row items-center;
+        @apply flex flex-row items-center h-4;
     }
 
-    .sv-checkbox__icon-container {
+    .sv-checkbox__box {
         @apply sv-rounded sv-border h-5 w-5 cursor-pointer bg-gray-100 border-gray-200 dark:bg-gray-700 dark:border-gray-800;
     }
 
-    .sv-checkbox__icon-container--disabled {
+    .sv-checkbox__box--disabled {
         @apply cursor-default bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900;
     }
 
@@ -385,5 +385,42 @@
 
     .sv-navigation__dropdown--normal {
         @apply absolute;
+    }
+
+    /* Toggle */
+    .sv-toggle {
+        @apply relative flex flex-row items-center h-4;
+    }
+
+    .sv-toggle__slider {
+        @apply absolute flex flex-row items-center justify-center rounded-full w-5 h-5 left-0.5 shadow transition bg-gray-100 border-gray-200 dark:bg-gray-700 dark:border-gray-800 cursor-pointer;
+    }
+
+    .sv-toggle__slider--on {
+        @apply translate-x-6;
+    }
+
+    .sv-toggle__slider--disabled {
+        @apply cursor-default bg-gray-300 border-gray-400 dark:bg-gray-800 dark:border-gray-900;
+    }
+
+    .sv-toggle__box {
+        @apply w-12 h-6 bg-gray-400 rounded-full shadow-inner;
+    }
+
+    .sv-toggle__box--disabled {
+        @apply bg-gray-600 rounded-full shadow-inner;
+    }
+
+    .sv-toggle__icon {
+        @apply h-4 w-4;
+    }
+
+    .sv-toggle__label {
+        @apply ml-2 cursor-pointer;
+    }
+
+    .sv-toggle__label--disabled {
+        @apply cursor-default text-gray-300 dark:text-gray-500;
     }
 }

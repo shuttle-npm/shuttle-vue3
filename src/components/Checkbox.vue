@@ -1,6 +1,6 @@
 <template>
     <div :class="getClasses()" @click="click">
-        <div :class="getIconContainerClasses()">
+        <div :class="getBoxClasses()">
             <component :is="getIcon?.()" :class="getIconClasses()" />
         </div>
         <label v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</label>
@@ -62,21 +62,23 @@ const getClasses = () => {
         useCoreClass("sv-checkbox", getOptions(true)),
         useCoreClass("sv-checkbox--checked", getOptions(props.modelValue)),
         useCoreClass("sv-checkbox--unchecked", getOptions(!props.modelValue)),
+        useCoreClass("sv-checkbox--disabled", getOptions(props.disabled)),
     ];
 }
 
-const getIconContainerClasses = () => {
+const getBoxClasses = () => {
     return [
-        useCoreClass("sv-checkbox__icon-container", getOptions(true)),
-        useCoreClass("sv-checkbox__icon-container--disabled", getOptions(props.disabled)),
-        useCoreClass("sv-checkbox__icon-container--checked", getOptions(props.modelValue)),
-        useCoreClass("sv-checkbox__icon-container--unchecked", getOptions(!props.modelValue)),
+        useCoreClass("sv-checkbox__box", getOptions(true)),
+        useCoreClass("sv-checkbox__box--checked", getOptions(props.modelValue)),
+        useCoreClass("sv-checkbox__box--unchecked", getOptions(!props.modelValue)),
+        useCoreClass("sv-checkbox__box--disabled", getOptions(props.disabled)),
     ];
 }
 
 const getIconClasses = () => {
     return [
         useCoreClass("sv-checkbox__icon", getOptions(true)),
+        useCoreClass("sv-checkbox__icon--disabled", getOptions(props.disabled)),
         useCoreClass("sv-checkbox__icon--checked", getOptions(props.modelValue)),
         useCoreClass("sv-checkbox__icon--unchecked", getOptions(!props.modelValue)),
     ];

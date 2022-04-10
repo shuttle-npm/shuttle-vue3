@@ -44,15 +44,17 @@ Value: {{ value }}
 - `sv-checkbox`
   - `sv-checkbox--checked`
   - `sv-checkbox--unchecked`
+  - `sv-checkbox__box--disabled`
 
-- `sv-checkbox__icon-container`
-  - `sv-checkbox__icon-container--checked`
-  - `sv-checkbox__icon-container--unchecked`
-  - `sv-checkbox__icon-container--disabled`
+- `sv-checkbox__box`
+  - `sv-checkbox__box--checked`
+  - `sv-checkbox__box--unchecked`
+  - `sv-checkbox__box--disabled`
 
 - `sv-checkbox__icon`
   - `sv-checkbox__icon--checked`
   - `sv-checkbox__icon--unchecked`
+  - `sv-checkbox__icon--disabled`
 
 - `sv-checkbox__label`
   - `sv-checkbox__label--checked`

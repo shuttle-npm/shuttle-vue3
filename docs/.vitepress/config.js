@@ -87,6 +87,10 @@ module.exports = (async () => {
                                 text: 'Navigation',
                                 link: '/components/navigation'
                             },
+                            {
+                                text: 'Toggle',
+                                link: '/components/toggle'
+                            },
                         ]
                     },
                     {
