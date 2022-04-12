@@ -1,5 +1,5 @@
 <script setup>
-import { Alert, Checkbox, Navigation } from "@/components";
+import { Alert, Navigation, Toggle } from "@/components";
 import { ref } from "vue";
 
 const items = ref([
@@ -45,6 +45,7 @@ const items = ref([
 ]);
 
 const message = ref("You can click a navigation item to change this message.");
+const minimal = ref(false);
 
 const click = (item) => {
     message.value = `You clicked the "${item.text}" item that routes to "${item.to}".`;
@@ -53,11 +54,17 @@ const click = (item) => {
 
 # Navigation
 
+A `Navigation` component is essentially a menu.  The items displayed depend mainly on the `text` property and the `buttonIcon` to render.  A `button` item is container for the sub-menu so it would contain an `items` property.  An `item` may also have a `click` function that will be invoked is available.
+
 ## Example
 
 <Alert type="info" :message="message" class="mb-4" />
 
-<Navigation :items="items" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" @click="click" />
+<Toggle v-model="minimal" label="Minimal?" :sv-class="{ 'sv-toggle': 'mb-2' }" />
+
+<div class="sv-border border-gray-400">
+<Navigation :items="items" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" @click="click" :minimal="minimal" />
+</div>
 
 ```vue
 <script setup>
@@ -106,7 +113,9 @@ const items = ref([
 ]);
 </script>
 
-<Navigation :items="items" @click="click" />
+<template>
+    <Navigation :items="items" @click="click" />
+</template>
 ```
 
 ## Properties

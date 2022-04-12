@@ -2,27 +2,17 @@
     <div :class="getClasses()">
         <Menu as="div" v-for="item in items" :key="item.text" :class="getItemClasses()">
             <MenuButton v-if="!!item.items?.length" as="div" :class="getButtonClasses(item)">
-                <div :class="getButtonTextClasses()">{{ item.text }}</div>
-                <ChevronDownIcon :class="getButtonIconClasses()" />
+                <div v-if="item.text" :class="getButtonTextClasses()">{{ item.text }}</div>
+                <component :is="getButtonIcon(item)" :class="getButtonIconClasses()" />
             </MenuButton>
             <a v-if="!item.items?.length" @click="click(item)" :class="getLinkClasses(item)">{{ item.text }}</a>
-            <transition
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-            >
+            <transition enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
                 <MenuItems :class="getDropdownClasses()">
-                    <MenuItem
-                        v-for="subitem in item.items"
-                        :key="subitem.text"
-                        v-slot="{ active }"
-                        as="div"
-                    >
-                        <div v-if="getItemType(subitem) === 'divider'" :class="getDividerClasses(active)"></div>
-                        <a v-else @click="click(subitem)" :class="getLinkClasses(subitem, active)">{{ subitem.text }}</a>
+                    <MenuItem v-for="subitem in item.items" :key="subitem.text" v-slot="{ active }" as="div">
+                    <div v-if="getItemType(subitem) === 'divider'" :class="getDividerClasses(active)"></div>
+                    <a v-else @click="click(subitem)" :class="getLinkClasses(subitem, active)">{{ subitem.text }}</a>
                     </MenuItem>
                 </MenuItems>
             </transition>
@@ -42,12 +32,17 @@ const click = (item) => {
         return;
     }
 
-    emit("click", item);
+    if (!!item.click) {
+        item.click(item);
+    } else {
+        emit("click", item);
+    }
 }
 
 const props = defineProps({
     items: {
-        type: Array
+        type: Array,
+        default: []
     },
     svClass: {
         type: Object
@@ -55,44 +50,60 @@ const props = defineProps({
     minimal: {
         type: Boolean,
         default: false
+    },
+    dropdownAlignment: {
+        type: String,
+        default: "left"
     }
 });
+
+const getButtonIcon = (item) => {
+    return item.buttonIcon ? item.buttonIcon: ChevronDownIcon;
+}
 
 const getItemType = (item) => {
     return item.type ?? "item";
 }
 
-const minimal = props.minimal ?? false;
-const normal = !minimal;
+const getDropdownAlignment = () => {
+    switch ((props.dropdownAlignment ?? "left").toLowerCase()) {
+        case "right": {
+            return "right";
+        }
+        default: {
+            return "left";
+        }
+    }
+}
 
 const getOptions = (include) => {
     return {
         svClass: props.svClass,
         include: include
     };
-}
+};
 
 const getClasses = () => {
     return [
         useCoreClass("sv-navigation", getOptions(true)),
-        useCoreClass("sv-navigation--minimal", getOptions(minimal)),
-        useCoreClass("sv-navigation--normal", getOptions(normal)),
+        useCoreClass("sv-navigation--minimal", getOptions(props.minimal)),
+        useCoreClass("sv-navigation--normal", getOptions(!props.minimal)),
     ];
-}
+};
 
 const getItemClasses = () => {
     return [
         useCoreClass("sv-navigation__item", getOptions(true)),
-        useCoreClass("sv-navigation__item--minimal", getOptions(minimal)),
-        useCoreClass("sv-navigation__item--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__item--minimal", getOptions(props.minimal)),
+        useCoreClass("sv-navigation__item--normal", getOptions(!props.minimal)),
     ];
 }
 
 const getButtonClasses = (item) => {
     return [
         useCoreClass("sv-navigation__button", getOptions(true)),
-        useCoreClass("sv-navigation__button--minimal", getOptions(minimal)),
-        useCoreClass("sv-navigation__button--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__button--minimal", getOptions(props.minimal)),
+        useCoreClass("sv-navigation__button--normal", getOptions(!props.minimal)),
         useCoreClass("sv-navigation__button--disabled", getOptions(item?.disabled ?? false)),
     ];
 }
@@ -100,24 +111,24 @@ const getButtonClasses = (item) => {
 const getButtonTextClasses = () => {
     return [
         useCoreClass("sv-navigation__button-text", getOptions(true)),
-        useCoreClass("sv-navigation__button-text--minimal", getOptions(minimal)),
-        useCoreClass("sv-navigation__button-text--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__button-text--minimal", getOptions(props.minimal)),
+        useCoreClass("sv-navigation__button-text--normal", getOptions(!props.minimal)),
     ];
 }
 
 const getButtonIconClasses = () => {
     return [
         useCoreClass("sv-navigation__button-icon", getOptions(true)),
-        useCoreClass("sv-navigation__button-icon--minimal", getOptions(minimal)),
-        useCoreClass("sv-navigation__button-icon--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__button-icon--minimal", getOptions(props.minimal)),
+        useCoreClass("sv-navigation__button-icon--normal", getOptions(!props.minimal)),
     ];
 }
 
 const getLinkClasses = (item, active) => {
     return [
         useCoreClass("sv-navigation__link", getOptions(true)),
-        useCoreClass("sv-navigation__link--minimal", getOptions(minimal)),
-        useCoreClass("sv-navigation__link--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__link--minimal", getOptions(props.minimal)),
+        useCoreClass("sv-navigation__link--normal", getOptions(!props.minimal)),
         useCoreClass("sv-navigation__link--active", getOptions(active)),
         useCoreClass("sv-navigation__link--inactive", getOptions(!active)),
         useCoreClass("sv-navigation__link--disabled", getOptions(item?.disabled ?? false)),
@@ -133,8 +144,10 @@ const getDividerClasses = (active) => {
 const getDropdownClasses = () => {
     return [
         useCoreClass("sv-navigation__dropdown", getOptions(true)),
-        useCoreClass("sv-navigation__dropdown--minimal", getOptions(minimal)),
-        useCoreClass("sv-navigation__dropdown--normal", getOptions(normal)),
+        useCoreClass("sv-navigation__dropdown--minimal", getOptions(props.minimal)),
+        useCoreClass("sv-navigation__dropdown--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation__dropdown--left", getOptions(getDropdownAlignment() == "left")),
+        useCoreClass("sv-navigation__dropdown--right", getOptions(getDropdownAlignment() == "right")),
     ];
 }
 </script>    

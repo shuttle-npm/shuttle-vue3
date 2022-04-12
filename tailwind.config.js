@@ -1,4 +1,10 @@
-const safelist = [];
+const safelist = [
+    'sv-border',
+    'sv-rounded',
+    'sv-padding',
+    'sv-focus',
+    'sv-disabled'
+];
 
 const bemSafelist = (prefix) => {
     safelist.push(prefix + '--primary');

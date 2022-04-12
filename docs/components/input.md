@@ -19,8 +19,10 @@ Value: {{ value }}
 <Input v-model="value" label="Inline layout" layout="inline" class="mt-2" />
 
 ```vue
-<Input v-model="value" label="Block layout" />
-<Input v-model="value" label="Inline layout" layout="inline" />
+<template>
+    <Input v-model="value" label="Block layout" />
+    <Input v-model="value" label="Inline layout" layout="inline" />
+</template>
 ```
 
 ## Properties

@@ -19,7 +19,7 @@
         @apply focus:outline-none focus:ring focus:ring-blue-300 focus:border-blue-200 dark:focus:ring-blue-500 dark:focus:border-blue-400;
     }
 
-    .disabled {
+    .sv-disabled {
         @apply border-gray-200 bg-gray-100 text-gray-400 dark:border-gray-700 dark:bg-gray-600 dark:text-gray-900;
     }
 
@@ -201,6 +201,10 @@
         @apply sv-rounded sv-border h-5 w-5 cursor-pointer bg-gray-100 border-gray-200 dark:bg-gray-700 dark:border-gray-800;
     }
 
+    .sv-checkbox__box--checked {
+        @apply border-blue-200 bg-blue-100 dark:border-blue-700 dark:bg-blue-600;
+    }
+
     .sv-checkbox__box--disabled {
         @apply cursor-default bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-900;
     }
@@ -326,9 +330,38 @@
         @apply sv-icon text-blue-600;
     }
 
+    /* Navbar */
+    .sv-navbar {
+        @apply mx-auto flex flex-row flex-wrap items-center h-16 z-[1000];
+    }
+
+    .sv-navbar__menu-toggle {
+        @apply sm:hidden bg-gray-700 p-2 text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white;
+    }
+
+    .sv-navbar__slot-start {
+        @apply flex flex-grow items-center justify-center sm:justify-start sm:flex-grow-0;
+    }
+
+    .sv-navbar__slot-end {
+        @apply flex-shrink-0 flex items-center justify-end;
+    }
+
+    .sv-navbar__navigation {
+        @apply items-center hidden sm:justify-start sm:flex sm:flex-grow;
+    }
+
+    .sv-navbar__navigation-panel {
+        @apply px-2 pt-2 pb-3 space-y-1 sm:hidden;
+    }
+
     /* Navigation */
     .sv-navigation {
         @apply w-full flex items-center;
+    }
+
+    .sv-navigation--minimal {
+        @apply flex-col;
     }
 
     .sv-navigation__item--minimal {
@@ -336,27 +369,19 @@
     }
 
     .sv-navigation__item--normal {
-        @apply relative ml-3;
+        @apply relative;
     }
 
     .sv-navigation__button {
-        @apply flex items-center h-12 py-0 cursor-pointer text-gray-900 dark:text-white hover:bg-gray-300 hover:dark:bg-gray-600;
+        @apply flex items-center justify-between h-12 py-0 px-3 cursor-pointer text-gray-900 dark:text-white hover:bg-gray-300 hover:dark:bg-gray-600;
     }
 
     .sv-navigation__button--minimal {
-        @apply w-full p-0;
-    }
-
-    .sv-navigation__button--normal {
-        @apply px-3;
-    }
-
-    .sv-navigation__button-text--minimal {
-        @apply px-3;
+        @apply w-full;
     }
 
     .sv-navigation__button-icon {
-        @apply w-5 h-5 ml-1;
+        @apply w-5 h-5;
     }
 
     .sv-navigation__link {
@@ -364,7 +389,7 @@
     }
 
     .sv-navigation__link--minimal {
-        @apply w-full p-0;
+        @apply w-full;
     }
 
     .sv-navigation__link--disabled {
@@ -376,7 +401,15 @@
     }
 
     .sv-navigation__dropdown {
-        @apply sv-rounded sv-border origin-top-left left-0 shadow-lg py-1 focus:outline-none z-[1000] mt-2 ring-black ring-opacity-5 bg-gray-100 border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+        @apply min-w-[10rem] shadow-lg py-1 focus:outline-none z-[1000] mt-2 ring-black ring-opacity-5 bg-gray-100 text-gray-900 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white;
+    }
+
+    .sv-navigation__dropdown--left {
+        @apply origin-top-left left-0;
+    }
+
+    .sv-navigation__dropdown--right {
+        @apply origin-top-right right-0;
     }
 
     .sv-navigation__dropdown--minimal {
@@ -384,32 +417,36 @@
     }
 
     .sv-navigation__dropdown--normal {
-        @apply absolute;
+        @apply absolute sv-border border-gray-300 dark:border-gray-600;
     }
 
     /* Toggle */
     .sv-toggle {
-        @apply relative flex flex-row items-center h-4;
+        @apply relative flex flex-row items-center h-6;
     }
 
     .sv-toggle__slider {
-        @apply absolute flex flex-row items-center justify-center rounded-full w-5 h-5 left-0.5 shadow transition bg-gray-100 border-gray-200 dark:bg-gray-700 dark:border-gray-800 cursor-pointer;
+        @apply absolute flex flex-row items-center justify-center rounded-full w-5 h-5 left-0.5 shadow transition bg-gray-100 dark:bg-gray-700 cursor-pointer;
     }
 
     .sv-toggle__slider--on {
-        @apply translate-x-6;
+        @apply translate-x-6 bg-blue-400 dark:bg-blue-900;
     }
 
     .sv-toggle__slider--disabled {
-        @apply cursor-default bg-gray-300 border-gray-400 dark:bg-gray-800 dark:border-gray-900;
+        @apply cursor-default bg-gray-300 dark:bg-gray-800;
     }
 
     .sv-toggle__box {
-        @apply w-12 h-6 bg-gray-400 rounded-full shadow-inner;
+        @apply sv-border w-12 h-6 rounded-full shadow-inner bg-gray-300 border-gray-400 dark:bg-gray-800 dark:border-gray-900;
+    }
+
+    .sv-toggle__box--on {
+        @apply border-blue-200 bg-blue-100 dark:border-blue-700 dark:bg-blue-600;
     }
 
     .sv-toggle__box--disabled {
-        @apply bg-gray-600 rounded-full shadow-inner;
+        @apply bg-gray-100 border-gray-200 dark:bg-gray-700 dark:border-gray-800 rounded-full shadow-inner;
     }
 
     .sv-toggle__icon {

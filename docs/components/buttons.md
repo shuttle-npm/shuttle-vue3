@@ -27,13 +27,15 @@ const click = (type) => {
 </div>
 
 ```vue
-<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="success">Success</Button>
-<Button variant="danger">Danger</Button>
-<Button variant="warning">Warning</Button>
-<Button variant="info">Info</Button>
-<Button variant="link">Link</Button>
+<template>
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="success">Success</Button>
+    <Button variant="danger">Danger</Button>
+    <Button variant="warning">Warning</Button>
+    <Button variant="info">Info</Button>
+    <Button variant="link">Link</Button>
+</template>
 ```
 
 ---
@@ -47,8 +49,10 @@ const click = (type) => {
 import { PlayIcon } from '@heroicons/vue/outline'
 </script>
 
-<Button :icon="PlayIcon">Custom Icon</Button>
-<Button :disabled="true">Disabled</Button>
+<template>
+    <Button :icon="PlayIcon">Custom Icon</Button>
+    <Button :disabled="true">Disabled</Button>
+<template>
 ```
 
 ## Properties

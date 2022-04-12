@@ -71,7 +71,9 @@ const reset = () => {
 ## Custom Icon
 
 ```vue
+<template>
 <Alert :icon="BeakerIcon" type="primary" message="A simple primary alert with a custom icon." :dismissable="false" />
+</template>
 ```
 <Alert :icon="BeakerIcon" type="primary" message="A simple primary alert with a custom icon." :dismissable="false" />
 
@@ -106,7 +108,9 @@ const reset = () => {
 ## Container
 
 ```vue
+<template>
 <Alerts :alerts="alerts" @remove="remove" />
+</template>
 ```
 
 Where `alerts` contains an array of objects that have the same properties as an `Alert`.  Will redner with class `sv-alerts` and supports the `:sv-class` [core class object](/components/core-class) property.

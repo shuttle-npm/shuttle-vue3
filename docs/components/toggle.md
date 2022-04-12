@@ -19,7 +19,9 @@ Value: {{ value }}
 <Toggle v-model="value" label="Use express delivery?" />
 
 ```vue
-<Toggle v-model="value" label="Use express delivery?" />
+<template>
+    <Toggle v-model="value" label="Use express delivery?" />
+</template>
 ```
 
 ### Icon
@@ -31,7 +33,9 @@ Value: {{ value }}
 import { ThumbDownIcon, ThumbUpIcon } from "@heroicons/vue/outline";
 </script>
 
-<Toggle v-model="value" label="Use express delivery?" :onIcon="ThumbUpIcon" :offIcon="ThumbDownIcon" />
+<template>
+    <Toggle v-model="value" label="Use express delivery?" :onIcon="ThumbUpIcon" :offIcon="ThumbDownIcon" />
+</template>
 ```
 
 ### Disabled
@@ -39,7 +43,9 @@ import { ThumbDownIcon, ThumbUpIcon } from "@heroicons/vue/outline";
 <Toggle v-model="value" label="Is this disabled?" :disabled="true" />
 
 ```vue
-<Toggle v-model="value" label="Is this disabled?" :disabled="true" />
+<template>
+    <Toggle v-model="value" label="Is this disabled?" :disabled="true" />
+</template>
 ```
 
 ## Properties

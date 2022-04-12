@@ -18,7 +18,9 @@ Value: {{ value }}
 <Checkbox v-model="value" label="Use express delivery?" />
 
 ```vue
-<Checkbox v-model="value" label="Use express delivery?" />
+<template>
+    <Checkbox v-model="value" label="Use express delivery?" />
+</template>
 ```
 
 ### Disabled
@@ -26,7 +28,9 @@ Value: {{ value }}
 <Checkbox v-model="value" label="Is this disabled?" :disabled="true" />
 
 ```vue
-<Checkbox v-model="value" label="Is this disabled?" :disabled="true" />
+<template>
+    <Checkbox v-model="value" label="Is this disabled?" :disabled="true" />
+</template>
 ```
 
 ## Properties

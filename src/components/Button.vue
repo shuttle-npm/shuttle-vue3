@@ -1,6 +1,6 @@
 <template>
     <div :class="getClasses()" @click="click" tabindex="0">
-        <component :is="icon()" :class="getIconClasses()" />
+        <component :is="getIcon()" :class="getIconClasses()" />
         {{props.content}}
         <slot></slot>
     </div>
@@ -29,7 +29,7 @@ const click = () => {
     emit("click");
 }
 
-const icon = () => {
+const getIcon = () => {
     return props.icon ? props.icon: undefined;
 }
 

@@ -1,9 +1,9 @@
 <script setup>
-import IconShuttle from '@/components/icons/IconShuttle.vue'
+import { VTIconShuttle } from 'shuttle-theme'
 </script>
 <template>
     <section id="hero">
-        <IconShuttle class="logo" />
+        <VTIconShuttle class="logo" />
         <h1 class="tagline">Shuttle Vue</h1>
         <p class="description">Vue 3 UI components built using Tailwind CSS and Headless UI.</p>
     </section>

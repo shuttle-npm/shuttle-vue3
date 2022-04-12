@@ -50,8 +50,10 @@ const options = [
 const value = ref();
 </script>
 
-<Listbox  v-model="value" :options="options" label="Block layout" />
-<Listbox  v-model="value" :options="options" label="Inline layout" layout="inline" />
+<template>
+    <Listbox  v-model="value" :options="options" label="Block layout" />
+    <Listbox  v-model="value" :options="options" label="Inline layout" layout="inline" />
+</template>
 ```
 
 ## Properties
