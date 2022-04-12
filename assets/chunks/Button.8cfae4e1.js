@@ -1,5 +1,5 @@
 import { u as useCoreClass } from "./useCoreClass.322213e7.js";
-import { o as openBlock, b as createElementBlock, c as createBlock, n as normalizeClass, i as resolveDynamicComponent, g as createTextVNode, t as toDisplayString, j as renderSlot } from "../app.a503ecea.js";
+import { o as openBlock, b as createElementBlock, c as createBlock, n as normalizeClass, i as resolveDynamicComponent, g as createTextVNode, t as toDisplayString, j as renderSlot } from "../app.997cf0dd.js";
 const _sfc_main = {
   props: {
     content: { type: String },
@@ -19,7 +19,7 @@ const _sfc_main = {
       }
       emit("click");
     };
-    const icon = () => {
+    const getIcon = () => {
       return props.icon ? props.icon : void 0;
     };
     const getOptions = () => {
@@ -47,7 +47,7 @@ const _sfc_main = {
         onClick: click,
         tabindex: "0"
       }, [
-        (openBlock(), createBlock(resolveDynamicComponent(icon()), {
+        (openBlock(), createBlock(resolveDynamicComponent(getIcon()), {
           class: normalizeClass(getIconClasses())
         }, null, 8, ["class"])),
         createTextVNode(" " + toDisplayString(props.content) + " ", 1),

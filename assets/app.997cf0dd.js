@@ -5453,7 +5453,7 @@ function normalizeContainer(container) {
   }
   return container;
 }
-var serializedSiteData = '{"lang":"en-US","title":"Shuttle Vue","description":"Shuttle Vue 3 UI components built with Tailwind.","base":"/shuttle-vue3/","head":[],"themeConfig":{"socialLinks":[{"icon":"github","link":"https://github.com/shuttle-npm/shuttle-vue3"}],"nav":[{"text":"Components","activeMatch":"^/components/","link":"/components/overview"}],"sidebar":{"/components/":[{"text":"Components","items":[{"text":"Alerts","link":"/components/alerts"},{"text":"Buttons","link":"/components/buttons"},{"text":"Checkbox","link":"/components/checkbox"},{"text":"Input","link":"/components/input"},{"text":"Listbox","link":"/components/listbox"},{"text":"Navbar","link":"/components/navbar"},{"text":"Navigation","link":"/components/navigation"}]},{"text":"Essentials","items":[{"text":"Core Class Objects","link":"/components/core-class"}]}]}},"locales":{},"langs":{},"scrollOffset":90}';
+var serializedSiteData = '{"lang":"en-US","title":"Shuttle Vue","description":"Shuttle Vue 3 UI components built with Tailwind.","base":"/shuttle-vue3/","head":[],"themeConfig":{"socialLinks":[{"icon":"github","link":"https://github.com/shuttle-npm/shuttle-vue3"}],"nav":[{"text":"Components","activeMatch":"^/components/","link":"/components/overview"}],"sidebar":{"/components/":[{"text":"Components","items":[{"text":"Alerts","link":"/components/alerts"},{"text":"Buttons","link":"/components/buttons"},{"text":"Checkbox","link":"/components/checkbox"},{"text":"Input","link":"/components/input"},{"text":"Listbox","link":"/components/listbox"},{"text":"Navbar","link":"/components/navbar"},{"text":"Navigation","link":"/components/navigation"},{"text":"Toggle","link":"/components/toggle"}]},{"text":"Essentials","items":[{"text":"Core Class Objects","link":"/components/core-class"}]}]}},"locales":{},"langs":{},"scrollOffset":90}';
 const EXTERNAL_URL_RE = /^https?:/i;
 const inBrowser$1 = typeof window !== "undefined";
 function findMatchRoot(route, roots) {
@@ -6704,7 +6704,7 @@ const _hoisted_5$6 = /* @__PURE__ */ createBaseVNode("span", { class: "DocSearch
 const _sfc_main$w = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const { theme } = useData();
-    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.2ea786d5.js"));
+    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.9a5d00ab.js"));
     const loaded = ref(false);
     const metaKey = ref();
     onMounted(() => {
@@ -8385,4 +8385,4 @@ if (inBrowser$1) {
     app.mount("#app");
   });
 }
-export { h as A, Teleport as B, reactive as C, onUpdated as D, cloneVNode as E, Fragment as F, nextTick as G, pushScopeId as H, popScopeId as I, useData as J, useRoute as K, useRouter as L, Transition as T, _export_sfc as _, createVNode as a, createElementBlock as b, createBlock as c, createApp, createCommentVNode as d, ref as e, createBaseVNode as f, createTextVNode as g, createStaticVNode as h, resolveDynamicComponent as i, renderSlot as j, defineComponent as k, computed as l, mergeProps as m, normalizeClass as n, openBlock as o, watch as p, provide as q, renderList as r, onMounted as s, toDisplayString as t, unref as u, watchEffect as v, withCtx as w, inject as x, toRaw as y, onUnmounted as z };
+export { h as A, Teleport as B, reactive as C, onUpdated as D, cloneVNode as E, Fragment as F, nextTick as G, pushScopeId as H, popScopeId as I, useData as J, useRoute as K, useRouter as L, Transition as T, VTIconShuttle as V, _export_sfc as _, createVNode as a, createElementBlock as b, createBlock as c, createApp, createCommentVNode as d, ref as e, createBaseVNode as f, createTextVNode as g, createStaticVNode as h, resolveDynamicComponent as i, renderSlot as j, defineComponent as k, computed as l, mergeProps as m, normalizeClass as n, openBlock as o, watch as p, provide as q, renderList as r, onMounted as s, toDisplayString as t, unref as u, watchEffect as v, withCtx as w, inject as x, toRaw as y, onUnmounted as z };
