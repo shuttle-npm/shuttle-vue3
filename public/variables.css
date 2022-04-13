@@ -1,0 +1,77 @@
+:root {
+    --sv-text-primary: 96, 165, 250;
+    --sv-text-secondary: 163, 163, 163;
+    --sv-text-success: 74, 222, 128;
+    --sv-text-danger: 248, 113, 113;
+    --sv-text-warning: 250, 204, 21;
+    --sv-text-info: 34, 211, 238;
+    --sv-text-link: 34, 211, 238;
+    --sv-text-disabled: 255, 255, 255;
+
+    --sv-bg-primary: 219, 234, 254;
+    --sv-bg-primary--hover: 191, 219, 254;
+    --sv-bg-primary--active: 147, 197, 253;
+    --sv-bg-secondary: 245, 245, 245;
+    --sv-bg-secondary--hover: 229, 229, 229;
+    --sv-bg-secondary--active: 212, 212, 212;
+    --sv-bg-success: 220, 252, 231;
+    --sv-bg-success--hover: 187, 247, 208;
+    --sv-bg-success--active: 134, 239, 172;
+    --sv-bg-danger: 254, 226, 226;
+    --sv-bg-danger--hover: 254, 202, 202;
+    --sv-bg-danger--active: 252, 165, 165;
+    --sv-bg-warning: 254, 249, 195;
+    --sv-bg-warning--hover: 254, 240, 138;
+    --sv-bg-warning--active: 253, 224, 71;
+    --sv-bg-info: 207, 250, 254;
+    --sv-bg-info--hover: 165, 243, 252;
+    --sv-bg-info--active: 103, 232, 249;
+    --sv-bg-disabled: 229, 231, 235;
+
+    --sv-border-primary: 191, 219, 254;
+    --sv-border-secondary: 229, 229, 229;
+    --sv-border-success: 187, 247, 208;
+    --sv-border-danger: 254, 202, 202;
+    --sv-border-warning: 254, 240, 138;
+    --sv-border-info: 165, 243, 252;
+    --sv-border-disabled: 209, 213, 219;
+}
+
+.dark {
+    --sv-text-primary: 30, 58, 138;
+    --sv-text-secondary: 23, 23, 23;
+    --sv-text-success: 20, 83, 45;
+    --sv-text-danger: 127, 29, 29;
+    --sv-text-warning: 113, 63, 18;
+    --sv-text-info: 22, 78, 99;
+    --sv-text-link: 22, 78, 99;
+    --sv-text-disabled: 107, 114, 128;
+
+    --sv-bg-primary: 37, 99, 235;
+    --sv-bg-primary--hover: 29, 78, 216;
+    --sv-bg-primary--active: 30, 64, 175;
+    --sv-bg-secondary: 82, 82, 82;
+    --sv-bg-secondary--hover: 64, 64, 64;
+    --sv-bg-secondary--active: 38, 38, 38;
+    --sv-bg-success: 22, 163, 74;
+    --sv-bg-success--hover: 21, 128, 61;
+    --sv-bg-success--active: 22, 101, 52;
+    --sv-bg-danger: 220, 38, 38;
+    --sv-bg-danger--hover: 185, 28, 28;
+    --sv-bg-danger--active: 153, 27, 27;
+    --sv-bg-warning: 202, 138, 4;
+    --sv-bg-warning--hover: 161, 98, 7;
+    --sv-bg-warning--active: 133, 77, 14;
+    --sv-bg-info: 8, 145, 178;
+    --sv-bg-info--hover: 14, 116, 144;
+    --sv-bg-info--active: 21, 94, 117;
+    --sv-bg-disabled: 31, 41, 55;
+
+    --sv-border-primary: 29, 78, 216;
+    --sv-border-secondary: 64, 64, 64;
+    --sv-border-success: 21, 128, 61;
+    --sv-border-danger: 185, 28, 28;
+    --sv-border-warning: 161, 98, 7;
+    --sv-border-info: 14, 116, 144;
+    --sv-border-disabled: 31, 41, 55;
+}

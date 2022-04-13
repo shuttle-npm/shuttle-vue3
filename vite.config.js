@@ -10,7 +10,7 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, "src/index.js"),
             name: "shuttle-vue3",
-            fileName: (format) => `shuttle-vue3-${format}.js`
+            fileName: (format) => `shuttle-vue3.${format}.js`
         },
         rollupOptions: {
             external: ["vue"],

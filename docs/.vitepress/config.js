@@ -25,7 +25,7 @@ module.exports = (async () => {
 
         head: [
             ...base.head,
-            ['link', { rel: "shortcut icon", href: "/shuttle-vue3/favicon.ico" }]
+            ['link', { rel: "shortcut icon", href: "/shuttle-vue3/favicon.ico" }],
         ],
 
         themeConfig: {

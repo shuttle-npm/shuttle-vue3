@@ -1,5 +1,4 @@
-import * as components from "./components"
-import "./styles/shuttle.css"
+import * as components from "./components";
 
 const ShuttleVue = {
     install(app, options = {}) {
