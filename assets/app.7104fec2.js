@@ -6704,7 +6704,7 @@ const _hoisted_5$6 = /* @__PURE__ */ createBaseVNode("span", { class: "DocSearch
 const _sfc_main$w = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const { theme } = useData();
-    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.9a5d00ab.js"));
+    const VPAlgoliaSearchBox = defineAsyncComponent(() => import("./chunks/VPAlgoliaSearchBox.d62862fb.js"));
     const loaded = ref(false);
     const metaKey = ref();
     onMounted(() => {
@@ -8230,9 +8230,10 @@ var VPTheme = {
   Layout: withConfigProvider(VPApp),
   NotFound: VPNotFound
 };
-var shuttle = "";
 var docs = "";
 var demo = "";
+var variables = "";
+var shuttleVue3 = "";
 var Theme = __spreadValues({}, VPTheme);
 const hasFetched = /* @__PURE__ */ new Set();
 const createLink = () => document.createElement("link");

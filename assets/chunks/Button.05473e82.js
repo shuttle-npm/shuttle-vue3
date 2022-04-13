@@ -1,5 +1,5 @@
 import { u as useCoreClass } from "./useCoreClass.322213e7.js";
-import { o as openBlock, b as createElementBlock, c as createBlock, n as normalizeClass, i as resolveDynamicComponent, g as createTextVNode, t as toDisplayString, j as renderSlot } from "../app.997cf0dd.js";
+import { o as openBlock, b as createElementBlock, c as createBlock, n as normalizeClass, i as resolveDynamicComponent, g as createTextVNode, t as toDisplayString, j as renderSlot } from "../app.7104fec2.js";
 const _sfc_main = {
   props: {
     content: { type: String },

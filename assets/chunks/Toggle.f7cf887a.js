@@ -1,5 +1,5 @@
 import { u as useCoreClass } from "./useCoreClass.322213e7.js";
-import { o as openBlock, b as createElementBlock, f as createBaseVNode, c as createBlock, n as normalizeClass, i as resolveDynamicComponent, t as toDisplayString, d as createCommentVNode } from "../app.997cf0dd.js";
+import { o as openBlock, b as createElementBlock, f as createBaseVNode, c as createBlock, n as normalizeClass, i as resolveDynamicComponent, t as toDisplayString, d as createCommentVNode } from "../app.7104fec2.js";
 const _sfc_main = {
   props: {
     label: {
