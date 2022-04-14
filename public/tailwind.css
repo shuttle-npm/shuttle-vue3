@@ -196,7 +196,7 @@
     }
 
     .sv-checkbox__box--checked {
-        @apply border-input-actual bg-input-actual;
+        @apply border-input-active bg-input-active;
     }
 
     .sv-checkbox__box--disabled {
@@ -424,11 +424,11 @@
     }
 
     .sv-toggle__slider--on {
-        @apply translate-x-6 bg-blue-400 dark:bg-blue-900;
+        @apply translate-x-6 bg-input-active
     }
 
     .sv-toggle__slider--disabled {
-        @apply cursor-default bg-gray-300 dark:bg-gray-800;
+        @apply cursor-default bg-disabled;
     }
 
     .sv-toggle__box {
@@ -436,7 +436,7 @@
     }
 
     .sv-toggle__box--on {
-        @apply border-blue-200 bg-blue-100 dark:border-blue-700 dark:bg-blue-600;
+        @apply border-input-active bg-input-active;
     }
 
     .sv-toggle__box--disabled {

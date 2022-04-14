@@ -54,7 +54,9 @@
     --sv-border-disabled: 209, 213, 219;
 
     --sv-border-input: 60, 60, 60;
-    --sv-border-input-actual: 120, 120, 120;
+    --sv-border-input-active: 120, 120, 120;
+    --sv-border-input-indicator: 60, 60, 60;
+    --sv-border-input-indicator-active: 120, 120, 120;
 
     /* placeholder */
     --sv-placeholder-input: 180, 180, 180;
@@ -104,7 +106,8 @@
 
     --sv-bg-input: 47, 47, 47;
     --sv-bg-input-indicator: 26, 26, 26;
-    --sv-bg-input-actual: 80, 80, 80;
+    --sv-bg-input-active: 26, 26, 26;
+    --sv-bg-input-indicator-active: 26, 26, 26;
 
     /* borderColor */
     --sv-border-primary: 29, 78, 216;
@@ -116,7 +119,9 @@
     --sv-border-disabled: 31, 41, 55;
 
     --sv-border-input: 128, 128, 128;
-    --sv-border-input-actual: 64, 64, 64;
+    --sv-border-input-active: 128, 128, 128;
+    --sv-border-input-indicator: 128, 128, 128;
+    --sv-border-input-indicator-active: 128, 128, 128;
 
     /* placeholder */
     --sv-placeholder-input: 100, 100, 100;

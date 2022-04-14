@@ -78,8 +78,9 @@ module.exports = {
                 "info--active": generateColorClass("sv-bg-info--active"),
                 disabled: generateColorClass("sv-bg-disabled"),
                 input: generateColorClass("sv-bg-input"),
+                "input-active": generateColorClass("sv-bg-input-active"),
                 "input-indicator": generateColorClass("sv-bg-input-indicator"),
-                "input-actual": generateColorClass("sv-bg-input-actual"),
+                "input-indicator-active": generateColorClass("sv-bg-input-indicator-active"),
             },
             borderColor: {
                 primary: generateColorClass("sv-border-primary"),
@@ -90,8 +91,9 @@ module.exports = {
                 info: generateColorClass("sv-border-info"),
                 disabled: generateColorClass("sv-border-disabled"),
                 input: generateColorClass("sv-border-input"),
+                "input-active": generateColorClass("sv-border-input-active"),
                 "input-indicator": generateColorClass("sv-border-input-indicator"),
-                "input-actual": generateColorClass("sv-border-input-actual"),
+                "input-indicator-active": generateColorClass("sv-border-input-indicator-active"),
             },
             placeholderColor: {
                 input: generateColorClass("sv-placeholder-input"),

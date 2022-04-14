@@ -354,9 +354,9 @@
 }
 .sv-checkbox__box--checked {
     --tw-border-opacity: 1;
-    border-color: rgba(var(--sv-border-input-actual), var(--tw-border-opacity));
+    border-color: rgba(var(--sv-border-input-active), var(--tw-border-opacity));
     --tw-bg-opacity: 1;
-    background-color: rgba(var(--sv-bg-input-actual), var(--tw-bg-opacity))
+    background-color: rgba(var(--sv-bg-input-active), var(--tw-bg-opacity))
 }
 .sv-checkbox__box--disabled {
     cursor: default;
@@ -907,20 +907,12 @@
     --tw-translate-x: 1.5rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     --tw-bg-opacity: 1;
-    background-color: rgb(96 165 250 / var(--tw-bg-opacity))
-}
-.dark .sv-toggle__slider--on {
-    --tw-bg-opacity: 1;
-    background-color: rgb(30 58 138 / var(--tw-bg-opacity))
+    background-color: rgba(var(--sv-bg-input-active), var(--tw-bg-opacity))
 }
 .sv-toggle__slider--disabled {
     cursor: default;
     --tw-bg-opacity: 1;
-    background-color: rgb(209 213 219 / var(--tw-bg-opacity))
-}
-.dark .sv-toggle__slider--disabled {
-    --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity))
+    background-color: rgba(var(--sv-bg-disabled), var(--tw-bg-opacity))
 }
 .sv-toggle__box {
     border-width: 1px;
@@ -938,15 +930,9 @@
 }
 .sv-toggle__box--on {
     --tw-border-opacity: 1;
-    border-color: rgb(191 219 254 / var(--tw-border-opacity));
+    border-color: rgba(var(--sv-border-input-active), var(--tw-border-opacity));
     --tw-bg-opacity: 1;
-    background-color: rgb(219 234 254 / var(--tw-bg-opacity))
-}
-.dark .sv-toggle__box--on {
-    --tw-border-opacity: 1;
-    border-color: rgb(29 78 216 / var(--tw-border-opacity));
-    --tw-bg-opacity: 1;
-    background-color: rgb(37 99 235 / var(--tw-bg-opacity))
+    background-color: rgba(var(--sv-bg-input-active), var(--tw-bg-opacity))
 }
 .sv-toggle__box--disabled {
     border-radius: 9999px;
