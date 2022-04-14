@@ -18,6 +18,8 @@ const bemSafelist = (prefix) => {
 }
 
 bemSafelist('sv-alert');
+bemSafelist('sv-alert__icon');
+bemSafelist('sv-alert__icon-close');
 bemSafelist('sv-alerts');
 bemSafelist('sv-button');
 
@@ -37,13 +39,23 @@ module.exports = {
         extend: {
             textColor: {
                 primary: generateColorClass("sv-text-primary"),
+                "primary--hover": generateColorClass("sv-text-primary--hover"),
                 secondary: generateColorClass("sv-text-secondary"),
+                "secondary--hover": generateColorClass("sv-text-secondary--hover"),
                 success: generateColorClass("sv-text-success"),
+                "success--hover": generateColorClass("sv-text-success--hover"),
                 danger: generateColorClass("sv-text-danger"),
+                "danger--hover": generateColorClass("sv-text-danger--hover"),
                 warning: generateColorClass("sv-text-warning"),
+                "warning--hover": generateColorClass("sv-text-warning--hover"),
                 info: generateColorClass("sv-text-info"),
+                "info--hover": generateColorClass("sv-text-info--hover"),
                 link: generateColorClass("sv-text-link"),
-                disabled: generateColorClass("sv-text-disabled")
+                "link--hover": generateColorClass("sv-text-link--hover"),
+                disabled: generateColorClass("sv-text-disabled"),
+                label: generateColorClass("sv-text-label"),
+                input: generateColorClass("sv-text-input"),
+                "input-selected": generateColorClass("sv-text-input-selected"),
             },
             backgroundColor: {
                 primary: generateColorClass("sv-bg-primary"),
@@ -65,6 +77,9 @@ module.exports = {
                 "info--hover": generateColorClass("sv-bg-info--hover"),
                 "info--active": generateColorClass("sv-bg-info--active"),
                 disabled: generateColorClass("sv-bg-disabled"),
+                input: generateColorClass("sv-bg-input"),
+                "input-indicator": generateColorClass("sv-bg-input-indicator"),
+                "input-actual": generateColorClass("sv-bg-input-actual"),
             },
             borderColor: {
                 primary: generateColorClass("sv-border-primary"),
@@ -74,6 +89,12 @@ module.exports = {
                 warning: generateColorClass("sv-border-warning"),
                 info: generateColorClass("sv-border-info"),
                 disabled: generateColorClass("sv-border-disabled"),
+                input: generateColorClass("sv-border-input"),
+                "input-indicator": generateColorClass("sv-border-input-indicator"),
+                "input-actual": generateColorClass("sv-border-input-actual"),
+            },
+            placeholderColor: {
+                input: generateColorClass("sv-placeholder-input"),
             }
         },
     },

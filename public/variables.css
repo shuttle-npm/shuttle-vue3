@@ -1,13 +1,25 @@
 :root {
+    /* textColor */
     --sv-text-primary: 96, 165, 250;
+    --sv-text-primary--hover: 147, 197, 253;
     --sv-text-secondary: 163, 163, 163;
+    --sv-text-secondary--hover: 212, 212, 212;
     --sv-text-success: 74, 222, 128;
+    --sv-text-success--hover: 134, 239, 172;
     --sv-text-danger: 248, 113, 113;
+    --sv-text-danger--hover: 252, 165, 165;
     --sv-text-warning: 250, 204, 21;
+    --sv-text-warning--hover: 253, 224, 71;
     --sv-text-info: 34, 211, 238;
+    --sv-text-info--hover: 103, 232, 249;
     --sv-text-link: 34, 211, 238;
+    --sv-text-link--hover: 103, 232, 249;
     --sv-text-disabled: 255, 255, 255;
+    --sv-text-label: 33, 53, 71;
+    --sv-text-input: 33, 53, 71;
+    --sv-text-input-selected: 61, 37, 192;
 
+    /* backgroundColor */
     --sv-bg-primary: 219, 234, 254;
     --sv-bg-primary--hover: 191, 219, 254;
     --sv-bg-primary--active: 147, 197, 253;
@@ -28,6 +40,11 @@
     --sv-bg-info--active: 103, 232, 249;
     --sv-bg-disabled: 229, 231, 235;
 
+    --sv-bg-input: 241, 241, 241;
+    --sv-bg-input-indicator: 250, 250, 250;
+    --sv-bg-input-actual: 224, 224, 224;
+
+    /* borderColor */
     --sv-border-primary: 191, 219, 254;
     --sv-border-secondary: 229, 229, 229;
     --sv-border-success: 187, 247, 208;
@@ -35,18 +52,36 @@
     --sv-border-warning: 254, 240, 138;
     --sv-border-info: 165, 243, 252;
     --sv-border-disabled: 209, 213, 219;
+
+    --sv-border-input: 60, 60, 60;
+    --sv-border-input-actual: 120, 120, 120;
+
+    /* placeholder */
+    --sv-placeholder-input: 180, 180, 180;
 }
 
 .dark {
+    /* textColor */
     --sv-text-primary: 30, 58, 138;
+    --sv-text-primary--hover: 30, 64, 175;
     --sv-text-secondary: 23, 23, 23;
+    --sv-text-secondary--hover: 38, 38, 38;
     --sv-text-success: 20, 83, 45;
+    --sv-text-success--hover: 22, 101, 52;
     --sv-text-danger: 127, 29, 29;
+    --sv-text-danger--hover: 153, 27, 27;
     --sv-text-warning: 113, 63, 18;
+    --sv-text-warning--hover: 133, 77, 14;
     --sv-text-info: 22, 78, 99;
+    --sv-text-info--hover: 21, 94, 117;
     --sv-text-link: 22, 78, 99;
+    --sv-text-link--hover: 21, 94, 117;
     --sv-text-disabled: 107, 114, 128;
+    --sv-text-label: 250, 250, 250;
+    --sv-text-input: 250, 250, 250;
+    --sv-text-input-selected: 61, 37, 192;
 
+    /* backgroundColor */
     --sv-bg-primary: 37, 99, 235;
     --sv-bg-primary--hover: 29, 78, 216;
     --sv-bg-primary--active: 30, 64, 175;
@@ -67,6 +102,11 @@
     --sv-bg-info--active: 21, 94, 117;
     --sv-bg-disabled: 31, 41, 55;
 
+    --sv-bg-input: 47, 47, 47;
+    --sv-bg-input-indicator: 26, 26, 26;
+    --sv-bg-input-actual: 80, 80, 80;
+
+    /* borderColor */
     --sv-border-primary: 29, 78, 216;
     --sv-border-secondary: 64, 64, 64;
     --sv-border-success: 21, 128, 61;
@@ -74,4 +114,10 @@
     --sv-border-warning: 161, 98, 7;
     --sv-border-info: 14, 116, 144;
     --sv-border-disabled: 31, 41, 55;
+
+    --sv-border-input: 128, 128, 128;
+    --sv-border-input-actual: 64, 64, 64;
+
+    /* placeholder */
+    --sv-placeholder-input: 100, 100, 100;
 }
