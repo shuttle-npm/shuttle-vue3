@@ -16,7 +16,7 @@
     }
 
     .sv-focus {
-        @apply focus:outline-none focus:ring focus:ring-blue-300 focus:border-blue-200 dark:focus:ring-blue-500 dark:focus:border-blue-400;
+        @apply focus:outline-none focus:ring focus:ring-default--focus focus:border-default--focus;
     }
 
     .sv-disabled {
@@ -330,7 +330,7 @@
     }
 
     .sv-navbar__menu-toggle {
-        @apply sm:hidden bg-gray-700 p-2 text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white;
+        @apply sm:hidden bg-navbar-menu-toggle text-navbar-menu-toggle hover:text-navbar-menu-toggle--hover hover:bg-navbar-menu-toggle--hover;
     }
 
     .sv-navbar__start {
@@ -379,7 +379,7 @@
     }
 
     .sv-navigation__button {
-        @apply flex items-center justify-between h-12 py-0 px-3 cursor-pointer text-gray-900 dark:text-white hover:bg-gray-300 hover:dark:bg-gray-600;
+        @apply flex items-center justify-between h-12 py-0 px-3 cursor-pointer text-navigation hover:bg-navigation--hover;
     }
 
     .sv-navigation__button--minimal {
@@ -391,7 +391,7 @@
     }
 
     .sv-navigation__link {
-        @apply px-3 flex items-center h-12 py-0 cursor-pointer whitespace-nowrap text-gray-900 dark:text-white hover:bg-gray-300 hover:dark:bg-gray-600;
+        @apply px-3 flex items-center h-12 py-0 cursor-pointer whitespace-nowrap text-navigation hover:bg-navigation--hover;
     }
 
     .sv-navigation__link--minimal {
@@ -399,15 +399,15 @@
     }
 
     .sv-navigation__link--disabled {
-        @apply text-gray-400 dark:text-gray-400;
+        @apply text-disabled;
     }
 
     .sv-navigation__divider {
-        @apply h-2 mt-2 border-0 border-t border-solid border-gray-300 dark:border-gray-600;
+        @apply h-2 mt-2 border-0 border-t border-solid border-navigation-divider;
     }
 
     .sv-navigation__dropdown {
-        @apply min-w-[10rem] shadow-lg py-1 focus:outline-none z-[1000] mt-2 ring-black ring-opacity-5 bg-gray-100 text-gray-900 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white;
+        @apply min-w-[10rem] shadow-lg py-1 focus:outline-none z-[1000] mt-2 bg-navigation-dropdown text-navigation;
     }
 
     .sv-navigation__dropdown--left {
@@ -423,7 +423,7 @@
     }
 
     .sv-navigation__dropdown--normal {
-        @apply absolute sv-border border-gray-300 dark:border-gray-600;
+        @apply absolute sv-border border-navigation-dropdown;
     }
 
     /* Toggle */

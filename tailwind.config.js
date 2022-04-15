@@ -56,6 +56,9 @@ module.exports = {
                 label: generateColorClass("sv-text-label"),
                 input: generateColorClass("sv-text-input"),
                 "input-selected": generateColorClass("sv-text-input-selected"),
+                navigation: generateColorClass("sv-text-navigation"),
+                "navbar-menu-toggle": generateColorClass("sv-text-navbar-menu-toggle"),
+                "navbar-menu-toggle--hover": generateColorClass("sv-text-navbar-menu-toggle--hover"),
             },
             backgroundColor: {
                 primary: generateColorClass("sv-bg-primary"),
@@ -81,6 +84,10 @@ module.exports = {
                 "input-active": generateColorClass("sv-bg-input-active"),
                 "input-indicator": generateColorClass("sv-bg-input-indicator"),
                 "input-indicator-active": generateColorClass("sv-bg-input-indicator-active"),
+                "navigation-dropdown": generateColorClass("sv-bg-navigation-dropdown"),
+                "navigation--hover": generateColorClass("sv-bg-navigation--hover"),
+                "navbar-menu-toggle": generateColorClass("sv-bg-navbar-menu-toggle"),
+                "navbar-menu-toggle--hover": generateColorClass("sv-bg-navbar-menu-toggle--hover"),
             },
             borderColor: {
                 primary: generateColorClass("sv-border-primary"),
@@ -95,9 +102,15 @@ module.exports = {
                 "input-active": generateColorClass("sv-border-input-active"),
                 "input-indicator": generateColorClass("sv-border-input-indicator"),
                 "input-indicator-active": generateColorClass("sv-border-input-indicator-active"),
+                "navigation-dropdown": generateColorClass("sv-border-navigation-dropdown"),
+                "navigation-divider": generateColorClass("sv-border-navigation-divider"),
+                "default--focus": generateColorClass("sv-border-default--focus"),
             },
             placeholderColor: {
                 input: generateColorClass("sv-placeholder-input"),
+            },
+            ringColor: {
+                "default--focus": generateColorClass("sv-ring-default--focus"),
             }
         },
     },

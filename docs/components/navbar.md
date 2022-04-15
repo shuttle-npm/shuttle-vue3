@@ -1,5 +1,6 @@
 <script setup>
-import { VTIconShuttle } from 'shuttle-theme'
+import { VTIconShuttle } from "shuttle-theme";
+import IconGitHub from "/@theme/components/IconGitHub.vue";
 import { Alert, Navbar, Navigation, Toggle } from "@/components";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { UserIcon, ChevronDownIcon } from "@heroicons/vue/outline";
@@ -94,8 +95,11 @@ const click = (item) => {
         <Navigation :items="items" @click="click" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }"/>
     </template>
     <template #end>
-        <div class="hidden sm:block">
-            <Navigation :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" />
+        <div class="flex flex-row items-center">
+            <div class="hidden sm:block">
+                <Navigation :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" />
+            </div>
+            <IconGitHub class="h-5 w-5 fill-gray-500 mx-2 cursor-pointer" />
         </div>
     </template>
     <template #navigation-minimal>
@@ -187,8 +191,11 @@ const profileItems = ref([
             <Navigation :items="items" @click="click" />
         </template>
         <template #end>
-            <div class="hidden sm:block">
-                <Navigation :items="profileItems" dropdown-alignment="right" />
+            <div class="flex flex-row items-center">
+                <div class="hidden sm:block">
+                    <Navigation :items="profileItems" dropdown-alignment="right" />
+                </div>
+                <IconGitHub class="h-5 w-5 fill-gray-500 mx-2 cursor-pointer" />
             </div>
         </template>
         <template #navigation-minimal>
