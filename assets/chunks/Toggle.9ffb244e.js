@@ -1,9 +1,13 @@
 import { u as useCoreClass } from "./useCoreClass.322213e7.js";
-import { o as openBlock, b as createElementBlock, f as createBaseVNode, c as createBlock, n as normalizeClass, i as resolveDynamicComponent, t as toDisplayString, d as createCommentVNode } from "../app.7104fec2.js";
+import { o as openBlock, b as createElementBlock, f as createBaseVNode, n as normalizeClass, c as createBlock, i as resolveDynamicComponent, t as toDisplayString, d as createCommentVNode } from "../app.7104fec2.js";
 const _sfc_main = {
   props: {
     label: {
       type: String
+    },
+    position: {
+      type: String,
+      default: "end"
     },
     modelValue: {
       type: Boolean,
@@ -46,7 +50,9 @@ const _sfc_main = {
         useCoreClass("sv-toggle", getOptions(true)),
         useCoreClass("sv-toggle--disabled", getOptions(props.disabled)),
         useCoreClass("sv-toggle--on", getOptions(props.modelValue)),
-        useCoreClass("sv-toggle--off", getOptions(!props.modelValue))
+        useCoreClass("sv-toggle--off", getOptions(!props.modelValue)),
+        useCoreClass("sv-toggle--start", getOptions(props.position === "start")),
+        useCoreClass("sv-toggle--end", getOptions(props.position === "end"))
       ];
     };
     const getSliderClasses = () => {
@@ -62,7 +68,9 @@ const _sfc_main = {
         useCoreClass("sv-toggle__box", getOptions(true)),
         useCoreClass("sv-toggle__box--disabled", getOptions(props.disabled)),
         useCoreClass("sv-toggle__box--on", getOptions(props.modelValue)),
-        useCoreClass("sv-toggle__box--off", getOptions(!props.modelValue))
+        useCoreClass("sv-toggle__box--off", getOptions(!props.modelValue)),
+        useCoreClass("sv-toggle__box--start", getOptions(props.position === "start")),
+        useCoreClass("sv-toggle__box--end", getOptions(props.position === "end"))
       ];
     };
     const getIconClasses = () => {
@@ -78,7 +86,9 @@ const _sfc_main = {
         useCoreClass("sv-toggle__label", getOptions(true)),
         useCoreClass("sv-toggle__label--disabled", getOptions(props.disabled)),
         useCoreClass("sv-toggle__label--on", getOptions(props.modelValue)),
-        useCoreClass("sv-toggle__label--off", getOptions(!props.modelValue))
+        useCoreClass("sv-toggle__label--off", getOptions(!props.modelValue)),
+        useCoreClass("sv-toggle__label--start", getOptions(props.position === "start")),
+        useCoreClass("sv-toggle__label--end", getOptions(props.position === "end"))
       ];
     };
     return (_ctx, _cache) => {
@@ -87,15 +97,16 @@ const _sfc_main = {
         onClick: click
       }, [
         createBaseVNode("div", {
-          class: normalizeClass(getSliderClasses())
-        }, [
-          (openBlock(), createBlock(resolveDynamicComponent(getIcon == null ? void 0 : getIcon()), {
-            class: normalizeClass(getIconClasses())
-          }, null, 8, ["class"]))
-        ], 2),
-        createBaseVNode("div", {
           class: normalizeClass(getBoxClasses())
-        }, null, 2),
+        }, [
+          createBaseVNode("div", {
+            class: normalizeClass(getSliderClasses())
+          }, [
+            (openBlock(), createBlock(resolveDynamicComponent(getIcon == null ? void 0 : getIcon()), {
+              class: normalizeClass(getIconClasses())
+            }, null, 8, ["class"]))
+          ], 2)
+        ], 2),
         !!props.label ? (openBlock(), createElementBlock("label", {
           key: 0,
           class: normalizeClass(getLabelClasses())

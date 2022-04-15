@@ -1,12 +1,12 @@
 import { _ as _sfc_main$1 } from "./chunks/Alert.d867fd84.js";
 import { _ as _sfc_main$3 } from "./chunks/Navigation.cf3b64b2.js";
-import { _ as _sfc_main$2 } from "./chunks/Toggle.f7cf887a.js";
+import { _ as _sfc_main$2 } from "./chunks/Toggle.9ffb244e.js";
 import { e as ref, b as createElementBlock, a as createVNode, u as unref, f as createBaseVNode, h as createStaticVNode, o as openBlock } from "./app.7104fec2.js";
 import "./chunks/useCoreClass.322213e7.js";
 import "./chunks/headlessui.esm.6088d488.js";
-const _hoisted_1 = /* @__PURE__ */ createStaticVNode("", 3);
-const _hoisted_4 = { class: "sv-border border-gray-400" };
-const _hoisted_5 = /* @__PURE__ */ createStaticVNode("", 8);
+const _hoisted_1 = /* @__PURE__ */ createStaticVNode("", 4);
+const _hoisted_5 = { class: "sv-border border-gray-400" };
+const _hoisted_6 = /* @__PURE__ */ createStaticVNode("", 8);
 const __pageData = '{"title":"Navigation","description":"","frontmatter":{},"headers":[{"level":2,"title":"Example","slug":"example"},{"level":2,"title":"Properties","slug":"properties"},{"level":3,"title":"Items","slug":"items"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/navigation.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
@@ -71,7 +71,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           label: "Minimal?",
           "sv-class": { "sv-toggle": "mb-2" }
         }, null, 8, ["modelValue"]),
-        createBaseVNode("div", _hoisted_4, [
+        createBaseVNode("div", _hoisted_5, [
           createVNode(unref(_sfc_main$3), {
             items: items.value,
             "sv-class": { "sv-navigation__link": "vt-doc-ignore" },
@@ -79,7 +79,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
             minimal: minimal.value
           }, null, 8, ["items", "minimal"])
         ]),
-        _hoisted_5
+        _hoisted_6
       ]);
     };
   }

@@ -1,8 +1,8 @@
-import { o as openBlock, c as createBlock, a as createVNode, w as withCtx, f as createBaseVNode, u as unref, n as normalizeClass, j as renderSlot, e as ref, b as createElementBlock, h as createStaticVNode, V as VTIconShuttle } from "./app.7104fec2.js";
+import { o as openBlock, c as createBlock, a as createVNode, w as withCtx, f as createBaseVNode, u as unref, n as normalizeClass, j as renderSlot, _ as _export_sfc, b as createElementBlock, e as ref, g as createTextVNode, h as createStaticVNode, V as VTIconShuttle } from "./app.7104fec2.js";
 import { _ as _sfc_main$3 } from "./chunks/Alert.d867fd84.js";
 import { a as aa, i as ia, r as ra } from "./chunks/headlessui.esm.6088d488.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.322213e7.js";
-import { _ as _sfc_main$2 } from "./chunks/Navigation.cf3b64b2.js";
+import { _ as _sfc_main$4 } from "./chunks/Navigation.cf3b64b2.js";
 function render$2(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -51,13 +51,9 @@ function render(_ctx, _cache) {
     })
   ]);
 }
-const _hoisted_1$1 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Open main menu", -1);
-const _sfc_main$1 = {
+const _hoisted_1$2 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Open main menu", -1);
+const _sfc_main$2 = {
   props: {
-    items: {
-      type: Array,
-      default: []
-    },
     svClass: {
       type: Object
     }
@@ -65,13 +61,6 @@ const _sfc_main$1 = {
   emits: ["click"],
   setup(__props, { emit }) {
     const props = __props;
-    const click = (item) => {
-      var _a;
-      if ((_a = item.disabled) != null ? _a : false) {
-        return;
-      }
-      emit("click", item);
-    };
     const getOptions = (include) => {
       return {
         svClass: props.svClass,
@@ -88,14 +77,9 @@ const _sfc_main$1 = {
         useCoreClass("sv-navbar__menu-toggle", getOptions(true))
       ];
     };
-    const getSlotStartClasses = () => {
+    const getStartClasses = () => {
       return [
-        useCoreClass("sv-navbar__slot-start", getOptions(true))
-      ];
-    };
-    const getSlotEndClasses = () => {
-      return [
-        useCoreClass("sv-navbar__slot-end", getOptions(true))
+        useCoreClass("sv-navbar__start", getOptions(true))
       ];
     };
     const getNavigationClasses = () => {
@@ -103,9 +87,29 @@ const _sfc_main$1 = {
         useCoreClass("sv-navbar__navigation", getOptions(true))
       ];
     };
-    const getNavigationPanelClasses = () => {
+    const getEndClasses = () => {
       return [
-        useCoreClass("sv-navbar__navigation-panel", getOptions(true))
+        useCoreClass("sv-navbar__end", getOptions(true))
+      ];
+    };
+    const getPanelMinimalClasses = () => {
+      return [
+        useCoreClass("sv-navbar__panel-minimal", getOptions(true))
+      ];
+    };
+    const getTopMinimalClasses = () => {
+      return [
+        useCoreClass("sv-top-minimal", getOptions(true))
+      ];
+    };
+    const getNavigationMinimalClasses = () => {
+      return [
+        useCoreClass("sv-navbar__navigation-minimal", getOptions(true))
+      ];
+    };
+    const getBottomMinimalClasses = () => {
+      return [
+        useCoreClass("sv-navbar__bottom--minimal", getOptions(true))
       ];
     };
     return (_ctx, _cache) => {
@@ -118,7 +122,7 @@ const _sfc_main$1 = {
               class: normalizeClass(getMenuToggleClasses())
             }, {
               default: withCtx(() => [
-                _hoisted_1$1,
+                _hoisted_1$2,
                 open ? (openBlock(), createBlock(unref(render), {
                   key: 0,
                   class: "h-8 w-8",
@@ -132,37 +136,42 @@ const _sfc_main$1 = {
               _: 2
             }, 1032, ["class"]),
             createBaseVNode("div", {
-              class: normalizeClass(getSlotStartClasses())
+              class: normalizeClass(getStartClasses())
             }, [
               renderSlot(_ctx.$slots, "start")
             ], 2),
             createBaseVNode("div", {
               class: normalizeClass(getNavigationClasses())
             }, [
-              createVNode(_sfc_main$2, {
-                items: _ctx.$props.items,
-                onClick: click,
-                "sv-class": props.svClass
-              }, null, 8, ["items", "sv-class"])
+              renderSlot(_ctx.$slots, "navigation")
             ], 2),
             createBaseVNode("div", {
-              class: normalizeClass(getSlotEndClasses())
+              class: normalizeClass(getEndClasses())
             }, [
               renderSlot(_ctx.$slots, "end")
             ], 2)
           ], 2),
           createVNode(unref(ia), {
-            class: normalizeClass(getNavigationPanelClasses())
+            class: normalizeClass(getPanelMinimalClasses())
           }, {
             default: withCtx(() => [
-              createVNode(_sfc_main$2, {
-                items: _ctx.$props.items,
-                minimal: true,
-                onClick: click,
-                "sv-class": props.svClass
-              }, null, 8, ["items", "sv-class"])
+              createBaseVNode("div", {
+                class: normalizeClass(getTopMinimalClasses())
+              }, [
+                renderSlot(_ctx.$slots, "top-minimal")
+              ], 2),
+              createBaseVNode("div", {
+                class: normalizeClass(getNavigationMinimalClasses())
+              }, [
+                renderSlot(_ctx.$slots, "navigation-minimal")
+              ], 2),
+              createBaseVNode("div", {
+                class: normalizeClass(getBottomMinimalClasses())
+              }, [
+                renderSlot(_ctx.$slots, "bottom-minimal")
+              ], 2)
             ]),
-            _: 1
+            _: 3
           }, 8, ["class"])
         ]),
         _: 3
@@ -170,11 +179,49 @@ const _sfc_main$1 = {
     };
   }
 };
-const _hoisted_1 = /* @__PURE__ */ createStaticVNode("", 3);
-const _hoisted_4 = { class: "sv-border border-gray-400" };
-const _hoisted_5 = { class: "flex flex-row items-center mr-2" };
-const _hoisted_6 = /* @__PURE__ */ createBaseVNode("div", { class: "font-bold text-orange-500 mt-[2px]" }, "Shuttle", -1);
-const _hoisted_7 = /* @__PURE__ */ createStaticVNode("", 8);
+const _sfc_main$1 = {};
+const _hoisted_1$1 = {
+  xmlns: "http://www.w3.org/2000/svg",
+  "aria-hidden": "true",
+  focusable: "false",
+  viewBox: "0 0 24 24"
+};
+const _hoisted_2$1 = /* @__PURE__ */ createBaseVNode("path", { d: "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" }, null, -1);
+const _hoisted_3$1 = [
+  _hoisted_2$1
+];
+function _sfc_render(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$1, _hoisted_3$1);
+}
+var IconGitHub = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render]]);
+const _hoisted_1 = /* @__PURE__ */ createBaseVNode("h1", {
+  id: "navbar",
+  tabindex: "-1"
+}, [
+  /* @__PURE__ */ createTextVNode("Navbar "),
+  /* @__PURE__ */ createBaseVNode("a", {
+    class: "header-anchor",
+    href: "#navbar",
+    "aria-hidden": "true"
+  }, "#")
+], -1);
+const _hoisted_2 = /* @__PURE__ */ createBaseVNode("h2", {
+  id: "example",
+  tabindex: "-1"
+}, [
+  /* @__PURE__ */ createTextVNode("Example "),
+  /* @__PURE__ */ createBaseVNode("a", {
+    class: "header-anchor",
+    href: "#example",
+    "aria-hidden": "true"
+  }, "#")
+], -1);
+const _hoisted_3 = { class: "sv-border border-gray-400" };
+const _hoisted_4 = { class: "flex flex-row items-center mr-2" };
+const _hoisted_5 = /* @__PURE__ */ createBaseVNode("div", { class: "font-bold text-orange-500 mt-[2px]" }, "Shuttle", -1);
+const _hoisted_6 = { class: "flex flex-row items-center" };
+const _hoisted_7 = { class: "hidden sm:block" };
+const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 8);
 const __pageData = '{"title":"Navbar","description":"","frontmatter":{},"headers":[{"level":2,"title":"Example","slug":"example"},{"level":2,"title":"Properties","slug":"properties"},{"level":3,"title":"Items","slug":"items"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/navbar.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
@@ -248,25 +295,54 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", null, [
         _hoisted_1,
+        _hoisted_2,
         createVNode(unref(_sfc_main$3), {
           type: "info",
           message: message.value,
           class: "mb-4"
         }, null, 8, ["message"]),
-        createBaseVNode("div", _hoisted_4, [
-          createVNode(unref(_sfc_main$1), {
+        createBaseVNode("div", _hoisted_3, [
+          createVNode(unref(_sfc_main$2), {
             items: items.value,
             "sv-class": { "sv-navbar": "px-2", "sv-navigation__link": "vt-doc-ignore" },
             onClick: click
           }, {
             start: withCtx(() => [
-              createBaseVNode("div", _hoisted_5, [
+              createBaseVNode("div", _hoisted_4, [
                 createVNode(unref(VTIconShuttle), { class: "h-10 w-10" }),
-                _hoisted_6
+                _hoisted_5
               ])
             ]),
+            navigation: withCtx(() => [
+              createVNode(unref(_sfc_main$4), {
+                items: items.value,
+                onClick: click,
+                "sv-class": { "sv-navigation__link": "vt-doc-ignore" }
+              }, null, 8, ["items"])
+            ]),
             end: withCtx(() => [
-              createVNode(unref(_sfc_main$2), {
+              createBaseVNode("div", _hoisted_6, [
+                createBaseVNode("div", _hoisted_7, [
+                  createVNode(unref(_sfc_main$4), {
+                    items: profileItems.value,
+                    "sv-class": { "sv-navigation__link": "vt-doc-ignore" },
+                    "dropdown-alignment": "right"
+                  }, null, 8, ["items"])
+                ]),
+                createVNode(IconGitHub, { class: "h-5 w-5 fill-gray-500 mx-2 cursor-pointer" })
+              ])
+            ]),
+            "navigation-minimal": withCtx(() => [
+              createVNode(unref(_sfc_main$4), {
+                minimal: true,
+                items: items.value,
+                onClick: click,
+                "sv-class": { "sv-navigation__link": "vt-doc-ignore" }
+              }, null, 8, ["items"])
+            ]),
+            "bottom-minimal": withCtx(() => [
+              createVNode(unref(_sfc_main$4), {
+                minimal: true,
                 items: profileItems.value,
                 "sv-class": { "sv-navigation__link": "vt-doc-ignore" },
                 "dropdown-alignment": "right"
@@ -275,7 +351,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
             _: 1
           }, 8, ["items"])
         ]),
-        _hoisted_7
+        _hoisted_8
       ]);
     };
   }
