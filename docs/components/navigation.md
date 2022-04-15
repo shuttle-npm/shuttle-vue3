@@ -56,6 +56,10 @@ const click = (item) => {
 
 A `Navigation` component is essentially a menu.  The items displayed depend mainly on the `text` property and the `buttonIcon` to render.  A `button` item is container for the sub-menu so it would contain an `items` property.  An `item` may also have a `click` function that will be invoked is available.
 
+::: info
+It is important to note that the `Navigation` component does not perform any routing; instead the `click` method is invoked and it would be the responsibility of the application to perform the routing using their router of choice.
+:::
+
 ## Example
 
 <Alert type="info" :message="message" class="mb-4" />

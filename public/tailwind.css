@@ -192,7 +192,7 @@
     }
 
     .sv-checkbox__box {
-        @apply sv-rounded sv-border h-5 w-5 cursor-pointer bg-input border-input;
+        @apply sv-rounded sv-border h-5 w-5 cursor-pointer bg-input border-input hover:border-input--hover flex flex-row items-center justify-center;
     }
 
     .sv-checkbox__box--checked {
@@ -204,7 +204,7 @@
     }
 
     .sv-checkbox__icon {
-        @apply sv-icon;
+        @apply h-4 w-4;
     }
 
     .sv-checkbox__label {
@@ -277,7 +277,7 @@
     }
 
     .sv-listbox__options {
-        @apply sv-border z-50 absolute w-full py-1 mt-1 overflow-auto text-base rounded shadow-lg max-h-60 bg-input border-input text-input placeholder-input;
+        @apply sv-border z-50 absolute w-full py-1 mt-1 overflow-auto text-base shadow-lg max-h-60 bg-input border-input text-input placeholder-input;
     }
 
     .sv-listbox__selected-option {
@@ -333,20 +333,32 @@
         @apply sm:hidden bg-gray-700 p-2 text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white;
     }
 
-    .sv-navbar__slot-start {
+    .sv-navbar__start {
         @apply flex flex-grow items-center justify-center sm:justify-start sm:flex-grow-0;
-    }
-
-    .sv-navbar__slot-end {
-        @apply flex-shrink-0 flex items-center justify-end;
     }
 
     .sv-navbar__navigation {
         @apply items-center hidden sm:justify-start sm:flex sm:flex-grow;
     }
 
-    .sv-navbar__navigation-panel {
-        @apply px-2 pt-2 pb-3 space-y-1 sm:hidden;
+    .sv-navbar__end {
+        @apply flex-shrink-0 flex items-center justify-end;
+    }
+
+    .sv-navbar__panel--minimal {
+        @apply flex flex-col px-2 pt-2 pb-3 space-y-1 sm:hidden;
+    }
+
+    .sv-navbar__top-minimal {
+        
+    }
+
+    .sv-navbar__navigation-minimal {
+
+    }
+
+    .sv-navbar__bottom-minimal {
+
     }
 
     /* Navigation */
@@ -419,12 +431,24 @@
         @apply relative flex flex-row items-center h-6;
     }
 
+    .sv-toggle--start {
+        @apply justify-start;
+    }
+
+    .sv-toggle--end {
+        @apply justify-between;
+    }
+
     .sv-toggle__slider {
-        @apply absolute flex flex-row items-center justify-center rounded-full w-5 h-5 left-0.5 shadow transition bg-input-indicator cursor-pointer;
+        @apply relative flex flex-row items-center justify-center rounded-full w-5 h-5 shadow transition bg-input-indicator cursor-pointer;
+    }
+
+    .sv-toggle__slider--off {
+        @apply left-0.5;
     }
 
     .sv-toggle__slider--on {
-        @apply translate-x-6 bg-input-active
+        @apply translate-x-6 bg-input-indicator-active
     }
 
     .sv-toggle__slider--disabled {
@@ -432,7 +456,7 @@
     }
 
     .sv-toggle__box {
-        @apply sv-border w-12 h-6 rounded-full shadow-inner bg-input border-input;
+        @apply flex flex-row items-center sv-border w-12 h-7 rounded-full shadow-inner bg-input border-input hover:border-input--hover cursor-pointer;
     }
 
     .sv-toggle__box--on {
@@ -440,7 +464,15 @@
     }
 
     .sv-toggle__box--disabled {
-        @apply bg-gray-100 border-gray-200 dark:bg-gray-700 dark:border-gray-800 rounded-full shadow-inner;
+        @apply bg-disabled border-disabled rounded-full shadow-inner;
+    }
+
+    .sv-toggle__box--start {
+        @apply order-1;
+    }
+
+    .sv-toggle__box--end {
+        @apply order-2;
     }
 
     .sv-toggle__icon {
@@ -448,10 +480,18 @@
     }
 
     .sv-toggle__label {
-        @apply ml-2 cursor-pointer;
+        @apply cursor-pointer;
+    }
+
+    .sv-toggle__label--start {
+        @apply ml-2 order-2;
+    }
+
+    .sv-toggle__label--end {
+        @apply order-1;
     }
 
     .sv-toggle__label--disabled {
-        @apply cursor-default text-gray-300 dark:text-gray-500;
+        @apply cursor-default text-disabled;
     }
 }

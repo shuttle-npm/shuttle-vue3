@@ -91,6 +91,7 @@ module.exports = {
                 info: generateColorClass("sv-border-info"),
                 disabled: generateColorClass("sv-border-disabled"),
                 input: generateColorClass("sv-border-input"),
+                "input--hover": generateColorClass("sv-border-input--hover"),
                 "input-active": generateColorClass("sv-border-input-active"),
                 "input-indicator": generateColorClass("sv-border-input-indicator"),
                 "input-indicator-active": generateColorClass("sv-border-input-indicator-active"),

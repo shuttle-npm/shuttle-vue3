@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { Checkbox } from "@/components";
+import { ThumbDownIcon, ThumbUpIcon } from "@heroicons/vue/outline";
 
 const value = ref(false);
 </script>
@@ -23,6 +24,16 @@ Value: {{ value }}
 </template>
 ```
 
+### Icon
+
+<Checkbox v-model="value" label="Use express delivery?" :checkedIcon="ThumbUpIcon" :uncheckedIcon="ThumbDownIcon" />
+
+```vue
+<template>
+    <Checkbox v-model="value" label="Use express delivery?" :checkedIcon="ThumbUpIcon" :uncheckedIcon="ThumbDownIcon" />
+</template>
+```
+
 ### Disabled
 
 <Checkbox v-model="value" label="Is this disabled?" :disabled="true" />
@@ -35,20 +46,22 @@ Value: {{ value }}
 
 ## Properties
 
-| Name          | Type      | Default | Description                                                                                                        |
-| ------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `label`       | `String`  | ""      | The label to display for the input.                                                                                |
-| `layout`      | `String`  | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
-| `placeholder` | `String`  | ""      | The placeholder to display for the input.                                                                          |
-| `disabled`    | `Boolean` | `false` | Indicates whether the checkbox is in a disabled state.                                                             |
-| `sv-class`    | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+| Name            | Type      | Default     | Description                                                                                                        |
+| --------------- | --------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| `label`         | `String`  | ""          | The label to display for the input.                                                                                |
+| `layout`        | `String`  | `block`     | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
+| `checkedIcon`   | `null`    | `undefined` | An icon that should be used when the checkbox is in the `checked` / `true` state.                                 |
+| `uncheckedIcon` | `null`    | `undefined` | An icon that should be used when the checkbox is in the `unchecked` / `false` state.                              |
+| `placeholder`   | `String`  | ""          | The placeholder to display for the input.                                                                          |
+| `disabled`      | `Boolean` | `false`     | Indicates whether the checkbox is in a disabled state.                                                             |
+| `sv-class`      | `Object`  | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Classes
 
 - `sv-checkbox`
   - `sv-checkbox--checked`
   - `sv-checkbox--unchecked`
-  - `sv-checkbox__box--disabled`
+  - `sv-checkbox--disabled`
 
 - `sv-checkbox__box`
   - `sv-checkbox__box--checked`

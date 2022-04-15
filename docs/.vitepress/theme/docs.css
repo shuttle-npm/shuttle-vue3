@@ -97,6 +97,9 @@
 .flex {
     display: flex
 }
+.hidden {
+    display: none
+}
 .h-10 {
     height: 2.5rem
 }
@@ -123,4 +126,9 @@
 .text-orange-500 {
     --tw-text-opacity: 1;
     color: rgb(249 115 22 / var(--tw-text-opacity))
+}
+@media (min-width: 640px) {
+    .sm\:block {
+        display: block
+    }
 }

@@ -78,8 +78,6 @@ const click = (item) => {
 
 # Navbar
 
-A `Navbar` contains a `start` and `end` slot (typically left and right, respectively) around a `Navigation` component.
-
 ## Example
 
 <Alert type="info" :message="message" class="mb-4" />
@@ -92,8 +90,19 @@ A `Navbar` contains a `start` and `end` slot (typically left and right, respecti
             <div class="font-bold text-orange-500 mt-[2px]">Shuttle</div>
         </div>
     </template>
+    <template #navigation>
+        <Navigation :items="items" @click="click" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }"/>
+    </template>
     <template #end>
-        <Navigation :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" />
+        <div class="hidden sm:block">
+            <Navigation :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" />
+        </div>
+    </template>
+    <template #navigation-minimal>
+        <Navigation :minimal="true" :items="items" @click="click" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }"/>
+    </template>
+    <template #bottom-minimal>
+        <Navigation :minimal="true" :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" />
     </template>
 </Navbar>
 </div>
@@ -174,8 +183,19 @@ const profileItems = ref([
                 <div class="font-bold text-orange-500 mt-[2px]">Shuttle</div>
             </div>
         </template>
+        <template #navigation>
+            <Navigation :items="items" @click="click" />
+        </template>
         <template #end>
-            <Navigation :items="profileItems" dropdown-alignment="right" />
+            <div class="hidden sm:block">
+                <Navigation :items="profileItems" dropdown-alignment="right" />
+            </div>
+        </template>
+        <template #navigation-minimal>
+            <Navigation :minimal="true" :items="items" @click="click" />
+        </template>
+        <template #bottom-minimal>
+            <Navigation :minimal="true" :items="profileItems" />
         </template>
     </Navbar>
 <template>
@@ -183,10 +203,10 @@ const profileItems = ref([
 
 ## Properties
 
-| Name       | Type      | Default | Description                                                                                                                                                     |
-| ---------- | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `items`    | `Array`   | `[]`    | The items that should be rendered in the navigation menu,                                                                                                       |
-| `sv-class` | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.                                              |
+| Name       | Type     | Default | Description                                                                                                        |
+| ---------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `items`    | `Array`  | `[]`    | The items that should be rendered in the navigation menu,                                                          |
+| `sv-class` | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ### Items
 
@@ -219,7 +239,10 @@ The items represent a menu that is one level deep:
 
 - `sv-navbar`
 - `sv-navbar__menu-toggle`
-- `sv-navbar__slot-start`
-- `sv-navbar__slot-end`
+- `sv-navbar__start`
 - `sv-navbar__navigation`
-- `sv-navbar__navigation-panel`
+- `sv-navbar__end`
+- `sv-navbar__panel-minimal`
+- `sv-navbar__top-minimal`
+- `sv-navbar__navigation-minimal`
+- `sv-navbar__bottom-minimal`

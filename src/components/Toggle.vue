@@ -1,9 +1,10 @@
 <template>
     <div :class="getClasses()" @click="click">
-        <div :class="getSliderClasses()">
-            <component :is="getIcon?.()" :class="getIconClasses()" />
+        <div :class="getBoxClasses()">
+            <div :class="getSliderClasses()">
+                <component :is="getIcon?.()" :class="getIconClasses()" />
+            </div>
         </div>
-        <div :class="getBoxClasses()"></div>
         <label v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</label>
     </div>
 </template>
@@ -14,6 +15,10 @@ import { useCoreClass } from "@/composables/useCoreClass";
 const props = defineProps({
     label: {
         type: String,
+    },
+    position: {
+        type: String,
+        default: "end"
     },
     modelValue: {
         type: Boolean,
@@ -63,6 +68,8 @@ const getClasses = () => {
         useCoreClass("sv-toggle--disabled", getOptions(props.disabled)),
         useCoreClass("sv-toggle--on", getOptions(props.modelValue)),
         useCoreClass("sv-toggle--off", getOptions(!props.modelValue)),
+        useCoreClass("sv-toggle--start", getOptions(props.position === "start")),
+        useCoreClass("sv-toggle--end", getOptions(props.position === "end")),
     ];
 }
 
@@ -81,6 +88,8 @@ const getBoxClasses = () => {
         useCoreClass("sv-toggle__box--disabled", getOptions(props.disabled)),
         useCoreClass("sv-toggle__box--on", getOptions(props.modelValue)),
         useCoreClass("sv-toggle__box--off", getOptions(!props.modelValue)),
+        useCoreClass("sv-toggle__box--start", getOptions(props.position === "start")),
+        useCoreClass("sv-toggle__box--end", getOptions(props.position === "end")),
     ];
 }
 
@@ -99,6 +108,8 @@ const getLabelClasses = () => {
         useCoreClass("sv-toggle__label--disabled", getOptions(props.disabled)),
         useCoreClass("sv-toggle__label--on", getOptions(props.modelValue)),
         useCoreClass("sv-toggle__label--off", getOptions(!props.modelValue)),
+        useCoreClass("sv-toggle__label--start", getOptions(props.position === "start")),
+        useCoreClass("sv-toggle__label--end", getOptions(props.position === "end")),
     ];
 }
 </script>

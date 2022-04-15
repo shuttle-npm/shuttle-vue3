@@ -6,18 +6,26 @@
                 <XIcon v-if="open" class="h-8 w-8" aria-hidden="true" />
                 <MenuIcon v-else class="h-8 w-8" aria-hidden="true" />
             </DisclosureButton>
-            <div :class="getSlotStartClasses()">
+            <div :class="getStartClasses()">
                 <slot name="start"></slot>
             </div>
             <div :class="getNavigationClasses()">
-                <Navigation :items="$props.items" @click="click" :sv-class="props.svClass" />
+                <slot name="navigation"></slot>
             </div>
-            <div :class="getSlotEndClasses()">
+            <div :class="getEndClasses()">
                 <slot name="end"></slot>
             </div>
         </div>
-        <DisclosurePanel :class="getNavigationPanelClasses()">
-            <Navigation :items="$props.items" :minimal="true" @click="click" :sv-class="props.svClass" />
+        <DisclosurePanel :class="getPanelMinimalClasses()">
+            <div :class="getTopMinimalClasses()">
+                <slot name="top-minimal"></slot>
+            </div>
+            <div :class="getNavigationMinimalClasses()">
+                <slot name="navigation-minimal"></slot>
+            </div>
+            <div :class="getBottomMinimalClasses()">
+                <slot name="bottom-minimal"></slot>
+            </div>
         </DisclosurePanel>
     </Disclosure>
 </template>
@@ -28,23 +36,10 @@ import {
 } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline"
 import { useCoreClass } from "@/composables/useCoreClass";
-import Navigation from "./Navigation.vue";
 
 const emit = defineEmits(["click"]);
 
-const click = (item) => {
-    if (item.disabled ?? false) {
-        return;
-    }
-
-    emit("click", item);
-}
-
 const props = defineProps({
-    items: {
-        type: Array,
-        default: []
-    },
     svClass: {
         type: Object
     }
@@ -69,15 +64,9 @@ const getMenuToggleClasses = () => {
     ];
 };
 
-const getSlotStartClasses = () => {
+const getStartClasses = () => {
     return [
-        useCoreClass("sv-navbar__slot-start", getOptions(true)),
-    ];
-};
-
-const getSlotEndClasses = () => {
-    return [
-        useCoreClass("sv-navbar__slot-end", getOptions(true)),
+        useCoreClass("sv-navbar__start", getOptions(true)),
     ];
 };
 
@@ -87,9 +76,33 @@ const getNavigationClasses = () => {
     ];
 };
 
-const getNavigationPanelClasses = () => {
+const getEndClasses = () => {
     return [
-        useCoreClass("sv-navbar__navigation-panel", getOptions(true)),
+        useCoreClass("sv-navbar__end", getOptions(true)),
+    ];
+};
+
+const getPanelMinimalClasses = () => {
+    return [
+        useCoreClass("sv-navbar__panel-minimal", getOptions(true)),
+    ];
+};
+
+const getTopMinimalClasses = () => {
+    return [
+        useCoreClass("sv-top-minimal", getOptions(true)),
+    ];
+};
+
+const getNavigationMinimalClasses = () => {
+    return [
+        useCoreClass("sv-navbar__navigation-minimal", getOptions(true)),
+    ];
+};
+
+const getBottomMinimalClasses = () => {
+    return [
+        useCoreClass("sv-navbar__bottom--minimal", getOptions(true)),
     ];
 };
 </script>
