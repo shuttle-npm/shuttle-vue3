@@ -40,7 +40,7 @@ const _sfc_main$1 = {
       type: Object
     }
   },
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "click"],
   setup(__props, { emit }) {
     const props = __props;
     const click = () => {
@@ -48,6 +48,7 @@ const _sfc_main$1 = {
         return;
       }
       emit("update:modelValue", !props.modelValue);
+      emit("click");
     };
     const getIcon = () => {
       return props.modelValue ? !!props.checkedIcon ? props.checkedIcon : render : !!props.uncheckedIcon ? props.uncheckedIcon : null;
@@ -145,8 +146,8 @@ const _hoisted_3 = /* @__PURE__ */ createBaseVNode("h3", {
 ], -1);
 const _hoisted_4 = /* @__PURE__ */ createStaticVNode("", 2);
 const _hoisted_6 = /* @__PURE__ */ createStaticVNode("", 2);
-const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 5);
-const __pageData = '{"title":"Checkbox","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Disabled","slug":"disabled"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/checkbox.md"}';
+const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 7);
+const __pageData = '{"title":"Checkbox","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Disabled","slug":"disabled"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Events","slug":"events"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/checkbox.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {

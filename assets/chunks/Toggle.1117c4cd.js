@@ -27,7 +27,7 @@ const _sfc_main = {
       type: Object
     }
   },
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "click"],
   setup(__props, { emit }) {
     const props = __props;
     const click = () => {
@@ -35,6 +35,7 @@ const _sfc_main = {
         return;
       }
       emit("update:modelValue", !props.modelValue);
+      emit("click");
     };
     const getIcon = () => {
       return props.modelValue ? !!props.onIcon ? props.onIcon : null : !!props.offIcon ? props.offIcon : null;

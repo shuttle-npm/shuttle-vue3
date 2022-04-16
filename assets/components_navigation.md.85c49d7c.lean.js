@@ -1,6 +1,6 @@
 import { _ as _sfc_main$1 } from "./chunks/Alert.d867fd84.js";
 import { _ as _sfc_main$3 } from "./chunks/Navigation.cf3b64b2.js";
-import { _ as _sfc_main$2 } from "./chunks/Toggle.9ffb244e.js";
+import { _ as _sfc_main$2 } from "./chunks/Toggle.1117c4cd.js";
 import { e as ref, b as createElementBlock, a as createVNode, u as unref, f as createBaseVNode, h as createStaticVNode, o as openBlock } from "./app.7104fec2.js";
 import "./chunks/useCoreClass.322213e7.js";
 import "./chunks/headlessui.esm.6088d488.js";

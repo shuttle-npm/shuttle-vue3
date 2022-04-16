@@ -1,4 +1,4 @@
-import { _ as _sfc_main$1 } from "./chunks/Toggle.9ffb244e.js";
+import { _ as _sfc_main$1 } from "./chunks/Toggle.1117c4cd.js";
 import { r as render, a as render$1 } from "./chunks/ThumbUpIcon.502944df.js";
 import { e as ref, l as computed, b as createElementBlock, f as createBaseVNode, t as toDisplayString, a as createVNode, u as unref, g as createTextVNode, h as createStaticVNode, o as openBlock } from "./app.7104fec2.js";
 import "./chunks/useCoreClass.322213e7.js";
@@ -48,8 +48,8 @@ const _hoisted_6 = /* @__PURE__ */ createBaseVNode("h3", {
   }, "#")
 ], -1);
 const _hoisted_7 = /* @__PURE__ */ createStaticVNode("", 2);
-const _hoisted_9 = /* @__PURE__ */ createStaticVNode("", 5);
-const __pageData = '{"title":"Toggle","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Position","slug":"position"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Disabled","slug":"disabled"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/toggle.md"}';
+const _hoisted_9 = /* @__PURE__ */ createStaticVNode("", 7);
+const __pageData = '{"title":"Toggle","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Position","slug":"position"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Disabled","slug":"disabled"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Events","slug":"events"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/toggle.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
