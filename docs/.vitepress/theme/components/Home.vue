@@ -6,6 +6,7 @@ import { VTIconShuttle } from 'shuttle-theme'
         <VTIconShuttle class="logo" />
         <h1 class="tagline">Shuttle Vue</h1>
         <p class="description">Vue 3 UI components built using Tailwind CSS and Headless UI.</p>
+        <pre class="text-red-700">npm install shuttle-vue3</pre>
     </section>
 
     <section id="highlights" class="vt-box-container">

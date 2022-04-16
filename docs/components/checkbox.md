@@ -50,11 +50,17 @@ Value: {{ value }}
 | --------------- | --------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
 | `label`         | `String`  | ""          | The label to display for the input.                                                                                |
 | `layout`        | `String`  | `block`     | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
-| `checkedIcon`   | `null`    | `undefined` | An icon that should be used when the checkbox is in the `checked` / `true` state.                                 |
-| `uncheckedIcon` | `null`    | `undefined` | An icon that should be used when the checkbox is in the `unchecked` / `false` state.                              |
+| `checkedIcon`   | `null`    | `undefined` | An icon that should be used when the checkbox is in the `checked` / `true` state.                                  |
+| `uncheckedIcon` | `null`    | `undefined` | An icon that should be used when the checkbox is in the `unchecked` / `false` state.                               |
 | `placeholder`   | `String`  | ""          | The placeholder to display for the input.                                                                          |
 | `disabled`      | `Boolean` | `false`     | Indicates whether the checkbox is in a disabled state.                                                             |
 | `sv-class`      | `Object`  | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+
+## Events
+
+| Name    | Description                                                                                             |
+| ------- | ------------------------------------------------------------------------------------------------------- |
+| `click` | Called when the checkbox is clicked.  This occurs after the `update:modelValue` event has been emitted. |
 
 ## Classes
 

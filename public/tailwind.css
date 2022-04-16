@@ -27,6 +27,10 @@
         @apply h-5 w-5;
     }
 
+    .sv-clickable {
+        @apply cursor-pointer;
+    }
+
     /* Alert */
     .sv-alert {
         @apply sv-rounded sv-border sv-padding flex flex-row;
@@ -244,6 +248,34 @@
         @apply sv-focus sv-rounded sv-border sv-padding w-full bg-input border-input text-input block placeholder-input;
     }
 
+    .sv-input__input--icon-start {
+        @apply pl-8;
+    }
+
+    .sv-input__input--icon-end {
+        @apply pr-8;
+    }
+
+    .sv-input__input-container {
+        @apply relative w-full flex flex-row items-center;
+    }
+
+    .sv-input__icon-start {
+        @apply absolute left-0 sv-icon mx-2;
+    }
+
+    .sv-input__icon-start--clickable {
+        @apply sv-clickable;
+    }
+
+    .sv-input__icon-end {
+        @apply absolute right-0 sv-icon mx-2;
+    }
+
+    .sv-input__icon-end--clickable {
+        @apply sv-clickable;
+    }
+
     /* Listbox */
     .sv-listbox {
         @apply relative;
@@ -452,7 +484,7 @@
     }
 
     .sv-toggle__slider--disabled {
-        @apply cursor-default bg-disabled;
+        @apply cursor-default bg-input-indicator-disabled;
     }
 
     .sv-toggle__box {

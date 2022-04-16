@@ -1,13 +1,13 @@
 <template>
     <div :class="getClasses()">
         <label v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</label>
-        <input
-            :class="getInputClasses()"
-            type="text"
-            :value="props.modelValue"
-            @input="emit('update:modelValue', $event.target.value)"
-            :placeholder="props.placeholder ?? ''"
-        />
+        <div :class="getInputContainerClasses()">
+            <component v-if="!!props.iconStart" :is="getIconStart?.()" :class="getIconStartClasses()"
+                @click="iconStartClick" />
+            <input :class="getInputClasses()" :type="props.type ?? 'text'" :value="props.modelValue"
+                @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''" />
+            <component v-if="!!props.iconEnd" :is="getIconEnd?.()" :class="getIconEndClasses()" @click="iconEndClick" />
+        </div>
     </div>
 </template>
 
@@ -15,26 +15,52 @@
 import { useCoreClass } from "@/composables/useCoreClass";
 
 const props = defineProps({
+    iconEnd: {
+        type: null
+    },
+    iconEndClickable: {
+        type: Boolean,
+        default: false
+    },
+    iconStart: {
+        type: null
+    },
+    iconStartClickable: {
+        type: Boolean,
+        default: false
+    },
+    label: {
+        type: String,
+        default: ""
+    },
     layout: {
         type: String,
         default: "block"
     },
-    label: {
-        type: String,
+    modelValue: {
+        type: [String, Number, Date],
         default: ""
     },
     placeholder: {
         type: String,
         default: ""
     },
-    modelValue: {
-        type: [String, Number, Date],
-        default: ""
-    },
     svClass: {
         type: Object
     },
+    type: {
+        type: String,
+        default: "text"
+    }
 })
+
+const getIconStart = () => {
+    return props.iconStart ? props.iconStart : null;
+}
+
+const getIconEnd = () => {
+    return props.iconEnd ? props.iconEnd : null;
+}
 
 const getLayout = () => {
     return (props.layout ?? "block").toLowerCase();
@@ -68,8 +94,50 @@ const getInputClasses = () => {
         useCoreClass("sv-input__input", getOptions(true)),
         useCoreClass("sv-input__input--inline", getOptions(getLayout() === "inline")),
         useCoreClass("sv-input__input--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-input__input--icon-end", getOptions(!!props.iconEnd)),
+        useCoreClass("sv-input__input--icon-start", getOptions(!!props.iconStart)),
     ];
 }
 
-const emit = defineEmits(["update:modelValue"]);
+const getInputContainerClasses = () => {
+    return [
+        useCoreClass("sv-input__input-container", getOptions(true)),
+        useCoreClass("sv-input__input-container--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-input__input-container--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-input__input-container--icon-end", getOptions(!!props.iconEnd)),
+        useCoreClass("sv-input__input-container--icon-start", getOptions(!!props.iconStart)),
+    ];
+}
+
+const getIconStartClasses = () => {
+    return [
+        useCoreClass("sv-input__icon-start", getOptions(!!props.iconStart)),
+        useCoreClass("sv-input__icon-start--clickable", getOptions(!!props.iconStart && props.iconStartClickable))
+    ];
+}
+
+const getIconEndClasses = () => {
+    return [
+        useCoreClass("sv-input__icon-end", getOptions(!!props.iconEnd)),
+        useCoreClass("sv-input__icon-end--clickable", getOptions(!!props.iconEnd && props.iconEndClickable))
+    ];
+}
+
+const emit = defineEmits(["update:modelValue", "iconStartClick", "iconEndClick"]);
+
+const iconStartClick = () => {
+    if (!props.iconStartClickable) {
+        return;
+    }
+
+    emit("iconStartClick");
+}
+
+const iconEndClick = () => {
+    if (!props.iconEndClickable) {
+        return;
+    }
+
+    emit("iconEndClick");
+}
 </script>

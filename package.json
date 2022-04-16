@@ -3,7 +3,7 @@
     "files": [
         "dist"
     ],
-    "version": "0.0.12",
+    "version": "0.0.16",
     "main": "./dist/shuttle-vue3.umd.js",
     "module": "./dist/shuttle-vue3.es.js",
     "exports": {
@@ -12,7 +12,8 @@
             "require": "./dist/shuttle-vue3.umd.js"
         },
         "./dist/shuttle-vue3.css": "./dist/shuttle-vue3.css",
-        "./dist/variables.css": "./dist/variables.css"
+        "./dist/variables.css": "./dist/variables.css",
+        "./dist/tailwind.css": "./dist/tailwind.css"
     },
     "scripts": {
         "dev": "npm run build:css && npm run build:css-docs && vitepress dev docs",

@@ -84,6 +84,7 @@ module.exports = {
                 "input-active": generateColorClass("sv-bg-input-active"),
                 "input-indicator": generateColorClass("sv-bg-input-indicator"),
                 "input-indicator-active": generateColorClass("sv-bg-input-indicator-active"),
+                "input-indicator-disabled": generateColorClass("sv-bg-input-indicator-disabled"),
                 "navigation-dropdown": generateColorClass("sv-bg-navigation-dropdown"),
                 "navigation--hover": generateColorClass("sv-bg-navigation--hover"),
                 "navbar-menu-toggle": generateColorClass("sv-bg-navbar-menu-toggle"),

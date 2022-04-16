@@ -39,7 +39,7 @@ const props = defineProps({
     },
 })
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue","click"]);
 
 const click = () => {
     if (props.disabled) {
@@ -47,6 +47,7 @@ const click = () => {
     }
 
     emit("update:modelValue", !props.modelValue);
+    emit("click");
 }
 
 const getIcon = () => {

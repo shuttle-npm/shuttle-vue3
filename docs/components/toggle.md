@@ -51,11 +51,11 @@ import { ThumbDownIcon, ThumbUpIcon } from "@heroicons/vue/outline";
 
 ### Disabled
 
-<Toggle v-model="value" label="Is this disabled?" :disabled="true" />
+<Toggle v-model="value" label="Is this disabled?" disabled />
 
 ```vue
 <template>
-    <Toggle v-model="value" label="Is this disabled?" :disabled="true" />
+    <Toggle v-model="value" label="Is this disabled?" disabled />
 </template>
 ```
 
@@ -71,6 +71,12 @@ import { ThumbDownIcon, ThumbUpIcon } from "@heroicons/vue/outline";
 | `placeholder` | `String`  | ""          | The placeholder to display for the input.                                                                          |
 | `disabled`    | `Boolean` | `false`     | Indicates whether the toggle is in a disabled state.                                                               |
 | `sv-class`    | `Object`  | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+
+## Events
+
+| Name    | Description                                                                                             |
+| ------- | ------------------------------------------------------------------------------------------------------- |
+| `click` | Called when the checkbox is clicked.  This occurs after the `update:modelValue` event has been emitted. |
 
 ## Classes
 

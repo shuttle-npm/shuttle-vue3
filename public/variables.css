@@ -47,6 +47,7 @@
     --sv-bg-input-active: 224, 224, 224;
     --sv-bg-input-indicator: 250, 250, 250;
     --sv-bg-input-indicator-active: 250, 250, 250;
+    --sv-bg-input-indicator-disabled: 250, 250, 250;
 
     --sv-bg-navigation--hover: 209, 213, 219;
     --sv-bg-navigation-dropdown: 243, 244, 246;
@@ -129,6 +130,7 @@
     --sv-bg-input-indicator: 47, 47, 47;
     --sv-bg-input-active: 47, 47, 47;
     --sv-bg-input-indicator-active: 26, 26, 26;
+    --sv-bg-input-indicator-disabled: 65, 65, 65;
 
     --sv-bg-navigation--hover: 75, 85, 99;
     --sv-bg-navigation-dropdown: 55, 65, 81;
