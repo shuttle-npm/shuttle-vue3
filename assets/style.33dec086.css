@@ -2956,6 +2956,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-bg-input-active: 224, 224, 224;
     --sv-bg-input-indicator: 250, 250, 250;
     --sv-bg-input-indicator-active: 250, 250, 250;
+    --sv-bg-input-indicator-disabled: 250, 250, 250;
 
     --sv-bg-navigation--hover: 209, 213, 219;
     --sv-bg-navigation-dropdown: 243, 244, 246;
@@ -3038,6 +3039,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-bg-input-indicator: 47, 47, 47;
     --sv-bg-input-active: 47, 47, 47;
     --sv-bg-input-indicator-active: 26, 26, 26;
+    --sv-bg-input-indicator-disabled: 65, 65, 65;
 
     --sv-bg-navigation--hover: 75, 85, 99;
     --sv-bg-navigation-dropdown: 55, 65, 81;
@@ -3513,6 +3515,41 @@ a:hover .title[data-v-a42cc842] {
     --tw-placeholder-opacity: 1;
     color: rgba(var(--sv-placeholder-input), var(--tw-placeholder-opacity))
 }
+.sv-input__input--icon-start {
+    padding-left: 2rem
+}
+.sv-input__input--icon-end {
+    padding-right: 2rem
+}
+.sv-input__input-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center
+}
+.sv-input__icon-start {
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    left: 0px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem
+}
+.sv-input__icon-start--clickable {
+    cursor: pointer
+}
+.sv-input__icon-end {
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    right: 0px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem
+}
+.sv-input__icon-end--clickable {
+    cursor: pointer
+}
 /* Listbox */
 .sv-listbox {
     position: relative
@@ -3908,7 +3945,7 @@ a:hover .title[data-v-a42cc842] {
 .sv-toggle__slider--disabled {
     cursor: default;
     --tw-bg-opacity: 1;
-    background-color: rgba(var(--sv-bg-disabled), var(--tw-bg-opacity))
+    background-color: rgba(var(--sv-bg-input-indicator-disabled), var(--tw-bg-opacity))
 }
 .sv-toggle__box {
     border-width: 1px;

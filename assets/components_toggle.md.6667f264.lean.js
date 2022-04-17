@@ -99,7 +99,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           modelValue: value.value,
           "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => value.value = $event),
           label: "Is this disabled?",
-          disabled: true
+          disabled: ""
         }, null, 8, ["modelValue"]),
         _hoisted_9
       ]);
