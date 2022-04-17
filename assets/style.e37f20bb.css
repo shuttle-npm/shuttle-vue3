@@ -3494,6 +3494,7 @@ a:hover .title[data-v-a42cc842] {
     --tw-ring-color: rgba(var(--sv-ring-default--focus), var(--tw-ring-opacity))
 }
 .sv-input__input {
+    z-index: 10;
     display: block;
     width: 100%;
     --tw-border-opacity: 1;
@@ -3533,6 +3534,7 @@ a:hover .title[data-v-a42cc842] {
     width: 1.25rem;
     position: absolute;
     left: 0px;
+    z-index: 50;
     margin-left: 0.5rem;
     margin-right: 0.5rem
 }
@@ -3544,6 +3546,7 @@ a:hover .title[data-v-a42cc842] {
     width: 1.25rem;
     position: absolute;
     right: 0px;
+    z-index: 50;
     margin-left: 0.5rem;
     margin-right: 0.5rem
 }
