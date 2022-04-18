@@ -10,9 +10,13 @@ const bemSafelist = (prefix) => {
     safelist.push(prefix + '--primary');
     safelist.push(prefix + '--secondary');
     safelist.push(prefix + '--success');
+    safelist.push(prefix + '--success-state');
     safelist.push(prefix + '--danger');
+    safelist.push(prefix + '--danger-state');
     safelist.push(prefix + '--warning');
+    safelist.push(prefix + '--warning-state');
     safelist.push(prefix + '--info');
+    safelist.push(prefix + '--info-state');
     safelist.push(prefix + '--link');
     safelist.push(prefix + '--disabled');
 }
@@ -22,6 +26,7 @@ bemSafelist('sv-alert__icon');
 bemSafelist('sv-alert__icon-close');
 bemSafelist('sv-alerts');
 bemSafelist('sv-button');
+bemSafelist('sv-title');
 
 const generateColorClass = (variable) => {
     return ({ opacityValue }) =>

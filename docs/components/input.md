@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { Input } from "@/components";
-import { EyeIcon, EyeOffIcon, ShieldExclamationIcon } from "@heroicons/vue/outline";
+import { ExclamationIcon, EyeIcon, EyeOffIcon, ShieldExclamationIcon } from "@heroicons/vue/outline";
 
 const value = ref("");
 const iconEndClickCount = ref(0);
@@ -22,6 +22,8 @@ const getEndIcon = () => {
 const getInputType = () => {
     return iconEndClickCount.value % 2 == 0 ? "text" : "password";
 }
+
+const message = ref("");
 </script>
 
 # Input
@@ -82,10 +84,16 @@ Value: {{ value }}
 </template>
 ```
 
+### Alert
+
+<Input v-model="message" label="Block layout" :alert="{ message: 'This is an info message.'}" />
+<Input v-model="message" label="Inline layout" layout="inline" :alert="{ message: 'This is a danger message.', variant: 'danger-state', icon: ExclamationIcon, dismissable: true }" class="mt-2" />
+
 ## Properties
 
 | Name                   | Type      | Default     | Description                                                                                                        |
 | ---------------------- | --------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| `alert`                | `Object`  | `undefined` | An object that has the same properties as an `Alert`.                                                              |
 | `icon-end`             | `null`    | `undefined` | An icon to display at the end of the input.                                                                        |
 | `icon-end-clickable`   | `Boolean` | `false`     | If `true` the `icon-end` is clickable.                                                                             |
 | `icon-start`           | `null`    | `undefined` | An icon to display at the start of the input.                                                                      |

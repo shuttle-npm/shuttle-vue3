@@ -6,7 +6,16 @@ import { VTIconShuttle } from 'shuttle-theme'
         <VTIconShuttle class="logo" />
         <h1 class="tagline">Shuttle Vue</h1>
         <p class="description">Vue 3 UI components built using Tailwind CSS and Headless UI.</p>
-        <pre class="text-red-700">npm install shuttle-vue3</pre>
+        <pre class="install">npm install shuttle-vue3</pre>
+        <div class="actions">
+            <a class="components" href="/shuttle-vue3/components/overview.html">
+                Components
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24">
+                    <path
+                        d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
+                </svg>
+            </a>
+        </div>
     </section>
 
     <section id="highlights" class="vt-box-container">
@@ -16,15 +25,15 @@ import { VTIconShuttle } from 'shuttle-theme'
         </div>
         <div class="vt-box">
             <h2>Why?</h2>
-            <div>These components are for developing Shuttle based web applications. You are welcome to use them and assist in extending the framework.</div>
+            <div>These components are for developing Shuttle based web applications. You are welcome to use them and
+                assist in extending the framework.</div>
         </div>
         <div class="vt-box">
             <h2>Open Source</h2>
             <div>
                 These packages are free open source software licensed under the
-                <a
-                    href="https://opensource.org/licenses/BSD-3-Clause"
-                >3-Clause BSD License</a>. Pull requests are welcome.
+                <a href="https://opensource.org/licenses/BSD-3-Clause">3-Clause BSD License</a>. Pull requests are
+                welcome.
             </div>
         </div>
     </section>
@@ -65,11 +74,9 @@ section {
 
 html:not(.dark) .accent,
 .dark .tagline {
-    background: -webkit-linear-gradient(
-        315deg,
-        hsl(31, 75%, 52%) 25%,
-        hsl(45, 69%, 44%)
-    );
+    background: -webkit-linear-gradient(315deg,
+            hsl(31, 75%, 52%) 25%,
+            hsl(45, 69%, 44%));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -84,6 +91,18 @@ html:not(.dark) .accent,
     margin: 24px auto 40px;
 }
 
+.install {
+    border-radius: .25rem;
+    border: 1px solid rgb(120, 120, 120);
+    padding: .25rem 1rem;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+div.actions {
+    padding-top: 2rem;
+}
+
 .actions a {
     font-size: 16px;
     display: inline-block;
@@ -94,18 +113,7 @@ html:not(.dark) .accent,
     transition: background-color 0.5s, color 0.5s;
 }
 
-.actions .why {
-    background-color: var(--vt-c-indigo);
-    color: var(--vt-c-gray-light-4);
-    margin-right: 18px;
-}
-
-.actions .why:hover {
-    background-color: var(--vt-c-indigo-soft);
-    color: var(--vt-c-gray-light-1);
-}
-
-.actions .get-started {
+.actions .components {
     font-weight: 600;
     background-color: var(--vt-c-orange);
     color: #fff;
@@ -121,34 +129,21 @@ html:not(.dark) .accent,
     transition: transform 0.2s;
 }
 
-.dark .actions .get-started {
+.dark .actions .components {
     color: var(--vt-c-indigo);
 }
 
-.actions .get-started:hover {
+.actions .components:hover {
     background-color: var(--vt-c-orange-dark);
     transition-duration: 0.2s;
 }
 
-.actions .get-started:hover .icon {
+.actions .components:hover .icon {
     transform: translateX(2px);
 }
 
-.dark .actions .get-started:hover {
+.dark .actions .components:hover {
     background-color: var(--vt-c-orange-light);
-}
-
-.actions .upgrade {
-    color: var(--vt-c-text-code);
-}
-
-.actions .upgrade:hover {
-    background-color: var(--vt-c-gray-light-4);
-    transition-duration: 0.2s;
-}
-
-.dark .actions .upgrade:hover {
-    background-color: var(--vt-c-gray-dark-3);
 }
 
 #special-sponsor {
@@ -220,6 +215,7 @@ html:not(.dark) .accent,
         font-size: 64px;
         letter-spacing: -0.5px;
     }
+
     .description {
         font-size: 18px;
         margin-bottom: 48px;
@@ -237,17 +233,21 @@ html:not(.dark) .accent,
     #hero {
         padding: 64px 32px;
     }
+
     .description {
         font-size: 16px;
         margin: 18px 0 30px;
     }
+
     #special-sponsor img {
         display: block;
         margin: 2px auto 1px;
     }
+
     #highlights h3 {
         margin-bottom: 0.6em;
     }
+
     #highlights .vt-box {
         padding: 20px 36px;
     }

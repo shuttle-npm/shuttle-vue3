@@ -56,14 +56,20 @@ const value = ref();
 </template>
 ```
 
+### Alert
+
+<Listbox  v-model="value" :options="options" label="Block layout" :alert="{ message: 'This is an info message.'}" />
+<Listbox  v-model="value" :options="options" label="Inline layout" layout="inline" :alert="{ message: 'This is a danger message.', variant: 'danger-state', icon: ExclamationIcon, dismissable: true }" class="mt-2" />
+
 ## Properties
 
-| Name          | Type     | Default | Description                                                                                                        |
-| ------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `label`       | `String` | ""      | The label to display for the input.                                                                                |
-| `layout`      | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
-| `placeholder` | `String` | ""      | The placeholder to display for the input.                                                                          |
-| `sv-class`    | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+| Name          | Type     | Default     | Description                                                                                                        |
+| ------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| `alert`       | `Object` | `undefined` | An object that has the same properties as an `Alert`.                                                              |
+| `label`       | `String` | ""          | The label to display for the input.                                                                                |
+| `layout`      | `String` | `block`     | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
+| `placeholder` | `String` | ""          | The placeholder to display for the input.                                                                          |
+| `sv-class`    | `Object` | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Classes
 

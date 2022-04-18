@@ -13,9 +13,13 @@ export function useCoreClass(svBem, options) {
         result[svBem + "--primary"] = variant === "primary";
         result[svBem + "--secondary"] = variant === "secondary";
         result[svBem + "--success"] = variant === "success";
+        result[svBem + "--success-state"] = variant === "success-state";
         result[svBem + "--danger"] = variant === "danger";
+        result[svBem + "--danger-state"] = variant === "danger-state";
         result[svBem + "--warning"] = variant === "warning";
+        result[svBem + "--warning-state"] = variant === "warning-state";
         result[svBem + "--info"] = variant === "info";
+        result[svBem + "--info-state"] = variant === "info-state";
         result[svBem + "--link"] = variant === "link";
     }
 

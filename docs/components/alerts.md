@@ -38,13 +38,36 @@ const alertsReference = [
     },
     {
         name: "Information",
-        message: "A simple information alert.",
+        message: "A simple info alert.",
         variant: "info",
         dismissable: true
     }
 ];
 
 const alerts = ref([...alertsReference]);
+
+const stateAlerts = ref([
+    {
+        name: "Success",
+        message: "A simple `success-state` alert.",
+        variant: "success-state",
+    },
+    {
+        name: "Danger",
+        message: "A simple `danger-state` alert.",
+        variant: "danger-state",
+    },
+    {
+        name: "Warning",
+        message: "A simple `warning-state` alert.",
+        variant: "warning-state",
+    },
+    {
+        name: "Information",
+        message: "A simple `info-state` alert.",
+        variant: "info-state",
+    }
+]);
 
 const remove = (alert) => {
     const index = alerts.value.findIndex(item => item.name === alert.name);
@@ -68,7 +91,7 @@ const reset = () => {
 <Button @click="reset" content="Reset" class="mb-2" :disabled="alerts.length >= alertsReference.length"></Button>
 <Alerts :alerts="alerts" @remove="remove" :sv-class="{ 'sv-alert': 'mb-2' }"/>
 
-## Custom Icon
+### Custom Icon
 
 ```vue
 <template>
@@ -76,6 +99,10 @@ const reset = () => {
 </template>
 ```
 <Alert :icon="BeakerIcon" type="primary" message="A simple primary alert with a custom icon." :dismissable="false" />
+
+### State Variants
+
+<Alerts :alerts="stateAlerts" :sv-class="{ 'sv-alert': 'mb-2' }" />
 
 ## Properties
 

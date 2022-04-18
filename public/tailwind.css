@@ -31,14 +31,17 @@
         @apply cursor-pointer;
     }
 
-    /* Alert */
+    /* Alert (variants) */
     .sv-alert {
-        @apply sv-rounded sv-border sv-padding flex flex-row;
+        @apply sv-rounded sv-border sv-padding flex flex-row w-full;
     }
 
-    .sv-alert__icon,
+    .sv-alert__icon {
+        @apply sv-icon mt-1 mr-2;
+    }
+
     .sv-alert__icon-close {
-        @apply sv-icon mt-1;
+        @apply sv-icon mt-1 ml-2;
     }
 
     .sv-alert__icon-close {
@@ -46,7 +49,7 @@
     }
 
     .sv-alert__message {
-        @apply w-full mx-2;
+        @apply w-full;
     }
 
     .sv-alert--primary {
@@ -118,6 +121,55 @@
     }
 
     .sv-alert__icon-close--info {
+        @apply text-info hover:text-info--hover;
+    }
+
+    /* Alert (state variants) */
+    .sv-alert--success-state {
+        @apply border-success text-success font-normal py-1 px-2;
+    }
+
+    .sv-alert__icon--success-state {
+        @apply text-success;
+    }
+
+    .sv-alert__icon-close--success-state {
+        @apply text-success hover:text-success--hover;
+    }
+
+    .sv-alert--danger-state {
+        @apply border-danger text-danger font-normal py-1 px-2;
+    }
+
+    .sv-alert__icon--danger-state {
+        @apply text-danger;
+    }
+
+    .sv-alert__icon-close--danger-state {
+        @apply text-danger hover:text-danger--hover;
+    }
+
+    .sv-alert--warning-state {
+        @apply border-warning text-warning font-normal py-1 px-2;
+    }
+
+    .sv-alert__icon--warning-state {
+        @apply text-warning;
+    }
+
+    .sv-alert__icon-close--warning-state {
+        @apply text-warning hover:text-warning--hover;
+    }
+
+    .sv-alert--info-state {
+        @apply border-info text-info font-normal py-1 px-2;
+    }
+
+    .sv-alert__icon--info-state {
+        @apply text-info;
+    }
+
+    .sv-alert__icon-close--info-state {
         @apply text-info hover:text-info--hover;
     }
 
@@ -220,21 +272,20 @@
     }
 
     /* Input */
-
     .sv-input {
-        @apply flex;
+        @apply grid;
     }
 
     .sv-input--block {
-        @apply flex-col;
+        @apply grid-cols-1;
     }
 
     .sv-input--inline {
-        @apply flex-row items-center;
+        @apply grid-cols-[25%_1fr];
     }
 
     .sv-input__label {
-        @apply whitespace-nowrap mr-2 font-medium text-label;
+        @apply whitespace-nowrap mr-2 font-medium text-label self-center;
     }
 
     .sv-input__label--block {
@@ -245,7 +296,7 @@
     }
 
     .sv-input__input {
-        @apply sv-focus sv-rounded sv-border sv-padding w-full bg-input border-input text-input block placeholder-input;
+        @apply sv-focus sv-rounded sv-border sv-padding w-full bg-input border-input text-input block placeholder-input z-10;
     }
 
     .sv-input__input--icon-start {
@@ -261,7 +312,7 @@
     }
 
     .sv-input__icon-start {
-        @apply absolute left-0 sv-icon mx-2;
+        @apply absolute left-0 sv-icon mx-2 z-50;
     }
 
     .sv-input__icon-start--clickable {
@@ -269,11 +320,19 @@
     }
 
     .sv-input__icon-end {
-        @apply absolute right-0 sv-icon mx-2;
+        @apply absolute right-0 sv-icon mx-2 z-50;
     }
 
     .sv-input__icon-end--clickable {
         @apply sv-clickable;
+    }
+
+    .sv-input__alert {
+        @apply mt-1;
+    }
+
+    .sv-input__alert--inline {
+        @apply col-span-2;
     }
 
     /* Listbox */
@@ -282,15 +341,15 @@
     }
 
     .sv-listbox__container {
-        @apply flex;
+        @apply grid;
     }
 
     .sv-listbox__container--block {
-        @apply flex-col;
+        @apply grid-cols-1;
     }
 
     .sv-listbox__container--inline {
-        @apply flex-row items-center;
+        @apply grid-cols-[25%_1fr];
     }
 
     .sv-listbox__label {
@@ -354,6 +413,14 @@
 
     .sv-listbox__option-icon--selected {
         @apply sv-icon text-input-selected;
+    }
+
+    .sv-listbox__alert {
+        @apply mt-1;
+    }
+
+    .sv-listbox__alert--inline {
+        @apply col-span-2;
     }
 
     /* Navbar */
@@ -458,6 +525,67 @@
         @apply absolute sv-border border-navigation-dropdown;
     }
 
+    /* Title */
+    .sv-title {
+        @apply flex flex-row items-center font-semibold text-primary text-2xl border-0 border-b-2 border-solid pb-2 mb-4 w-full cursor-default;
+    }
+
+    .sv-title--clickable {
+        @apply sv-clickable;
+    }
+
+    .sv-title__icon {
+        @apply sv-icon mr-2;
+    }
+    
+    .sv-title--primary {
+        @apply text-primary border-primary;
+    }
+
+    .sv-title__icon--primary {
+        @apply text-primary;
+    }
+
+    .sv-title--secondary {
+        @apply text-secondary border-secondary;
+    }
+
+    .sv-title__icon--secondary {
+        @apply text-secondary;
+    }
+
+    .sv-title--success {
+        @apply text-success border-success;
+    }
+
+    .sv-title__icon--success {
+        @apply text-success;
+    }
+
+    .sv-title--danger {
+        @apply text-danger border-danger;
+    }
+
+    .sv-title__icon--danger {
+        @apply text-danger;
+    }
+
+    .sv-title--warning {
+        @apply text-warning border-warning;
+    }
+
+    .sv-title__icon--warning {
+        @apply text-warning;
+    }
+
+    .sv-title--info {
+        @apply text-info border-info;
+    }
+
+    .sv-title__icon--info {
+        @apply text-info;
+    }
+    
     /* Toggle */
     .sv-toggle {
         @apply relative flex flex-row items-center h-6;

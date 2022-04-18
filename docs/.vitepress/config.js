@@ -88,6 +88,10 @@ module.exports = (async () => {
                                 link: '/components/navigation'
                             },
                             {
+                                text: 'Title',
+                                link: '/components/title'
+                            },
+                            {
                                 text: 'Toggle',
                                 link: '/components/toggle'
                             },

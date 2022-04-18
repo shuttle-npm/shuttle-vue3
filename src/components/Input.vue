@@ -8,13 +8,22 @@
                 @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''" />
             <component v-if="!!props.iconEnd" :is="getIconEnd?.()" :class="getIconEndClasses()" @click="iconEndClick" />
         </div>
+        <div :class="getAlertClasses()">
+            <Alert v-if="!!alert" :message="alert.message" :variant="alert.variant" :icon="alert.icon" :dismissable="alert.dismissable" @click="alert.click" />
+        </div>
     </div>
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useAlert } from "@/composables/useAlert";
 import { useCoreClass } from "@/composables/useCoreClass";
+import Alert from "./Alert.vue";
 
 const props = defineProps({
+    alert: {
+        type: Object
+    },
     iconEnd: {
         type: null
     },
@@ -123,6 +132,14 @@ const getIconEndClasses = () => {
     ];
 }
 
+const getAlertClasses = () => {
+    return [
+        useCoreClass("sv-input__alert", getOptions(true)),
+        useCoreClass("sv-input__alert--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-input__alert--block", getOptions(getLayout() === "block")),
+    ];
+}
+
 const emit = defineEmits(["update:modelValue", "iconStartClick", "iconEndClick"]);
 
 const iconStartClick = () => {
@@ -140,4 +157,6 @@ const iconEndClick = () => {
 
     emit("iconEndClick");
 }
+
+const alert = useAlert(props);
 </script>
