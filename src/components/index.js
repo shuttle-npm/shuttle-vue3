@@ -2,6 +2,7 @@ import Alert from "./Alert.vue";
 import Alerts from "./Alerts.vue";
 import Button from "./Button.vue";
 import Checkbox from "./Checkbox.vue";
+import Dialog from "./Dialog.vue";
 import Input from "./Input.vue";
 import Listbox from "./Listbox.vue";
 import Navbar from "./Navbar.vue";
@@ -14,6 +15,7 @@ export {
     Alerts,
     Button,
     Checkbox,
+    Dialog,
     Input,
     Listbox,
     Navbar,

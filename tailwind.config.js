@@ -6,7 +6,7 @@ const safelist = [
     'sv-disabled'
 ];
 
-const bemSafelist = (prefix) => {
+const variantSafelist = (prefix) => {
     safelist.push(prefix + '--primary');
     safelist.push(prefix + '--secondary');
     safelist.push(prefix + '--success');
@@ -21,12 +21,26 @@ const bemSafelist = (prefix) => {
     safelist.push(prefix + '--disabled');
 }
 
-bemSafelist('sv-alert');
-bemSafelist('sv-alert__icon');
-bemSafelist('sv-alert__icon-close');
-bemSafelist('sv-alerts');
-bemSafelist('sv-button');
-bemSafelist('sv-title');
+const trasitionSafelist = (name) => {
+    safelist.push(name + '-enter-active');
+    safelist.push(name + '-enter-from');
+    safelist.push(name + '-enter-to');
+    safelist.push(name + '-leave-active');
+    safelist.push(name + '-leave-from');
+    safelist.push(name + '-leave-to');
+}
+
+variantSafelist('sv-alert');
+variantSafelist('sv-alert__icon');
+variantSafelist('sv-alert__icon-close');
+variantSafelist('sv-alerts');
+variantSafelist('sv-button');
+variantSafelist('sv-title');
+
+trasitionSafelist('sv-navigation');
+trasitionSafelist('sv-dialog');
+trasitionSafelist('sv-dialog__overlay');
+trasitionSafelist('sv-dialog__container');
 
 const generateColorClass = (variable) => {
     return ({ opacityValue }) =>
@@ -94,6 +108,7 @@ module.exports = {
                 "navigation--hover": generateColorClass("sv-bg-navigation--hover"),
                 "navbar-menu-toggle": generateColorClass("sv-bg-navbar-menu-toggle"),
                 "navbar-menu-toggle--hover": generateColorClass("sv-bg-navbar-menu-toggle--hover"),
+                "dialog": generateColorClass("sv-bg-dialog"),
             },
             borderColor: {
                 primary: generateColorClass("sv-border-primary"),
@@ -111,6 +126,7 @@ module.exports = {
                 "navigation-dropdown": generateColorClass("sv-border-navigation-dropdown"),
                 "navigation-divider": generateColorClass("sv-border-navigation-divider"),
                 "default--focus": generateColorClass("sv-border-default--focus"),
+                "dialog": generateColorClass("sv-border-dialog"),
             },
             placeholderColor: {
                 input: generateColorClass("sv-placeholder-input"),

@@ -6,9 +6,7 @@
                 <component :is="getButtonIcon(item)" :class="getButtonIconClasses()" />
             </MenuButton>
             <a v-if="!item.items?.length" @click="click(item)" :class="getLinkClasses(item)">{{ item.text }}</a>
-            <transition enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
+           <transition name="sv-navigation">
                 <MenuItems :class="getDropdownClasses()">
                     <MenuItem v-for="subitem in item.items" :key="subitem.text" v-slot="{ active }" as="div">
                     <div v-if="getItemType(subitem) === 'divider'" :class="getDividerClasses(active)"></div>

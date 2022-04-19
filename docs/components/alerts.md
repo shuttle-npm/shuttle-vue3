@@ -2,8 +2,7 @@
 import { ref } from "vue";
 import { BeakerIcon } from '@heroicons/vue/outline'
 import { Alert } from "@/components";
-import Alerts from "@/components/Alerts.vue";
-import Button from "@/components/Button.vue";
+import { Alerts, Button } from "@/components";
 
 const alertsReference = [
     {

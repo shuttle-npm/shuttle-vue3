@@ -72,6 +72,10 @@ module.exports = (async () => {
                                 link: '/components/checkbox'
                             },
                             {
+                                text: 'Dialog',
+                                link: '/components/dialog'
+                            },
+                            {
                                 text: 'Input',
                                 link: '/components/input'
                             },

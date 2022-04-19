@@ -175,7 +175,7 @@
 
     /* Button */
     .sv-button {
-        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit content-center justify-center px-3 whitespace-nowrap;
+        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit content-center justify-center px-3 whitespace-nowrap select-none;
     }
 
     .sv-button__icon {
@@ -269,6 +269,66 @@
 
     .sv-checkbox__label--disabled {
         @apply cursor-default text-disabled;
+    }
+
+    /* Dialog */
+    .sv-dialog {
+        @apply fixed inset-0 z-[100] overflow-y-auto min-h-screen px-4 text-center;
+    }
+
+    .sv-dialog__overlay {
+        @apply fixed inset-0 bg-black opacity-40;
+    }
+
+    .sv-dialog__container {
+        @apply inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform rounded-lg bg-dialog;
+    }
+
+    .sv-dialog__title {
+        @apply text-lg font-medium leading-6 text-gray-900 border-0 border-b-2 border-gray-700 border-solid pb-2 mb-4;
+    }
+
+    .sv-dialog__message {
+        @apply text-dialog;
+    }
+
+    /* Dialog transition */
+    .sv-dialog-enter-active {
+        @apply transition transform duration-300 ease-out;
+    }
+    .sv-dialog-enter-from {
+        @apply opacity-0 scale-95;
+    }
+    .sv-dialog-enter-to {
+        @apply opacity-100 scale-100;
+    }
+    .sv-dialog-leave-active {
+        @apply transition transform duration-200 ease-in;
+    }
+    .sv-dialog-leave-from {
+        @apply opacity-100 scale-100;
+    }
+    .sv-dialog-leave-to {
+        @apply opacity-0 scale-95;
+    }
+
+    .sv-dialog__overlay-enter-active {
+        @apply transition-opacity duration-300 ease-out;
+    }
+    .sv-dialog__overlay-enter-from {
+        @apply opacity-0;
+    }
+    .sv-dialog__overlay-enter-to {
+        @apply opacity-100;
+    }
+    .sv-dialog__overlay-leave-active {
+        @apply transition-opacity duration-200 ease-in;
+    }
+    .sv-dialog__overlay-leave-from {
+        @apply opacity-100;
+    }
+    .sv-dialog__overlay-leave-to {
+        @apply opacity-0;
     }
 
     /* Input */
@@ -449,20 +509,17 @@
     }
 
     .sv-navbar__top-minimal {
-        
     }
 
     .sv-navbar__navigation-minimal {
-
     }
 
     .sv-navbar__bottom-minimal {
-
     }
 
     /* Navigation */
     .sv-navigation {
-        @apply w-full flex items-center;
+        @apply w-full flex items-center select-none;
     }
 
     .sv-navigation--minimal {
@@ -525,6 +582,26 @@
         @apply absolute sv-border border-navigation-dropdown;
     }
 
+    /* Navigation transition */
+    .sv-navigation-enter-active {
+        @apply transition duration-100 ease-out;
+    }
+    .sv-navigation-enter-from {
+        @apply transform scale-95 opacity-0;
+    }
+    .sv-navigation-enter-to {
+        @apply transform scale-100 opacity-100;
+    }
+    .sv-navigation-leave-active {
+        @apply transition duration-75 ease-in;
+    }
+    .sv-navigation-leave-from {
+        @apply transform scale-100 opacity-100;
+    }
+    .sv-navigation-leave-to {
+        @apply transform scale-95 opacity-0;
+    }
+
     /* Title */
     .sv-title {
         @apply flex flex-row items-center font-semibold text-primary text-2xl border-0 border-b-2 border-solid pb-2 mb-4 w-full cursor-default;
@@ -537,7 +614,7 @@
     .sv-title__icon {
         @apply sv-icon mr-2;
     }
-    
+
     .sv-title--primary {
         @apply text-primary border-primary;
     }
@@ -585,7 +662,7 @@
     .sv-title__icon--info {
         @apply text-info;
     }
-    
+
     /* Toggle */
     .sv-toggle {
         @apply relative flex flex-row items-center h-6;
@@ -608,7 +685,7 @@
     }
 
     .sv-toggle__slider--on {
-        @apply translate-x-6 bg-input-indicator-active
+        @apply translate-x-6 bg-input-indicator-active;
     }
 
     .sv-toggle__slider--disabled {
