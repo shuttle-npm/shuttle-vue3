@@ -60,12 +60,16 @@ module.exports = (async () => {
                         text: 'Components',
                         items: [
                             {
-                                text: 'Alerts',
-                                link: '/components/alerts'
+                                text: 'Alert',
+                                link: '/components/alert'
                             },
                             {
-                                text: 'Buttons',
-                                link: '/components/buttons'
+                                text: 'Button',
+                                link: '/components/button'
+                            },
+                            {
+                                text: 'Button Group',
+                                link: '/components/button-group'
                             },
                             {
                                 text: 'Checkbox',

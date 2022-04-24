@@ -10,7 +10,7 @@ const click = (type) => {
 }
 </script>
 
-# Buttons
+# Button
 
 ## Examples
 
@@ -38,7 +38,8 @@ const click = (type) => {
 </template>
 ```
 
----
+### With Icon
+
 <div class="flex flex-row">
 <Button :icon="PlayIcon">Custom Icon</Button>
 <Button :disabled="true" class="ml-2">Disabled</Button>

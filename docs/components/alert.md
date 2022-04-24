@@ -83,7 +83,7 @@ const reset = () => {
 }
 </script>
 
-# Alerts
+# Alert
 
 ## Examples (dismissable)
 

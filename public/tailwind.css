@@ -242,6 +242,35 @@
         @apply text-link;
     }
 
+    /* ButtonGroup */
+    .sv-button-group {
+        @apply flex flex-row;
+    }
+
+    .sv-button-group__button {
+        @apply sv-border whitespace-nowrap first:rounded-l-md last:rounded-r-md cursor-pointer px-2 py-1 bg-input border-input hover:border-input--hover flex flex-row items-center justify-center active:bg-input--active;
+    }
+
+    .sv-button-group__button--disabled {
+        @apply cursor-default border-disabled bg-disabled active:bg-disabled hover:border-disabled;
+    }
+
+    .sv-button-group__button--selected {
+        @apply border-input-selected bg-input-selected;
+    }
+
+    .sv-button-group__button-icon {
+        @apply h-4 w-4 mr-1;
+    }
+
+    .sv-button-group__button-label {
+        @apply ml-2;
+    }
+
+    .sv-button-group__button-label--disabled {
+        @apply text-disabled;
+    }
+
     /* Checkbox */
     .sv-checkbox {
         @apply flex flex-row items-center h-4;
@@ -252,7 +281,7 @@
     }
 
     .sv-checkbox__box--checked {
-        @apply border-input-active bg-input-active;
+        @apply border-input--active bg-input-selected;
     }
 
     .sv-checkbox__box--disabled {
@@ -694,7 +723,7 @@
     }
 
     .sv-toggle__slider--on {
-        @apply translate-x-6 bg-input-indicator-active;
+        @apply translate-x-6 bg-input-indicator-selected;
     }
 
     .sv-toggle__slider--disabled {
@@ -706,7 +735,7 @@
     }
 
     .sv-toggle__box--on {
-        @apply border-input-active bg-input-active;
+        @apply border-input--active bg-input-selected;
     }
 
     .sv-toggle__box--disabled {

@@ -1,0 +1,136 @@
+<script setup>
+import { ref } from "vue";
+import { Alert, Button, ButtonGroup } from "@/components";
+import { EmojiHappyIcon, EmojiSadIcon } from '@heroicons/vue/outline'
+
+const value = ref();
+
+const message = ref("You can click a button to change this message.");
+
+const click = (button) => {
+    message.value = `You clicked the "${button.text}" button with value "${button.value}".`;
+}
+
+const buttons = ref([
+    {
+        text: "Left",
+        value: "left-value"
+    },
+    {
+        text: "Middle",
+        value: "middle-value"
+    },
+    {
+        text: "Right",
+        value: "right-value"
+    },
+]);
+
+const buttonsWithIcon = ref([
+    {
+        text: "Left",
+        value: "left-value",
+        icon: EmojiSadIcon
+    },
+    {
+        text: "Middle",
+        value: "middle-value"
+    },
+    {
+        text: "Right",
+        value: "right-value",
+        icon: EmojiHappyIcon
+    },
+]);
+</script>
+
+# Button Group
+
+## Examples
+
+Value: {{ value }}
+
+<Alert variant="info" :message="message" class="mb-4" />
+
+<ButtonGroup :buttons="buttons" @click="click" v-model="value" />
+
+```vue
+<script setup>
+const buttons = ref([
+    {
+        text: "Left",
+        value: "left-value"
+    },
+    {
+        text: "Middle",
+        value: "middle-value"
+    },
+    {
+        text: "Right",
+        value: "right-value"
+    },
+]);
+</script>
+
+<template>
+    <ButtonGroup :buttons="buttons" @click="click" v-model="value" />
+</template>
+```
+
+### With Icon
+
+<ButtonGroup :buttons="buttonsWithIcon" @click="click" v-model="value" />
+
+```vue
+<script setup>
+import { EmojiHappyIcon, EmojiSadIcon } from '@heroicons/vue/outline';
+
+const buttonsWithIcon = ref([
+    {
+        text: "Left",
+        value: "left-value",
+        icon: EmojiSadIcon
+    },
+    {
+        text: "Middle",
+        value: "middle-value"
+    },
+    {
+        text: "Right",
+        value: "right-value",
+        icon: EmojiHappyIcon
+    },
+]);
+</script>
+
+<template>
+    <Button :icon="PlayIcon">Custom Icon</Button>
+    <Button :disabled="true">Disabled</Button>
+<template>
+```
+
+### Disabled
+
+<ButtonGroup :buttons="buttonsWithIcon" @click="click" v-model="value" :disabled="true" />
+
+## Properties
+
+| Name       | Type      | Default | Description                                                                                                        |
+| ---------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `buttons`  | `Array`   | `[]`    | An `array` of buttons to render.  May contain the following properties: <br/>- `text` <br/>- `value` <br/>- `icon` |
+| `disabled` | `Boolean` | `false` | Indicates whether the checkbox is in a disabled state.                                                             |
+| `sv-class` | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+
+## Events
+
+| Name    | Description                                                                      |
+| ------- | -------------------------------------------------------------------------------- |
+| `click` | Called when the button is clicked.  Receive the clicked `button` as an argument. |
+
+## Classes
+
+- `sv-button-group`
+- `sv-button-group__button`
+  -  `sv-button-group__button--selected`
+- `sv-button-group__button-icon`
+- `sv-button-group__button-text`

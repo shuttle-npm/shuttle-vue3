@@ -1,6 +1,7 @@
 import Alert from "./Alert.vue";
 import Alerts from "./Alerts.vue";
 import Button from "./Button.vue";
+import ButtonGroup from "./ButtonGroup.vue";
 import Checkbox from "./Checkbox.vue";
 import Dialog from "./Dialog.vue";
 import Form from "./Form.vue";
@@ -15,6 +16,7 @@ export {
     Alert,
     Alerts,
     Button,
+    ButtonGroup,
     Checkbox,
     Dialog,
     Form,
