@@ -15,7 +15,6 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
 import { useAlert } from "@/composables/useAlert";
 import { useCoreClass } from "@/composables/useCoreClass";
 import Alert from "./Alert.vue";

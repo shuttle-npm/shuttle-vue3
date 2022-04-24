@@ -157,6 +157,33 @@ The items represent a menu that is one level deep:
 ]
 ```
 
+### Items
+
+The items represent a menu that is one level deep:
+
+```js
+[
+    {
+        text: "some text",
+        to: "represents a route"
+        disabled: true|false // defaults to false
+    }, // or
+    {
+        text: "some text",
+        items: [
+            {
+                text: "some text",
+                to: "represents a route"
+                disabled: true|false // defaults to false
+            }
+            {
+                type: "divider|item",
+            }
+        ]
+    }
+]
+```
+
 ## Classes
 
 - `sv-navigation`

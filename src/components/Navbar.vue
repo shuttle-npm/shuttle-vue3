@@ -1,7 +1,7 @@
 <template>
     <Disclosure as="nav" v-slot="{ open }">
         <div :class="getClasses()">
-            <DisclosureButton :class="getMenuToggleClasses()">
+            <DisclosureButton v-if="props.showMenuToggle" :class="getMenuToggleClasses()">
                 <span class="sr-only">Open main menu</span>
                 <XIcon v-if="open" class="h-8 w-8" aria-hidden="true" />
                 <MenuIcon v-else class="h-8 w-8" aria-hidden="true" />
@@ -37,9 +37,11 @@ import {
 import { MenuIcon, XIcon } from "@heroicons/vue/outline"
 import { useCoreClass } from "@/composables/useCoreClass";
 
-const emit = defineEmits(["click"]);
-
 const props = defineProps({
+    showMenuToggle: {
+        type: Boolean,
+        default: true
+    },
     svClass: {
         type: Object
     }
@@ -84,13 +86,13 @@ const getEndClasses = () => {
 
 const getPanelMinimalClasses = () => {
     return [
-        useCoreClass("sv-navbar__panel-minimal", getOptions(true)),
+        useCoreClass("sv-navbar__panel--minimal", getOptions(true)),
     ];
 };
 
 const getTopMinimalClasses = () => {
     return [
-        useCoreClass("sv-top-minimal", getOptions(true)),
+        useCoreClass("sv-navbar__sv-top-minimal", getOptions(true)),
     ];
 };
 
@@ -102,7 +104,7 @@ const getNavigationMinimalClasses = () => {
 
 const getBottomMinimalClasses = () => {
     return [
-        useCoreClass("sv-navbar__bottom--minimal", getOptions(true)),
+        useCoreClass("sv-navbar__bottom-minimal", getOptions(true)),
     ];
 };
 </script>

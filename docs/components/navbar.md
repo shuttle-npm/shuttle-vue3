@@ -71,6 +71,7 @@ const profileItems = ref([
 
 const message = ref("You can click a navigation item to change this message.");
 const minimal = ref(false);
+const showMenuToggle = ref(true);
 
 const click = (item) => {
     message.value = `You clicked the "${item.text}" item that routes to "${item.to}".`;
@@ -82,9 +83,10 @@ const click = (item) => {
 ## Example
 
 <Alert type="info" :message="message" class="mb-4" />
+<Toggle v-model="showMenuToggle" label="Show menu toggle (minimal)?" :sv-class="{ 'sv-toggle': 'mb-4' }" />
 
 <div class="sv-border border-gray-400">
-<Navbar :items="items" :sv-class="{ 'sv-navbar': 'px-2', 'sv-navigation__link': 'vt-doc-ignore' }" @click="click">
+<Navbar :items="items" :sv-class="{ 'sv-navbar': 'px-2', 'sv-navigation__link': 'vt-doc-ignore' }" :show-menu-toggle="showMenuToggle">
     <template #start>
         <div class="flex flex-row items-center mr-2">
             <VTIconShuttle class="h-10 w-10" />
@@ -97,7 +99,7 @@ const click = (item) => {
     <template #end>
         <div class="flex flex-row items-center">
             <div class="hidden sm:block">
-                <Navigation :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" />
+                <Navigation :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" @click="click" />
             </div>
             <IconGitHub class="h-5 w-5 fill-gray-500 mx-2 cursor-pointer" />
         </div>
@@ -106,7 +108,7 @@ const click = (item) => {
         <Navigation :minimal="true" :items="items" @click="click" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }"/>
     </template>
     <template #bottom-minimal>
-        <Navigation :minimal="true" :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" />
+        <Navigation :minimal="true" :items="profileItems" :sv-class="{ 'sv-navigation__link': 'vt-doc-ignore' }" dropdown-alignment="right" @click="click" />
     </template>
 </Navbar>
 </div>
@@ -193,7 +195,7 @@ const profileItems = ref([
         <template #end>
             <div class="flex flex-row items-center">
                 <div class="hidden sm:block">
-                    <Navigation :items="profileItems" dropdown-alignment="right" />
+                    <Navigation :items="profileItems" dropdown-alignment="right" @click="click" />
                 </div>
                 <IconGitHub class="h-5 w-5 fill-gray-500 mx-2 cursor-pointer" />
             </div>
@@ -202,7 +204,7 @@ const profileItems = ref([
             <Navigation :minimal="true" :items="items" @click="click" />
         </template>
         <template #bottom-minimal>
-            <Navigation :minimal="true" :items="profileItems" />
+            <Navigation :minimal="true" :items="profileItems" @click="click" />
         </template>
     </Navbar>
 <template>
@@ -210,37 +212,10 @@ const profileItems = ref([
 
 ## Properties
 
-| Name       | Type     | Default | Description                                                                                                        |
-| ---------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `items`    | `Array`  | `[]`    | The items that should be rendered in the navigation menu,                                                          |
-| `sv-class` | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
-
-### Items
-
-The items represent a menu that is one level deep:
-
-```js
-[
-    {
-        text: "some text",
-        to: "represents a route"
-        disabled: true|false // defaults to false
-    }, // or
-    {
-        text: "some text",
-        items: [
-            {
-                text: "some text",
-                to: "represents a route"
-                disabled: true|false // defaults to false
-            }
-            {
-                type: "divider|item",
-            }
-        ]
-    }
-]
-```
+| Name               | Type      | Default | Description                                                                                                        |
+| ------------------ | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `show-menu-toggle` | `Boolean` | `true`  | The items that should be rendered in the navigation menu,                                                          |
+| `sv-class`         | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Classes
 

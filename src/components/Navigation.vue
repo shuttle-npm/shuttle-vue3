@@ -5,12 +5,12 @@
                 <div v-if="item.text" :class="getButtonTextClasses()">{{ item.text }}</div>
                 <component :is="getButtonIcon(item)" :class="getButtonIconClasses()" />
             </MenuButton>
-            <a v-if="!item.items?.length" @click="click(item)" :class="getLinkClasses(item)">{{ item.text }}</a>
+            <a v-if="!item.items?.length" @click="click(item, $event)" :class="getLinkClasses(item)">{{ item.text }}</a>
            <transition name="sv-navigation">
                 <MenuItems :class="getDropdownClasses()">
                     <MenuItem v-for="subitem in item.items" :key="subitem.text" v-slot="{ active }" as="div">
                     <div v-if="getItemType(subitem) === 'divider'" :class="getDividerClasses(active)"></div>
-                    <a v-else @click="click(subitem)" :class="getLinkClasses(subitem, active)">{{ subitem.text }}</a>
+                    <a v-else @click="click(subitem, $event)" :class="getLinkClasses(subitem, active)">{{ subitem.text }}</a>
                     </MenuItem>
                 </MenuItems>
             </transition>
@@ -25,7 +25,9 @@ import { useCoreClass } from "@/composables/useCoreClass";
 
 const emit = defineEmits(["click"]);
 
-const click = (item) => {
+const click = (item, event) => {
+    event.stopPropagation();
+
     if (item.disabled ?? false) {
         return;
     }
