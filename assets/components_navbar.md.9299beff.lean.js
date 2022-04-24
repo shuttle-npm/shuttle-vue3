@@ -2,7 +2,7 @@ import { o as openBlock, c as createBlock, a as createVNode, w as withCtx, f as 
 import { _ as _sfc_main$3 } from "./chunks/Alert.45f4c826.js";
 import { a as aa, i as ia, r as ra } from "./chunks/headlessui.esm.38e5f17b.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
-import { _ as _sfc_main$5 } from "./chunks/Navigation.14a87eaa.js";
+import { _ as _sfc_main$5 } from "./chunks/Navigation.6a307c6f.js";
 import { _ as _sfc_main$4 } from "./chunks/Toggle.52fb6494.js";
 function render$2(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
@@ -98,12 +98,12 @@ const _sfc_main$2 = {
     };
     const getPanelMinimalClasses = () => {
       return [
-        useCoreClass("sv-navbar__panel-minimal", getOptions(true))
+        useCoreClass("sv-navbar__panel--minimal", getOptions(true))
       ];
     };
     const getTopMinimalClasses = () => {
       return [
-        useCoreClass("sv-top-minimal", getOptions(true))
+        useCoreClass("sv-navbar__sv-top-minimal", getOptions(true))
       ];
     };
     const getNavigationMinimalClasses = () => {
@@ -113,7 +113,7 @@ const _sfc_main$2 = {
     };
     const getBottomMinimalClasses = () => {
       return [
-        useCoreClass("sv-navbar__bottom--minimal", getOptions(true))
+        useCoreClass("sv-navbar__bottom-minimal", getOptions(true))
       ];
     };
     return (_ctx, _cache) => {
@@ -317,8 +317,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           createVNode(unref(_sfc_main$2), {
             items: items.value,
             "sv-class": { "sv-navbar": "px-2", "sv-navigation__link": "vt-doc-ignore" },
-            "show-menu-toggle": showMenuToggle.value,
-            onClick: click
+            "show-menu-toggle": showMenuToggle.value
           }, {
             start: withCtx(() => [
               createBaseVNode("div", _hoisted_4, [
@@ -339,7 +338,8 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
                   createVNode(unref(_sfc_main$5), {
                     items: profileItems.value,
                     "sv-class": { "sv-navigation__link": "vt-doc-ignore" },
-                    "dropdown-alignment": "right"
+                    "dropdown-alignment": "right",
+                    onClick: click
                   }, null, 8, ["items"])
                 ]),
                 createVNode(IconGitHub, { class: "h-5 w-5 fill-gray-500 mx-2 cursor-pointer" })
@@ -358,7 +358,8 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
                 minimal: true,
                 items: profileItems.value,
                 "sv-class": { "sv-navigation__link": "vt-doc-ignore" },
-                "dropdown-alignment": "right"
+                "dropdown-alignment": "right",
+                onClick: click
               }, null, 8, ["items"])
             ]),
             _: 1

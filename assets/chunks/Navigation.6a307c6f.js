@@ -40,8 +40,9 @@ const _sfc_main = {
   emits: ["click"],
   setup(__props, { emit }) {
     const props = __props;
-    const click = (item) => {
+    const click = (item, event) => {
       var _a2;
+      event.stopPropagation();
       if ((_a2 = item.disabled) != null ? _a2 : false) {
         return;
       }
@@ -168,7 +169,7 @@ const _sfc_main = {
                 }, 1032, ["class"])) : createCommentVNode("", true),
                 !((_b = item.items) == null ? void 0 : _b.length) ? (openBlock(), createElementBlock("a", {
                   key: 1,
-                  onClick: ($event) => click(item),
+                  onClick: ($event) => click(item, $event),
                   class: normalizeClass(getLinkClasses(item))
                 }, toDisplayString(item.text), 11, _hoisted_1)) : createCommentVNode("", true),
                 createVNode(Transition, { name: "sv-navigation" }, {
@@ -188,7 +189,7 @@ const _sfc_main = {
                                 class: normalizeClass(getDividerClasses())
                               }, null, 2)) : (openBlock(), createElementBlock("a", {
                                 key: 1,
-                                onClick: ($event) => click(subitem),
+                                onClick: ($event) => click(subitem, $event),
                                 class: normalizeClass(getLinkClasses(subitem, active))
                               }, toDisplayString(subitem.text), 11, _hoisted_2))
                             ]),

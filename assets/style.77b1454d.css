@@ -4094,7 +4094,29 @@ a:hover .title[data-v-a42cc842] {
     align-items: center;
     justify-content: flex-end
 }
+.sv-navbar__panel--minimal {
+    display: flex;
+    flex-direction: column
+}
+.sv-navbar__panel--minimal > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
+}
+.sv-navbar__panel--minimal {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem
+}
+@media (min-width: 640px) {
+    .sv-navbar__panel--minimal {
+        display: none
+    }
+}
 .sv-navbar__navigation-minimal {
+    }
+.sv-navbar__bottom-minimal {
     }
 /* Navigation */
 .sv-navigation {
