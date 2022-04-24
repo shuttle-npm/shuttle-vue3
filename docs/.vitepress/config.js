@@ -76,6 +76,10 @@ module.exports = (async () => {
                                 link: '/components/dialog'
                             },
                             {
+                                text: 'Form',
+                                link: '/components/form'
+                            },
+                            {
                                 text: 'Input',
                                 link: '/components/input'
                             },

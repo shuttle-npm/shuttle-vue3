@@ -8,8 +8,8 @@
 import { useCoreClass } from "@/composables/useCoreClass";
 
 const props = defineProps({
-    showMenuToggle: {
-        type: Boolean,
+    size: {
+        type: String,
         default: true
     },
     svClass: {
@@ -26,7 +26,10 @@ const getOptions = (include) => {
 
 const getClasses = () => {
     return [
-        useCoreClass("sv-navbar", getOptions(true)),
+        useCoreClass("sv-form", getOptions(true)),
+        useCoreClass("sv-form--small", getOptions(props.size == "small")),
+        useCoreClass("sv-form--medium", getOptions(props.size == "medium")),
+        useCoreClass("sv-form--large", getOptions(props.size == "large")),
     ];
 };
 </script>

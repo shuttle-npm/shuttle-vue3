@@ -331,6 +331,15 @@
         @apply opacity-0;
     }
 
+    /* Form */
+    .sv-form {
+        @apply w-full mx-auto;
+    }
+
+    .sv-form--small {
+        @apply lg:w-1/4 mx-auto;
+    }
+
     /* Input */
     .sv-input {
         @apply grid;

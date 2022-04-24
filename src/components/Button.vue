@@ -1,5 +1,5 @@
 <template>
-    <div :class="getClasses()" @click="click" tabindex="0">
+    <div :class="getClasses()" @click="click($event)" @keydown.space="click($event)" @keydown.enter="click($event)" tabindex="0">
         <component :is="getIcon()" :class="getIconClasses()" />
         {{props.content}}
         <slot></slot>
@@ -21,7 +21,10 @@ const props = defineProps({
     },
 })
 
-const click = () => {
+const click = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+
     if (props.disabled) {
         return;
     }

@@ -1,37 +1,16 @@
 <script setup>
 import { ref } from "vue";
-import { Button, Dialog } from "@/components";
-
-const isOpen = ref(false);
-
-const setIsOpen = (value) => {
-    isOpen.value = value;
-}
+import { Button, Input, Form } from "@/components";
 </script>
 
-# Dialog
+# Form
 
 ## Examples
 
-<Button @click="setIsOpen(true)">Show</Button>
-<Dialog :is-open="isOpen" :set-is-open="setIsOpen" title="Dialog Title" message="A message for the dialog.">
-<template v-slot:default>
-<div>
-    <div class="mt-2">
-        <p class="text-sm text-gray-500">
-            This text is provided in the default slot.
-        </p>
-    </div>
-    <div class="mt-4">
-        <button type="button"
-            class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white0 bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
-            @click="setIsOpen(false)">
-            Button
-        </button>
-    </div>
-</div>
-</template>
-</Dialog>
+<Form class="border border-solid border-gray-600 p-2 rounded">
+<Input label="What is your favourite movie?" />
+<Button class="pt-2">Submit</Button>
+</Form>
 
 ## Properties
 
