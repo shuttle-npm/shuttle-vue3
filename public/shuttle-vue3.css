@@ -694,10 +694,22 @@
     margin-left: auto;
     margin-right: auto
 }
+@media (min-width: 768px) {
+    .sv-form--small {
+        width: 50%
+    }
+}
 @media (min-width: 1024px) {
     .sv-form--small {
         width: 25%
     }
+}
+@media (min-width: 768px) {
+    .sv-form--medium {
+        width: 75%
+    }
+}
+@media (min-width: 1024px) {
     .sv-form--medium {
         width: 50%
     }

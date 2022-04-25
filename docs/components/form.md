@@ -44,9 +44,9 @@ const buttons = ref([
 
 ## Events
 
-| Name    | Description                        |
-| ------- | ---------------------------------- |
-| `click` | Called when the button is clicked. |
+| Name     | Description                                                           |
+| -------- | --------------------------------------------------------------------- |
+| `submit` | Called when the form is submitted (enter is pressed within the form). |
 
 ## Classes
 

@@ -1,5 +1,5 @@
 <template>
-    <form :class="getClasses()">
+    <form :class="getClasses()" v-on:submit.prevent="submit">
         <slot></slot>
     </form>
 </template>
@@ -16,6 +16,12 @@ const props = defineProps({
         type: Object
     }
 });
+
+const emit = defineEmits(["submit"]);
+
+const submit = () => {
+    emit("submit");
+}
 
 const getOptions = (include) => {
     return {
