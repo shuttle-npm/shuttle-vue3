@@ -63,10 +63,7 @@ import { PlayIcon } from '@heroicons/vue/outline'
 
 ## Classes
 
-- `sv-button`
-  -  `--{variant}`
-  -  `--disabled`
-
-- `sv-button__icon`
-  -  `--{variant}`
-  -  `--disabled`
+- `sv-title`
+  -  `sv-title--{variant}`
+  -  `sv-title--clickable`
+- `sv-title__icon`

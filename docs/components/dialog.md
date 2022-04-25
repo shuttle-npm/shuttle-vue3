@@ -52,7 +52,6 @@ const setIsOpen = (value) => {
 - `sv-button`
   -  `--{variant}`
   -  `--disabled`
-
 - `sv-button__icon`
   -  `--{variant}`
   -  `--disabled`

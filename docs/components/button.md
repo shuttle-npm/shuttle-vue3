@@ -75,7 +75,6 @@ import { PlayIcon } from '@heroicons/vue/outline'
 - `sv-button`
   -  `--{variant}`
   -  `--disabled`
-
 - `sv-button__icon`
   -  `--{variant}`
   -  `--disabled`

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { Alert, Button, ButtonGroup } from "@/components";
-import { EmojiHappyIcon, EmojiSadIcon } from '@heroicons/vue/outline'
+import { ArrowCircleLeftIcon, ArrowCircleRightIcon } from '@heroicons/vue/outline'
 
 const value = ref();
 
@@ -30,7 +30,7 @@ const buttonsWithIcon = ref([
     {
         text: "Left",
         value: "left-value",
-        icon: EmojiSadIcon
+        icon: ArrowCircleLeftIcon
     },
     {
         text: "Middle",
@@ -39,7 +39,7 @@ const buttonsWithIcon = ref([
     {
         text: "Right",
         value: "right-value",
-        icon: EmojiHappyIcon
+        icon: ArrowCircleRightIcon
     },
 ]);
 </script>
@@ -76,6 +76,10 @@ const buttons = ref([
     <ButtonGroup :buttons="buttons" @click="click" v-model="value" />
 </template>
 ```
+
+### Label
+<ButtonGroup label="Block layout" :buttons="buttons" @click="click" v-model="value" />
+<ButtonGroup label="Inline layout" layout="inline" :buttons="buttons" @click="click" v-model="value" class="mt-2" />
 
 ### With Icon
 
@@ -130,6 +134,14 @@ const buttonsWithIcon = ref([
 ## Classes
 
 - `sv-button-group`
+  - `sv-button-group--block`
+  - `sv-button-group--inline`
+- `sv-button-group__label`
+  - `sv-button-group__label--block`
+  - `sv-button-group__label--inline`
+- `sv-button-group__box`
+  - `sv-button-group__box--block`
+  - `sv-button-group__box--inline`
 - `sv-button-group__button`
   -  `sv-button-group__button--selected`
 - `sv-button-group__button-icon`

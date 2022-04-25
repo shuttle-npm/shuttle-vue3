@@ -430,6 +430,26 @@
 }
 /* ButtonGroup */
 .sv-button-group {
+    display: grid
+}
+.sv-button-group--block {
+    grid-template-columns: repeat(1, minmax(0, 1fr))
+}
+.sv-button-group--inline {
+    grid-template-columns: 25% 1fr;
+    align-items: center
+}
+.sv-button-group__label {
+    margin-right: 0.5rem;
+    white-space: nowrap;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgba(var(--sv-text-label), var(--tw-text-opacity))
+}
+.sv-button-group__label--block {
+    margin-bottom: 0.5rem
+}
+.sv-button-group__box {
     display: flex;
     flex-direction: row
 }
@@ -672,17 +692,21 @@
 /* Form */
 .sv-form {
     margin-left: auto;
-    margin-right: auto;
-    width: 100%
-}
-.sv-form--small {
-    margin-left: auto;
     margin-right: auto
 }
 @media (min-width: 1024px) {
     .sv-form--small {
         width: 25%
     }
+    .sv-form--medium {
+        width: 50%
+    }
+    .sv-form--large {
+        width: 75%
+    }
+}
+.sv-form--full {
+    width: 100%
 }
 /* Input */
 .sv-input {

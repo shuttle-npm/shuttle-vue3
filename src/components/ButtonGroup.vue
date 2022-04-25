@@ -1,9 +1,12 @@
 <template>
     <div :class="getClasses()">
-        <div v-for="button in buttons" :class="getButtonClasses(button)" @click="click($event, button)"
-            @keydown.space="click($event, button)" @keydown.enter="click($event, button)" tabindex="0">
-            <component :is="getIcon(button)" :class="getIconClasses(button)" />
-            <span :class="getTextClasses(button)">{{ button.text }}</span>
+        <label v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</label>
+        <div :class="getBoxClasses()">
+            <div v-for="button in buttons" :class="getButtonClasses(button)" @click="click($event, button)"
+                @keydown.space="click($event, button)" @keydown.enter="click($event, button)" tabindex="0">
+                <component :is="getIcon(button)" :class="getIconClasses(button)" />
+                <span :class="getTextClasses(button)">{{ button.text }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -24,6 +27,10 @@ const props = defineProps({
     },
     label: {
         type: String,
+    },
+    layout: {
+        type: String,
+        default: "block"
     },
     modelValue: {
         type: String,
@@ -50,6 +57,10 @@ const getIcon = (button) => {
     return button.icon ? button.icon : undefined;
 }
 
+const getLayout = () => {
+    return (props.layout ?? "block").toLowerCase();
+}
+
 const getOptions = (include) => {
     return {
         svClass: props.svClass,
@@ -60,6 +71,24 @@ const getOptions = (include) => {
 const getClasses = () => {
     return [
         useCoreClass("sv-button-group", getOptions(true)),
+        useCoreClass("sv-button-group--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-button-group--block", getOptions(getLayout() === "block"))
+   ];
+}
+
+const getLabelClasses = () => {
+    return [
+        useCoreClass("sv-button-group__label", getOptions(true)),
+        useCoreClass("sv-button-group__label--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-button-group__label--block", getOptions(getLayout() === "block")),
+    ];
+}
+
+const getBoxClasses = () => {
+    return [
+        useCoreClass("sv-button-group__box", getOptions(true)),
+        useCoreClass("sv-button-group__box--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-button-group__box--block", getOptions(getLayout() === "block")),
     ];
 }
 

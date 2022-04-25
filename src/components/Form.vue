@@ -10,7 +10,7 @@ import { useCoreClass } from "@/composables/useCoreClass";
 const props = defineProps({
     size: {
         type: String,
-        default: true
+        default: "full"
     },
     svClass: {
         type: Object
@@ -30,6 +30,7 @@ const getClasses = () => {
         useCoreClass("sv-form--small", getOptions(props.size == "small")),
         useCoreClass("sv-form--medium", getOptions(props.size == "medium")),
         useCoreClass("sv-form--large", getOptions(props.size == "large")),
+        useCoreClass("sv-form--full", getOptions(props.size == "full")),
     ];
 };
 </script>

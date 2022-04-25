@@ -1,24 +1,46 @@
 <script setup>
 import { ref } from "vue";
-import { Button, Input, Form } from "@/components";
+import { Button, ButtonGroup, Input, Form } from "@/components";
+
+const size = ref("full");
+
+const buttons = ref([
+    {
+        text: "small",
+        value: "small"
+    },
+    {
+        text: "medium",
+        value: "medium"
+    },
+    {
+        text: "large",
+        value: "large"
+    },
+    {
+        text: "full",
+        value: "full"
+    },
+]);
 </script>
 
 # Form
 
 ## Examples
 
-<Form class="border border-solid border-gray-600 p-2 rounded">
-<Input label="What is your favourite movie?" />
+<ButtonGroup v-model="size" :buttons="buttons" class="mb-4" />
+
+<Form class="border border-solid border-gray-600 p-2 rounded" :size="size">
+<Input label="Input label" class="pb-2" />
 <Button class="pt-2">Submit</Button>
 </Form>
 
 ## Properties
 
-| Name       | Type        | Default     | Description                                                                                                                    |
-| ---------- | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `type`     | `String`    | `primary`   | The type of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
-| `icon`     | `Component` | `undefined` | Displays the given icon in front of the content.                                                                               |
-| `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.             |
+| Name       | Type     | Default | Description                                                                                                        |
+| ---------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `size`     | `String` | `full`  | The size of the form:<br/>- `small`<br/>- `medium`<br/>- `large`<br/>- `full`                                      |
+| `sv-class` | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Events
 
@@ -28,10 +50,7 @@ import { Button, Input, Form } from "@/components";
 
 ## Classes
 
-- `sv-button`
-  -  `--{variant}`
-  -  `--disabled`
-
-- `sv-button__icon`
-  -  `--{variant}`
-  -  `--disabled`
+- `sv-form`
+  -  `sv-form--small`
+  -  `sv-form--medium`
+  -  `sv-form--large`

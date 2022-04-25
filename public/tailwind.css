@@ -244,6 +244,26 @@
 
     /* ButtonGroup */
     .sv-button-group {
+        @apply grid;
+    }
+
+    .sv-button-group--block {
+        @apply grid-cols-1;
+    }
+
+    .sv-button-group--inline {
+        @apply grid-cols-[25%_1fr] items-center;
+    }
+
+    .sv-button-group__label {
+        @apply whitespace-nowrap mr-2 font-medium text-label;
+    }
+
+    .sv-button-group__label--block {
+        @apply mb-2;
+    }
+    
+    .sv-button-group__box {
         @apply flex flex-row;
     }
 
@@ -362,11 +382,23 @@
 
     /* Form */
     .sv-form {
-        @apply w-full mx-auto;
+        @apply mx-auto;
     }
 
     .sv-form--small {
-        @apply lg:w-1/4 mx-auto;
+        @apply lg:w-1/4 md:w-2/4;
+    }
+
+    .sv-form--medium {
+        @apply lg:w-2/4 md:w-3/4;
+    }
+
+    .sv-form--large {
+        @apply lg:w-3/4;
+    }
+
+    .sv-form--full {
+        @apply w-full ;
     }
 
     /* Input */

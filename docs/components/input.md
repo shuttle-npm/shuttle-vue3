@@ -109,7 +109,6 @@ Value: {{ value }}
 - `sv-input` 
   - `--block` 
   - `--inline`
-
 - `sv-input__label`
   - `--block` 
   - `--inline`
