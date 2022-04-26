@@ -3863,7 +3863,11 @@ a:hover .title[data-v-a42cc842] {
 /* Form */
 .sv-form {
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1)
 }
 @media (min-width: 768px) {
     .sv-form--small {
