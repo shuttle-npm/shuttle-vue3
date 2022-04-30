@@ -22,6 +22,7 @@
     --sv-text-navigation: 17, 24, 39;
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
+    --sv-text-table: 230, 230, 230;
 
     /* backgroundColor */
     --sv-bg-primary: 219, 234, 254;
@@ -59,6 +60,11 @@
 
     --sv-bg-dialog: 240, 240, 240;
 
+    --sv-bg-table: 30, 30, 30;
+    --sv-bg-table-thead-tr: 17, 24, 39;
+    --sv-bg-table-tbody-tr--odd: 45, 45, 45;
+    --sv-bg-table-tbody-tr--hover: 60, 60, 60;
+
     /* borderColor */
     --sv-border-primary: 191, 219, 254;
     --sv-border-secondary: 229, 229, 229;
@@ -82,6 +88,8 @@
     --sv-default--focus: 191, 219, 254;
 
     --sv-border-dialog: 100, 100, 100;
+
+    --sv-border-table: 17, 24, 39;
 
     /* placeholderColor */
     --sv-placeholder-input: 180, 180, 180;
@@ -114,6 +122,7 @@
     --sv-text-navigation: 250 250 250;
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
+    --sv-text-table: 230, 230, 230;
 
     /* backgroundColor */
     --sv-bg-primary: 37, 99, 235;
@@ -149,6 +158,11 @@
     
     --sv-bg-dialog: 180, 180, 180;
 
+    --sv-bg-table: 40, 40, 40;
+    --sv-bg-table-thead-tr: 28, 32, 36;
+    --sv-bg-table-tbody-tr--odd: 45, 45, 45;
+    --sv-bg-table-tbody-tr--hover: 60, 60, 60;
+
     /* borderColor */
     --sv-border-primary: 29, 78, 216;
     --sv-border-secondary: 64, 64, 64;
@@ -174,6 +188,8 @@
     --sv-default--focus: 96, 165, 250;
     
     --sv-dialog: 50, 50, 50;
+
+    --sv-border-table: 17, 24, 39;
 
     /* placeholder */
     --sv-placeholder-input: 100, 100, 100;

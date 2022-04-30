@@ -5,7 +5,7 @@
             <component v-if="!!props.iconStart" :is="getIconStart?.()" :class="getIconStartClasses()"
                 @click="iconStartClick" />
             <input :class="getInputClasses()" :type="props.type ?? 'text'" :value="props.modelValue"
-                @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''" />
+                @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''" :autocomplete="autocomplete" />
             <component v-if="!!props.iconEnd" :is="getIconEnd?.()" :class="getIconEndClasses()" @click="iconEndClick" />
         </div>
         <div :class="getAlertClasses()">
@@ -22,6 +22,9 @@ import Alert from "./Alert.vue";
 const props = defineProps({
     alert: {
         type: Object
+    },
+    autocomplete: {
+        type: String
     },
     iconEnd: {
         type: null

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
-import { Button, ButtonGroup, Input, Form } from "@/components";
+import { Alert, Button, ButtonGroup, Input, Form, Title } from "@/components";
+import { ThumbDownIcon, ThumbUpIcon } from "@heroicons/vue/outline";
 
 const size = ref("full");
 
@@ -22,6 +23,14 @@ const buttons = ref([
         value: "full"
     },
 ]);
+
+const message = ref("");
+const count = ref(0);
+
+const submitted = () => {
+    count.value++;
+    message.value = `Form submission count: ${count.value}`;
+}
 </script>
 
 # Form
@@ -30,9 +39,14 @@ const buttons = ref([
 
 <ButtonGroup v-model="size" :buttons="buttons" class="mb-4" />
 
-<Form class="border border-solid border-gray-600 p-2 rounded" :size="size">
-<Input label="Input label" class="pb-2" />
-<Button class="pt-2">Submit</Button>
+<Alert v-if="!!message" variant="info" :message="message" class="mb-4" />
+
+<Form class="border border-solid border-gray-600 p-2 rounded" :size="size" @submit.prevent="submitted()">
+<div></div>
+<div>
+<Input label="Input label" class="pb-2" :icon-start="ThumbDownIcon" v-model="message" />
+</div>
+<Button class="pt-2" type="submit">Submit</Button>
 </Form>
 
 ## Properties

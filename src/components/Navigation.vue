@@ -26,8 +26,6 @@ import { useCoreClass } from "@/composables/useCoreClass";
 const emit = defineEmits(["click"]);
 
 const click = (item, event) => {
-    event.stopPropagation();
-
     if (item.disabled ?? false) {
         return;
     }
