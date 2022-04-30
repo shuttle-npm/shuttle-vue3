@@ -8,19 +8,19 @@ const size = ref("full");
 const buttons = ref([
     {
         text: "small",
-        value: "small"
+        value: "sm"
     },
     {
         text: "medium",
-        value: "medium"
+        value: "md"
     },
     {
         text: "large",
-        value: "large"
+        value: "lg"
     },
     {
-        text: "full",
-        value: "full"
+        text: "none",
+        value: ""
     },
 ]);
 
@@ -53,7 +53,7 @@ const submitted = () => {
 
 | Name       | Type     | Default | Description                                                                                                        |
 | ---------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `size`     | `String` | `full`  | The size of the form:<br/>- `small`<br/>- `medium`<br/>- `large`<br/>- `full`                                      |
+| `size`     | `String` | `""`    | The size of the form:<br/>- `sm`<br/>- `md`<br/>- `lg`<br/>- an empty value would be the full width.               |
 | `sv-class` | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Events
@@ -65,6 +65,6 @@ const submitted = () => {
 ## Classes
 
 - `sv-form`
-  -  `sv-form--small`
-  -  `sv-form--medium`
-  -  `sv-form--large`
+  -  `sv-form--dm`
+  -  `sv-form--md`
+  -  `sv-form--lg`

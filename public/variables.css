@@ -100,7 +100,7 @@
 
 .dark {
     /* textColor */
-    --sv-text-primary: 30, 58, 138;
+    --sv-text-primary: 33, 49, 65;
     --sv-text-primary--hover: 30, 64, 175;
     --sv-text-secondary: 90, 90, 90;
     --sv-text-secondary--hover: 38, 38, 38;
@@ -125,22 +125,22 @@
     --sv-text-table: 230, 230, 230;
 
     /* backgroundColor */
-    --sv-bg-primary: 37, 99, 235;
-    --sv-bg-primary--hover: 29, 78, 216;
-    --sv-bg-primary--active: 30, 64, 175;
-    --sv-bg-secondary: 82, 82, 82;
+    --sv-bg-primary: 55, 90, 127;
+    --sv-bg-primary--hover: 50, 82, 116;
+    --sv-bg-primary--active: 47, 73, 100;
+    --sv-bg-secondary: 68, 68, 68;
     --sv-bg-secondary--hover: 64, 64, 64;
     --sv-bg-secondary--active: 38, 38, 38;
     --sv-bg-success: 22, 163, 74;
     --sv-bg-success--hover: 21, 128, 61;
     --sv-bg-success--active: 22, 101, 52;
-    --sv-bg-danger: 220, 38, 38;
-    --sv-bg-danger--hover: 185, 28, 28;
-    --sv-bg-danger--active: 153, 27, 27;
+    --sv-bg-danger: 231, 76, 60;
+    --sv-bg-danger--hover: 204, 73, 58;
+    --sv-bg-danger--active: 177, 69, 57;
     --sv-bg-warning: 202, 138, 4;
     --sv-bg-warning--hover: 161, 98, 7;
     --sv-bg-warning--active: 133, 77, 14;
-    --sv-bg-info: 8, 145, 178;
+    --sv-bg-info: 52, 152, 219;
     --sv-bg-info--hover: 14, 116, 144;
     --sv-bg-info--active: 21, 94, 117;
     --sv-bg-disabled: 31, 41, 55;
@@ -164,10 +164,10 @@
     --sv-bg-table-tbody-tr--hover: 60, 60, 60;
 
     /* borderColor */
-    --sv-border-primary: 29, 78, 216;
+    --sv-border-primary: 33, 49, 65;
     --sv-border-secondary: 64, 64, 64;
     --sv-border-success: 21, 128, 61;
-    --sv-border-danger: 185, 28, 28;
+    --sv-border-danger: 172, 62, 50;
     --sv-border-warning: 161, 98, 7;
     --sv-border-info: 14, 116, 144;
     --sv-border-disabled: 31, 41, 55;

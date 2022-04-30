@@ -175,11 +175,35 @@
 
     /* Button */
     .sv-button {
-        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit content-center justify-center px-3 whitespace-nowrap select-none;
+        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit items-center justify-center px-3 whitespace-nowrap select-none h-10;
+    }
+
+    .sv-button--xs {
+        @apply text-xs h-6 px-1;
+    }
+
+    .sv-button--sm {
+        @apply text-sm h-8 px-2;
+    }
+
+    .sv-button--lg {
+        @apply text-lg h-12 px-4;
     }
 
     .sv-button__icon {
-        @apply sv-icon mt-1 mr-2;
+        @apply sv-icon mr-2;
+    }
+
+    .sv-button__icon--xs {
+        @apply h-3 w-3 mr-1;
+    }
+
+    .sv-button__icon--sm {
+        @apply h-4 w-4 mr-1.5;
+    }
+
+    .sv-button__icon--lg {
+        @apply h-6 w-6;
     }
 
     .sv-button--disabled {
@@ -382,23 +406,19 @@
 
     /* Form */
     .sv-form {
-        @apply mx-auto transition-width ease-in duration-300;
+        @apply w-full mx-auto transition-width ease-in duration-300;
     }
 
-    .sv-form--small {
+    .sv-form--sm {
         @apply lg:w-1/4 md:w-2/4;
     }
 
-    .sv-form--medium {
+    .sv-form--md {
         @apply lg:w-2/4 md:w-3/4;
     }
 
-    .sv-form--large {
+    .sv-form--lg {
         @apply lg:w-3/4;
-    }
-
-    .sv-form--full {
-        @apply w-full ;
     }
 
     /* Input */

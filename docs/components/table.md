@@ -64,7 +64,7 @@ const svClass= {
 
 <ButtonGroup v-model="variant" :buttons="buttons" class="mb-4" />
 
-<Table :fields="fields" :items="items" :variant="variant" :sv-class="svClass"><template v-slot:item(row)="data">{{data.index}}</template><template v-slot:item(custom)="data"><Button variant="danger">Remove</Button></template></Table>
+<Table :fields="fields" :items="items" :variant="variant" :sv-class="svClass"><template #item(row)="data">{{data.index}}</template><template v-slot:item(custom)="data"><Button variant="danger" size="xs">Remove</Button></template></Table>
 
 ```vue
 <script setup>
@@ -104,9 +104,17 @@ const items = [
 </script>
 
 <template>
-    <Table :fields="fields" :items="items" />
+    <Table :fields="fields" :items="items" :variant="variant">
+        <template #item(row)="data">
+                {{data.index}}
+        </template>
+        <template v-slot:item(custom)="data">
+            <Button variant="danger" size="xs">Remove</Button>
+        </template>
+    </Table>
 </template>
 ```
+
 ## Properties
 
 | Name       | Type     | Default | Description                                                                                                         |
@@ -115,6 +123,18 @@ const items = [
 | `items`    | `Array`  | `[]`    | The items that contains the data for each row.  The `fields` would contain the property name of the item to render. |
 | `sv-class` | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.  |
 | `variant`  | `String` | `""`    | A variant that should be applied to the table:<br/>- `striped`                                                      |
+
+## Slots
+
+Each field has a slot named `field({field.name})` with the following props:
+
+- `field`
+
+Items have a slot named `item({field.name})` with the following props:
+
+- `field`
+- `item`
+- `index`
 
 ## Fields
 

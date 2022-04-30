@@ -56,12 +56,35 @@ import { PlayIcon } from '@heroicons/vue/outline'
 <template>
 ```
 
+### Size
+
+<div class="flex flex-row items-center">
+<Button variant="info" @click="click('xs')" size="xs">Extra Small</Button>
+<Button variant="primary" class="ml-2" @click="click('sm')" size="sm">Small</Button>
+<Button variant="secondary" class="ml-2" @click="click('lg')" size="lg">Large</Button>
+<Button variant="info" :icon="PlayIcon" class="ml-2" @click="click('xs')" size="xs">Extra Small</Button>
+<Button variant="primary" :icon="PlayIcon" class="ml-2" @click="click('sm')" size="sm">Small</Button>
+<Button variant="secondary" :icon="PlayIcon" class="ml-2" @click="click('lg')" size="lg">Large</Button>
+</div>
+
+```vue
+<template>
+    <Button variant="info" size="xs">Extra Small</Button>
+    <Button variant="primary" size="sm">Small</Button>
+    <Button variant="secondary" size="lg">Large</Button>
+    <Button variant="info" :icon="PlayIcon" size="xs">Extra Small</Button>
+    <Button variant="primary" :icon="PlayIcon" size="sm">Small</Button>
+    <Button variant="secondary" :icon="PlayIcon" size="lg">Large</Button>
+</template>
+```
+
 ## Properties
 
 | Name       | Type        | Default     | Description                                                                                                                    |
 | ---------- | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `type`     | `String`    | `primary`   | The type of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
 | `icon`     | `Component` | `undefined` | Displays the given icon in front of the content.                                                                               |
+| `type`     | `String`    | `primary`   | The type of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
+| `size`     | `String`    | `""`        | The size of the form:<br/>- `xs`<br/>- `sm`<br/>- `lg`<br/>- an empty value would be the default size.                         |
 | `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.             |
 
 ## Events
@@ -73,8 +96,9 @@ import { PlayIcon } from '@heroicons/vue/outline'
 ## Classes
 
 - `sv-button`
-  -  `--{variant}`
-  -  `--disabled`
+  -  `sv-button--{variant}`
+  -  `sv-button--{size}`
+  -  `sv-button--disabled`
 - `sv-button__icon`
-  -  `--{variant}`
-  -  `--disabled`
+  -  `sv-button__icon--{variant}`
+  -  `sv-button__icon--disabled`

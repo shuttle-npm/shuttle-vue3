@@ -217,6 +217,15 @@ const profileItems = ref([
 | `show-menu-toggle` | `Boolean` | `true`  | The items that should be rendered in the navigation menu,                                                          |
 | `sv-class`         | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
+## Slots
+
+- `start`
+- `navigation`
+- `end`
+- `top-minimal`
+- `navigation-minimal`
+- `bottom-minimal`
+
 ## Classes
 
 - `sv-navbar`

@@ -1,7 +1,8 @@
 <template>
-    <div :class="getClasses()" @click="click($event)" @keydown.space="click($event)" @keydown.enter="click($event)" tabindex="0">
+    <div :class="getClasses()" @click="click($event)" @keydown.space="click($event)" @keydown.enter="click($event)"
+        tabindex="0">
         <component :is="getIcon()" :class="getIconClasses()" />
-        {{props.content}}
+        {{ props.content }}
         <slot></slot>
     </div>
 </template>
@@ -12,10 +13,22 @@ import { useCoreClass } from "@/composables/useCoreClass";
 const emit = defineEmits(["click"]);
 
 const props = defineProps({
-    content: { type: String },
-    variant: { type: String },
-    disabled: { type: Boolean },
-    icon: { type: null },
+    content: {
+        type: String
+    },
+    variant: {
+        type: String
+    },
+    disabled: {
+        type: Boolean
+    },
+    icon: {
+        type: null
+    },
+    size: {
+        type: String,
+        default: ""
+    },
     svClass: {
         type: Object
     },
@@ -33,7 +46,7 @@ const click = (event) => {
 }
 
 const getIcon = () => {
-    return props.icon ? props.icon: undefined;
+    return props.icon ? props.icon : undefined;
 }
 
 const getOptions = () => {
@@ -45,15 +58,28 @@ const getOptions = () => {
     };
 }
 
+const getSizeOptions = (include) => {
+    return {
+        svClass: props.svClass,
+        include: include
+    };
+}
+
 const getClasses = () => {
     return [
         useCoreClass("sv-button", getOptions()),
+        useCoreClass("sv-button--xs", getSizeOptions(props.size == "xs")),
+        useCoreClass("sv-button--sm", getSizeOptions(props.size == "sm")),
+        useCoreClass("sv-button--lg", getSizeOptions(props.size == "lg")),
     ];
 }
 
 const getIconClasses = () => {
     return [
         useCoreClass("sv-button__icon", getOptions()),
+        useCoreClass("sv-button__icon--xs", getSizeOptions(props.size == "xs")),
+        useCoreClass("sv-button__icon--sm", getSizeOptions(props.size == "sm")),
+        useCoreClass("sv-button__icon--lg", getSizeOptions(props.size == "lg")),
     ];
 }
 </script>
