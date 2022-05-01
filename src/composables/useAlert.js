@@ -8,7 +8,7 @@ export function useAlert(props) {
     
         var result = props.alert;
     
-        result.variant = result.variant ?? "info-state";
+        result.variant = result.variant ?? "info";
     
         return result;
     })    

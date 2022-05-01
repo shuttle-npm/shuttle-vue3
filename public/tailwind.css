@@ -27,21 +27,53 @@
         @apply h-5 w-5;
     }
 
+    .sv-icon--sm {
+        @apply h-4 w-4;
+    }
+
+    .sv-icon--lg {
+        @apply h-6 w-6;
+    }
+
     .sv-clickable {
         @apply cursor-pointer;
     }
 
     /* Alert (variants) */
     .sv-alert {
-        @apply sv-rounded sv-border sv-padding flex flex-row w-full;
+        @apply sv-rounded sv-border sv-padding flex flex-row w-full p-2;
+    }
+
+    .sv-alert--sm {
+        @apply text-sm py-1;
+    }
+
+    .sv-alert--lg {
+        @apply text-lg py-3;
     }
 
     .sv-alert__icon {
-        @apply sv-icon mt-1 mr-2;
+        @apply sv-icon mr-2 mt-1;
+    }
+
+    .sv-alert__icon--sm {
+        @apply sv-icon mr-2 mt-0.5;
+    }
+
+    .sv-alert__icon--lg {
+        @apply sv-icon mr-2 mt-0.5;
     }
 
     .sv-alert__icon-close {
-        @apply sv-icon mt-1 ml-2;
+        @apply sv-icon ml-2 mt-1;
+    }
+
+    .sv-alert__icon-close--sm {
+        @apply sv-icon--sm ml-2 mt-0.5;
+    }
+
+    .sv-alert__icon-close--lg {
+        @apply sv-icon--lg ml-2 mt-0.5;
     }
 
     .sv-alert__icon-close {
@@ -53,7 +85,7 @@
     }
 
     .sv-alert--primary {
-        @apply border-primary bg-primary;
+        @apply border-primary bg-primary text-primary;
     }
 
     .sv-alert__icon--primary {
@@ -65,7 +97,7 @@
     }
 
     .sv-alert--secondary {
-        @apply border-secondary bg-secondary;
+        @apply border-secondary bg-secondary text-secondary;
     }
 
     .sv-alert__icon--secondary {
@@ -77,7 +109,7 @@
     }
 
     .sv-alert--success {
-        @apply border-success bg-success;
+        @apply border-success bg-success text-success;
     }
 
     .sv-alert__icon--success {
@@ -89,7 +121,7 @@
     }
 
     .sv-alert--danger {
-        @apply border-danger bg-danger;
+        @apply border-danger bg-danger text-danger;
     }
 
     .sv-alert__icon--danger {
@@ -101,7 +133,7 @@
     }
 
     .sv-alert--warning {
-        @apply border-warning bg-warning;
+        @apply border-warning bg-warning text-warning;
     }
 
     .sv-alert__icon--warning {
@@ -113,7 +145,7 @@
     }
 
     .sv-alert--info {
-        @apply border-info bg-info;
+        @apply border-info bg-info text-info;
     }
 
     .sv-alert__icon--info {
@@ -124,58 +156,13 @@
         @apply text-info hover:text-info--hover;
     }
 
-    /* Alert (state variants) */
-    .sv-alert--success-state {
-        @apply border-success text-success font-normal py-1 px-2;
-    }
-
-    .sv-alert__icon--success-state {
-        @apply text-success;
-    }
-
-    .sv-alert__icon-close--success-state {
-        @apply text-success hover:text-success--hover;
-    }
-
-    .sv-alert--danger-state {
-        @apply border-danger text-danger font-normal py-1 px-2;
-    }
-
-    .sv-alert__icon--danger-state {
-        @apply text-danger;
-    }
-
-    .sv-alert__icon-close--danger-state {
-        @apply text-danger hover:text-danger--hover;
-    }
-
-    .sv-alert--warning-state {
-        @apply border-warning text-warning font-normal py-1 px-2;
-    }
-
-    .sv-alert__icon--warning-state {
-        @apply text-warning;
-    }
-
-    .sv-alert__icon-close--warning-state {
-        @apply text-warning hover:text-warning--hover;
-    }
-
-    .sv-alert--info-state {
-        @apply border-info text-info font-normal py-1 px-2;
-    }
-
-    .sv-alert__icon--info-state {
-        @apply text-info;
-    }
-
-    .sv-alert__icon-close--info-state {
-        @apply text-info hover:text-info--hover;
+    .sv-alert--outline {
+        @apply bg-transparent;
     }
 
     /* Button */
     .sv-button {
-        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit items-center justify-center px-3 whitespace-nowrap select-none h-10;
+        @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit items-center justify-between px-3 whitespace-nowrap select-none h-10;
     }
 
     .sv-button--xs {
@@ -191,19 +178,19 @@
     }
 
     .sv-button__icon {
-        @apply sv-icon mr-2;
+        @apply sv-icon;
     }
 
     .sv-button__icon--xs {
-        @apply h-3 w-3 mr-1;
+        @apply sv-icon--sm;
     }
 
     .sv-button__icon--sm {
-        @apply h-4 w-4 mr-1.5;
+        @apply sv-icon--sm;
     }
 
     .sv-button__icon--lg {
-        @apply h-6 w-6;
+        @apply sv-icon--lg;
     }
 
     .sv-button--disabled {
@@ -211,7 +198,7 @@
     }
 
     .sv-button--primary {
-        @apply border-primary bg-primary hover:bg-primary--hover active:bg-primary--active;
+        @apply text-primary border-primary bg-primary hover:bg-primary--hover active:bg-primary--active;
     }
 
     .sv-button__icon--primary {
@@ -219,7 +206,7 @@
     }
 
     .sv-button--secondary {
-        @apply border-secondary bg-secondary hover:bg-secondary--hover active:bg-secondary--active;
+        @apply text-secondary border-secondary bg-secondary hover:bg-secondary--hover active:bg-secondary--active;
     }
 
     .sv-button__icon--secondary {
@@ -227,7 +214,7 @@
     }
 
     .sv-button--success {
-        @apply border-success bg-success hover:bg-success--hover active:bg-success--active;
+        @apply text-success border-success bg-success hover:bg-success--hover active:bg-success--active;
     }
 
     .sv-button__icon--success {
@@ -235,7 +222,7 @@
     }
 
     .sv-button--danger {
-        @apply border-danger bg-danger hover:bg-danger--hover active:bg-danger--active;
+        @apply text-danger border-danger bg-danger hover:bg-danger--hover active:bg-danger--active;
     }
 
     .sv-button__icon--danger {
@@ -243,7 +230,7 @@
     }
 
     .sv-button--warning {
-        @apply border-warning bg-warning hover:bg-warning--hover active:bg-warning--active;
+        @apply text-warning border-warning bg-warning hover:bg-warning--hover active:bg-warning--active;
     }
 
     .sv-button__icon--warning {
@@ -251,7 +238,7 @@
     }
 
     .sv-button--info {
-        @apply border-info bg-info hover:bg-info--hover active:bg-info--active;
+        @apply text-info border-info bg-info hover:bg-info--hover active:bg-info--active;
     }
 
     .sv-button__icon--info {
@@ -259,11 +246,15 @@
     }
 
     .sv-button--link {
-        @apply border-0 underline hover:no-underline;
+        @apply text-link border-0 underline hover:no-underline;
     }
 
     .sv-button__icon--link {
         @apply text-link;
+    }
+
+    .sv-button--outline {
+        @apply bg-transparent;
     }
 
     /* ButtonGroup */
@@ -304,7 +295,7 @@
     }
 
     .sv-button-group__button-icon {
-        @apply h-4 w-4 mr-1;
+        @apply sv-icon--sm mr-1;
     }
 
     .sv-button-group__button-label {
@@ -333,7 +324,7 @@
     }
 
     .sv-checkbox__icon {
-        @apply h-4 w-4;
+        @apply sv-icon--sm;
     }
 
     .sv-checkbox__label {
@@ -718,7 +709,7 @@
     }
 
     .sv-table__th-sort-order-icon {
-        @apply h-4 w-4 ml-2;
+        @apply sv-icon--sm ml-2;
     }
 
     .sv-table__tbody-tr {
@@ -844,7 +835,7 @@
     }
 
     .sv-toggle__icon {
-        @apply h-4 w-4;
+        @apply sv-icon--sm;
     }
 
     .sv-toggle__label {

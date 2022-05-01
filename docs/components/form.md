@@ -3,24 +3,24 @@ import { ref } from "vue";
 import { Alert, Button, ButtonGroup, Input, Form, Title } from "@/components";
 import { ThumbDownIcon, ThumbUpIcon } from "@heroicons/vue/outline";
 
-const size = ref("full");
+const size = ref("");
 
 const buttons = ref([
     {
-        text: "small",
+        text: "empty",
+        value: ""
+    },
+    {
+        text: "sm",
         value: "sm"
     },
     {
-        text: "medium",
+        text: "md",
         value: "md"
     },
     {
-        text: "large",
+        text: "lg",
         value: "lg"
-    },
-    {
-        text: "none",
-        value: ""
     },
 ]);
 
@@ -65,6 +65,6 @@ const submitted = () => {
 ## Classes
 
 - `sv-form`
-  -  `sv-form--dm`
+  -  `sv-form--sm`
   -  `sv-form--md`
   -  `sv-form--lg`

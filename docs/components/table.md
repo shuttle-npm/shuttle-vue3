@@ -5,7 +5,9 @@ import { Button, ButtonGroup, Table } from "@/components";
 const fields = [
     {
         name: "row",
-        text: "#"
+        text: "#",
+        thClass: "border-solid border-0 border-b border-gray-500 w-1",
+        tdClass: "border-solid border-0 border-r border-gray-500"
     },
     {
         name: "name",
@@ -71,7 +73,9 @@ const svClass= {
 const fields = [
     {
         name: "row",
-        text: "#"
+        text: "#",
+        thClass: "border-solid border-0 border-b border-gray-500 w-1",
+        tdClass: "border-solid border-0 border-r border-gray-500"
     },
     {
         name: "name",

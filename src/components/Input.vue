@@ -9,7 +9,7 @@
             <component v-if="!!props.iconEnd" :is="getIconEnd?.()" :class="getIconEndClasses()" @click="iconEndClick" />
         </div>
         <div :class="getAlertClasses()">
-            <Alert v-if="!!alert" :message="alert.message" :variant="alert.variant" :icon="alert.icon" :dismissable="alert.dismissable" @click="alert.click" />
+            <Alert v-if="!!alert" :message="alert.message" :variant="alert.variant" :icon="alert.icon" :dismissable="alert.dismissable" @click="alert.click" :outline="alert.outline" :size="alert.size" />
         </div>
     </div>
 </template>

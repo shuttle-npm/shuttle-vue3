@@ -10,7 +10,7 @@ import { useCoreClass } from "@/composables/useCoreClass";
 const props = defineProps({
     size: {
         type: String,
-        default: "full"
+        default: ""
     },
     svClass: {
         type: Object

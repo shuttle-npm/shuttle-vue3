@@ -15,9 +15,9 @@
             </thead>
             <tbody :class="getBodyClasses()">
                 <tr v-for="(item, index) in items" :class="getBodyRowClasses()">
-                    <td v-for="field in fields" :class="getItemClasses(item, field)">
+                    <td v-for="field in fields" :class="getItemClasses(field)">
                         <slot :name="getItemSlotName(field)" :field="field" :item="item" :index="index">
-                            {{ item[field.name] }}
+                            {{ formatValue(field, item[field.name]) }}
                         </slot>
                     </td>
                 </tr>
@@ -60,6 +60,15 @@ const fieldClick = (field) => {
             sortOrder.value = "ascending";
         }
     }
+}
+
+const formatValue = (field, value) => {
+    if (!!field.formatter &&
+        typeof(field.formatter === 'function')) {
+        return field.formatter(value);
+    }
+
+    return value;
 }
 
 const items = computed(() => {
@@ -129,6 +138,7 @@ const getFieldClasses = (field) => {
     return [
         useCoreClass("sv-table__th", getOptions(true)),
         useCoreClass("sv-table__th--sortable", getOptions(!!field.sortable)),
+        !!field.thClass ? field.thClass : ""
     ];
 }
 
@@ -151,9 +161,10 @@ const getBodyClasses = () => {
     ];
 }
 
-const getItemClasses = () => {
+const getItemClasses = (field) => {
     return [
         useCoreClass("sv-table__td", getOptions(true)),
+        !!field.tdClass ? field.tdClass : ""
     ];
 }
 

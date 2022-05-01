@@ -25,6 +25,10 @@ const props = defineProps({
     icon: {
         type: null
     },
+    outline: {
+        type: Boolean,
+        default: false
+    },
     size: {
         type: String,
         default: ""
@@ -58,7 +62,7 @@ const getOptions = () => {
     };
 }
 
-const getSizeOptions = (include) => {
+const getBaseOptions = (include) => {
     return {
         svClass: props.svClass,
         include: include
@@ -68,18 +72,20 @@ const getSizeOptions = (include) => {
 const getClasses = () => {
     return [
         useCoreClass("sv-button", getOptions()),
-        useCoreClass("sv-button--xs", getSizeOptions(props.size == "xs")),
-        useCoreClass("sv-button--sm", getSizeOptions(props.size == "sm")),
-        useCoreClass("sv-button--lg", getSizeOptions(props.size == "lg")),
+        useCoreClass("sv-button--outline", getBaseOptions(!!props.outline)),
+        useCoreClass("sv-button--xs", getBaseOptions(props.size == "xs")),
+        useCoreClass("sv-button--sm", getBaseOptions(props.size == "sm")),
+        useCoreClass("sv-button--lg", getBaseOptions(props.size == "lg")),
     ];
 }
 
 const getIconClasses = () => {
     return [
         useCoreClass("sv-button__icon", getOptions()),
-        useCoreClass("sv-button__icon--xs", getSizeOptions(props.size == "xs")),
-        useCoreClass("sv-button__icon--sm", getSizeOptions(props.size == "sm")),
-        useCoreClass("sv-button__icon--lg", getSizeOptions(props.size == "lg")),
+        useCoreClass("sv-button__icon--outline", getBaseOptions(!!props.outline)),
+        useCoreClass("sv-button__icon--xs", getBaseOptions(props.size == "xs")),
+        useCoreClass("sv-button__icon--sm", getBaseOptions(props.size == "sm")),
+        useCoreClass("sv-button__icon--lg", getBaseOptions(props.size == "lg")),
     ];
 }
 </script>

@@ -86,8 +86,8 @@ Value: {{ value }}
 
 ### Alert
 
-<Input v-model="message" label="Block layout" :alert="{ message: 'This is an info message.'}" />
-<Input v-model="message" label="Inline layout" layout="inline" :alert="{ message: 'This is a danger message.', variant: 'danger-state', icon: ExclamationIcon, dismissable: true }" class="mt-2" />
+<Input v-model="message" label="Block layout" :alert="{ message: 'This is an info message.', outline: true, size: 'sm' }" />
+<Input v-model="message" label="Inline layout" layout="inline" :alert="{ message: 'This is a danger message.', variant: 'danger', icon: ExclamationIcon, dismissable: true, size: 'lg' }" class="mt-2" />
 
 ## Properties
 

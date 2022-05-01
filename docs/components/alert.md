@@ -1,8 +1,25 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { BeakerIcon } from '@heroicons/vue/outline'
-import { Alert } from "@/components";
-import { Alerts, Button } from "@/components";
+import { Alert, Alerts, Button, ButtonGroup, Checkbox } from "@/components";
+
+const outline = ref(false);
+const size = ref("");
+
+const buttons = ref([
+    {
+        text: "none",
+        value: ""
+    },
+    {
+        text: "small",
+        value: "sm"
+    },
+    {
+        text: "large",
+        value: "lg"
+    },
+]);
 
 const alertsReference = [
     {
@@ -43,30 +60,7 @@ const alertsReference = [
     }
 ];
 
-const alerts = ref([...alertsReference]);
-
-const stateAlerts = ref([
-    {
-        name: "Success",
-        message: "A simple `success-state` alert.",
-        variant: "success-state",
-    },
-    {
-        name: "Danger",
-        message: "A simple `danger-state` alert.",
-        variant: "danger-state",
-    },
-    {
-        name: "Warning",
-        message: "A simple `warning-state` alert.",
-        variant: "warning-state",
-    },
-    {
-        name: "Information",
-        message: "A simple `info-state` alert.",
-        variant: "info-state",
-    }
-]);
+const alerts = ref([]);
 
 const remove = (alert) => {
     const index = alerts.value.findIndex(item => item.name === alert.name);
@@ -78,17 +72,27 @@ const remove = (alert) => {
     alerts.value.splice(index, 1);
 }
 
+const computedAlerts = computed(() => {
+    return alerts.value.map(item => ({...item, outline: outline.value, size: size.value}));
+})
+
 const reset = () => {
     alerts.value = [...alertsReference];
 }
+
+reset();
 </script>
 
 # Alert
 
 ## Examples (dismissable)
 
+<ButtonGroup v-model="size" :buttons="buttons" class="mb-4" />
+
+<Checkbox v-model="outline" label="Outline?" class="mb-4" />
+
 <Button @click="reset" content="Reset" class="mb-2" :disabled="alerts.length >= alertsReference.length"></Button>
-<Alerts :alerts="alerts" @remove="remove" :sv-class="{ 'sv-alert': 'mb-2' }"/>
+<Alerts :alerts="computedAlerts" @remove="remove" :sv-class="{ 'sv-alert': 'mb-2' }"/>
 
 ### Custom Icon
 
@@ -99,10 +103,6 @@ const reset = () => {
 ```
 <Alert :icon="BeakerIcon" type="primary" message="A simple primary alert with a custom icon." :dismissable="false" />
 
-### State Variants
-
-<Alerts :alerts="stateAlerts" :sv-class="{ 'sv-alert': 'mb-2' }" />
-
 ## Properties
 
 | Name          | Type        | Default     | Description                                                                                                        |
@@ -112,6 +112,7 @@ const reset = () => {
 | `message`     | `String`    | (required)  | The message to display for the alert.                                                                              |
 | `dismissable` | `Boolean`   | `false`     | Whether a close icon will be displayed with will emit the `remove` event when clicked.                             |
 | `icon`        | `Component` | `undefined` | Displays the given icon in front of the message.                                                                   |
+| `size`        | `String`    | `""`        | The size of the alert:<br/>- `sm`<br/>- `lg`<br/>- an empty value would be the default size.                       |
 | `sv-class`    | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Events
@@ -123,13 +124,17 @@ const reset = () => {
 ## Classes
 
 - `sv-alert`
-  - `--{variant}`
+  - `sv-alert--{variant}`
+  - `sv-alert--{size}`
 - `sv-alert__icon`
-  - `--{variant}`
+  - `sv-alert__icon--{variant}`
+  - `sv-alert__icon--{size}`
 - `sv-alert__icon-close`
-  - `--{variant}`
+  - `sv-alert__icon-close--{variant}`
+  - `sv-alert__icon-close--{size}`
 - `sv-alert__message`
-  - `--{variant}`
+  - `sv-alert__message--{variant}`
+  - `sv-alert__message--{size}`
 
 ## Container
 
