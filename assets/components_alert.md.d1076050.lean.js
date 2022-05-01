@@ -17,11 +17,12 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { _ as _sfc_main$2 } from "./chunks/Alert.c6e8ba04.js";
+import { _ as _sfc_main$2 } from "./chunks/Alert.01de8972.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
 import { c as createBlock, a as createVNode, o as openBlock, b as createElementBlock, F as Fragment, r as renderList, n as normalizeClass, d as createCommentVNode, m as mergeProps, e as ref, f as computed, u as unref, g as createBaseVNode, h as createTextVNode, i as createStaticVNode } from "./app.db6a9323.js";
-import { _ as _sfc_main$4 } from "./chunks/Button.02a79404.js";
-import { _ as _sfc_main$3 } from "./chunks/Checkbox.f5a3fc3b.js";
+import { _ as _sfc_main$5 } from "./chunks/Button.02a79404.js";
+import { _ as _sfc_main$3 } from "./chunks/ButtonGroup.88c9fd55.js";
+import { _ as _sfc_main$4 } from "./chunks/Checkbox.f5a3fc3b.js";
 function render(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -95,14 +96,15 @@ const _hoisted_2 = /* @__PURE__ */ createBaseVNode("h2", {
     "aria-hidden": "true"
   }, "#")
 ], -1);
-const _hoisted_3 = /* @__PURE__ */ createStaticVNode('<h3 id="custom-icon" tabindex="-1">Custom Icon <a class="header-anchor" href="#custom-icon" aria-hidden="true">#</a></h3><div class="language-vue"><pre><code><span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>\n<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">Alert</span><span style="color:#89DDFF;"> :</span><span style="color:#C792EA;">icon</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#A6ACCD;">BeakerIcon</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">type</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">primary</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">message</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">A simple primary alert with a custom icon.</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> :</span><span style="color:#C792EA;">dismissable</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#FF9CAC;">false</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> /&gt;</span></span>\n<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>\n<span class="line"></span></code></pre></div>', 2);
-const _hoisted_5 = /* @__PURE__ */ createStaticVNode('<h2 id="properties" tabindex="-1">Properties <a class="header-anchor" href="#properties" aria-hidden="true">#</a></h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>name</code></td><td><code>String</code></td><td>(empty)</td><td>A name to uniquely identify the alert.</td></tr><tr><td><code>type</code></td><td><code>String</code></td><td><code>primary</code></td><td>The type of alert:<br>- <code>primary</code><br>- <code>secondary</code><br>- <code>success</code><br>- <code>danger</code><br>- <code>warning</code><br>- <code>info</code></td></tr><tr><td><code>message</code></td><td><code>String</code></td><td>(required)</td><td>The message to display for the alert.</td></tr><tr><td><code>dismissable</code></td><td><code>Boolean</code></td><td><code>false</code></td><td>Whether a close icon will be displayed with will emit the <code>remove</code> event when clicked.</td></tr><tr><td><code>icon</code></td><td><code>Component</code></td><td><code>undefined</code></td><td>Displays the given icon in front of the message.</td></tr><tr><td><code>sv-class</code></td><td><code>Object</code></td><td><code>{}</code></td><td>The <a href="/shuttle-vue3/components/core-class.html">core class object</a> that will render classes along with the corresponding BEM entries.</td></tr></tbody></table><h2 id="events" tabindex="-1">Events <a class="header-anchor" href="#events" aria-hidden="true">#</a></h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code>remove</code></td><td>Called when the dismissable element is clicked.</td></tr></tbody></table><h2 id="classes" tabindex="-1">Classes <a class="header-anchor" href="#classes" aria-hidden="true">#</a></h2><ul><li><code>sv-alert</code><ul><li><code>--{variant}</code></li></ul></li><li><code>sv-alert__icon</code><ul><li><code>--{variant}</code></li></ul></li><li><code>sv-alert__icon-close</code><ul><li><code>--{variant}</code></li></ul></li><li><code>sv-alert__message</code><ul><li><code>--{variant}</code></li></ul></li></ul><h2 id="container" tabindex="-1">Container <a class="header-anchor" href="#container" aria-hidden="true">#</a></h2><div class="language-vue"><pre><code><span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>\n<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">Alerts</span><span style="color:#89DDFF;"> :</span><span style="color:#C792EA;">alerts</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#A6ACCD;">alerts</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> @</span><span style="color:#C792EA;">remove</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#A6ACCD;">remove</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> /&gt;</span></span>\n<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>\n<span class="line"></span></code></pre></div><p>Where <code>alerts</code> contains an array of objects that have the same properties as an <code>Alert</code>. Will redner with class <code>sv-alerts</code> and supports the <code>:sv-class</code> <a href="/shuttle-vue3/components/core-class.html">core class object</a> property.</p>', 9);
+const _hoisted_3 = /* @__PURE__ */ createStaticVNode("", 2);
+const _hoisted_5 = /* @__PURE__ */ createStaticVNode("", 9);
 const __pageData = '{"title":"Alert","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples (dismissable)","slug":"examples-dismissable"},{"level":3,"title":"Custom Icon","slug":"custom-icon"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Events","slug":"events"},{"level":2,"title":"Classes","slug":"classes"},{"level":2,"title":"Container","slug":"container"}],"relativePath":"components/alert.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
     const outline = ref(false);
-    ref([
+    const size = ref("");
+    const buttons = ref([
       {
         text: "none",
         value: ""
@@ -163,7 +165,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
       alerts.value.splice(index, 1);
     };
     const computedAlerts = computed(() => {
-      return alerts.value.map((item) => __spreadProps(__spreadValues({}, item), { outline: outline.value }));
+      return alerts.value.map((item) => __spreadProps(__spreadValues({}, item), { outline: outline.value, size: size.value }));
     });
     const reset = () => {
       alerts.value = [...alertsReference];
@@ -174,12 +176,18 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         _hoisted_1,
         _hoisted_2,
         createVNode(unref(_sfc_main$3), {
+          modelValue: size.value,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => size.value = $event),
+          buttons: buttons.value,
+          class: "mb-4"
+        }, null, 8, ["modelValue", "buttons"]),
+        createVNode(unref(_sfc_main$4), {
           modelValue: outline.value,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => outline.value = $event),
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => outline.value = $event),
           label: "Outline?",
           class: "mb-4"
         }, null, 8, ["modelValue"]),
-        createVNode(unref(_sfc_main$4), {
+        createVNode(unref(_sfc_main$5), {
           onClick: reset,
           content: "Reset",
           class: "mb-2",

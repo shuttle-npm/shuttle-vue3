@@ -37,6 +37,10 @@ const _sfc_main = {
       type: Boolean,
       default: false
     },
+    size: {
+      type: String,
+      default: ""
+    },
     svClass: {
       type: Object
     }
@@ -55,28 +59,39 @@ const _sfc_main = {
         variant: (_a = props.variant) != null ? _a : "primary"
       };
     };
+    const getBaseOptions = (include) => {
+      return {
+        svClass: props.svClass,
+        include
+      };
+    };
     const getClasses = () => {
       return [
         useCoreClass("sv-alert", getOptions()),
-        useCoreClass("sv-alert--outline", {
-          svClass: props.svClass,
-          include: !!props.outline
-        })
+        useCoreClass("sv-alert--outline", getBaseOptions(!!props.outline)),
+        useCoreClass("sv-alert--sm", getBaseOptions(props.size === "sm")),
+        useCoreClass("sv-alert--lg", getBaseOptions(props.size === "lg"))
       ];
     };
     const getIconClasses = () => {
       return [
-        useCoreClass("sv-alert__icon", getOptions())
+        useCoreClass("sv-alert__icon", getOptions()),
+        useCoreClass("sv-alert__icon--sm", getBaseOptions(props.size === "sm")),
+        useCoreClass("sv-alert__icon--lg", getBaseOptions(props.size === "lg"))
       ];
     };
     const getCloseIconClasses = () => {
       return [
-        useCoreClass("sv-alert__icon-close", getOptions())
+        useCoreClass("sv-alert__icon-close", getOptions()),
+        useCoreClass("sv-alert__icon-close--sm", getBaseOptions(props.size === "sm")),
+        useCoreClass("sv-alert__icon-close--lg", getBaseOptions(props.size === "lg"))
       ];
     };
     const getMessageClasses = () => {
       return [
-        useCoreClass("sv-alert__message", getOptions())
+        useCoreClass("sv-alert__message", getOptions()),
+        useCoreClass("sv-alert__message--sm", getBaseOptions(props.size === "sm")),
+        useCoreClass("sv-alert__message--lg", getBaseOptions(props.size === "lg"))
       ];
     };
     return (_ctx, _cache) => {

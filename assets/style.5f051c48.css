@@ -3285,25 +3285,63 @@ a:hover .title[data-v-a42cc842] {
 }
 /* Alert (variants) */
 .sv-alert {
-    padding: 0.5rem;
     border-radius: 0.375rem;
     border-width: 1px;
     border-style: solid;
     display: flex;
     width: 100%;
-    flex-direction: row
+    flex-direction: row;
+    padding: 0.5rem
+}
+.sv-alert--sm {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem
+}
+.sv-alert--lg {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem
 }
 .sv-alert__icon {
     height: 1.25rem;
     width: 1.25rem;
-    margin-top: 0.25rem;
-    margin-right: 0.5rem
+    margin-right: 0.5rem;
+    margin-top: 0.25rem
+}
+.sv-alert__icon--sm {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-right: 0.5rem;
+    margin-top: 0.125rem
+}
+.sv-alert__icon--lg {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-right: 0.5rem;
+    margin-top: 0.125rem
 }
 .sv-alert__icon-close {
     height: 1.25rem;
     width: 1.25rem;
-    margin-top: 0.25rem;
     margin-left: 0.5rem;
+    margin-top: 0.25rem
+}
+.sv-alert__icon-close--sm {
+    height: 1rem;
+    width: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 0.125rem
+}
+.sv-alert__icon-close--lg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 0.5rem;
+    margin-top: 0.125rem
+}
+.sv-alert__icon-close {
     cursor: pointer
 }
 .sv-alert__message {
@@ -3692,9 +3730,9 @@ a:hover .title[data-v-a42cc842] {
     background-color: rgba(var(--sv-bg-input-selected), var(--tw-bg-opacity))
 }
 .sv-button-group__button-icon {
-    margin-right: 0.25rem;
     height: 1rem;
-    width: 1rem
+    width: 1rem;
+    margin-right: 0.25rem
 }
 /* Checkbox */
 .sv-checkbox {
@@ -4471,9 +4509,9 @@ a:hover .title[data-v-a42cc842] {
     cursor: pointer
 }
 .sv-table__th-sort-order-icon {
-    margin-left: 0.5rem;
     height: 1rem;
-    width: 1rem
+    width: 1rem;
+    margin-left: 0.5rem
 }
 .sv-table__tbody-tr {
     border-width: 0px;

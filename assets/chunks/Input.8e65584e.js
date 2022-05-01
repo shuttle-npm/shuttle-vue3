@@ -1,6 +1,6 @@
-import { u as useAlert } from "./useAlert.0395d41b.js";
+import { u as useAlert } from "./useAlert.0bc7b1d9.js";
 import { u as useCoreClass } from "./useCoreClass.4c1eebb8.js";
-import { _ as _sfc_main$1 } from "./Alert.c6e8ba04.js";
+import { _ as _sfc_main$1 } from "./Alert.01de8972.js";
 import { o as openBlock, b as createElementBlock, n as normalizeClass, t as toDisplayString, d as createCommentVNode, g as createBaseVNode, c as createBlock, j as resolveDynamicComponent, u as unref } from "../app.db6a9323.js";
 const _hoisted_1 = ["type", "value", "placeholder", "autocomplete"];
 const _sfc_main = {
@@ -172,8 +172,10 @@ const _sfc_main = {
             variant: unref(alert).variant,
             icon: unref(alert).icon,
             dismissable: unref(alert).dismissable,
-            onClick: unref(alert).click
-          }, null, 8, ["message", "variant", "icon", "dismissable", "onClick"])) : createCommentVNode("", true)
+            onClick: unref(alert).click,
+            outline: unref(alert).outline,
+            size: unref(alert).size
+          }, null, 8, ["message", "variant", "icon", "dismissable", "onClick", "outline", "size"])) : createCommentVNode("", true)
         ], 2)
       ], 2);
     };

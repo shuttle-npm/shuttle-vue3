@@ -6,7 +6,7 @@ function useAlert(props) {
       return;
     }
     var result = props.alert;
-    result.variant = (_a = result.variant) != null ? _a : "info-state";
+    result.variant = (_a = result.variant) != null ? _a : "info";
     return result;
   });
 }

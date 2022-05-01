@@ -1,8 +1,8 @@
-import { _ as _sfc_main$1 } from "./chunks/Input.ea7edb95.js";
+import { _ as _sfc_main$1 } from "./chunks/Input.8e65584e.js";
 import { c as createBlock, a as createVNode, o as openBlock, e as ref, b as createElementBlock, g as createBaseVNode, t as toDisplayString, u as unref, h as createTextVNode, i as createStaticVNode } from "./app.db6a9323.js";
-import "./chunks/useAlert.0395d41b.js";
+import "./chunks/useAlert.0bc7b1d9.js";
 import "./chunks/useCoreClass.4c1eebb8.js";
-import "./chunks/Alert.c6e8ba04.js";
+import "./chunks/Alert.01de8972.js";
 function render$3(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -190,14 +190,14 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           modelValue: message.value,
           "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => message.value = $event),
           label: "Block layout",
-          alert: { message: "This is an info message." }
+          alert: { message: "This is an info message.", outline: true, size: "sm" }
         }, null, 8, ["modelValue", "alert"]),
         createVNode(unref(_sfc_main$1), {
           modelValue: message.value,
           "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => message.value = $event),
           label: "Inline layout",
           layout: "inline",
-          alert: { message: "This is a danger message.", variant: "danger-state", icon: unref(render$3), dismissable: true },
+          alert: { message: "This is a danger message.", variant: "danger", icon: unref(render$3), dismissable: true, size: "lg" },
           class: "mt-2"
         }, null, 8, ["modelValue", "alert"]),
         _hoisted_10
