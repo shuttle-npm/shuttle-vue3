@@ -91,12 +91,12 @@ import { PlayIcon } from '@heroicons/vue/outline'
 
 ## Properties
 
-| Name       | Type        | Default     | Description                                                                                                                    |
-| ---------- | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `icon`     | `Component` | `undefined` | Displays the given icon in front of the content.                                                                               |
-| `type`     | `String`    | `primary`   | The type of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
-| `size`     | `String`    | `""`        | The size of the form:<br/>- `xs`<br/>- `sm`<br/>- `lg`<br/>- an empty value would be the default size.                         |
-| `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.             |
+| Name       | Type        | Default     | Description                                                                                                                       |
+| ---------- | ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `icon`     | `Component` | `undefined` | Displays the given icon in front of the content.                                                                                  |
+| `size`     | `String`    | `""`        | The size of the form:<br/>- `xs`<br/>- `sm`<br/>- `lg`<br/>- an empty value would be the default size.                            |
+| `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.                |
+| `variant`  | `String`    | `primary`   | The variant of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
 
 ## Events
 

@@ -23,6 +23,7 @@
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 130, 130, 130;
+    --sv-text-dialog: 30, 30, 30;
 
     /* backgroundColor */
     --sv-bg-primary: 219, 234, 254;
@@ -126,6 +127,7 @@
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 230, 230, 230;
+    --sv-text-dialog: 230, 230, 230;
 
     /* backgroundColor */
     --sv-bg-primary: 55, 90, 127;

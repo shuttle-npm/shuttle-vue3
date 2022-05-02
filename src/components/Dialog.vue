@@ -21,11 +21,13 @@
 </template>
 
 <script setup>
-import { XCircleIcon } from "@heroicons/vue/outline";
 import { useCoreClass } from "@/composables/useCoreClass";
 import { TransitionRoot, TransitionChild } from "@headlessui/vue";
 
 const props = defineProps({
+    message: {
+        type: String
+    },
     isOpen: {
         type: Boolean,
         default: false
@@ -37,12 +39,6 @@ const props = defineProps({
         type: Object
     },
     title: {
-        type: String
-    },
-    description: {
-        type: String
-    },
-    variant: {
         type: String
     },
 })
@@ -68,7 +64,7 @@ const getTitleClasses = () => {
 
 const getMessageClasses = () => {
     return [
-        useCoreClass("sv-dialog__title", getOptions(true)),
+        useCoreClass("sv-dialog__message", getOptions(true)),
     ];
 }
 

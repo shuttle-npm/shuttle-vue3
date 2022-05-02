@@ -83,6 +83,7 @@ module.exports = {
                 "navbar-menu-toggle": generateColorClass("sv-text-navbar-menu-toggle"),
                 "navbar-menu-toggle--hover": generateColorClass("sv-text-navbar-menu-toggle--hover"),
                 "table-th": generateColorClass("sv-text-table-th"),
+                "dialog": generateColorClass("sv-text-dialog"),
             },
             backgroundColor: {
                 "primary": generateColorClass("sv-bg-primary"),
