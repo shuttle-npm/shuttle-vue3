@@ -1256,6 +1256,13 @@
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     opacity: 0
 }
+/* Strip */
+.sv-strip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem
+}
 /* Table */
 .sv-table {
     width: 100%;
@@ -1281,7 +1288,7 @@
     line-height: 1rem;
     text-transform: uppercase;
     --tw-text-opacity: 1;
-    color: rgba(var(--sv-text-table), var(--tw-text-opacity))
+    color: rgba(var(--sv-text-table-th), var(--tw-text-opacity))
 }
 .sv-table__thead-tr {
     --tw-bg-opacity: 1;

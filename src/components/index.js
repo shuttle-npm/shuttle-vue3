@@ -9,6 +9,7 @@ import Input from "./Input.vue";
 import Listbox from "./Listbox.vue";
 import Navbar from "./Navbar.vue";
 import Navigation from "./Navigation.vue";
+import Strip from "./Strip.vue";
 import Table from "./Table.vue";
 import Title from "./Title.vue";
 import Toggle from "./Toggle.vue";
@@ -25,6 +26,7 @@ export {
     Listbox,
     Navbar,
     Navigation,
+    Strip,
     Table,
     Title,
     Toggle

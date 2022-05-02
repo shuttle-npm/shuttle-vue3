@@ -100,6 +100,10 @@ module.exports = (async () => {
                                 link: '/components/navigation'
                             },
                             {
+                                text: 'Strip',
+                                link: '/components/strip'
+                            },
+                            {
                                 text: 'Table',
                                 link: '/components/table'
                             },

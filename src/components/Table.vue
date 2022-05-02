@@ -14,10 +14,22 @@
                 </tr>
             </thead>
             <tbody :class="getBodyClasses()">
-                <tr v-for="(item, index) in items" :class="getBodyRowClasses()">
+                <tr v-if="!props.busy && !!items.length" v-for="(item, index) in items" :class="getBodyRowClasses()">
                     <td v-for="field in fields" :class="getItemClasses(field)">
                         <slot :name="getItemSlotName(field)" :field="field" :item="item" :index="index">
                             {{ formatValue(field, item[field.name]) }}
+                        </slot>
+                    </td>
+                </tr>
+                <tr v-if="!props.busy && !items.length" :class="getBodyRowClasses()">
+                    <td :colspan="fields.length" :class="getItemClasses()">
+                        <slot name="empty">
+                        </slot>
+                    </td>
+                </tr>
+                <tr v-if="props.busy" :class="getBodyRowClasses()">
+                    <td :colspan="fields.length" :class="getItemClasses()">
+                        <slot name="busy">
                         </slot>
                     </td>
                 </tr>
@@ -32,6 +44,10 @@ import { SortAscendingIcon, SortDescendingIcon, EyeIcon } from "@heroicons/vue/o
 import { ref, computed } from "vue";
 
 const props = defineProps({
+    busy: {
+        type: Boolean,
+        default: false
+    },
     fields: {
         type: Array,
         default: []
@@ -64,7 +80,7 @@ const fieldClick = (field) => {
 
 const formatValue = (field, value) => {
     if (!!field.formatter &&
-        typeof(field.formatter === 'function')) {
+        typeof (field.formatter === 'function')) {
         return field.formatter(value);
     }
 
@@ -128,9 +144,11 @@ const getHeadClasses = () => {
     ];
 }
 
-const getHeadRowClasses = (field) => {
+const getHeadRowClasses = () => {
     return [
         useCoreClass("sv-table__thead-tr", getOptions(true)),
+        useCoreClass("sv-table__thead-tr--busy", getOptions(!!props.busy)),
+        useCoreClass("sv-table__thead-tr--empty", getOptions(!items.length)),
     ];
 }
 
@@ -138,6 +156,8 @@ const getFieldClasses = (field) => {
     return [
         useCoreClass("sv-table__th", getOptions(true)),
         useCoreClass("sv-table__th--sortable", getOptions(!!field.sortable)),
+        useCoreClass("sv-table__th--busy", getOptions(!!props.busy)),
+        useCoreClass("sv-table__th--empty", getOptions(!items.length)),
         !!field.thClass ? field.thClass : ""
     ];
 }
@@ -164,13 +184,17 @@ const getBodyClasses = () => {
 const getItemClasses = (field) => {
     return [
         useCoreClass("sv-table__td", getOptions(true)),
-        !!field.tdClass ? field.tdClass : ""
+        useCoreClass("sv-table__td--busy", getOptions(!!props.busy)),
+        useCoreClass("sv-table__td--empty", getOptions(!items.length)),
+        !!field?.tdClass ? field.tdClass : ""
     ];
 }
 
 const getBodyRowClasses = () => {
     return [
         useCoreClass("sv-table__tbody-tr", getOptions(true)),
+        useCoreClass("sv-table__tbody-tr--busy", getOptions(!!props.busy)),
+        useCoreClass("sv-table__tbody-tr--empty", getOptions(!items.length)),
         useCoreClass("sv-table__tbody-tr--striped", getOptions(props.variant === "striped")),
     ];
 }

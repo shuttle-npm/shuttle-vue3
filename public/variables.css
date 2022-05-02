@@ -22,7 +22,7 @@
     --sv-text-navigation: 17, 24, 39;
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
-    --sv-text-table: 230, 230, 230;
+    --sv-text-table-th: 130, 130, 130;
 
     /* backgroundColor */
     --sv-bg-primary: 219, 234, 254;
@@ -60,10 +60,10 @@
 
     --sv-bg-dialog: 240, 240, 240;
 
-    --sv-bg-table: 220, 220, 220;
-    --sv-bg-table-thead-tr: 120, 120, 120;
+    --sv-bg-table: 240, 240, 240;
+    --sv-bg-table-thead-tr: 210, 210, 210;
     --sv-bg-table-tbody-tr--odd: 230, 230, 230;
-    --sv-bg-table-tbody-tr--hover: 240, 240, 240;
+    --sv-bg-table-tbody-tr--hover: 250, 250, 250;
 
     /* borderColor */
     --sv-border-primary: 191, 219, 254;
@@ -122,7 +122,7 @@
     --sv-text-navigation: 250 250 250;
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
-    --sv-text-table: 230, 230, 230;
+    --sv-text-table-th: 230, 230, 230;
 
     /* backgroundColor */
     --sv-bg-primary: 55, 90, 127;

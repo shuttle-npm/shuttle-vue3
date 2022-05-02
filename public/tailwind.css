@@ -683,6 +683,11 @@
         @apply transform scale-95 opacity-0;
     }
 
+    /* Strip */
+    .sv-strip {
+        @apply flex flex-row items-center gap-2;
+    }
+
     /* Table */
     .sv-table {
         @apply w-full text-sm text-left bg-table;
@@ -693,7 +698,7 @@
     }
 
     .sv-table__thead {
-        @apply text-xs uppercase bg-table text-table cursor-default;
+        @apply text-xs uppercase bg-table text-table-th cursor-default;
     }
 
     .sv-table__thead-tr {
