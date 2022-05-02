@@ -160,6 +160,15 @@
         @apply bg-transparent;
     }
 
+    /* Busy */
+    .sv-busy {
+        @apply w-full p-4;
+    }
+
+    .sv-busy__icon {
+        @apply w-8 h-8 mx-auto text-primary animate-spin fill-primary;
+    }
+
     /* Button */
     .sv-button {
         @apply sv-rounded sv-border sv-padding flex flex-row cursor-pointer w-fit items-center justify-between px-3 whitespace-nowrap select-none h-10;
@@ -277,7 +286,7 @@
     .sv-button-group__label--block {
         @apply mb-2;
     }
-    
+
     .sv-button-group__box {
         @apply flex flex-row;
     }

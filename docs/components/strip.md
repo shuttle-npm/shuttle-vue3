@@ -1,5 +1,5 @@
 <script setup>
-    import { ref } from "vue";
+import { ref } from "vue";
 import { Alert, Button, Strip } from "@/components";
 import { PlusIcon, RefreshIcon } from "@heroicons/vue/outline";
 

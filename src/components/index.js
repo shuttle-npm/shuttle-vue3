@@ -1,5 +1,6 @@
 import Alert from "./Alert.vue";
 import Alerts from "./Alerts.vue";
+import Busy from "./Busy.vue";
 import Button from "./Button.vue";
 import ButtonGroup from "./ButtonGroup.vue";
 import Checkbox from "./Checkbox.vue";
@@ -17,6 +18,7 @@ import Toggle from "./Toggle.vue";
 export {
     Alert,
     Alerts,
+    Busy,
     Button,
     ButtonGroup,
     Checkbox,

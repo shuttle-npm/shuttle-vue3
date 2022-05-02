@@ -64,6 +64,10 @@ module.exports = (async () => {
                                 link: '/components/alert'
                             },
                             {
+                                text: 'Busy',
+                                link: '/components/busy'
+                            },
+                            {
                                 text: 'Button',
                                 link: '/components/button'
                             },

@@ -91,6 +91,9 @@
 
     --sv-border-table: 17, 24, 39;
 
+    /* fill */
+    --sv-fill-primary: 57, 87, 124;
+
     /* placeholderColor */
     --sv-placeholder-input: 180, 180, 180;
 
@@ -185,11 +188,14 @@
     --sv-border-navbar-menu-toggle: 55, 65, 81;
     --sv-border-navbar-menu-toggle--hover: 31, 41, 55;
 
-    --sv-default--focus: 96, 165, 250;
-    
-    --sv-dialog: 50, 50, 50;
+    --sv-border-default--focus: 96, 165, 250;
 
+    --sv-border-dialog: 50, 50, 50;
+    
     --sv-border-table: 17, 24, 39;
+
+    /* fill */
+    --sv-fill-primary: 59, 75, 119;
 
     /* placeholder */
     --sv-placeholder-input: 100, 100, 100;

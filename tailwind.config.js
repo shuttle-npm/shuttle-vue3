@@ -142,6 +142,9 @@ module.exports = {
                 "dialog": generateColorClass("sv-border-dialog"),
                 "table": generateColorClass("sv-border-table"),
             },
+            fill: {
+                "primary": generateColorClass("sv-fill-primary"),
+            },
             placeholderColor: {
                 "input": generateColorClass("sv-placeholder-input"),
             },

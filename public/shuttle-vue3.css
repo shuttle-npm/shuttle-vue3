@@ -258,6 +258,34 @@
 .sv-alert--outline {
     background-color: transparent
 }
+/* Busy */
+.sv-busy {
+    width: 100%;
+    padding: 1rem
+}
+.sv-busy__icon {
+    margin-left: auto;
+    margin-right: auto;
+    height: 2rem;
+    width: 2rem
+}
+@-webkit-keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+.sv-busy__icon {
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+    fill: rgb(var(--sv-fill-primary));
+    --tw-text-opacity: 1;
+    color: rgba(var(--sv-text-primary), var(--tw-text-opacity))
+}
 /* Button */
 .sv-button {
     padding: 0.5rem;
