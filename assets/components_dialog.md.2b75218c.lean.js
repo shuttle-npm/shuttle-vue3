@@ -4,6 +4,9 @@ import { Q as Qn, Y as Yn } from "./chunks/headlessui.esm.e8ba3a89.js";
 import { o as openBlock, c as createBlock, l as withCtx, g as createBaseVNode, a as createVNode, n as normalizeClass, u as unref, b as createElementBlock, t as toDisplayString, d as createCommentVNode, k as renderSlot, e as ref, h as createTextVNode, i as createStaticVNode } from "./app.e1321d96.js";
 const _sfc_main$1 = {
   props: {
+    message: {
+      type: String
+    },
     isOpen: {
       type: Boolean,
       default: false
@@ -15,12 +18,6 @@ const _sfc_main$1 = {
       type: Object
     },
     title: {
-      type: String
-    },
-    description: {
-      type: String
-    },
-    variant: {
       type: String
     }
   },
@@ -44,7 +41,7 @@ const _sfc_main$1 = {
     };
     const getMessageClasses = () => {
       return [
-        useCoreClass("sv-dialog__title", getOptions(true))
+        useCoreClass("sv-dialog__message", getOptions(true))
       ];
     };
     const getOverlayClasses = () => {
@@ -143,8 +140,8 @@ const _hoisted_4 = /* @__PURE__ */ createBaseVNode("div", { class: "mt-2" }, [
   /* @__PURE__ */ createBaseVNode("p", { class: "text-sm text-gray-500" }, " This text is provided in the default slot. ")
 ], -1);
 const _hoisted_5 = { class: "mt-4" };
-const _hoisted_6 = /* @__PURE__ */ createStaticVNode("", 6);
-const __pageData = '{"title":"Dialog","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Events","slug":"events"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/dialog.md"}';
+const _hoisted_6 = /* @__PURE__ */ createStaticVNode("", 5);
+const __pageData = '{"title":"Dialog","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/dialog.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
@@ -171,15 +168,13 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           message: "A message for the dialog."
         }, {
           default: withCtx(() => [
-            createBaseVNode("div", null, [
-              _hoisted_4,
-              createBaseVNode("div", _hoisted_5, [
-                createBaseVNode("button", {
-                  type: "button",
-                  class: "inline-flex justify-center px-4 py-2 text-sm font-medium text-white0 bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500",
-                  onClick: _cache[1] || (_cache[1] = ($event) => setIsOpen(false))
-                }, " Button ")
-              ])
+            _hoisted_4,
+            createBaseVNode("div", _hoisted_5, [
+              createBaseVNode("button", {
+                type: "button",
+                class: "inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500",
+                onClick: _cache[1] || (_cache[1] = ($event) => setIsOpen(false))
+              }, " Button ")
             ])
           ]),
           _: 1

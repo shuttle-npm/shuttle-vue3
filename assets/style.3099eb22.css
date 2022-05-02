@@ -3016,6 +3016,10 @@ a:hover .title[data-v-a42cc842] {
     --tw-text-opacity: 1;
     color: rgb(107 114 128 / var(--tw-text-opacity))
 }
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
 .text-orange-500 {
     --tw-text-opacity: 1;
     color: rgb(249 115 22 / var(--tw-text-opacity))
@@ -3081,6 +3085,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 130, 130, 130;
+    --sv-text-dialog: 30, 30, 30;
 
     /* backgroundColor */
     --sv-bg-primary: 219, 234, 254;
@@ -3184,6 +3189,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 230, 230, 230;
+    --sv-text-dialog: 230, 230, 230;
 
     /* backgroundColor */
     --sv-bg-primary: 55, 90, 127;
@@ -3920,6 +3926,10 @@ a:hover .title[data-v-a42cc842] {
     line-height: 1.5rem;
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity))
+}
+.sv-dialog__message {
+    --tw-text-opacity: 1;
+    color: rgba(var(--sv-text-dialog), var(--tw-text-opacity))
 }
 /* Dialog transition */
 .sv-dialog-enter-active {
