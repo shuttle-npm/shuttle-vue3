@@ -3533,7 +3533,8 @@ a:hover .title[data-v-a42cc842] {
 /* Busy */
 .sv-busy {
     width: 100%;
-    padding: 1rem
+    padding: 1rem;
+    text-align: center
 }
 .sv-busy__icon {
     margin-left: auto;
