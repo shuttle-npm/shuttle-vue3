@@ -137,7 +137,7 @@ const _hoisted_2 = /* @__PURE__ */ createBaseVNode("h2", {
 ], -1);
 const _hoisted_3 = /* @__PURE__ */ createTextVNode("Show");
 const _hoisted_4 = /* @__PURE__ */ createBaseVNode("div", { class: "mt-2" }, [
-  /* @__PURE__ */ createBaseVNode("p", { class: "text-sm text-gray-500" }, " This text is provided in the default slot. ")
+  /* @__PURE__ */ createBaseVNode("p", { class: "text-sm" }, " This text is provided in the default slot. ")
 ], -1);
 const _hoisted_5 = { class: "mt-4" };
 const _hoisted_6 = /* @__PURE__ */ createStaticVNode("", 5);

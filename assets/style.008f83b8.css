@@ -3012,13 +3012,13 @@ a:hover .title[data-v-a42cc842] {
 .font-bold {
     font-weight: 700
 }
-.text-gray-500 {
-    --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity))
-}
 .text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+.text-gray-500 {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity))
 }
 .text-orange-500 {
     --tw-text-opacity: 1;
@@ -3086,6 +3086,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 130, 130, 130;
     --sv-text-dialog: 30, 30, 30;
+    --sv-text-dialog-title: 96, 165, 250;
 
     /* backgroundColor */
     --sv-bg-primary: 219, 234, 254;
@@ -3151,6 +3152,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-default--focus: 191, 219, 254;
 
     --sv-border-dialog: 100, 100, 100;
+    --sv-border-dialog-title: 96, 165, 250;
 
     --sv-border-table: 17, 24, 39;
 
@@ -3190,6 +3192,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 230, 230, 230;
     --sv-text-dialog: 230, 230, 230;
+    --sv-text-dialog-title: 192, 207, 249;
 
     /* backgroundColor */
     --sv-bg-primary: 55, 90, 127;
@@ -3223,7 +3226,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-bg-navigation--hover: 75, 85, 99;
     --sv-bg-navigation-dropdown: 55, 65, 81;
     
-    --sv-bg-dialog: 180, 180, 180;
+    --sv-bg-dialog: 48, 48, 48;
 
     --sv-bg-table: 40, 40, 40;
     --sv-bg-table-thead-tr: 28, 32, 36;
@@ -3255,6 +3258,7 @@ a:hover .title[data-v-a42cc842] {
     --sv-border-default--focus: 96, 165, 250;
 
     --sv-border-dialog: 50, 50, 50;
+    --sv-border-dialog-title: 192, 207, 249;
     
     --sv-border-table: 17, 24, 39;
 
@@ -3903,7 +3907,7 @@ a:hover .title[data-v-a42cc842] {
     max-width: 28rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     overflow: hidden;
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     --tw-bg-opacity: 1;
     background-color: rgba(var(--sv-bg-dialog), var(--tw-bg-opacity));
     padding: 1.5rem;
@@ -3916,16 +3920,16 @@ a:hover .title[data-v-a42cc842] {
 .sv-dialog__title {
     margin-bottom: 1rem;
     border-width: 0px;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-style: solid;
     --tw-border-opacity: 1;
-    border-color: rgb(55 65 81 / var(--tw-border-opacity));
+    border-color: rgba(var(--sv-border-dialog-title), var(--tw-border-opacity));
     padding-bottom: 0.5rem;
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.5rem;
     --tw-text-opacity: 1;
-    color: rgb(17 24 39 / var(--tw-text-opacity))
+    color: rgba(var(--sv-text-dialog-title), var(--tw-text-opacity))
 }
 .sv-dialog__message {
     --tw-text-opacity: 1;
