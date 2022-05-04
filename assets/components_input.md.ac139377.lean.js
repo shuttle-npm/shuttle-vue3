@@ -1,24 +1,8 @@
-import { _ as _sfc_main$1 } from "./chunks/Input.44dc11da.js";
-import { c as createBlock, a as createVNode, o as openBlock, e as ref, b as createElementBlock, g as createBaseVNode, t as toDisplayString, u as unref, h as createTextVNode, i as createStaticVNode } from "./app.2556e307.js";
-import "./chunks/useAlert.3f07982e.js";
+import { _ as _sfc_main$2 } from "./chunks/Alert.67dc2959.js";
+import { _ as _sfc_main$1 } from "./chunks/Input.2769daa4.js";
+import { c as createBlock, a as createVNode, o as openBlock, e as ref, b as createElementBlock, g as createBaseVNode, t as toDisplayString, u as unref, h as createTextVNode, w as withCtx, i as createStaticVNode } from "./app.2556e307.js";
 import "./chunks/useCoreClass.4c1eebb8.js";
-import "./chunks/Alert.67dc2959.js";
-function render$3(_ctx, _cache) {
-  return openBlock(), createBlock("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    fill: "none",
-    viewBox: "0 0 24 24",
-    "stroke-width": "2",
-    stroke: "currentColor",
-    "aria-hidden": "true"
-  }, [
-    createVNode("path", {
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-      d: "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-    })
-  ]);
-}
+import "./chunks/useAlert.3f07982e.js";
 function render$2(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -108,9 +92,10 @@ const _hoisted_3 = /* @__PURE__ */ createBaseVNode("h3", {
 const _hoisted_4 = /* @__PURE__ */ createStaticVNode("", 2);
 const _hoisted_6 = { class: "mb-4" };
 const _hoisted_7 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 2);
-const _hoisted_10 = /* @__PURE__ */ createStaticVNode("", 4);
-const __pageData = '{"title":"Input","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Alert","slug":"alert"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/input.md"}';
+const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 3);
+const _hoisted_11 = /* @__PURE__ */ createBaseVNode("div", null, "This is a custom message.", -1);
+const _hoisted_12 = /* @__PURE__ */ createStaticVNode("", 5);
+const __pageData = '{"title":"Input","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Slot","slug":"slot"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/input.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
@@ -189,18 +174,32 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         createVNode(unref(_sfc_main$1), {
           modelValue: message.value,
           "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => message.value = $event),
-          label: "Block layout",
-          alert: { message: "This is an info message.", outline: true, size: "sm" }
-        }, null, 8, ["modelValue", "alert"]),
+          label: "Block layout"
+        }, {
+          message: withCtx(() => [
+            createVNode(unref(_sfc_main$2), {
+              message: "This is a danger alert.",
+              size: "sm",
+              outline: "",
+              class: "mt-2",
+              variant: "danger"
+            })
+          ]),
+          _: 1
+        }, 8, ["modelValue"]),
         createVNode(unref(_sfc_main$1), {
           modelValue: message.value,
           "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => message.value = $event),
           label: "Inline layout",
           layout: "inline",
-          alert: { message: "This is a danger message.", variant: "danger", icon: unref(render$3), dismissable: true, size: "lg" },
           class: "mt-2"
-        }, null, 8, ["modelValue", "alert"]),
-        _hoisted_10
+        }, {
+          message: withCtx(() => [
+            _hoisted_11
+          ]),
+          _: 1
+        }, 8, ["modelValue"]),
+        _hoisted_12
       ]);
     };
   }

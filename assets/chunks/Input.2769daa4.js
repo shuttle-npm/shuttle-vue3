@@ -1,13 +1,9 @@
 import { u as useAlert } from "./useAlert.3f07982e.js";
 import { u as useCoreClass } from "./useCoreClass.4c1eebb8.js";
-import { _ as _sfc_main$1 } from "./Alert.67dc2959.js";
-import { o as openBlock, b as createElementBlock, n as normalizeClass, t as toDisplayString, d as createCommentVNode, g as createBaseVNode, c as createBlock, j as resolveDynamicComponent, u as unref } from "../app.2556e307.js";
+import { o as openBlock, b as createElementBlock, n as normalizeClass, t as toDisplayString, d as createCommentVNode, g as createBaseVNode, c as createBlock, j as resolveDynamicComponent, k as renderSlot } from "../app.2556e307.js";
 const _hoisted_1 = ["type", "value", "placeholder", "autocomplete"];
 const _sfc_main = {
   props: {
-    alert: {
-      type: Object
-    },
     autocomplete: {
       type: String
     },
@@ -112,11 +108,11 @@ const _sfc_main = {
         useCoreClass("sv-input__icon-end--clickable", getOptions(!!props.iconEnd && props.iconEndClickable))
       ];
     };
-    const getAlertClasses = () => {
+    const getMessageClasses = () => {
       return [
-        useCoreClass("sv-input__alert", getOptions(true)),
-        useCoreClass("sv-input__alert--inline", getOptions(getLayout() === "inline")),
-        useCoreClass("sv-input__alert--block", getOptions(getLayout() === "block"))
+        useCoreClass("sv-input__message", getOptions(true)),
+        useCoreClass("sv-input__message--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-input__message--block", getOptions(getLayout() === "block"))
       ];
     };
     const iconStartClick = () => {
@@ -131,7 +127,7 @@ const _sfc_main = {
       }
       emit("iconEndClick");
     };
-    const alert = useAlert(props);
+    useAlert(props);
     return (_ctx, _cache) => {
       var _a, _b;
       return openBlock(), createElementBlock("div", {
@@ -164,18 +160,9 @@ const _sfc_main = {
           }, null, 8, ["class"])) : createCommentVNode("", true)
         ], 2),
         createBaseVNode("div", {
-          class: normalizeClass(getAlertClasses())
+          class: normalizeClass(getMessageClasses())
         }, [
-          !!unref(alert) ? (openBlock(), createBlock(_sfc_main$1, {
-            key: 0,
-            message: unref(alert).message,
-            variant: unref(alert).variant,
-            icon: unref(alert).icon,
-            dismissable: unref(alert).dismissable,
-            onClick: unref(alert).click,
-            outline: unref(alert).outline,
-            size: unref(alert).size
-          }, null, 8, ["message", "variant", "icon", "dismissable", "onClick", "outline", "size"])) : createCommentVNode("", true)
+          renderSlot(_ctx.$slots, "message")
         ], 2)
       ], 2);
     };
