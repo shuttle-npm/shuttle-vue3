@@ -91,7 +91,7 @@ reset();
 
 <Checkbox v-model="outline" label="Outline?" class="mb-4" />
 
-<Button @click="reset" content="Reset" class="mb-2" :disabled="alerts.length >= alertsReference.length"></Button>
+<Button @click="reset" class="mb-2" :disabled="alerts.length >= alertsReference.length">Reset</Button>
 <Alerts :alerts="computedAlerts" @remove="remove" :sv-class="{ 'sv-alert': 'mb-2' }"/>
 
 ### Custom Icon
