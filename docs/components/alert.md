@@ -119,7 +119,7 @@ reset();
 
 | Name     | Description                                     |
 | -------- | ----------------------------------------------- |
-| `remove` | Called when the dismissable element is clicked. |
+| `remove` | Calls when the dismissable element is clicked, passing the relevant `alert` as an argument: `emit('remove', alert)` |
 
 ## Classes
 

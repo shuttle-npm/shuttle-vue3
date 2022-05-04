@@ -162,7 +162,7 @@
 
     /* Busy */
     .sv-busy {
-        @apply w-full p-4;
+        @apply w-full p-4 text-center;
     }
 
     .sv-busy__icon {
@@ -354,11 +354,11 @@
     }
 
     .sv-dialog__container {
-        @apply inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform rounded-lg bg-dialog;
+        @apply inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform rounded-md bg-dialog;
     }
 
     .sv-dialog__title {
-        @apply text-lg font-medium leading-6 text-gray-900 border-0 border-b-2 border-gray-700 border-solid pb-2 mb-4;
+        @apply text-lg font-medium leading-6 text-dialog-title border-0 border-b border-dialog-title border-solid pb-2 mb-4;
     }
 
     .sv-dialog__message {

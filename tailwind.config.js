@@ -84,6 +84,7 @@ module.exports = {
                 "navbar-menu-toggle--hover": generateColorClass("sv-text-navbar-menu-toggle--hover"),
                 "table-th": generateColorClass("sv-text-table-th"),
                 "dialog": generateColorClass("sv-text-dialog"),
+                "dialog-title": generateColorClass("sv-text-dialog-title"),
             },
             backgroundColor: {
                 "primary": generateColorClass("sv-bg-primary"),
@@ -141,6 +142,7 @@ module.exports = {
                 "navigation-divider": generateColorClass("sv-border-navigation-divider"),
                 "default--focus": generateColorClass("sv-border-default--focus"),
                 "dialog": generateColorClass("sv-border-dialog"),
+                "dialog-title": generateColorClass("sv-border-dialog-title"),
                 "table": generateColorClass("sv-border-table"),
             },
             fill: {

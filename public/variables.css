@@ -24,6 +24,7 @@
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 130, 130, 130;
     --sv-text-dialog: 30, 30, 30;
+    --sv-text-dialog-title: 96, 165, 250;
 
     /* backgroundColor */
     --sv-bg-primary: 219, 234, 254;
@@ -89,6 +90,7 @@
     --sv-default--focus: 191, 219, 254;
 
     --sv-border-dialog: 100, 100, 100;
+    --sv-border-dialog-title: 96, 165, 250;
 
     --sv-border-table: 17, 24, 39;
 
@@ -128,6 +130,7 @@
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
     --sv-text-table-th: 230, 230, 230;
     --sv-text-dialog: 230, 230, 230;
+    --sv-text-dialog-title: 192, 207, 249;
 
     /* backgroundColor */
     --sv-bg-primary: 55, 90, 127;
@@ -161,7 +164,7 @@
     --sv-bg-navigation--hover: 75, 85, 99;
     --sv-bg-navigation-dropdown: 55, 65, 81;
     
-    --sv-bg-dialog: 180, 180, 180;
+    --sv-bg-dialog: 48, 48, 48;
 
     --sv-bg-table: 40, 40, 40;
     --sv-bg-table-thead-tr: 28, 32, 36;
@@ -193,6 +196,7 @@
     --sv-border-default--focus: 96, 165, 250;
 
     --sv-border-dialog: 50, 50, 50;
+    --sv-border-dialog-title: 192, 207, 249;
     
     --sv-border-table: 17, 24, 39;
 

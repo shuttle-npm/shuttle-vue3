@@ -16,7 +16,7 @@ const setIsOpen = (value) => {
 <Button @click="setIsOpen(true)">Show</Button>
 <Dialog :is-open="isOpen" :set-is-open="setIsOpen" title="Dialog Title" message="A message for the dialog.">
 <div class="mt-2">
-    <p class="text-sm text-gray-500">
+    <p class="text-sm">
         This text is provided in the default slot.
     </p>
 </div>
