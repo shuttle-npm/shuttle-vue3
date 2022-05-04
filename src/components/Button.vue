@@ -2,7 +2,6 @@
     <div :class="getClasses()" @click="click($event)" @keydown.space="click($event)" @keydown.enter="click($event)"
         tabindex="0">
         <component :is="getIcon()" :class="getIconClasses()" />
-        {{ props.content }}
         <slot></slot>
     </div>
 </template>
@@ -13,9 +12,6 @@ import { useCoreClass } from "@/composables/useCoreClass";
 const emit = defineEmits(["click"]);
 
 const props = defineProps({
-    content: {
-        type: String
-    },
     variant: {
         type: String
     },

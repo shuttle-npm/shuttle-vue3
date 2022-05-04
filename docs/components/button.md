@@ -93,7 +93,9 @@ import { PlayIcon } from '@heroicons/vue/outline'
 
 | Name       | Type        | Default     | Description                                                                                                                       |
 | ---------- | ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled` | `Boolean`   | `false`     | Set to `true` to disable the button.                                                                                              |
 | `icon`     | `Component` | `undefined` | Displays the given icon in front of the content.                                                                                  |
+| `outline`  | `Boolean`   | `false`     | Adds the `--outline-{variant}` class modifier.                                                                                    |
 | `size`     | `String`    | `""`        | The size of the form:<br/>- `xs`<br/>- `sm`<br/>- `lg`<br/>- an empty value would be the default size.                            |
 | `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.                |
 | `variant`  | `String`    | `primary`   | The variant of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
