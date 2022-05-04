@@ -1,5 +1,5 @@
 import { _ as _sfc_main$2 } from "./chunks/Alert.e4484792.js";
-import { _ as _sfc_main$3 } from "./chunks/Button.ae08e867.js";
+import { _ as _sfc_main$3 } from "./chunks/Button.8275c6d2.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
 import { o as openBlock, c as createBlock, a as createVNode, b as createElementBlock, k as renderSlot, n as normalizeClass, e as ref, u as unref, l as withCtx, g as createBaseVNode, h as createTextVNode, i as createStaticVNode } from "./app.e1321d96.js";
 function render$1(_ctx, _cache) {

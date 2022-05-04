@@ -1,10 +1,7 @@
-import { o as openBlock, b as createElementBlock, c as createBlock, n as normalizeClass, j as resolveDynamicComponent, h as createTextVNode, t as toDisplayString, k as renderSlot, w as withKeys } from "../app.e1321d96.js";
+import { o as openBlock, b as createElementBlock, c as createBlock, n as normalizeClass, j as resolveDynamicComponent, k as renderSlot, w as withKeys } from "../app.e1321d96.js";
 import { u as useCoreClass } from "./useCoreClass.4c1eebb8.js";
 const _sfc_main = {
   props: {
-    content: {
-      type: String
-    },
     variant: {
       type: String
     },
@@ -86,7 +83,6 @@ const _sfc_main = {
         (openBlock(), createBlock(resolveDynamicComponent(getIcon()), {
           class: normalizeClass(getIconClasses())
         }, null, 8, ["class"])),
-        createTextVNode(" " + toDisplayString(props.content) + " ", 1),
         renderSlot(_ctx.$slots, "default")
       ], 34);
     };

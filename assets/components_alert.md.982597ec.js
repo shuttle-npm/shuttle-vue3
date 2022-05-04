@@ -20,7 +20,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 import { _ as _sfc_main$2 } from "./chunks/Alert.e4484792.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
 import { c as createBlock, a as createVNode, o as openBlock, b as createElementBlock, F as Fragment, r as renderList, n as normalizeClass, d as createCommentVNode, m as mergeProps, e as ref, f as computed, u as unref, g as createBaseVNode, h as createTextVNode, i as createStaticVNode } from "./app.e1321d96.js";
-import { _ as _sfc_main$5 } from "./chunks/Button.ae08e867.js";
+import { _ as _sfc_main$5 } from "./chunks/Button.8275c6d2.js";
 import { _ as _sfc_main$3 } from "./chunks/ButtonGroup.1e8b143a.js";
 import { _ as _sfc_main$4 } from "./chunks/Checkbox.e1f16576.js";
 function render(_ctx, _cache) {

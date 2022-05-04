@@ -1,4 +1,4 @@
-import { _ as _sfc_main$4 } from "./chunks/Button.ae08e867.js";
+import { _ as _sfc_main$4 } from "./chunks/Button.8275c6d2.js";
 import { _ as _sfc_main$2 } from "./chunks/ButtonGroup.1e8b143a.js";
 import { _ as _sfc_main$3 } from "./chunks/Checkbox.e1f16576.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
