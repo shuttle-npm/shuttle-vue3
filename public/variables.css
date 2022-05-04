@@ -1,8 +1,8 @@
 :root {
     /* textColor */
-    --sv-text-primary: 96, 165, 250;
-    --sv-text-primary--hover: 147, 197, 253;
-    --sv-text-secondary: 163, 163, 163;
+    --sv-text-primary: 66, 47, 33;
+    --sv-text-primary--hover: 30, 64, 175;
+    --sv-text-secondary: 177, 177, 177;
     --sv-text-secondary--hover: 212, 212, 212;
     --sv-text-success: 74, 222, 128;
     --sv-text-success--hover: 134, 239, 172;
@@ -27,9 +27,9 @@
     --sv-text-dialog-title: 96, 165, 250;
 
     /* backgroundColor */
-    --sv-bg-primary: 219, 234, 254;
-    --sv-bg-primary--hover: 191, 219, 254;
-    --sv-bg-primary--active: 147, 197, 253;
+    --sv-bg-primary: 249, 115, 22;
+    --sv-bg-primary--hover: 212, 103, 24;
+    --sv-bg-primary--active: 182, 93, 29;
     --sv-bg-secondary: 245, 245, 245;
     --sv-bg-secondary--hover: 229, 229, 229;
     --sv-bg-secondary--active: 212, 212, 212;
@@ -106,7 +106,7 @@
 
 .dark {
     /* textColor */
-    --sv-text-primary: 192, 207, 249;
+    --sv-text-primary: 255, 220, 196;
     --sv-text-primary--hover: 30, 64, 175;
     --sv-text-secondary: 177, 177, 177;
     --sv-text-secondary--hover: 38, 38, 38;
@@ -133,12 +133,12 @@
     --sv-text-dialog-title: 192, 207, 249;
 
     /* backgroundColor */
-    --sv-bg-primary: 55, 90, 127;
-    --sv-bg-primary--hover: 50, 82, 116;
-    --sv-bg-primary--active: 47, 73, 100;
+    --sv-bg-primary: 161, 78, 21;
+    --sv-bg-primary--hover: 148, 77, 30;
+    --sv-bg-primary--active: 134, 81, 46;
     --sv-bg-secondary: 68, 68, 68;
     --sv-bg-secondary--hover: 64, 64, 64;
-    --sv-bg-secondary--active: 38, 38, 38;
+    --sv-bg-secondary--active: 60, 60, 60;
     --sv-bg-success: 64, 112, 61;
     --sv-bg-success--hover: 56, 97, 53;
     --sv-bg-success--active: 54, 90, 52;
@@ -172,7 +172,7 @@
     --sv-bg-table-tbody-tr--hover: 60, 60, 60;
 
     /* borderColor */
-    --sv-border-primary: 33, 49, 65;
+    --sv-border-primary: 163, 99, 56;
     --sv-border-secondary: 48, 48, 48;
     --sv-border-success: 60, 87, 58;
     --sv-border-danger: 73, 46, 46;

@@ -864,10 +864,7 @@
 .sv-input__icon-end--clickable {
     cursor: pointer
 }
-.sv-input__alert {
-    margin-top: 0.25rem
-}
-.sv-input__alert--inline {
+.sv-input__message--inline {
     grid-column: span 2 / span 2
 }
 /* Listbox */
@@ -1299,6 +1296,7 @@
 /* Table */
 .sv-table {
     width: 100%;
+    border-collapse: collapse;
     --tw-bg-opacity: 1;
     background-color: rgba(var(--sv-bg-table), var(--tw-bg-opacity));
     text-align: left;

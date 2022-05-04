@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from "vue";
-import { Input } from "@/components";
+import { Alert, Input } from "@/components";
 import { ExclamationIcon, EyeIcon, EyeOffIcon, ShieldExclamationIcon } from "@heroicons/vue/outline";
 
 const value = ref("");
@@ -84,10 +84,27 @@ Value: {{ value }}
 </template>
 ```
 
-### Alert
+### Slot
 
-<Input v-model="message" label="Block layout" :alert="{ message: 'This is an info message.', outline: true, size: 'sm' }" />
-<Input v-model="message" label="Inline layout" layout="inline" :alert="{ message: 'This is a danger message.', variant: 'danger', icon: ExclamationIcon, dismissable: true, size: 'lg' }" class="mt-2" />
+- `message`
+
+<Input v-model="message" label="Block layout"><template #message><Alert message="This is a danger alert." size="sm" outline class="mt-2" variant="danger"/></template></Input>
+<Input v-model="message" label="Inline layout" layout="inline" class="mt-2"><template #message><div>This is a custom message.</div></template></Input>
+
+```vue
+<template>
+    <Input v-model="message" label="Block layout">
+        <template #message>
+            <Alert message="This is a danger alert." size="sm" variant="danger" outline />
+        </template>
+    </Input>
+    <Input v-model="message" label="Inline layout" layout="inline">
+        <template #message>
+            <div>This is a custom message.</div>
+        </template>
+    </Input>
+</template>
+```
 
 ## Properties
 

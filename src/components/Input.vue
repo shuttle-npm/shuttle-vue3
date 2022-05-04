@@ -8,8 +8,8 @@
                 @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''" :autocomplete="autocomplete" />
             <component v-if="!!props.iconEnd" :is="getIconEnd?.()" :class="getIconEndClasses()" @click="iconEndClick" />
         </div>
-        <div :class="getAlertClasses()">
-            <Alert v-if="!!alert" :message="alert.message" :variant="alert.variant" :icon="alert.icon" :dismissable="alert.dismissable" @click="alert.click" :outline="alert.outline" :size="alert.size" />
+        <div :class="getMessageClasses()">
+            <slot name="message"></slot>
         </div>
     </div>
 </template>
@@ -17,12 +17,8 @@
 <script setup>
 import { useAlert } from "@/composables/useAlert";
 import { useCoreClass } from "@/composables/useCoreClass";
-import Alert from "./Alert.vue";
 
 const props = defineProps({
-    alert: {
-        type: Object
-    },
     autocomplete: {
         type: String
     },
@@ -134,11 +130,11 @@ const getIconEndClasses = () => {
     ];
 }
 
-const getAlertClasses = () => {
+const getMessageClasses = () => {
     return [
-        useCoreClass("sv-input__alert", getOptions(true)),
-        useCoreClass("sv-input__alert--inline", getOptions(getLayout() === "inline")),
-        useCoreClass("sv-input__alert--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-input__message", getOptions(true)),
+        useCoreClass("sv-input__message--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-input__message--block", getOptions(getLayout() === "block")),
     ];
 }
 
