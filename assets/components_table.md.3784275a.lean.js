@@ -1,6 +1,5 @@
-import { _ as _sfc_main$4 } from "./chunks/Button.b93f312c.js";
-import { _ as _sfc_main$2 } from "./chunks/ButtonGroup.34aa9180.js";
-import { _ as _sfc_main$3 } from "./chunks/Checkbox.b780ec41.js";
+import { _ as _sfc_main$3 } from "./chunks/Button.b93f312c.js";
+import { _ as _sfc_main$2 } from "./chunks/Checkbox.b780ec41.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
 import { o as openBlock, c as createBlock, a as createVNode, e as ref, f as computed, b as createElementBlock, g as createBaseVNode, n as normalizeClass, F as Fragment, r as renderList, u as unref, d as createCommentVNode, k as renderSlot, h as createTextVNode, t as toDisplayString, j as resolveDynamicComponent, w as withCtx, i as createStaticVNode } from "./app.2556e307.js";
 function render$1(_ctx, _cache) {
@@ -51,6 +50,10 @@ const _sfc_main$1 = {
     items: {
       type: Array,
       default: []
+    },
+    striped: {
+      type: Boolean,
+      default: false
     },
     svClass: {
       type: Object
@@ -168,7 +171,7 @@ const _sfc_main$1 = {
         useCoreClass("sv-table__tbody-tr", getOptions(true)),
         useCoreClass("sv-table__tbody-tr--busy", getOptions(!!props.busy)),
         useCoreClass("sv-table__tbody-tr--empty", getOptions(!items.length)),
-        useCoreClass("sv-table__tbody-tr--striped", getOptions(props.variant === "striped"))
+        useCoreClass("sv-table__tbody-tr--striped", getOptions(props.striped))
       ];
     };
     return (_ctx, _cache) => {
@@ -334,17 +337,8 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         name: "Name-E"
       }
     ];
-    const variant = ref("");
-    const buttons = ref([
-      {
-        text: "none",
-        value: ""
-      },
-      {
-        text: "striped",
-        value: "striped"
-      }
-    ]);
+    ref("");
+    const striped = ref(false);
     const svClass = {
       "sv-table": "vt-doc-ignore",
       "sv-table__thead-tr": "vt-doc-ignore",
@@ -363,18 +357,18 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         _hoisted_1,
         _hoisted_2,
         createVNode(unref(_sfc_main$2), {
-          modelValue: variant.value,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => variant.value = $event),
-          buttons: buttons.value,
-          class: "mb-4"
-        }, null, 8, ["modelValue", "buttons"]),
-        createVNode(unref(_sfc_main$3), {
+          modelValue: striped.value,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => striped.value = $event),
+          label: "Striped?",
+          class: "mb-2"
+        }, null, 8, ["modelValue"]),
+        createVNode(unref(_sfc_main$2), {
           modelValue: busy.value,
           "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => busy.value = $event),
           label: "Busy?",
           class: "mb-2"
         }, null, 8, ["modelValue"]),
-        createVNode(unref(_sfc_main$3), {
+        createVNode(unref(_sfc_main$2), {
           modelValue: empty.value,
           "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => empty.value = $event),
           label: "Empty?",
@@ -383,7 +377,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         createVNode(unref(_sfc_main$1), {
           fields,
           items: unref(getItems),
-          variant: variant.value,
+          striped: striped.value,
           "sv-class": svClass,
           busy: busy.value
         }, {
@@ -391,7 +385,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
             createTextVNode(toDisplayString(data.index), 1)
           ]),
           "item(custom)": withCtx((data) => [
-            createVNode(unref(_sfc_main$4), {
+            createVNode(unref(_sfc_main$3), {
               variant: "danger",
               size: "xs"
             }, {
@@ -408,7 +402,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
             _hoisted_5
           ]),
           _: 1
-        }, 8, ["items", "variant", "busy"]),
+        }, 8, ["items", "striped", "busy"]),
         _hoisted_6
       ]);
     };
