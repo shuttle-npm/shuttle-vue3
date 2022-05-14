@@ -1394,37 +1394,37 @@
     --tw-border-opacity: 1;
     border-color: rgba(var(--sv-border-primary), var(--tw-border-opacity));
     --tw-text-opacity: 1;
-    color: rgba(var(--sv-text-primary), var(--tw-text-opacity))
+    color: rgba(var(--sv-text-title-primary), var(--tw-text-opacity))
 }
 .sv-title--secondary {
     --tw-border-opacity: 1;
     border-color: rgba(var(--sv-border-secondary), var(--tw-border-opacity));
     --tw-text-opacity: 1;
-    color: rgba(var(--sv-text-secondary), var(--tw-text-opacity))
+    color: rgba(var(--sv-text-title-secondary), var(--tw-text-opacity))
 }
 .sv-title--success {
     --tw-border-opacity: 1;
     border-color: rgba(var(--sv-border-success), var(--tw-border-opacity));
     --tw-text-opacity: 1;
-    color: rgba(var(--sv-text-success), var(--tw-text-opacity))
+    color: rgba(var(--sv-text-title-success), var(--tw-text-opacity))
 }
 .sv-title--danger {
     --tw-border-opacity: 1;
     border-color: rgba(var(--sv-border-danger), var(--tw-border-opacity));
     --tw-text-opacity: 1;
-    color: rgba(var(--sv-text-danger), var(--tw-text-opacity))
+    color: rgba(var(--sv-text-title-danger), var(--tw-text-opacity))
 }
 .sv-title--warning {
     --tw-border-opacity: 1;
     border-color: rgba(var(--sv-border-warning), var(--tw-border-opacity));
     --tw-text-opacity: 1;
-    color: rgba(var(--sv-text-warning), var(--tw-text-opacity))
+    color: rgba(var(--sv-text-title-warning), var(--tw-text-opacity))
 }
 .sv-title--info {
     --tw-border-opacity: 1;
     border-color: rgba(var(--sv-border-info), var(--tw-border-opacity));
     --tw-text-opacity: 1;
-    color: rgba(var(--sv-text-info), var(--tw-text-opacity))
+    color: rgba(var(--sv-text-title-info), var(--tw-text-opacity))
 }
 /* Toggle */
 .sv-toggle {

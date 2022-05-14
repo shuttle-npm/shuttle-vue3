@@ -51,9 +51,9 @@ import { PlayIcon } from '@heroicons/vue/outline'
 
 | Name       | Type        | Default     | Description                                                                                                                    |
 | ---------- | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `type`     | `String`    | `primary`   | The type of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
 | `icon`     | `Component` | `undefined` | Displays the given icon in front of the content.                                                                               |
 | `sv-class` | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.             |
+| `variant`  | `String`    | `primary`   | The type of button:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`<br/>- `link` |
 
 ## Events
 

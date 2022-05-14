@@ -56,6 +56,10 @@ const props = defineProps({
         type: Array,
         default: []
     },
+    striped: {
+        type: Boolean,
+        default: false
+    },
     svClass: {
         type: Object
     },
@@ -195,7 +199,7 @@ const getBodyRowClasses = () => {
         useCoreClass("sv-table__tbody-tr", getOptions(true)),
         useCoreClass("sv-table__tbody-tr--busy", getOptions(!!props.busy)),
         useCoreClass("sv-table__tbody-tr--empty", getOptions(!items.length)),
-        useCoreClass("sv-table__tbody-tr--striped", getOptions(props.variant === "striped")),
+        useCoreClass("sv-table__tbody-tr--striped", getOptions(props.striped)),
     ];
 }
 </script>
