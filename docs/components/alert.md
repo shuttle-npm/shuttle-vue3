@@ -4,6 +4,7 @@ import { BeakerIcon } from '@heroicons/vue/outline'
 import { Alert, Alerts, Button, ButtonGroup, Checkbox } from "@/components";
 
 const outline = ref(false);
+const icon = ref(false);
 const size = ref("");
 
 const buttons = ref([
@@ -72,8 +73,12 @@ const remove = (alert) => {
     alerts.value.splice(index, 1);
 }
 
+const getIcon = () => {
+    return icon.value ? BeakerIcon : undefined;
+}
+
 const computedAlerts = computed(() => {
-    return alerts.value.map(item => ({...item, outline: outline.value, size: size.value}));
+    return alerts.value.map(item => ({...item, outline: outline.value, size: size.value, icon: getIcon()}));
 })
 
 const reset = () => {
@@ -90,18 +95,10 @@ reset();
 <ButtonGroup v-model="size" :buttons="buttons" class="mb-4" />
 
 <Checkbox v-model="outline" label="Outline?" class="mb-4" />
+<Checkbox v-model="icon" label="Icon?" class="mb-4" />
 
 <Button @click="reset" class="mb-2" :disabled="alerts.length >= alertsReference.length">Reset</Button>
 <Alerts :alerts="computedAlerts" @remove="remove" :sv-class="{ 'sv-alert': 'mb-2' }"/>
-
-### Custom Icon
-
-```vue
-<template>
-<Alert :icon="BeakerIcon" type="primary" message="A simple primary alert with a custom icon." :dismissable="false" />
-</template>
-```
-<Alert :icon="BeakerIcon" type="primary" message="A simple primary alert with a custom icon." :dismissable="false" />
 
 ## Properties
 
@@ -126,15 +123,19 @@ reset();
 - `sv-alert`
   - `sv-alert--{variant}`
   - `sv-alert--{size}`
+  - `sv-alert--outline`
 - `sv-alert__icon`
   - `sv-alert__icon--{variant}`
   - `sv-alert__icon--{size}`
+  - `sv-alert__icon--outline`
 - `sv-alert__icon-close`
   - `sv-alert__icon-close--{variant}`
   - `sv-alert__icon-close--{size}`
+  - `sv-alert__icon-close--outline`
 - `sv-alert__message`
   - `sv-alert__message--{variant}`
   - `sv-alert__message--{size}`
+  - `sv-alert__message--outline`
 
 ## Container
 

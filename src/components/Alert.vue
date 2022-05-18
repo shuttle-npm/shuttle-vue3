@@ -72,6 +72,7 @@ const getClasses = () => {
 const getIconClasses = () => {
     return [
         useCoreClass("sv-alert__icon", getOptions()),
+        useCoreClass("sv-alert__icon--outline", getBaseOptions(!!props.outline)),
         useCoreClass("sv-alert__icon--sm", getBaseOptions(props.size === "sm")),
         useCoreClass("sv-alert__icon--lg", getBaseOptions(props.size === "lg")),
     ];
@@ -80,6 +81,7 @@ const getIconClasses = () => {
 const getCloseIconClasses = () => {
     return [
         useCoreClass("sv-alert__icon-close", getOptions()),
+        useCoreClass("sv-alert__icon-close--outline", getBaseOptions(!!props.outline)),
         useCoreClass("sv-alert__icon-close--sm", getBaseOptions(props.size === "sm")),
         useCoreClass("sv-alert__icon-close--lg", getBaseOptions(props.size === "lg")),
     ];
@@ -88,6 +90,7 @@ const getCloseIconClasses = () => {
 const getMessageClasses = () => {
     return [
         useCoreClass("sv-alert__message", getOptions()),
+        useCoreClass("sv-alert__message--outline", getBaseOptions(!!props.outline)),
         useCoreClass("sv-alert__message--sm", getBaseOptions(props.size === "sm")),
         useCoreClass("sv-alert__message--lg", getBaseOptions(props.size === "lg")),
     ];

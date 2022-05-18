@@ -57,11 +57,11 @@
     }
 
     .sv-alert__icon--sm {
-        @apply sv-icon mr-2 mt-0.5;
+        @apply sv-icon--sm mt-0.5;
     }
 
     .sv-alert__icon--lg {
-        @apply sv-icon mr-2 mt-0.5;
+        @apply sv-icon--lg mt-0.5;
     }
 
     .sv-alert__icon-close {
@@ -85,79 +85,151 @@
     }
 
     .sv-alert--primary {
-        @apply border-primary bg-primary text-primary;
+        @apply border-primary bg-primary text-fg-primary;
     }
 
     .sv-alert__icon--primary {
-        @apply text-primary;
+        @apply text-fg-primary;
     }
 
     .sv-alert__icon-close--primary {
-        @apply text-primary hover:text-primary--hover;
+        @apply text-fg-primary hover:text-fg-primary--hover;
     }
 
     .sv-alert--secondary {
-        @apply border-secondary bg-secondary text-secondary;
+        @apply border-secondary bg-secondary text-fg-secondary;
     }
 
     .sv-alert__icon--secondary {
-        @apply text-secondary;
+        @apply text-fg-secondary;
     }
 
     .sv-alert__icon-close--secondary {
-        @apply text-secondary hover:text-secondary--hover;
+        @apply text-fg-secondary hover:text-fg-secondary--hover;
     }
 
     .sv-alert--success {
-        @apply border-success bg-success text-success;
+        @apply border-success bg-success text-fg-success;
     }
 
     .sv-alert__icon--success {
-        @apply text-success;
+        @apply text-fg-success;
     }
 
     .sv-alert__icon-close--success {
-        @apply text-success hover:text-success--hover;
+        @apply text-fg-success hover:text-fg-success--hover;
     }
 
     .sv-alert--danger {
-        @apply border-danger bg-danger text-danger;
+        @apply border-danger bg-danger text-fg-danger;
     }
 
     .sv-alert__icon--danger {
-        @apply text-danger;
+        @apply text-fg-danger;
     }
 
     .sv-alert__icon-close--danger {
-        @apply text-danger hover:text-danger--hover;
+        @apply text-fg-danger hover:text-fg-danger--hover;
     }
 
     .sv-alert--warning {
-        @apply border-warning bg-warning text-warning;
+        @apply border-warning bg-warning text-fg-warning;
     }
 
     .sv-alert__icon--warning {
-        @apply text-warning;
+        @apply text-fg-warning;
     }
 
     .sv-alert__icon-close--warning {
-        @apply text-warning hover:text-warning--hover;
+        @apply text-fg-warning hover:text-fg-warning--hover;
     }
 
     .sv-alert--info {
-        @apply border-info bg-info text-info;
+        @apply border-info bg-info text-fg-info;
     }
 
     .sv-alert__icon--info {
-        @apply text-info;
+        @apply text-fg-info;
     }
 
     .sv-alert__icon-close--info {
-        @apply text-info hover:text-info--hover;
+        @apply text-fg-info hover:text-fg-info--hover;
     }
 
     .sv-alert--outline {
         @apply bg-transparent;
+    }
+
+    .sv-alert--primary.sv-alert--outline {
+        @apply text-primary hover:bg-light-primary--hover active:bg-light-primary--active;
+    }
+
+    .sv-alert__icon--primary.sv-alert__icon--outline {
+        @apply text-primary;
+    }
+
+    .sv-alert__icon-close--primary.sv-alert__icon-close--outline {
+        @apply text-primary;
+    }
+
+    .sv-alert--secondary.sv-alert--outline {
+        @apply text-secondary hover:bg-light-secondary--hover active:bg-light-secondary--active;
+    }
+
+    .sv-alert__icon--secondary.sv-alert__icon--outline {
+        @apply text-secondary;
+    }
+
+    .sv-alert__icon-close--secondary.sv-alert__icon-close--outline {
+        @apply text-secondary;
+    }
+
+    .sv-alert--success.sv-alert--outline {
+        @apply text-success hover:bg-light-success--hover active:bg-light-success--active;
+    }
+
+    .sv-alert__icon--success.sv-alert__icon--outline {
+        @apply text-success;
+    }
+
+    .sv-alert__icon-close--success.sv-alert__icon-close--outline {
+        @apply text-success;
+    }
+
+    .sv-alert--danger.sv-alert--outline {
+        @apply text-danger hover:bg-light-danger--hover active:bg-light-danger--active;
+    }
+
+    .sv-alert__icon--danger.sv-alert__icon--outline {
+        @apply text-danger;
+    }
+
+    .sv-alert__icon-close--danger.sv-alert__icon-close--outline {
+        @apply text-danger;
+    }
+
+    .sv-alert--warning.sv-alert--outline {
+        @apply text-warning hover:bg-light-warning--hover active:bg-light-warning--active;
+    }
+
+    .sv-alert__icon--warning.sv-alert__icon--outline {
+        @apply text-warning;
+    }
+
+    .sv-alert__icon-close--warning.sv-alert__icon-close--outline {
+        @apply text-warning;
+    }
+
+    .sv-alert--info.sv-alert--outline {
+        @apply text-info hover:bg-light-info--hover active:bg-light-info--active;
+    }
+
+    .sv-alert__icon--info.sv-alert__icon--outline {
+        @apply text-info;
+    }
+
+    .sv-alert__icon-close--info.sv-alert__icon-close--outline {
+        @apply text-info;
     }
 
     /* Busy */
@@ -207,63 +279,87 @@
     }
 
     .sv-button--primary {
-        @apply text-primary border-primary bg-primary hover:bg-primary--hover active:bg-primary--active;
+        @apply text-fg-primary border-primary bg-primary hover:bg-primary--hover active:bg-primary--active;
     }
 
     .sv-button__icon--primary {
-        @apply text-primary;
+        @apply text-fg-primary;
     }
 
     .sv-button--secondary {
-        @apply text-secondary border-secondary bg-secondary hover:bg-secondary--hover active:bg-secondary--active;
+        @apply text-fg-secondary border-secondary bg-secondary hover:bg-secondary--hover active:bg-secondary--active;
     }
 
     .sv-button__icon--secondary {
-        @apply text-secondary;
+        @apply text-fg-secondary;
     }
 
     .sv-button--success {
-        @apply text-success border-success bg-success hover:bg-success--hover active:bg-success--active;
+        @apply text-fg-success border-success bg-success hover:bg-success--hover active:bg-success--active;
     }
 
     .sv-button__icon--success {
-        @apply text-success;
+        @apply text-fg-success;
     }
 
     .sv-button--danger {
-        @apply text-danger border-danger bg-danger hover:bg-danger--hover active:bg-danger--active;
+        @apply text-fg-danger border-danger bg-danger hover:bg-danger--hover active:bg-danger--active;
     }
 
     .sv-button__icon--danger {
-        @apply text-danger;
+        @apply text-fg-danger;
     }
 
     .sv-button--warning {
-        @apply text-warning border-warning bg-warning hover:bg-warning--hover active:bg-warning--active;
+        @apply text-fg-warning border-warning bg-warning hover:bg-warning--hover active:bg-warning--active;
     }
 
     .sv-button__icon--warning {
-        @apply text-warning;
+        @apply text-fg-warning;
     }
 
     .sv-button--info {
-        @apply text-info border-info bg-info hover:bg-info--hover active:bg-info--active;
+        @apply text-fg-info border-info bg-info hover:bg-info--hover active:bg-info--active;
     }
 
     .sv-button__icon--info {
-        @apply text-info;
+        @apply text-fg-info;
     }
 
     .sv-button--link {
-        @apply text-link border-0 underline hover:no-underline;
+        @apply text-fg-link border-0 underline hover:no-underline;
     }
 
     .sv-button__icon--link {
-        @apply text-link;
+        @apply text-fg-link;
     }
 
     .sv-button--outline {
         @apply bg-transparent;
+    }
+
+    .sv-button--primary.sv-button--outline {
+        @apply text-primary hover:bg-light-primary--hover active:bg-light-primary--active;
+    }
+
+    .sv-button--secondary.sv-button--outline {
+        @apply text-secondary hover:bg-light-secondary--hover active:bg-light-secondary--active;
+    }
+
+    .sv-button--success.sv-button--outline {
+        @apply text-success hover:bg-light-success--hover active:bg-light-success--active;
+    }
+
+    .sv-button--danger.sv-button--outline {
+        @apply text-danger hover:bg-light-danger--hover active:bg-light-danger--active;
+    }
+
+    .sv-button--warning.sv-button--outline {
+        @apply text-warning hover:bg-light-warning--hover active:bg-light-warning--active;
+    }
+
+    .sv-button--info.sv-button--outline {
+        @apply text-info hover:bg-light-info--hover active:bg-light-info--active;
     }
 
     /* ButtonGroup */

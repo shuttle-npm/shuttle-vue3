@@ -54,7 +54,7 @@ const getOptions = () => {
         svClass: props.svClass,
         include: true,
         variant: props.variant ?? "primary",
-        disabled: props.disabled
+        disabled: props.disabled,
     };
 }
 
