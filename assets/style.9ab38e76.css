@@ -4851,7 +4851,10 @@ a:hover .title[data-v-a42cc842] {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0.5rem
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem
 }
 .sv-table__th-container--sortable {
     cursor: pointer
