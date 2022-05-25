@@ -5065,6 +5065,7 @@ a:hover .title[data-v-a42cc842] {
 }
 /* ValidationMessage */
 .sv-validation-message {
+    margin-top: 0.25rem;
     border-radius: 0.125rem;
     border-width: 1px;
     border-style: solid;

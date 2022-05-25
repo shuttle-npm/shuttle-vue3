@@ -1,7 +1,8 @@
 import { _ as _sfc_main$2 } from "./chunks/Alert.5cbcd09d.js";
-import { o as openBlock, c as createBlock, a as createVNode, e as ref, w as withCtx, g as createBaseVNode, n as normalizeClass, u as unref, h as createTextVNode, t as toDisplayString, d as createCommentVNode, k as renderSlot, b as createElementBlock, r as renderList, F as Fragment, I as Transition, i as createStaticVNode } from "./app.64078bd2.js";
+import { o as openBlock, c as createBlock, a as createVNode, e as ref, w as withCtx, g as createBaseVNode, n as normalizeClass, u as unref, h as createTextVNode, t as toDisplayString, d as createCommentVNode, b as createElementBlock, k as renderSlot, r as renderList, F as Fragment, I as Transition, i as createStaticVNode } from "./app.64078bd2.js";
 import { P as Pa, D as Da, w as wa, I as Ia, L as La } from "./chunks/headlessui.esm.6b1df13f.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
+import { _ as _sfc_main$3 } from "./chunks/ValidationMessage.b190a6dc.js";
 function render$1(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -130,7 +131,7 @@ const _sfc_main$1 = {
         modelValue: selectedOption.value,
         "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => selectedOption.value = $event)
       }, {
-        default: withCtx(() => [
+        default: withCtx(({ open }) => [
           createBaseVNode("div", {
             class: normalizeClass(getClasses())
           }, [
@@ -163,11 +164,12 @@ const _sfc_main$1 = {
                 }),
                 _: 1
               }, 8, ["class"]),
-              createBaseVNode("div", {
+              !open ? (openBlock(), createElementBlock("div", {
+                key: 1,
                 class: normalizeClass(getMessageClasses())
               }, [
                 renderSlot(_ctx.$slots, "message")
-              ], 2)
+              ], 2)) : createCommentVNode("", true)
             ], 2),
             createVNode(Transition, {
               "leave-active-class": "transition duration-100 ease-in",
@@ -257,8 +259,7 @@ const _hoisted_3 = /* @__PURE__ */ createBaseVNode("h3", {
   }, "#")
 ], -1);
 const _hoisted_4 = /* @__PURE__ */ createStaticVNode("", 3);
-const _hoisted_7 = /* @__PURE__ */ createBaseVNode("div", null, "This is a custom message.", -1);
-const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 4);
+const _hoisted_7 = /* @__PURE__ */ createStaticVNode("", 5);
 const __pageData = '{"title":"Listbox","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Slot","slug":"slot"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/listbox.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
@@ -324,11 +325,11 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           class: "mt-2"
         }, {
           message: withCtx(() => [
-            _hoisted_7
+            createVNode(unref(_sfc_main$3), { message: "This is a validation message." })
           ]),
           _: 1
         }, 8, ["modelValue"]),
-        _hoisted_8
+        _hoisted_7
       ]);
     };
   }

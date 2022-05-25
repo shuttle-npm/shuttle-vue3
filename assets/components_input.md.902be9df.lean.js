@@ -1,5 +1,6 @@
 import { _ as _sfc_main$2 } from "./chunks/Alert.5cbcd09d.js";
 import { _ as _sfc_main$1 } from "./chunks/Input.2040448d.js";
+import { _ as _sfc_main$3 } from "./chunks/ValidationMessage.b190a6dc.js";
 import { c as createBlock, a as createVNode, o as openBlock, e as ref, b as createElementBlock, g as createBaseVNode, t as toDisplayString, u as unref, h as createTextVNode, w as withCtx, i as createStaticVNode } from "./app.64078bd2.js";
 import "./chunks/useCoreClass.4c1eebb8.js";
 function render$2(_ctx, _cache) {
@@ -92,8 +93,7 @@ const _hoisted_4 = /* @__PURE__ */ createStaticVNode("", 2);
 const _hoisted_6 = { class: "mb-4" };
 const _hoisted_7 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
 const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 3);
-const _hoisted_11 = /* @__PURE__ */ createBaseVNode("div", null, "This is a custom message.", -1);
-const _hoisted_12 = /* @__PURE__ */ createStaticVNode("", 5);
+const _hoisted_11 = /* @__PURE__ */ createStaticVNode("", 5);
 const __pageData = '{"title":"Input","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Slot","slug":"slot"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/input.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
@@ -194,11 +194,11 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           class: "mt-2"
         }, {
           message: withCtx(() => [
-            _hoisted_11
+            createVNode(unref(_sfc_main$3), { message: "This is a validation message." })
           ]),
           _: 1
         }, 8, ["modelValue"]),
-        _hoisted_12
+        _hoisted_11
       ]);
     };
   }

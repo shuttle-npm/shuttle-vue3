@@ -1,36 +1,7 @@
-import { _ as _sfc_main$2 } from "./chunks/Checkbox.413098e0.js";
-import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
-import { o as openBlock, b as createElementBlock, t as toDisplayString, n as normalizeClass, d as createCommentVNode, e as ref, f as computed, a as createVNode, u as unref, g as createBaseVNode, h as createTextVNode, i as createStaticVNode } from "./app.64078bd2.js";
-const _sfc_main$1 = {
-  props: {
-    message: {
-      type: String
-    },
-    svClass: {
-      type: Object
-    }
-  },
-  setup(__props) {
-    const props = __props;
-    const getOptions = (include) => {
-      return {
-        svClass: props.svClass,
-        include
-      };
-    };
-    const getClasses = () => {
-      return [
-        useCoreClass("sv-validation-message", getOptions(true))
-      ];
-    };
-    return (_ctx, _cache) => {
-      return !!props.message ? (openBlock(), createElementBlock("div", {
-        key: 0,
-        class: normalizeClass(getClasses())
-      }, toDisplayString(props.message), 3)) : createCommentVNode("", true);
-    };
-  }
-};
+import { _ as _sfc_main$1 } from "./chunks/Checkbox.413098e0.js";
+import { _ as _sfc_main$2 } from "./chunks/ValidationMessage.b190a6dc.js";
+import { e as ref, f as computed, b as createElementBlock, a as createVNode, u as unref, g as createBaseVNode, h as createTextVNode, i as createStaticVNode, o as openBlock } from "./app.64078bd2.js";
+import "./chunks/useCoreClass.4c1eebb8.js";
 const _hoisted_1 = /* @__PURE__ */ createBaseVNode("h1", {
   id: "validationmessage",
   tabindex: "-1"
@@ -64,13 +35,13 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
       return openBlock(), createElementBlock("div", null, [
         _hoisted_1,
         _hoisted_2,
-        createVNode(unref(_sfc_main$2), {
+        createVNode(unref(_sfc_main$1), {
           modelValue: show.value,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => show.value = $event),
           label: "Show message?",
           class: "mb-2"
         }, null, 8, ["modelValue"]),
-        createVNode(unref(_sfc_main$1), { message: unref(message) }, null, 8, ["message"]),
+        createVNode(unref(_sfc_main$2), { message: unref(message) }, null, 8, ["message"]),
         _hoisted_3
       ]);
     };
