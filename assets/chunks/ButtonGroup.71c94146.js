@@ -19,7 +19,7 @@ const _sfc_main = {
       default: "block"
     },
     modelValue: {
-      type: String,
+      type: [Number, String],
       default: ""
     },
     svClass: {
