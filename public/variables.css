@@ -39,7 +39,7 @@
     --sv-text-navigation: 17, 24, 39;
     --sv-text-navbar-menu-toggle: 156, 163, 175;
     --sv-text-navbar-menu-toggle--hover: 255, 255, 255;
-    --sv-text-table-th: 130, 130, 130;
+    --sv-text-table-th: 255, 255, 255;
     --sv-text-title-primary: 216, 113, 45;
     --sv-text-title-secondary: 229, 229, 229;
     --sv-text-title-success: 187, 247, 208;
@@ -103,10 +103,10 @@
 
     --sv-bg-dialog: 240, 240, 240;
 
-    --sv-bg-table: 240, 240, 240;
-    --sv-bg-table-thead-tr: 210, 210, 210;
-    --sv-bg-table-tbody-tr--odd: 230, 230, 230;
-    --sv-bg-table-tbody-tr--hover: 250, 250, 250;
+    --sv-bg-table: 250, 250, 250;
+    --sv-bg-table-thead-tr: 247, 113, 36;
+    --sv-bg-table-tbody-tr--odd: 245, 245, 245;
+    --sv-bg-table-tbody-tr--hover: 255, 218, 196;
 
     /* borderColor */
     --sv-border-primary: 255, 134, 53;
@@ -133,7 +133,7 @@
     --sv-border-dialog: 100, 100, 100;
     --sv-border-dialog-title: 96, 165, 250;
 
-    --sv-border-table: 17, 24, 39;
+    --sv-border-table: 255, 218, 196;
 
     /* fill */
     --sv-fill-primary: 57, 87, 124;
@@ -181,24 +181,42 @@
     --sv-text-dialog-title: 192, 207, 249;
 
     /* backgroundColor */
-    --sv-bg-primary: 161, 78, 21;
-    --sv-bg-primary--hover: 148, 77, 30;
-    --sv-bg-primary--active: 134, 81, 46;
+    --sv-bg-primary: 249, 115, 22;
+    --sv-bg-primary--hover: 250, 125, 36;
+    --sv-bg-primary--active: 235, 120, 38;
+    --sv-bg-light-primary: 255, 152, 79;
+    --sv-bg-light-primary--hover: 235, 118, 34;
+    --sv-bg-light-primary--active: 219, 106, 26;
     --sv-bg-secondary: 68, 68, 68;
     --sv-bg-secondary--hover: 64, 64, 64;
     --sv-bg-secondary--active: 60, 60, 60;
+    --sv-bg-light-secondary: 68, 68, 68;
+    --sv-bg-light-secondary--hover: 64, 64, 64;
+    --sv-bg-light-secondary--active: 60, 60, 60;
     --sv-bg-success: 64, 112, 61;
     --sv-bg-success--hover: 56, 97, 53;
     --sv-bg-success--active: 54, 90, 52;
+    --sv-bg-light-success: 64, 112, 61;
+    --sv-bg-light-success--hover: 56, 97, 53;
+    --sv-bg-light-success--active: 54, 90, 52;
     --sv-bg-danger: 126, 45, 45;
     --sv-bg-danger--hover: 116, 40, 40;
     --sv-bg-danger--active: 100, 36, 36;
+    --sv-bg-light-danger: 126, 45, 45;
+    --sv-bg-light-danger--hover: 116, 40, 40;
+    --sv-bg-light-danger--active: 100, 36, 36;
     --sv-bg-warning: 129, 112, 30;
     --sv-bg-warning--hover: 116, 102, 34;
     --sv-bg-warning--active: 109, 96, 34;
+    --sv-bg-light-warning: 129, 112, 30;
+    --sv-bg-light-warning--hover: 116, 102, 34;
+    --sv-bg-light-warning--active: 109, 96, 34;
     --sv-bg-info: 30, 123, 151;
     --sv-bg-info--hover: 14, 116, 144;
     --sv-bg-info--active: 21, 94, 117;
+    --sv-bg-light-info: 30, 123, 151;
+    --sv-bg-light-info--hover: 14, 116, 144;
+    --sv-bg-light-info--active: 21, 94, 117;
     --sv-bg-disabled: 31, 41, 55;
 
     --sv-bg-input: 26, 26, 26;
@@ -215,15 +233,15 @@
     --sv-bg-dialog: 48, 48, 48;
 
     --sv-bg-table: 40, 40, 40;
-    --sv-bg-table-thead-tr: 28, 32, 36;
+    --sv-bg-table-thead-tr: 165, 76, 25;
     --sv-bg-table-tbody-tr--odd: 45, 45, 45;
-    --sv-bg-table-tbody-tr--hover: 60, 60, 60;
+    --sv-bg-table-tbody-tr--hover: 136, 87, 58;
 
     /* borderColor */
     --sv-border-primary: 163, 99, 56;
     --sv-border-secondary: 48, 48, 48;
     --sv-border-success: 60, 87, 58;
-    --sv-border-danger: 73, 46, 46;
+    --sv-border-danger: 88, 41, 41;
     --sv-border-warning: 105, 96, 48;
     --sv-border-info: 14, 116, 144;
     --sv-border-disabled: 31, 41, 55;
@@ -246,10 +264,10 @@
     --sv-border-dialog: 50, 50, 50;
     --sv-border-dialog-title: 192, 207, 249;
     
-    --sv-border-table: 17, 24, 39;
+    --sv-border-table: 92, 71, 60;
 
     /* fill */
-    --sv-fill-primary: 59, 75, 119;
+    --sv-fill-primary: 218, 97, 27;
 
     /* placeholder */
     --sv-placeholder-input: 100, 100, 100;

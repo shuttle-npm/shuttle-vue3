@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from "vue";
-import { Alert, Input } from "@/components";
+import { Alert, Input, ValidationMessage } from "@/components";
 import { ExclamationIcon, EyeIcon, EyeOffIcon, ShieldExclamationIcon } from "@heroicons/vue/outline";
 
 const value = ref("");
@@ -89,7 +89,7 @@ Value: {{ value }}
 - `message`
 
 <Input v-model="message" label="Block layout"><template #message><Alert message="This is a danger alert." size="sm" outline class="mt-2" variant="danger"/></template></Input>
-<Input v-model="message" label="Inline layout" layout="inline" class="mt-2"><template #message><div>This is a custom message.</div></template></Input>
+<Input v-model="message" label="Inline layout" layout="inline" class="mt-2"><template #message><ValidationMessage message="This is a validation message." /></template></Input>
 
 ```vue
 <template>
@@ -100,7 +100,7 @@ Value: {{ value }}
     </Input>
     <Input v-model="message" label="Inline layout" layout="inline">
         <template #message>
-            <div>This is a custom message.</div>
+            <ValidationMessage message="This is a validation message." />
         </template>
     </Input>
 </template>
@@ -110,7 +110,6 @@ Value: {{ value }}
 
 | Name                   | Type      | Default     | Description                                                                                                        |
 | ---------------------- | --------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
-| `alert`                | `Object`  | `undefined` | An object that has the same properties as an `Alert`.                                                              |
 | `icon-end`             | `null`    | `undefined` | An icon to display at the end of the input.                                                                        |
 | `icon-end-clickable`   | `Boolean` | `false`     | If `true` the `icon-end` is clickable.                                                                             |
 | `icon-start`           | `null`    | `undefined` | An icon to display at the start of the input.                                                                      |

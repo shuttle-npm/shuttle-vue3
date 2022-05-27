@@ -1,5 +1,5 @@
 <template>
-    <Listbox v-model="selectedOption">
+    <Listbox v-model="selectedOption" v-slot="{ open }">
         <div :class="getClasses()">
             <div :class="getContainerClasses()">
                 <ListboxLabel v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</ListboxLabel>
@@ -12,8 +12,8 @@
                         <SelectorIcon class="sv-listbox__icon" aria-hidden="true" />
                     </span>
                 </ListboxButton>
-                <div :class="getAlertClasses()">
-                    <Alert v-if="!!alert" :message="alert.message" :variant="alert.variant" :icon="alert.icon" :dismissable="alert.dismissable" @click="alert.click" />
+                <div :class="getMessageClasses()" v-if="!open">
+                    <slot name="message"></slot>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import {
     Listbox,
     ListboxLabel,
@@ -49,9 +49,7 @@ import {
     ListboxOption,
 } from '@headlessui/vue'
 import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
-import { useAlert } from "@/composables/useAlert";
 import { useCoreClass } from "@/composables/useCoreClass";
-import Alert from "./Alert.vue";
 
 const props = defineProps({
     alert: {
@@ -136,11 +134,11 @@ const getLabelClasses = () => {
     ];
 }
 
-const getAlertClasses = () => {
+const getMessageClasses = () => {
     return [
-        useCoreClass("sv-listbox__alert", getOptions(true)),
-        useCoreClass("sv-listbox__alert--inline", getOptions(getLayout() === "inline")),
-        useCoreClass("sv-listbox__alert--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-listbox__message", getOptions(true)),
+        useCoreClass("sv-listbox__message--inline", getOptions(getLayout() === "inline")),
+        useCoreClass("sv-listbox__message--block", getOptions(getLayout() === "block")),
     ];
 }
 
@@ -148,6 +146,4 @@ const displayProperty = props.displayProperty ?? "text";
 const valueProperty = props.valueProperty ?? "value";
 
 const emit = defineEmits(["update:modelValue"]);
-
-const alert = useAlert(props);
 </script>

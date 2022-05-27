@@ -33,7 +33,7 @@ const props = defineProps({
         default: "block"
     },
     modelValue: {
-        type: String,
+        type: [Number, String],
         default: ''
     },
     svClass: {

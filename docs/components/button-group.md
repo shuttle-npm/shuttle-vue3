@@ -123,6 +123,8 @@ const buttonsWithIcon = ref([
 | ---------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
 | `buttons`  | `Array`   | `[]`    | An `array` of buttons to render.  May contain the following properties: <br/>- `text` <br/>- `value` <br/>- `icon` |
 | `disabled` | `Boolean` | `false` | Indicates whether the checkbox is in a disabled state.                                                             |
+| `label`    | `String`  | ""      | The label to display for the input.                                                                                |
+| `layout`   | `String`  | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
 | `sv-class` | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 
 ## Events

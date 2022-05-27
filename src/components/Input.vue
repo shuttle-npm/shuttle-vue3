@@ -15,7 +15,6 @@
 </template>
 
 <script setup>
-import { useAlert } from "@/composables/useAlert";
 import { useCoreClass } from "@/composables/useCoreClass";
 
 const props = defineProps({
@@ -155,6 +154,4 @@ const iconEndClick = () => {
 
     emit("iconEndClick");
 }
-
-const alert = useAlert(props);
 </script>

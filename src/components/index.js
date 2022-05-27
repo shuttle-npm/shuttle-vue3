@@ -14,6 +14,7 @@ import Strip from "./Strip.vue";
 import Table from "./Table.vue";
 import Title from "./Title.vue";
 import Toggle from "./Toggle.vue";
+import ValidationMessage from "./ValidationMessage.vue";
 
 export {
     Alert,
@@ -31,5 +32,6 @@ export {
     Strip,
     Table,
     Title,
-    Toggle
+    Toggle,
+    ValidationMessage
 }

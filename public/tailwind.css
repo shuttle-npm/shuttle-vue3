@@ -657,11 +657,11 @@
         @apply sv-icon text-input-selected;
     }
 
-    .sv-listbox__alert {
+    .sv-listbox__message {
         @apply mt-1;
     }
 
-    .sv-listbox__alert--inline {
+    .sv-listbox__message--inline {
         @apply col-span-2;
     }
 
@@ -795,7 +795,7 @@
     }
 
     .sv-table__container {
-        @apply min-w-full relative overflow-x-auto shadow-md;
+        @apply min-w-full relative overflow-x-auto;
     }
 
     .sv-table__thead {
@@ -807,7 +807,7 @@
     }
 
     .sv-table__th-container {
-        @apply flex flex-row items-center p-2;
+        @apply flex flex-row items-center px-2 py-3;
     }
 
     .sv-table__th-container--sortable {
@@ -958,5 +958,10 @@
 
     .sv-toggle__label--disabled {
         @apply cursor-default text-disabled;
+    }
+
+    /* ValidationMessage */
+    .sv-validation-message {
+        @apply border-warning border border-solid rounded-sm px-2 text-warning mt-1;
     }
 }

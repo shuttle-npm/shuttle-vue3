@@ -1230,10 +1230,10 @@
     --tw-text-opacity: 1;
     color: rgba(var(--sv-text-input-selected), var(--tw-text-opacity))
 }
-.sv-listbox__alert {
+.sv-listbox__message {
     margin-top: 0.25rem
 }
-.sv-listbox__alert--inline {
+.sv-listbox__message--inline {
     grid-column: span 2 / span 2
 }
 /* Navbar */
@@ -1496,10 +1496,7 @@
 .sv-table__container {
     position: relative;
     min-width: 100%;
-    overflow-x: auto;
-    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    overflow-x: auto
 }
 .sv-table__thead {
     cursor: default;
@@ -1519,7 +1516,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0.5rem
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem
 }
 .sv-table__th-container--sortable {
     cursor: pointer
@@ -1727,6 +1727,19 @@
     cursor: default;
     --tw-text-opacity: 1;
     color: rgba(var(--sv-text-disabled), var(--tw-text-opacity))
+}
+/* ValidationMessage */
+.sv-validation-message {
+    margin-top: 0.25rem;
+    border-radius: 0.125rem;
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgba(var(--sv-border-warning), var(--tw-border-opacity));
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    --tw-text-opacity: 1;
+    color: rgba(var(--sv-text-warning), var(--tw-text-opacity))
 }
 .sr-only {
     position: absolute;

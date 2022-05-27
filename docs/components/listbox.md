@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { Listbox } from "@/components";
+import { Alert, Listbox, ValidationMessage } from "@/components";
 
 const options = [
     { text: 'Wade Cooper' },
@@ -56,16 +56,32 @@ const value = ref();
 </template>
 ```
 
-### Alert
+### Slot
 
-<Listbox  v-model="value" :options="options" label="Block layout" :alert="{ message: 'This is an info message.'}" />
-<Listbox  v-model="value" :options="options" label="Inline layout" layout="inline" :alert="{ message: 'This is a danger message.', variant: 'danger-state', icon: ExclamationIcon, dismissable: true }" class="mt-2" />
+- `message`
+
+<Listbox v-model="value" :options="options" label="Block layout"><template #message><Alert message="This is an info alert." size="sm" outline class="mt-2" variant="info"/></template></Listbox>
+<Listbox v-model="value" :options="options" label="Inline layout" layout="inline" class="mt-2"><template #message><ValidationMessage message="This is a validation message." /></template></Listbox>
+
+```vue
+<template>
+    <Listbox v-model="value" :options="options" label="Block layout">
+        <template #message>
+            <Alert message="This is an info alert." size="sm" outline class="mt-2" variant="info"/>
+        </template>
+    </Listbox>
+    <Listbox v-model="value" :options="options" label="Inline layout" layout="inline" class="mt-2">
+        <template #message>
+            <ValidationMessage message="This is a validation message." />
+        </template>
+    </Listbox>
+</template>
+```
 
 ## Properties
 
 | Name          | Type     | Default     | Description                                                                                                        |
 | ------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
-| `alert`       | `Object` | `undefined` | An object that has the same properties as an `Alert`.                                                              |
 | `label`       | `String` | ""          | The label to display for the input.                                                                                |
 | `layout`      | `String` | `block`     | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
 | `placeholder` | `String` | ""          | The placeholder to display for the input.                                                                          |
@@ -74,14 +90,17 @@ const value = ref();
 ## Classes
 
 - `sv-listbox`
-  - `--block`
-  - `--inline`
+  - `sv-listbox--block`
+  - `sv-listbox--inline`
 - `sv-listbox__container`
-  - `--block` 
-  - `--inline`
+  - `sv-listbox__container--block` 
+  - `sv-listbox__container--inline`
 - `sv-listbox__button`
-  - `--block` 
-  - `--inline`
+  - `sv-listbox__button--block` 
+  - `sv-listbox__button--inline`
 - `sv-listbox__label`
-  - `--block` 
-  - `--inline`
+  - `sv-listbox__label--block` 
+  - `sv-listbox__label--inline`
+- `sv-listbox__message`
+  - `sv-listbox__message--inline`
+  - `sv-listbox__message--block`

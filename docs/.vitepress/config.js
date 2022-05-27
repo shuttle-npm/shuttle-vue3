@@ -119,6 +119,10 @@ module.exports = (async () => {
                                 text: 'Toggle',
                                 link: '/components/toggle'
                             },
+                            {
+                                text: 'Validation Message',
+                                link: '/components/validation-message'
+                            },
                         ]
                     },
                     {
