@@ -1,11 +1,11 @@
 <template>
     <div v-if="alerts" :class="getClasses()">
-        <Alert
-            v-for="alert in alerts"
-            v-bind="alert"
-            @remove="emit('remove', alert)"
-            :sv-class="props.svClass"
-        />
+        <transition-group appear tag="div" enter-active-class="sv-alert-enter-active" enter-from-class="sv-alert-enter-from"
+            enter-to-class="sv-alert-enter-to" leave-active-class="sv-alert-leave-active" leave-from-class="sv-alert-leave-from"
+            leave-to-class="sv-alert-leave-to">
+            <Alert v-for="alert in alerts" v-bind="alert" @remove="emit('remove', alert.name)" :key="alert.key ?? alert.name"
+                :sv-class="props.svClass" />
+        </transition-group>
     </div>
 </template>
 

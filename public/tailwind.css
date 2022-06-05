@@ -64,20 +64,36 @@
         @apply sv-icon--lg mt-0.5;
     }
 
-    .sv-alert__icon-close {
-        @apply sv-icon ml-2 mt-1;
+    .sv-alert__dismissable {
+        @apply relative sv-icon ml-2 mt-1;
     }
 
-    .sv-alert__icon-close--sm {
+    .sv-alert__dismissablee--sm {
         @apply sv-icon--sm ml-2 mt-0.5;
     }
 
-    .sv-alert__icon-close--lg {
+    .sv-alert__dismissablee--lg {
         @apply sv-icon--lg ml-2 mt-0.5;
     }
 
     .sv-alert__icon-close {
-        @apply cursor-pointer;
+        @apply absolute cursor-pointer left-0 top-0;
+    }
+
+    .sv-alert__timer {
+        @apply -scale-x-100 transform absolute left-0 top-0;
+    }
+
+    .sv-alert__timer-circle {
+        @apply fill-transparent stroke-0;
+    }
+
+    .sv-alert__timer-path-elapsed {
+        @apply stroke-transparent stroke-[10px];
+    }
+
+    .sv-alert__timer-path-remaining {
+        @apply stroke-[10px] origin-center rotate-90 duration-500 ease-linear transition-all;
     }
 
     .sv-alert__message {
@@ -231,6 +247,26 @@
     .sv-alert__icon-close--info.sv-alert__icon-close--outline {
         @apply text-info;
     }
+
+    .sv-alert-enter-active {
+        @apply transition transform duration-300 ease-out;
+    }
+    .sv-alert-enter-from {
+        @apply opacity-0 scale-75;
+    }
+    .sv-alert-enter-to {
+        @apply opacity-100 scale-100;
+    }
+    .sv-alert-leave-active {
+        @apply transition transform duration-200 ease-in;
+    }
+    .sv-alert-leave-from {
+        @apply opacity-100 scale-100;
+    }
+    .sv-alert-leave-to {
+        @apply opacity-0 scale-75;
+    }
+
 
     /* Busy */
     .sv-busy {

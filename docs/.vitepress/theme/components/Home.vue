@@ -154,7 +154,6 @@ div.actions {
     font-weight: 600;
     background-color: var(--vt-c-orange);
     color: #fff;
-    margin-right: 18px;
 }
 
 .actions .icon {

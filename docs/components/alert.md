@@ -6,8 +6,9 @@ import { Alert, Alerts, Button, ButtonGroup, Checkbox } from "@/components";
 const outline = ref(false);
 const icon = ref(false);
 const size = ref("");
+const expirySeconds = ref(0);
 
-const buttons = ref([
+const buttonsSize = ref([
     {
         text: "none",
         value: ""
@@ -19,6 +20,25 @@ const buttons = ref([
     {
         text: "large",
         value: "lg"
+    },
+]);
+
+const buttonsExpirySeconds = ref([
+    {
+        text: "none",
+        value: 0
+    },
+    {
+        text: "5",
+        value: 5
+    },
+    {
+        text: "10",
+        value: 10
+    },
+    {
+        text: "20",
+        value: 20
     },
 ]);
 
@@ -63,8 +83,8 @@ const alertsReference = [
 
 const alerts = ref([]);
 
-const remove = (alert) => {
-    const index = alerts.value.findIndex(item => item.name === alert.name);
+const remove = (name) => {
+    const index = alerts.value.findIndex(item => item.name === name);
 
     if (index < 0) {
         return;
@@ -78,7 +98,7 @@ const getIcon = () => {
 }
 
 const computedAlerts = computed(() => {
-    return alerts.value.map(item => ({...item, outline: outline.value, size: size.value, icon: getIcon()}));
+    return alerts.value.map(item => ({...item, outline: outline.value, size: size.value, icon: getIcon(), expirySeconds: expirySeconds.value}));
 })
 
 const reset = () => {
@@ -92,7 +112,8 @@ reset();
 
 ## Examples (dismissable)
 
-<ButtonGroup v-model="size" :buttons="buttons" class="mb-4" />
+<ButtonGroup label="Size" v-model="size" :buttons="buttonsSize" class="mb-4" layout="inline" />
+<ButtonGroup label="Expiry seconds" v-model="expirySeconds" :buttons="buttonsExpirySeconds" class="mb-4" layout="inline" />
 
 <Checkbox v-model="outline" label="Outline?" class="mb-4" />
 <Checkbox v-model="icon" label="Icon?" class="mb-4" />
@@ -102,20 +123,21 @@ reset();
 
 ## Properties
 
-| Name          | Type        | Default     | Description                                                                                                        |
-| ------------- | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
-| `name`        | `String`    | (empty)     | A name to uniquely identify the alert.                                                                             |
-| `type`        | `String`    | `primary`   | The type of alert:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`   |
-| `message`     | `String`    | (required)  | The message to display for the alert.                                                                              |
-| `dismissable` | `Boolean`   | `false`     | Whether a close icon will be displayed with will emit the `remove` event when clicked.                             |
-| `icon`        | `Component` | `undefined` | Displays the given icon in front of the message.                                                                   |
-| `size`        | `String`    | `""`        | The size of the alert:<br/>- `sm`<br/>- `lg`<br/>- an empty value would be the default size.                       |
-| `sv-class`    | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+| Name            | Type        | Default     | Description                                                                                                                                              |
+| --------------- | ----------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`          | `String`    | ''          | A name to uniquely identify the alert.                                                                                                                   |
+| `type`          | `String`    | `primary`   | The type of alert:<br/>- `primary`<br/>- `secondary`<br/>- `success`<br/>- `danger`<br/>- `warning`<br/>- `info`                                         |
+| `message`       | `String`    | (required)  | The message to display for the alert.                                                                                                                    |
+| `dismissable`   | `Boolean`   | `false`     | Whether a close icon will be displayed with will emit the `remove` event when clicked.                                                                   |
+| `expirySeconds` | `Number`    | `undefined` | When set to a value greater than `1` it will show a countdown `svg` in the dismissable container and emit the `remove` event once the timer reaches `0`. |
+| `icon`          | `Component` | `undefined` | Displays the given icon in front of the message.                                                                                                         |
+| `size`          | `String`    | `""`        | The size of the alert:<br/>- `sm`<br/>- `lg`<br/>- an empty value would be the default size.                                                             |
+| `sv-class`      | `Object`    | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries.                                       |
 
 ## Events
 
-| Name     | Description                                     |
-| -------- | ----------------------------------------------- |
+| Name     | Description                                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------------------------- |
 | `remove` | Calls when the dismissable element is clicked, passing the relevant `alert` as an argument: `emit('remove', alert)` |
 
 ## Classes

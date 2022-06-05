@@ -45,7 +45,7 @@ const click = (event, button) => {
     event.stopPropagation();
     event.preventDefault();
 
-    if (props.disabled) {
+    if (props.disabled || button.value == props.modelValue) {
         return;
     }
 

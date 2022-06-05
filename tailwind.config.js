@@ -3,7 +3,8 @@ const safelist = [
     'sv-rounded',
     'sv-padding',
     'sv-focus',
-    'sv-disabled'
+    'sv-disabled',
+    'sv-icon'
 ];
 
 const variantSafelist = (prefix) => {
