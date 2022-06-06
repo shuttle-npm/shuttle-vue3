@@ -16,6 +16,9 @@
             <tbody :class="getBodyClasses()">
                 <tr v-if="!props.busy && !!items.length" v-for="(item, index) in items" :class="getBodyRowClasses()">
                     <td v-for="field in fields" :class="getItemClasses(field)">
+                        <div :class="getInlineFieldClasses(field)">
+                            {{field.text}}
+                        </div>
                         <slot :name="getItemSlotName(field)" :field="field" :item="item" :index="index">
                             {{ formatValue(field, item[field.name]) }}
                         </slot>
@@ -162,6 +165,16 @@ const getFieldClasses = (field) => {
         useCoreClass("sv-table__th--sortable", getOptions(!!field.sortable)),
         useCoreClass("sv-table__th--busy", getOptions(!!props.busy)),
         useCoreClass("sv-table__th--empty", getOptions(!items.length)),
+        !!field.thClass ? field.thClass : ""
+    ];
+}
+
+const getInlineFieldClasses = (field) => {
+    return [
+        useCoreClass("sv-table__th-inline", getOptions(true)),
+        useCoreClass("sv-table__th-inline--sortable", getOptions(!!field.sortable)),
+        useCoreClass("sv-table__th-inline--busy", getOptions(!!props.busy)),
+        useCoreClass("sv-table__th-inline--empty", getOptions(!items.length)),
         !!field.thClass ? field.thClass : ""
     ];
 }
