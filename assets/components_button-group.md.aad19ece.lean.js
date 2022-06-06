@@ -56,21 +56,8 @@ const _hoisted_2 = /* @__PURE__ */ createBaseVNode("h2", {
     "aria-hidden": "true"
   }, "#")
 ], -1);
-const _hoisted_3 = /* @__PURE__ */ createStaticVNode("", 1);
-const _hoisted_4 = { class: "flex flex-row" };
-const _hoisted_5 = /* @__PURE__ */ createBaseVNode("span", { class: "ml-2" }, "test", -1);
-const _hoisted_6 = /* @__PURE__ */ createBaseVNode("h3", {
-  id: "label",
-  tabindex: "-1"
-}, [
-  /* @__PURE__ */ createTextVNode("Label "),
-  /* @__PURE__ */ createBaseVNode("a", {
-    class: "header-anchor",
-    href: "#label",
-    "aria-hidden": "true"
-  }, "#")
-], -1);
-const _hoisted_7 = /* @__PURE__ */ createBaseVNode("h3", {
+const _hoisted_3 = /* @__PURE__ */ createStaticVNode("", 2);
+const _hoisted_5 = /* @__PURE__ */ createBaseVNode("h3", {
   id: "with-icon",
   tabindex: "-1"
 }, [
@@ -81,8 +68,8 @@ const _hoisted_7 = /* @__PURE__ */ createBaseVNode("h3", {
     "aria-hidden": "true"
   }, "#")
 ], -1);
-const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 2);
-const _hoisted_10 = /* @__PURE__ */ createStaticVNode("", 6);
+const _hoisted_6 = /* @__PURE__ */ createStaticVNode("", 2);
+const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 6);
 const __pageData = '{"title":"Button Group","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"With Icon","slug":"with-icon"},{"level":3,"title":"Disabled","slug":"disabled"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Events","slug":"events"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/button-group.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
@@ -139,22 +126,12 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => value.value = $event)
         }, null, 8, ["buttons", "modelValue"]),
         _hoisted_3,
-        createBaseVNode("div", _hoisted_4, [
-          createVNode(unref(_sfc_main$2), {
-            buttons: buttons.value,
-            onClick: click,
-            modelValue: value.value,
-            "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => value.value = $event)
-          }, null, 8, ["buttons", "modelValue"]),
-          _hoisted_5
-        ]),
-        _hoisted_6,
         createVNode(unref(_sfc_main$2), {
           label: "Block layout",
           buttons: buttons.value,
           onClick: click,
           modelValue: value.value,
-          "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => value.value = $event)
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => value.value = $event)
         }, null, 8, ["buttons", "modelValue"]),
         createVNode(unref(_sfc_main$2), {
           label: "Inline layout",
@@ -162,25 +139,25 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           buttons: buttons.value,
           onClick: click,
           modelValue: value.value,
-          "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => value.value = $event),
+          "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => value.value = $event),
           class: "mt-2"
         }, null, 8, ["buttons", "modelValue"]),
-        _hoisted_7,
+        _hoisted_5,
         createVNode(unref(_sfc_main$2), {
           buttons: buttonsWithIcon.value,
           onClick: click,
           modelValue: value.value,
-          "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => value.value = $event)
+          "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => value.value = $event)
         }, null, 8, ["buttons", "modelValue"]),
-        _hoisted_8,
+        _hoisted_6,
         createVNode(unref(_sfc_main$2), {
           buttons: buttonsWithIcon.value,
           onClick: click,
           modelValue: value.value,
-          "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => value.value = $event),
+          "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => value.value = $event),
           disabled: true
         }, null, 8, ["buttons", "modelValue"]),
-        _hoisted_10
+        _hoisted_8
       ]);
     };
   }

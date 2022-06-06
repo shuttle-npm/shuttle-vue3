@@ -1,6 +1,6 @@
 import { u as useCoreClass } from "./useCoreClass.4c1eebb8.js";
 import { o as openBlock, b as createElementBlock, n as normalizeClass, t as toDisplayString, d as createCommentVNode, g as createBaseVNode, c as createBlock, j as resolveDynamicComponent, k as renderSlot } from "../app.b78d4ac8.js";
-const _hoisted_1 = ["type", "value", "placeholder", "autocomplete"];
+const _hoisted_1 = ["type", "value", "placeholder", "autocomplete", "readonly"];
 const _sfc_main = {
   props: {
     autocomplete: {
@@ -36,6 +36,10 @@ const _sfc_main = {
       type: String,
       default: ""
     },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
     svClass: {
       type: Object
     },
@@ -67,14 +71,16 @@ const _sfc_main = {
       return [
         useCoreClass("sv-input", getOptions(true)),
         useCoreClass("sv-input--inline", getOptions(getLayout() === "inline")),
-        useCoreClass("sv-input--block", getOptions(getLayout() === "block"))
+        useCoreClass("sv-input--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-input--readonly", getOptions(!!props.readonly))
       ];
     };
     const getLabelClasses = () => {
       return [
         useCoreClass("sv-input__label", getOptions(true)),
         useCoreClass("sv-input__label--inline", getOptions(getLayout() === "inline")),
-        useCoreClass("sv-input__label--block", getOptions(getLayout() === "block"))
+        useCoreClass("sv-input__label--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-input__label--readonly", getOptions(!!props.readonly))
       ];
     };
     const getInputClasses = () => {
@@ -83,7 +89,8 @@ const _sfc_main = {
         useCoreClass("sv-input__input--inline", getOptions(getLayout() === "inline")),
         useCoreClass("sv-input__input--block", getOptions(getLayout() === "block")),
         useCoreClass("sv-input__input--icon-end", getOptions(!!props.iconEnd)),
-        useCoreClass("sv-input__input--icon-start", getOptions(!!props.iconStart))
+        useCoreClass("sv-input__input--icon-start", getOptions(!!props.iconStart)),
+        useCoreClass("sv-input__input--readonly", getOptions(!!props.readonly))
       ];
     };
     const getInputContainerClasses = () => {
@@ -92,7 +99,8 @@ const _sfc_main = {
         useCoreClass("sv-input__input-container--inline", getOptions(getLayout() === "inline")),
         useCoreClass("sv-input__input-container--block", getOptions(getLayout() === "block")),
         useCoreClass("sv-input__input-container--icon-end", getOptions(!!props.iconEnd)),
-        useCoreClass("sv-input__input-container--icon-start", getOptions(!!props.iconStart))
+        useCoreClass("sv-input__input-container--icon-start", getOptions(!!props.iconStart)),
+        useCoreClass("sv-input__input-container--readonly", getOptions(!!props.readonly))
       ];
     };
     const getIconStartClasses = () => {
@@ -149,7 +157,8 @@ const _sfc_main = {
             value: props.modelValue,
             onInput: _cache[0] || (_cache[0] = ($event) => emit("update:modelValue", $event.target.value)),
             placeholder: (_b = props.placeholder) != null ? _b : "",
-            autocomplete: __props.autocomplete
+            autocomplete: __props.autocomplete,
+            readonly: !!props.readonly
           }, null, 42, _hoisted_1),
           !!props.iconEnd ? (openBlock(), createBlock(resolveDynamicComponent(getIconEnd == null ? void 0 : getIconEnd()), {
             key: 1,
