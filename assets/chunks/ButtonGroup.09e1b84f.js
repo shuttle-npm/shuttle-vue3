@@ -32,7 +32,7 @@ const _sfc_main = {
     const click = (event, button) => {
       event.stopPropagation();
       event.preventDefault();
-      if (props.disabled) {
+      if (props.disabled || button.value == props.modelValue) {
         return;
       }
       emit("update:modelValue", button.value);

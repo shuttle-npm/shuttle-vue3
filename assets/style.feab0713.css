@@ -2843,11 +2843,11 @@ a:hover .title[data-v-a42cc842] {
 .mb-2 {
     margin-bottom: 0.5rem
 }
-.mt-2 {
-    margin-top: 0.5rem
-}
 .ml-2 {
     margin-left: 0.5rem
+}
+.mt-2 {
+    margin-top: 0.5rem
 }
 .mt-4 {
     margin-top: 1rem
@@ -3405,6 +3405,10 @@ a:hover .title[data-v-a42cc842] {
     background-color: rgba(var(--sv-bg-disabled), var(--tw-bg-opacity));
     --tw-text-opacity: 1;
     color: rgba(var(--sv-text-disabled), var(--tw-text-opacity))
+}
+.sv-icon {
+    height: 1.25rem;
+    width: 1.25rem
 }
 /* Alert (variants) */
 .sv-alert {
@@ -4903,8 +4907,14 @@ a:hover .title[data-v-a42cc842] {
     color: rgba(var(--sv-text-table-th), var(--tw-text-opacity))
 }
 .sv-table__thead-tr {
+    display: none;
     --tw-bg-opacity: 1;
     background-color: rgba(var(--sv-bg-table-thead-tr), var(--tw-bg-opacity))
+}
+@media (min-width: 1280px) {
+    .sv-table__thead-tr {
+        display: table-row
+    }
 }
 .sv-table__th-container {
     display: flex;
@@ -4923,7 +4933,28 @@ a:hover .title[data-v-a42cc842] {
     width: 1rem;
     margin-left: 0.5rem
 }
+.sv-table__th-inline {
+    margin-right: 0.5rem;
+    display: inline-block;
+    width: 8rem;
+    min-width: 16rem;
+    --tw-bg-opacity: 1;
+    background-color: rgba(var(--sv-bg-table-thead-tr), var(--tw-bg-opacity));
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: left;
+    font-weight: 600
+}
+@media (min-width: 1280px) {
+    .sv-table__th-inline {
+        display: none
+    }
+}
 .sv-table__tbody-tr {
+    display: flex;
+    flex-direction: column;
     border-width: 0px;
     border-bottom-width: 1px;
     border-style: solid;
@@ -4938,15 +4969,33 @@ a:hover .title[data-v-a42cc842] {
     --tw-bg-opacity: 1;
     background-color: rgba(var(--sv-bg-table-tbody-tr--hover), var(--tw-bg-opacity))
 }
+@media (min-width: 1280px) {
+    .sv-table__tbody-tr {
+        display: table-row
+    }
+}
 .sv-table__tbody-tr--striped:nth-child(odd) {
     --tw-bg-opacity: 1;
     background-color: rgba(var(--sv-bg-table-tbody-tr--odd), var(--tw-bg-opacity))
 }
 .sv-table__td {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap
+}
+@media (min-width: 1280px) {
+    .sv-table__td {
+        display: table-cell
+    }
+    .sv-table__td {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem
+    }
+    .sv-table__td {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem
+    }
 }
 /* Title */
 .sv-title {

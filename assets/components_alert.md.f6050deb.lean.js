@@ -21,7 +21,7 @@ import { o as openBlock, c as createBlock, a as createVNode, b as createElementB
 import { _ as _sfc_main$2 } from "./chunks/Alert.1e6ceba5.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
 import { _ as _sfc_main$5 } from "./chunks/Button.7d01a20a.js";
-import { _ as _sfc_main$3 } from "./chunks/ButtonGroup.5be06809.js";
+import { _ as _sfc_main$3 } from "./chunks/ButtonGroup.09e1b84f.js";
 import { _ as _sfc_main$4 } from "./chunks/Checkbox.cbc3ce68.js";
 function render(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
@@ -76,9 +76,10 @@ const _sfc_main$1 = {
         }, {
           default: withCtx(() => [
             (openBlock(true), createElementBlock(Fragment, null, renderList(__props.alerts, (alert) => {
+              var _a;
               return openBlock(), createBlock(_sfc_main$2, mergeProps(alert, {
                 onRemove: ($event) => emit("remove", alert.name),
-                key: alert.name,
+                key: (_a = alert.key) != null ? _a : alert.name,
                 "sv-class": props.svClass
               }), null, 16, ["onRemove", "sv-class"]);
             }), 128))

@@ -143,6 +143,15 @@ const _sfc_main$1 = {
         !!field.thClass ? field.thClass : ""
       ];
     };
+    const getInlineFieldClasses = (field) => {
+      return [
+        useCoreClass("sv-table__th-inline", getOptions(true)),
+        useCoreClass("sv-table__th-inline--sortable", getOptions(!!field.sortable)),
+        useCoreClass("sv-table__th-inline--busy", getOptions(!!props.busy)),
+        useCoreClass("sv-table__th-inline--empty", getOptions(!items.length)),
+        !!field.thClass ? field.thClass : ""
+      ];
+    };
     const getFieldContainerClasses = (field) => {
       return [
         useCoreClass("sv-table__th-container", getOptions(true)),
@@ -218,6 +227,9 @@ const _sfc_main$1 = {
                   return openBlock(), createElementBlock("td", {
                     class: normalizeClass(getItemClasses(field))
                   }, [
+                    createBaseVNode("div", {
+                      class: normalizeClass(getInlineFieldClasses(field))
+                    }, toDisplayString(field.text), 3),
                     renderSlot(_ctx.$slots, getItemSlotName(field), {
                       field,
                       item,
