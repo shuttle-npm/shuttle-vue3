@@ -1,5 +1,5 @@
 import { _ as _sfc_main$2 } from "./chunks/Alert.8f88d4e2.js";
-import { o as openBlock, c as createBlock, a as createVNode, e as ref, p as watch, w as withCtx, g as createBaseVNode, n as normalizeClass, u as unref, h as createTextVNode, t as toDisplayString, d as createCommentVNode, b as createElementBlock, k as renderSlot, r as renderList, F as Fragment, J as Transition, i as createStaticVNode } from "./app.c06a58f8.js";
+import { o as openBlock, c as createBlock, a as createVNode, f as computed, w as withCtx, g as createBaseVNode, n as normalizeClass, u as unref, h as createTextVNode, t as toDisplayString, d as createCommentVNode, b as createElementBlock, k as renderSlot, r as renderList, F as Fragment, J as Transition, e as ref, i as createStaticVNode } from "./app.c06a58f8.js";
 import { P as Pa, D as Da, w as wa, I as Ia, L as La } from "./chunks/headlessui.esm.2f6fc0a2.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
 import { _ as _sfc_main$3 } from "./chunks/ValidationMessage.7d03ed6b.js";
@@ -31,17 +31,21 @@ function render(_ctx, _cache) {
     })
   ]);
 }
-const _hoisted_1$1 = { class: "sv-listbox__selected-option" };
-const _hoisted_2$1 = { class: "sv-listbox__icon-container" };
-const _hoisted_3$1 = {
+const _hoisted_1$1 = {
+  key: 0,
+  class: "sv-listbox__selected-option"
+};
+const _hoisted_2$1 = {
+  key: 1,
+  class: "sv-listbox__placeholder"
+};
+const _hoisted_3$1 = { class: "sv-listbox__icon-container" };
+const _hoisted_4$1 = {
   key: 0,
   class: "sv-listbox__option-icon-container--selected"
 };
 const _sfc_main$1 = {
   props: {
-    alert: {
-      type: Object
-    },
     layout: {
       type: String,
       default: "block"
@@ -67,7 +71,7 @@ const _sfc_main$1 = {
       default: "Please select..."
     },
     modelValue: {
-      type: void 0
+      type: [String, Number]
     },
     svClass: {
       type: Object
@@ -82,9 +86,9 @@ const _sfc_main$1 = {
       return ((_a2 = props.layout) != null ? _a2 : "block").toLowerCase();
     };
     const options = (_a = props.options) != null ? _a : [];
-    const selectedOption = ref();
-    watch(selectedOption, (value) => {
-      emit("update:modelValue", value);
+    const selectedOptionText = computed(() => {
+      var _a2;
+      return !!props.modelValue ? (_a2 = options.find((item) => item[props.valueProperty] === props.modelValue)) == null ? void 0 : _a2[props.displayProperty] : void 0;
     });
     const getOptions = (include) => {
       return {
@@ -131,8 +135,8 @@ const _sfc_main$1 = {
     const valueProperty = (_c = props.valueProperty) != null ? _c : "value";
     return (_ctx, _cache) => {
       return openBlock(), createBlock(unref(Ia), {
-        modelValue: selectedOption.value,
-        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => selectedOption.value = $event)
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = (value) => emit("update:modelValue", value)),
+        "model-value": props.modelValue
       }, {
         default: withCtx(({ open }) => [
           createBaseVNode("div", {
@@ -156,8 +160,8 @@ const _sfc_main$1 = {
                 default: withCtx(() => {
                   var _a2;
                   return [
-                    createBaseVNode("span", _hoisted_1$1, toDisplayString(!!selectedOption.value ? (_a2 = selectedOption.value[unref(displayProperty)]) != null ? _a2 : unref(displayProperty) : __props.placeholder), 1),
-                    createBaseVNode("span", _hoisted_2$1, [
+                    unref(selectedOptionText) ? (openBlock(), createElementBlock("span", _hoisted_1$1, toDisplayString(unref(selectedOptionText)), 1)) : (openBlock(), createElementBlock("span", _hoisted_2$1, toDisplayString((_a2 = props.placeholder) != null ? _a2 : "(select option)"), 1)),
+                    createBaseVNode("span", _hoisted_3$1, [
                       createVNode(unref(render), {
                         class: "sv-listbox__icon",
                         "aria-hidden": "true"
@@ -183,14 +187,13 @@ const _sfc_main$1 = {
                 createVNode(unref(wa), { class: "sv-listbox__options" }, {
                   default: withCtx(() => [
                     (openBlock(true), createElementBlock(Fragment, null, renderList(unref(options), (option) => {
-                      var _a2;
                       return openBlock(), createBlock(unref(La), {
-                        key: (_a2 = option[unref(valueProperty)]) != null ? _a2 : option[unref(displayProperty)],
-                        value: option,
+                        key: option[unref(valueProperty)],
+                        value: option[unref(valueProperty)],
                         as: "template"
                       }, {
                         default: withCtx(({ active, selected }) => {
-                          var _a3;
+                          var _a2;
                           return [
                             createBaseVNode("li", {
                               class: normalizeClass([active ? "sv-listbox__option--active" : "sv-listbox__option--inactive", "sv-listbox__option"])
@@ -200,8 +203,8 @@ const _sfc_main$1 = {
                                   selected ? "sv-listbox__option-text--selected" : "sv-listbox__option-text--not-selected",
                                   "sv-listbox__option-text"
                                 ])
-                              }, toDisplayString((_a3 = option[unref(displayProperty)]) != null ? _a3 : unref(displayProperty)), 3),
-                              selected ? (openBlock(), createElementBlock("span", _hoisted_3$1, [
+                              }, toDisplayString((_a2 = option[unref(displayProperty)]) != null ? _a2 : unref(displayProperty)), 3),
+                              selected ? (openBlock(), createElementBlock("span", _hoisted_4$1, [
                                 createVNode(unref(render$1), {
                                   class: "sv-listbox__option-icon--selected",
                                   "aria-hidden": "true"
@@ -222,7 +225,7 @@ const _sfc_main$1 = {
           ], 2)
         ]),
         _: 3
-      }, 8, ["modelValue"]);
+      }, 8, ["model-value"]);
     };
   }
 };
@@ -267,19 +270,19 @@ const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
     const options = [
-      { text: "Wade Cooper" },
-      { text: "Arlene Mccoy" },
-      { text: "Devon Webb" },
-      { text: "Tom Cook" },
-      { text: "Tanya Fox" },
-      { text: "Hellen Schmidt" }
+      { value: 1, text: "Wade Cooper" },
+      { value: 2, text: "Arlene Mccoy" },
+      { value: 3, text: "Devon Webb" },
+      { value: 4, text: "Tom Cook" },
+      { value: 5, text: "Tanya Fox" },
+      { value: 6, text: "Hellen Schmidt" }
     ];
     const value = ref();
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", null, [
         _hoisted_1,
         _hoisted_2,
-        createBaseVNode("p", null, "Value: " + toDisplayString(!!value.value ? value.value.text : "(nothing selected)"), 1),
+        createBaseVNode("p", null, "Value: " + toDisplayString(!!value.value ? value.value : "(nothing selected)"), 1),
         createVNode(unref(_sfc_main$1), {
           modelValue: value.value,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => value.value = $event),
