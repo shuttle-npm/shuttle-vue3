@@ -88,7 +88,7 @@ const _sfc_main$1 = {
     const options = (_a = props.options) != null ? _a : [];
     const selectedOptionText = computed(() => {
       var _a2;
-      return !!props.modelValue ? (_a2 = options.find((item) => item[props.valueProperty] === props.modelValue)) == null ? void 0 : _a2[props.displayProperty] : void 0;
+      return (_a2 = options.find((item) => item[props.valueProperty] === props.modelValue)) == null ? void 0 : _a2[props.displayProperty];
     });
     const getOptions = (include) => {
       return {
@@ -270,6 +270,7 @@ const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
     const options = [
+      { value: 0, text: "(no one)" },
       { value: 1, text: "Wade Cooper" },
       { value: 2, text: "Arlene Mccoy" },
       { value: 3, text: "Devon Webb" },
@@ -282,7 +283,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
       return openBlock(), createElementBlock("div", null, [
         _hoisted_1,
         _hoisted_2,
-        createBaseVNode("p", null, "Value: " + toDisplayString(!!value.value ? value.value : "(nothing selected)"), 1),
+        createBaseVNode("p", null, "Value: " + toDisplayString(value.value != void 0 ? value.value : "(nothing selected)"), 1),
         createVNode(unref(_sfc_main$1), {
           modelValue: value.value,
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => value.value = $event),
