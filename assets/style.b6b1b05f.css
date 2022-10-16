@@ -2955,6 +2955,9 @@ a:hover .title[data-v-a42cc842] {
 .text-center {
     text-align: center
 }
+.text-right {
+    text-align: right
+}
 .text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem
@@ -4932,6 +4935,9 @@ a:hover .title[data-v-a42cc842] {
 }
 .sv-table__th-container--sortable {
     cursor: pointer
+}
+.sv-table__th-container--reverse {
+    flex-direction: row-reverse
 }
 .sv-table__th-sort-order-icon {
     height: 1rem;

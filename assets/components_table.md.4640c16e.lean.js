@@ -155,7 +155,8 @@ const _sfc_main$1 = {
     const getFieldContainerClasses = (field) => {
       return [
         useCoreClass("sv-table__th-container", getOptions(true)),
-        useCoreClass("sv-table__th-container--sortable", getOptions(!!field.sortable))
+        useCoreClass("sv-table__th-container--sortable", getOptions(!!field.sortable)),
+        useCoreClass("sv-table__th-container--reverse", getOptions(!!field.reverse))
       ];
     };
     const getSortOrderIconClasses = (field) => {
@@ -312,25 +313,37 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         sortable: true
       },
       {
+        name: "count",
+        text: "Count",
+        tdClass: "text-right",
+        sortable: true,
+        reverse: true
+      },
+      {
         name: "custom",
         text: "Custom"
       }
     ];
     const items = [
       {
-        name: "Name-A"
+        name: "Name-A",
+        count: 1
       },
       {
-        name: "Name-B"
+        name: "Name-B",
+        count: 2
       },
       {
-        name: "Name-C"
+        name: "Name-C",
+        count: 3
       },
       {
-        name: "Name-D"
+        name: "Name-D",
+        count: 4
       },
       {
-        name: "Name-E"
+        name: "Name-E",
+        count: 5
       }
     ];
     const striped = ref(false);
