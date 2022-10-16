@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { Alert, Button, ButtonGroup } from "@/components";
+import { Alert, ButtonGroup } from "@/components";
 import { ArrowCircleLeftIcon, ArrowCircleRightIcon } from '@heroicons/vue/outline'
 
 const value = ref();

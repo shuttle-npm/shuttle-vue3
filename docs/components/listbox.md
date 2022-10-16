@@ -3,12 +3,13 @@ import { ref } from "vue";
 import { Alert, Listbox, ValidationMessage } from "@/components";
 
 const options = [
-    { text: 'Wade Cooper' },
-    { text: 'Arlene Mccoy' },
-    { text: 'Devon Webb' },
-    { text: 'Tom Cook' },
-    { text: 'Tanya Fox' },
-    { text: 'Hellen Schmidt' },
+    { value: 0, text: '(no one)' },
+    { value: 1, text: 'Wade Cooper' },
+    { value: 2, text: 'Arlene Mccoy' },
+    { value: 3, text: 'Devon Webb' },
+    { value: 4, text: 'Tom Cook' },
+    { value: 5, text: 'Tanya Fox' },
+    { value: 6, text: 'Hellen Schmidt' },
 ]
 
 const value = ref();
@@ -24,7 +25,7 @@ const value = ref();
 
 ## Examples
 
-Value: {{  !!value ? value.text : "(nothing selected)" }}
+Value: {{  value != undefined ? value : "(nothing selected)" }}
 
 <Listbox v-model="value" :options="options"/>
 
@@ -39,20 +40,21 @@ import { ref } from "vue";
 import { Listbox } from "@/components";
 
 const options = [
-    { text: 'Wade Cooper' },
-    { text: 'Arlene Mccoy' },
-    { text: 'Devon Webb' },
-    { text: 'Tom Cook' },
-    { text: 'Tanya Fox' },
-    { text: 'Hellen Schmidt' },
+    { value: 0, text: '(no one)' },
+    { value: 1, text: 'Wade Cooper' },
+    { value: 2, text: 'Arlene Mccoy' },
+    { value: 3, text: 'Devon Webb' },
+    { value: 4, text: 'Tom Cook' },
+    { value: 5, text: 'Tanya Fox' },
+    { value: 6, text: 'Hellen Schmidt' },
 ]
 
 const value = ref();
 </script>
 
 <template>
-    <Listbox  v-model="value" :options="options" label="Block layout" />
-    <Listbox  v-model="value" :options="options" label="Inline layout" layout="inline" />
+    <Listbox v-model="value" :options="options" label="Block layout" />
+    <Listbox v-model="value" :options="options" label="Inline layout" layout="inline" />
 </template>
 ```
 
@@ -80,12 +82,15 @@ const value = ref();
 
 ## Properties
 
-| Name          | Type     | Default     | Description                                                                                                        |
-| ------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------ |
-| `label`       | `String` | ""          | The label to display for the input.                                                                                |
-| `layout`      | `String` | `block`     | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
-| `placeholder` | `String` | ""          | The placeholder to display for the input.                                                                          |
-| `sv-class`    | `Object` | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+| Name              | Type     | Default | Description                                                                                                        |
+| ----------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `displayProperty` | `String` | "text"  | The property in the option object containing the text to display.                                                  |
+| `label`           | `String` | ""      | The label to display for the input.                                                                                |
+| `layout`          | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
+| `options`         | `Array`  | `[]`    | The available options where each object has both a `valueProperty` and a `displayProperty`.                        |
+| `placeholder`     | `String` | ""      | The placeholder to display for the input.                                                                          |
+| `sv-class`        | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+| `valueProperty`   | `String` | "value" | The property in the option object containing the value.                                                            |
 
 ## Classes
 
@@ -98,9 +103,21 @@ const value = ref();
 - `sv-listbox__button`
   - `sv-listbox__button--block` 
   - `sv-listbox__button--inline`
+- `sv-listbox__selected-option`
+- `sv-listbox__placeholder`
+- `sv-listbox__icon-container`
 - `sv-listbox__label`
   - `sv-listbox__label--block` 
   - `sv-listbox__label--inline`
+- `sv-listbox__options`
+- `sv-listbox__option`
+  - `sv-listbox__option--active`
+  - `sv-listbox__option--inactive`
+- `sv-listbox__option-text`
+  - `sv-listbox__option-text--selected`
+  - `sv-listbox__option-text--not-selected`
+- `sv-listbox__option-icon-container--selected`
+- `sv-listbox__option-icon--selected`
 - `sv-listbox__message`
   - `sv-listbox__message--inline`
   - `sv-listbox__message--block`

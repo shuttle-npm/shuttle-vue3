@@ -42,8 +42,8 @@ module.exports = (async () => {
 
             socialLinks: [
                 { icon: 'github', link: 'https://github.com/shuttle-npm/shuttle-vue3' },
+                { icon: 'discord', link: 'https://discord.gg/8CvzH2DZ2A' }
                 // { icon: 'twitter', link: '' },
-                // { icon: 'discord', link: '' }
             ],
 
             nav: [

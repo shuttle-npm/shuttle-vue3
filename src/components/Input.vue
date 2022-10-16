@@ -5,7 +5,8 @@
             <component v-if="!!props.iconStart" :is="getIconStart?.()" :class="getIconStartClasses()"
                 @click="iconStartClick" />
             <input :class="getInputClasses()" :type="props.type ?? 'text'" :value="props.modelValue"
-                @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''" :autocomplete="autocomplete" />
+                @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''"
+                :autocomplete="autocomplete" :readonly="!!props.readonly"/>
             <component v-if="!!props.iconEnd" :is="getIconEnd?.()" :class="getIconEndClasses()" @click="iconEndClick" />
         </div>
         <div :class="getMessageClasses()">
@@ -51,6 +52,10 @@ const props = defineProps({
         type: String,
         default: ""
     },
+    readonly: {
+        type: Boolean,
+        default: false
+    },
     svClass: {
         type: Object
     },
@@ -83,7 +88,8 @@ const getClasses = () => {
     return [
         useCoreClass("sv-input", getOptions(true)),
         useCoreClass("sv-input--inline", getOptions(getLayout() === "inline")),
-        useCoreClass("sv-input--block", getOptions(getLayout() === "block"))
+        useCoreClass("sv-input--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-input--readonly", getOptions(!!props.readonly))
     ];
 }
 
@@ -92,6 +98,7 @@ const getLabelClasses = () => {
         useCoreClass("sv-input__label", getOptions(true)),
         useCoreClass("sv-input__label--inline", getOptions(getLayout() === "inline")),
         useCoreClass("sv-input__label--block", getOptions(getLayout() === "block")),
+        useCoreClass("sv-input__label--readonly", getOptions(!!props.readonly))
     ];
 }
 
@@ -102,6 +109,7 @@ const getInputClasses = () => {
         useCoreClass("sv-input__input--block", getOptions(getLayout() === "block")),
         useCoreClass("sv-input__input--icon-end", getOptions(!!props.iconEnd)),
         useCoreClass("sv-input__input--icon-start", getOptions(!!props.iconStart)),
+        useCoreClass("sv-input__input--readonly", getOptions(!!props.readonly))
     ];
 }
 
@@ -112,6 +120,7 @@ const getInputContainerClasses = () => {
         useCoreClass("sv-input__input-container--block", getOptions(getLayout() === "block")),
         useCoreClass("sv-input__input-container--icon-end", getOptions(!!props.iconEnd)),
         useCoreClass("sv-input__input-container--icon-start", getOptions(!!props.iconStart)),
+        useCoreClass("sv-input__input-container--readonly", getOptions(!!props.readonly))
     ];
 }
 

@@ -4,7 +4,7 @@
 
 @layer components {
     .sv-padding {
-        @apply p-2;
+        @apply py-1 px-2;
     }
 
     .sv-rounded {
@@ -21,6 +21,10 @@
 
     .sv-disabled {
         @apply border-disabled bg-disabled text-disabled;
+    }
+
+    .sv-readonly {
+        @apply border-readonly bg-readonly text-readonly;
     }
 
     .sv-icon {
@@ -589,6 +593,10 @@
         @apply pr-8;
     }
 
+    .sv-input__input--readonly {
+        @apply cursor-default sv-readonly;
+    }
+
     .sv-input__input-container {
         @apply relative w-full flex flex-row items-center;
     }
@@ -653,8 +661,12 @@
         @apply block truncate w-full;
     }
 
+    .sv-listbox__placeholder {
+        @apply block truncate w-full text-secondary;
+    }
+
     .sv-listbox__icon-container {
-        @apply inset-y-0 right-0 pr-2 pointer-events-none;
+        @apply inset-y-0 right-0 pointer-events-none;
     }
 
     .sv-listbox__icon {
@@ -662,7 +674,7 @@
     }
 
     .sv-listbox__option {
-        @apply cursor-default select-none relative py-2 pl-10 pr-4;
+        @apply cursor-default select-none relative sv-padding pl-7;
     }
 
     .sv-listbox__option--active {
@@ -686,7 +698,7 @@
     }
 
     .sv-listbox__option-icon-container--selected {
-        @apply absolute inset-y-0 left-0 flex items-center pl-3;
+        @apply absolute inset-y-0 left-0 flex items-center pl-1;
     }
 
     .sv-listbox__option-icon--selected {
@@ -872,7 +884,7 @@
 
     /* Title */
     .sv-title {
-        @apply flex flex-row items-center font-semibold text-primary text-2xl border-0 border-b-2 border-solid pb-2 mb-4 w-full cursor-default;
+        @apply flex flex-row items-center font-semibold text-primary text-xl border-0 border-b-2 border-solid pb-1 mb-2 w-full cursor-default;
     }
 
     .sv-title--clickable {

@@ -1,18 +1,19 @@
 <template>
-    <Listbox v-model="selectedOption" v-slot="{ open }">
+    <Listbox 
+        @update:modelValue="value => emit('update:modelValue', value)"
+        :model-value="props.modelValue" 
+        v-slot="{ open }">
         <div :class="getClasses()">
             <div :class="getContainerClasses()">
                 <ListboxLabel v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</ListboxLabel>
                 <ListboxButton :class="getButtonClasses()">
-                    <span class="sv-listbox__selected-option">{{
-                        !!selectedOption ? selectedOption[displayProperty] ??
-                            displayProperty : placeholder
-                    }}</span>
+                    <span class="sv-listbox__selected-option" v-if="selectedOptionText">{{selectedOptionText}}</span>
+                    <span class="sv-listbox__placeholder" v-else>{{props.placeholder ?? "(select option)"}}</span>
                     <span class="sv-listbox__icon-container">
                         <SelectorIcon class="sv-listbox__icon" aria-hidden="true" />
                     </span>
                 </ListboxButton>
-                <div :class="getMessageClasses()" v-if="!open">
+                <div :class="getMessageClasses()" v-if="$slots.message && !open">
                     <slot name="message"></slot>
                 </div>
             </div>
@@ -21,8 +22,7 @@
                 leave-to-class="opacity-0">
                 <ListboxOptions class="sv-listbox__options">
                     <ListboxOption v-slot="{ active, selected }" v-for="option in options"
-                        :key="option[valueProperty] ?? option[displayProperty]" :value="option" as="template"
-                        :onclick="emit('update:modelValue', option)">
+                        :key="option[valueProperty]" :value="option[valueProperty]" as="template">
                         <li
                             :class="[active ? 'sv-listbox__option--active' : 'sv-listbox__option--inactive', 'sv-listbox__option']">
                             <span :class="[
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
 import {
     Listbox,
     ListboxLabel,
@@ -52,9 +52,6 @@ import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
 import { useCoreClass } from "@/composables/useCoreClass";
 
 const props = defineProps({
-    alert: {
-        type: Object
-    },
     layout: {
         type: String,
         default: "block"
@@ -80,7 +77,7 @@ const props = defineProps({
         default: "Please select..."
     },
     modelValue: {
-        type: undefined
+        type: [String, Number]
     },
     svClass: {
         type: Object
@@ -93,7 +90,9 @@ const getLayout = () => {
 
 const options = props.options ?? [];
 
-const selectedOption = ref();
+const selectedOptionText = computed(() => {
+    return options.find(item => item[props.valueProperty] === props.modelValue)?.[props.displayProperty];
+})
 
 const getOptions = (include) => {
     return {

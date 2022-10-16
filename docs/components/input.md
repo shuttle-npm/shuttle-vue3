@@ -1,11 +1,12 @@
 <script setup>
-import { computed, ref } from "vue";
-import { Alert, Input, ValidationMessage } from "@/components";
-import { ExclamationIcon, EyeIcon, EyeOffIcon, ShieldExclamationIcon } from "@heroicons/vue/outline";
+import { ref } from "vue";
+import { Alert, Checkbox, Input, ValidationMessage } from "@/components";
+import { EyeIcon, EyeOffIcon, ShieldExclamationIcon } from "@heroicons/vue/outline";
 
 const value = ref("");
 const iconEndClickCount = ref(0);
 const iconStartClickCount = ref(0);
+const readonly = ref(false);
 
 const iconStartClick = () => {
     iconStartClickCount.value += 1;
@@ -32,7 +33,9 @@ const message = ref("");
 
 Value: {{ value }}
 
-<Input v-model="value" placeholder="Please type something here" />
+<Checkbox v-model="readonly" label="Readonly?" class="mb-2" />
+
+<Input v-model="value" placeholder="Please type something here" :readonly="readonly" />
 
 ### Label
 
@@ -117,14 +120,36 @@ Value: {{ value }}
 | `label`                | `String`  | ""          | The label to display for the input.                                                                                |
 | `layout`               | `String`  | `block`     | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
 | `placeholder`          | `String`  | ""          | The placeholder to display for the input.                                                                          |
+| `readonly`             | `Boolean` | `false`     | When `true` the input value cannot be changed.                                                                     |
 | `sv-class`             | `Object`  | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 | `type`                 | `String`  | `text`      | The type of the input value (same as native typres).                                                               |
 
 ## Classes
 
 - `sv-input` 
-  - `--block` 
-  - `--inline`
+  - `sv-input--block` 
+  - `sv-input--inline`
+  - `sv-input--readonly`
 - `sv-input__label`
-  - `--block` 
-  - `--inline`
+  - `sv-input__label--block` 
+  - `sv-input__label--inline`
+  - `sv-input__label--readonly`
+- `sv-input__input` 
+  - `sv-input__input--block` 
+  - `sv-input__input--inline`
+  - `sv-input__input--readonly`
+  - `sv-input__input--icon-end`
+  - `sv-input__input--icon-start`
+- `sv-input__input-continer` 
+  - `sv-input__input-continer--block` 
+  - `sv-input__input-continer--inline`
+  - `sv-input__input-continer--readonly`
+  - `sv-input__input-continer--icon-end`
+  - `sv-input__input-continer--icon-start` 
+- `sv-input__icon-start`
+  - `sv-input__icon-start--clickable`
+- `sv-input__icon-end`
+  - `sv-input__icon-end--clickable`
+- `sv-input__message`
+  - `sv-input__message--block` 
+  - `sv-input__message--inline`

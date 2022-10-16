@@ -1,6 +1,5 @@
 <script setup>
 import { VTIconShuttle } from 'shuttle-theme';
-import { VTIconDiscord } from 'shuttle-theme';
 </script>
 <template>
     <section id="hero">
@@ -15,13 +14,6 @@ import { VTIconDiscord } from 'shuttle-theme';
                     <path
                         d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
                 </svg>
-            </a>
-        </div>
-        <div>
-            <a href="https://discord.gg/8CvzH2DZ2A" target="_blank">
-                <div class="discord-link">
-                    <VTIconDiscord class="discord-logo" />Join our Discord channel
-                </div>
             </a>
         </div>
     </section>
@@ -48,35 +40,6 @@ import { VTIconDiscord } from 'shuttle-theme';
 </template>
 
 <style scoped>
-.discord-link {
-    margin: auto;
-    background-color: rgb(88, 101, 242);
-    color: #fff;
-    width: fit-content;
-    padding: 0.75em;
-    margin-top: 1em;
-    border-radius: 8px;
-    transition: background-color 0.5s;
-}
-
-.discord-link:hover {
-    background-color: rgb(47, 55, 143);
-    transition: background-color 0.5s;
-}
-
-.discord-link:active {
-    background-color: rgb(31, 39, 119);
-    transition: background-color 0.2s;
-}
-
-.discord-logo {
-    height: 2em;
-    width: 2em;
-    fill: #fff;
-    display: inline;
-    margin-right: 1em;
-}
-
 a {
     color: var(--vt-c-orange-dark);
 }

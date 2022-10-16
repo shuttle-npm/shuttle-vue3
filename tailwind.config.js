@@ -4,6 +4,7 @@ const safelist = [
     'sv-padding',
     'sv-focus',
     'sv-disabled',
+    'sv-readonly',
     'sv-icon'
 ];
 
@@ -20,6 +21,7 @@ const variantSafelist = (prefix) => {
     safelist.push(prefix + '--info-state');
     safelist.push(prefix + '--link');
     safelist.push(prefix + '--disabled');
+    safelist.push(prefix + '--readonly');
 }
 
 const trasitionSafelist = (name) => {
@@ -76,6 +78,7 @@ module.exports = {
                 "link": generateColorClass("sv-text-link"),
                 "link--hover": generateColorClass("sv-text-link--hover"),
                 "disabled": generateColorClass("sv-text-disabled"),
+                "readonly": generateColorClass("sv-text-readonly"),
                 "fg-primary": generateColorClass("sv-text-fg-primary"),
                 "fg-primary--hover": generateColorClass("sv-text-fg-primary--hover"),
                 "fg-secondary": generateColorClass("sv-text-fg-secondary"),
@@ -91,6 +94,7 @@ module.exports = {
                 "fg-link": generateColorClass("sv-text-fg-link"),
                 "fg-link--hover": generateColorClass("sv-text-fg-link--hover"),
                 "fg-disabled": generateColorClass("sv-text-fg-disabled"),
+                "fg-readonly": generateColorClass("sv-text-fg-readonly"),
                 "label": generateColorClass("sv-text-label"),
                 "input": generateColorClass("sv-text-input"),
                 "input-selected": generateColorClass("sv-text-input-selected"),
@@ -146,6 +150,7 @@ module.exports = {
                 "light-info--hover": generateColorClass("sv-bg-light-info--hover"),
                 "light-info--active": generateColorClass("sv-bg-light-info--active"),
                 "disabled": generateColorClass("sv-bg-disabled"),
+                "readonly": generateColorClass("sv-bg-readonly"),
                 "input": generateColorClass("sv-bg-input"),
                 "input-selected": generateColorClass("sv-bg-input-selected"),
                 "input--active": generateColorClass("sv-bg-input--active"),
@@ -153,6 +158,7 @@ module.exports = {
                 "input-indicator-selected": generateColorClass("sv-bg-input-indicator-selected"),
                 "input-indicator--active": generateColorClass("sv-bg-input-indicator--active"),
                 "input-indicator-disabled": generateColorClass("sv-bg-input-indicator-disabled"),
+                "input-indicator-readonly": generateColorClass("sv-bg-input-indicator-readonly"),
                 "navigation-dropdown": generateColorClass("sv-bg-navigation-dropdown"),
                 "navigation--hover": generateColorClass("sv-bg-navigation--hover"),
                 "navbar-menu-toggle": generateColorClass("sv-bg-navbar-menu-toggle"),
@@ -171,6 +177,7 @@ module.exports = {
                 "warning": generateColorClass("sv-border-warning"),
                 "info": generateColorClass("sv-border-info"),
                 "disabled": generateColorClass("sv-border-disabled"),
+                "readonly": generateColorClass("sv-border-readonly"),
                 "input": generateColorClass("sv-border-input"),
                 "input--hover": generateColorClass("sv-border-input--hover"),
                 "input-selected": generateColorClass("sv-border-input-selected"),
