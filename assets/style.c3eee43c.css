@@ -3344,7 +3344,10 @@ a:hover .title[data-v-a42cc842] {
     --tw-backdrop-sepia:  
 }
 .sv-padding {
-    padding: 0.5rem
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem
 }
 .sv-rounded {
     border-radius: 0.375rem
@@ -3386,6 +3389,10 @@ a:hover .title[data-v-a42cc842] {
 }
 /* Alert (variants) */
 .sv-alert {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border-radius: 0.375rem;
     border-width: 1px;
     border-style: solid;
@@ -3779,7 +3786,8 @@ a:hover .title[data-v-a42cc842] {
 }
 /* Button */
 .sv-button {
-    padding: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
     border-radius: 0.375rem;
     border-width: 1px;
     border-style: solid;
@@ -4350,7 +4358,10 @@ a:hover .title[data-v-a42cc842] {
 .sv-input__label--inline {
     }
 .sv-input__input {
-    padding: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border-radius: 0.375rem;
     border-width: 1px;
     border-style: solid
@@ -4462,6 +4473,10 @@ a:hover .title[data-v-a42cc842] {
     margin-bottom: 0.5rem
 }
 .sv-listbox__button {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border-radius: 0.375rem;
     border-width: 1px;
     border-style: solid
@@ -4486,10 +4501,6 @@ a:hover .title[data-v-a42cc842] {
     border-color: rgba(var(--sv-border-input), var(--tw-border-opacity));
     --tw-bg-opacity: 1;
     background-color: rgba(var(--sv-bg-input), var(--tw-bg-opacity));
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
     text-align: left
 }
 .sv-listbox__button::-moz-placeholder {
@@ -4570,7 +4581,9 @@ a:hover .title[data-v-a42cc842] {
     color: rgb(156 163 175 / var(--tw-text-opacity))
 }
 .sv-listbox__option {
-    padding: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-right: 0.5rem;
     position: relative;
     cursor: default;
     -webkit-user-select: none;
@@ -4991,7 +5004,7 @@ a:hover .title[data-v-a42cc842] {
 }
 /* Title */
 .sv-title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: flex;
     width: 100%;
     cursor: default;
@@ -5000,9 +5013,9 @@ a:hover .title[data-v-a42cc842] {
     border-width: 0px;
     border-bottom-width: 2px;
     border-style: solid;
-    padding-bottom: 0.5rem;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    padding-bottom: 0.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     font-weight: 600;
     --tw-text-opacity: 1;
     color: rgba(var(--sv-text-primary), var(--tw-text-opacity))
