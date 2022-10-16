@@ -1632,6 +1632,9 @@
 .sv-table__th-container--sortable {
     cursor: pointer
 }
+.sv-table__th-container--reverse {
+    flex-direction: row-reverse
+}
 .sv-table__th-sort-order-icon {
     height: 1rem;
     width: 1rem;

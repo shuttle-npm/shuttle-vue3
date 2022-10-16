@@ -15,6 +15,13 @@ const fields = [
         sortable: true
     },
     {
+        name: "count",
+        text: "Count",
+        tdClass: "text-right",
+        sortable: true,
+        reverse: true
+    },
+    {
         name: "custom",
         text: "Custom"
     },
@@ -22,22 +29,26 @@ const fields = [
 
 const items = [
     {
-        name: "Name-A"
+        name: "Name-A",
+        count: 1
     },
     {
-        name: "Name-B"
+        name: "Name-B",
+        count: 2
     },
     {
-        name: "Name-C"
+        name: "Name-C",
+        count: 3
     },
     {
-        name: "Name-D"
+        name: "Name-D",
+        count: 4
     },
     {
-        name: "Name-E"
+        name: "Name-E",
+        count: 5
     },
 ]
-
 const striped = ref(false);
 const variant = ref("");
 
@@ -97,6 +108,13 @@ const fields = [
         sortable: true
     },
     {
+        name: "count",
+        text: "Count",
+        tdClass: "text-right",
+        sortable: true,
+        reverse: true
+    },
+    {
         name: "custom",
         text: "Custom"
     },
@@ -104,19 +122,24 @@ const fields = [
 
 const items = [
     {
-        name: "Name-A"
+        name: "Name-A",
+        count: 1
     },
     {
-        name: "Name-B"
+        name: "Name-B",
+        count: 2
     },
     {
-        name: "Name-C"
+        name: "Name-C",
+        count: 3
     },
     {
-        name: "Name-D"
+        name: "Name-D",
+        count: 4
     },
     {
-        name: "Name-E"
+        name: "Name-E",
+        count: 5
     },
 ]
 </script>
@@ -186,9 +209,25 @@ A field should have the following structure:
 - `sv-table__container`
 - `sv-table__thead`
 - `sv-table__thead-tr`
+  - `sv-table__thead-tr--busy`
+  - `sv-table__thead-tr--empty`
 - `sv-table__th`
+  - `sv-table__th--sortable`
+  - `sv-table__th--busy`
+  - `sv-table__th--empty`
+- `sv-table__th-inline`
+  - `sv-table__th-inline--sortable`
+  - `sv-table__th-inline--busy`
+  - `sv-table__th-inline--empty`
+- `sv-table__th-container`
+  - `sv-table__th-container--sortable`
+  - `sv-table__th-container--reverse`
 - `sv-table__th-sort-order-icon`
 - `sv-table__tbody`
 - `sv-table__td`
+  - `sv-table__td--busy`
+  - `sv-table__td--empty`
 - `sv-table__tbody-tr`
+  - `sv-table__tbody-tr--busy`
+  - `sv-table__tbody-tr--empty`
   - `sv-table__tbody-tr--striped`

@@ -862,6 +862,10 @@
         @apply cursor-pointer;
     }
 
+    .sv-table__th-container--reverse {
+        @apply flex-row-reverse;
+    }
+
     .sv-table__th-sort-order-icon {
         @apply sv-icon--sm ml-2;
     }

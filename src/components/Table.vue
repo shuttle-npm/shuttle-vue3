@@ -183,6 +183,7 @@ const getFieldContainerClasses = (field) => {
     return [
         useCoreClass("sv-table__th-container", getOptions(true)),
         useCoreClass("sv-table__th-container--sortable", getOptions(!!field.sortable)),
+        useCoreClass("sv-table__th-container--reverse", getOptions(!!field.reverse)),
     ];
 }
 
