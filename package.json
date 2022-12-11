@@ -3,7 +3,7 @@
     "files": [
         "dist"
     ],
-    "version": "0.0.73",
+    "version": "0.0.74",
     "main": "./dist/shuttle-vue3.umd.js",
     "module": "./dist/shuttle-vue3.es.js",
     "exports": {

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { Alert, Listbox, ValidationMessage } from "@/components";
 
 const options = [
@@ -10,9 +10,28 @@ const options = [
     { value: 4, text: 'Tom Cook' },
     { value: 5, text: 'Tanya Fox' },
     { value: 6, text: 'Hellen Schmidt' },
+    { value: 7, text: 'Inigo Montoya' },
+    { value: 8, text: 'Hartwig Schierbaum' },
 ]
 
 const value = ref();
+const searchValue = ref("");
+
+const filter = (value) => {
+    searchValue.value = value;
+}
+
+const filteredOptions = computed(() => {
+    if (!searchValue.value) {
+        return options;
+    }
+
+    const result = options.filter(option => {
+        return option.text.indexOf(searchValue.value) > -1;
+    });
+
+    return result;
+});
 </script>
 
 <style>
@@ -47,6 +66,8 @@ const options = [
     { value: 4, text: 'Tom Cook' },
     { value: 5, text: 'Tanya Fox' },
     { value: 6, text: 'Hellen Schmidt' },
+    { value: 7, text: 'Inigo Montoya' },
+    { value: 8, text: 'Hartwig Schierbaum' },
 ]
 
 const value = ref();
@@ -55,6 +76,54 @@ const value = ref();
 <template>
     <Listbox v-model="value" :options="options" label="Block layout" />
     <Listbox v-model="value" :options="options" label="Inline layout" layout="inline" />
+</template>
+```
+
+### Searchable
+
+<Listbox v-model="value" :options="filteredOptions" label="Block layout" searchable @searchValue="filter"/>
+<Listbox v-model="value" :options="filteredOptions" label="Inline layout" layout="inline" class="mt-2" searchable @searchValue="filter"/>
+
+```vue
+<script setup>
+import { computed, ref } from "vue";
+import { Listbox } from "@/components";
+
+const options = [
+    { value: 0, text: '(no one)' },
+    { value: 1, text: 'Wade Cooper' },
+    { value: 2, text: 'Arlene Mccoy' },
+    { value: 3, text: 'Devon Webb' },
+    { value: 4, text: 'Tom Cook' },
+    { value: 5, text: 'Tanya Fox' },
+    { value: 6, text: 'Hellen Schmidt' },
+    { value: 7, text: 'Inigo Montoya' },
+    { value: 8, text: 'Hartwig Schierbaum' },
+]
+
+const value = ref();
+const searchValue = ref("");
+
+const filter = (value) => {
+    searchValue.value = value;
+}
+
+const filteredOptions = computed(() => {
+    if (!searchValue.value) {
+        return options;
+    }
+
+    const result = options.filter(option => {
+        return option.text.indexOf(searchValue.value) > -1;
+    });
+
+    return result;
+});
+</script>
+
+<template>
+    <Listbox v-model="value" :options="filteredOptions" label="Block layout" searchable @searchValue="filter"/>
+    <Listbox v-model="value" :options="filteredOptions" label="Inline layout" layout="inline" class="mt-2" searchable @searchValue="filter"/>
 </template>
 ```
 

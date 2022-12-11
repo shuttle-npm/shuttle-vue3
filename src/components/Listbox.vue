@@ -1,14 +1,12 @@
 <template>
-    <Listbox 
-        @update:modelValue="value => emit('update:modelValue', value)"
-        :model-value="props.modelValue" 
+    <Listbox @update:modelValue="value => emit('update:modelValue', value)" :model-value="props.modelValue"
         v-slot="{ open }">
         <div :class="getClasses()">
             <div :class="getContainerClasses()">
                 <ListboxLabel v-if="!!props.label" :class="getLabelClasses()">{{ props.label }}</ListboxLabel>
                 <ListboxButton :class="getButtonClasses()">
-                    <span class="sv-listbox__selected-option" v-if="selectedOptionText">{{selectedOptionText}}</span>
-                    <span class="sv-listbox__placeholder" v-else>{{props.placeholder ?? "(select option)"}}</span>
+                    <span class="sv-listbox__selected-option" v-if="selectedOptionText">{{ selectedOptionText }}</span>
+                    <span class="sv-listbox__placeholder" v-else>{{ props.placeholder ?? "(select option)" }}</span>
                     <span class="sv-listbox__icon-container">
                         <SelectorIcon class="sv-listbox__icon" aria-hidden="true" />
                     </span>
@@ -20,19 +18,22 @@
 
             <transition leave-active-class="transition duration-100 ease-in" leave-from-class="opacity-100"
                 leave-to-class="opacity-0">
-                <ListboxOptions class="sv-listbox__options">
-                    <ListboxOption v-slot="{ active, selected }" v-for="option in options"
-                        :key="option[valueProperty]" :value="option[valueProperty]" as="template">
-                        <li
-                            :class="[active ? 'sv-listbox__option--active' : 'sv-listbox__option--inactive', 'sv-listbox__option']">
-                            <span :class="[
-                                selected ? 'sv-listbox__option-text--selected' : 'sv-listbox__option-text--not-selected', 'sv-listbox__option-text',
-                            ]">{{ option[displayProperty] ?? displayProperty }}</span>
-                            <span v-if="selected" class="sv-listbox__option-icon-container--selected">
-                                <CheckIcon class="sv-listbox__option-icon--selected" aria-hidden="true" />
-                            </span>
-                        </li>
-                    </ListboxOption>
+                <ListboxOptions :class="getListboxOptionsClasses()">
+                    <div class="relative">
+                        <Input v-if="props.searchable" class="sv-listbox__search" :icon-end="SearchIcon" @update:modelValue="value => emit('searchValue', value)"/>
+                        <ListboxOption v-slot="{ active, selected }" v-for="option in props.options"
+                            :key="option[valueProperty]" :value="option[valueProperty]" as="template">
+                            <li
+                                :class="[active ? 'sv-listbox__option--active' : 'sv-listbox__option--inactive', 'sv-listbox__option']">
+                                <span :class="[
+                                    selected ? 'sv-listbox__option-text--selected' : 'sv-listbox__option-text--not-selected', 'sv-listbox__option-text',
+                                ]">{{ option[displayProperty] ?? displayProperty }}</span>
+                                <span v-if="selected" class="sv-listbox__option-icon-container--selected">
+                                    <CheckIcon class="sv-listbox__option-icon--selected" aria-hidden="true" />
+                                </span>
+                            </li>
+                        </ListboxOption>
+                    </div>
                 </ListboxOptions>
             </transition>
         </div>
@@ -41,6 +42,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { Input } from '@/components'
 import {
     Listbox,
     ListboxLabel,
@@ -48,7 +50,7 @@ import {
     ListboxOptions,
     ListboxOption,
 } from '@headlessui/vue'
-import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
+import { CheckIcon, SelectorIcon, SearchIcon } from '@heroicons/vue/solid'
 import { useCoreClass } from "@/composables/useCoreClass";
 
 const props = defineProps({
@@ -79,6 +81,9 @@ const props = defineProps({
     modelValue: {
         type: [String, Number]
     },
+    searchable: {
+        type: Boolean
+    },
     svClass: {
         type: Object
     },
@@ -88,10 +93,8 @@ const getLayout = () => {
     return (props.layout ?? "block").toLowerCase();
 }
 
-const options = props.options ?? [];
-
 const selectedOptionText = computed(() => {
-    return options.find(item => item[props.valueProperty] === props.modelValue)?.[props.displayProperty];
+    return props.options.find(item => item[props.valueProperty] === props.modelValue)?.[props.displayProperty];
 })
 
 const getOptions = (include) => {
@@ -141,8 +144,15 @@ const getMessageClasses = () => {
     ];
 }
 
+const getListboxOptionsClasses = () => {
+    return [
+        useCoreClass("sv-listbox__options", getOptions(true)),
+        useCoreClass("sv-listbox__options--searchable", getOptions(props.searchable)),
+    ];
+}
+
 const displayProperty = props.displayProperty ?? "text";
 const valueProperty = props.valueProperty ?? "value";
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue", "searchValue"]);
 </script>

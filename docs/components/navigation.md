@@ -187,28 +187,28 @@ The items represent a menu that is one level deep:
 ## Classes
 
 - `sv-navigation`
-  - `--normal`
+  - `--horizontal`
   - `--minimal`
 - `sv-navigation__item`
-  - `--normal`
+  - `--horizontal`
   - `--minimal`
 - `sv-navigation__button`
-  - `--normal`
+  - `--horizontal`
   - `--minimal`
   - `--disabled`
 - `sv-navigation__button-text` 
-  - `--normal`
+  - `--horizontal`
   - `--minimal`
 - `sv-navigation__button-icon`
-  - `--normal`
+  - `--horizontal`
   - `--minimal`
 - `sv-navigation__link`
-  - `--normal`
+  - `--horizontal`
   - `--minimal`
   - `--disabled`
   - `--active`
   - `--inactive`
 - `sv-navigation__divider`
 - `sv-navigation__dropdown` 
-  - `--normal`
+  - `--horizontal`
   - `--minimal`

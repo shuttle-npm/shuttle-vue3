@@ -49,6 +49,7 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+    
     dropdownAlignment: {
         type: String,
         default: "left"
@@ -85,7 +86,7 @@ const getClasses = () => {
     return [
         useCoreClass("sv-navigation", getOptions(true)),
         useCoreClass("sv-navigation--minimal", getOptions(props.minimal)),
-        useCoreClass("sv-navigation--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation--horizontal", getOptions(!props.minimal)),
     ];
 };
 
@@ -93,7 +94,7 @@ const getItemClasses = () => {
     return [
         useCoreClass("sv-navigation__item", getOptions(true)),
         useCoreClass("sv-navigation__item--minimal", getOptions(props.minimal)),
-        useCoreClass("sv-navigation__item--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation__item--horizontal", getOptions(!props.minimal)),
     ];
 }
 
@@ -101,7 +102,7 @@ const getButtonClasses = (item) => {
     return [
         useCoreClass("sv-navigation__button", getOptions(true)),
         useCoreClass("sv-navigation__button--minimal", getOptions(props.minimal)),
-        useCoreClass("sv-navigation__button--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation__button--horizontal", getOptions(!props.minimal)),
         useCoreClass("sv-navigation__button--disabled", getOptions(item?.disabled ?? false)),
     ];
 }
@@ -110,7 +111,7 @@ const getButtonTextClasses = () => {
     return [
         useCoreClass("sv-navigation__button-text", getOptions(true)),
         useCoreClass("sv-navigation__button-text--minimal", getOptions(props.minimal)),
-        useCoreClass("sv-navigation__button-text--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation__button-text--horizontal", getOptions(!props.minimal)),
     ];
 }
 
@@ -118,7 +119,7 @@ const getButtonIconClasses = () => {
     return [
         useCoreClass("sv-navigation__button-icon", getOptions(true)),
         useCoreClass("sv-navigation__button-icon--minimal", getOptions(props.minimal)),
-        useCoreClass("sv-navigation__button-icon--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation__button-icon--horizontal", getOptions(!props.minimal)),
     ];
 }
 
@@ -126,7 +127,7 @@ const getLinkClasses = (item, active) => {
     return [
         useCoreClass("sv-navigation__link", getOptions(true)),
         useCoreClass("sv-navigation__link--minimal", getOptions(props.minimal)),
-        useCoreClass("sv-navigation__link--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation__link--horizontal", getOptions(!props.minimal)),
         useCoreClass("sv-navigation__link--active", getOptions(active)),
         useCoreClass("sv-navigation__link--inactive", getOptions(!active)),
         useCoreClass("sv-navigation__link--disabled", getOptions(item?.disabled ?? false)),
@@ -143,7 +144,7 @@ const getDropdownClasses = () => {
     return [
         useCoreClass("sv-navigation__dropdown", getOptions(true)),
         useCoreClass("sv-navigation__dropdown--minimal", getOptions(props.minimal)),
-        useCoreClass("sv-navigation__dropdown--normal", getOptions(!props.minimal)),
+        useCoreClass("sv-navigation__dropdown--horizontal", getOptions(!props.minimal)),
         useCoreClass("sv-navigation__dropdown--left", getOptions(getDropdownAlignment() == "left")),
         useCoreClass("sv-navigation__dropdown--right", getOptions(getDropdownAlignment() == "right")),
     ];

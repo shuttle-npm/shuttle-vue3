@@ -657,6 +657,10 @@
         @apply sv-border z-50 absolute w-full py-1 mt-1 overflow-auto text-base shadow-lg max-h-60 bg-input border-input text-input placeholder-input;
     }
 
+    .sv-listbox__options--searchable {
+        @apply pt-1;
+    }
+
     .sv-listbox__selected-option {
         @apply block truncate w-full;
     }
@@ -671,6 +675,10 @@
 
     .sv-listbox__icon {
         @apply sv-icon text-gray-400;
+    }
+
+    .sv-listbox__search {
+        @apply pl-7 pr-2 sticky w-full top-1 z-50;
     }
 
     .sv-listbox__option {
@@ -760,7 +768,7 @@
         @apply w-full;
     }
 
-    .sv-navigation__item--normal {
+    .sv-navigation__item--horizontal {
         @apply relative;
     }
 
@@ -808,7 +816,7 @@
         @apply relative;
     }
 
-    .sv-navigation__dropdown--normal {
+    .sv-navigation__dropdown--horizontal {
         @apply absolute sv-border border-navigation-dropdown;
     }
 
