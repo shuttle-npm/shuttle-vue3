@@ -20,7 +20,7 @@
                 leave-to-class="opacity-0">
                 <ListboxOptions :class="getListboxOptionsClasses()">
                     <div class="relative">
-                        <Input v-if="props.searchable" class="sv-listbox__search" :icon-end="SearchIcon" @update:modelValue="value => emit('searchValue', value)"/>
+                        <Input v-if="props.searchable" class="sv-listbox__search" :icon-end="SearchIcon" @update:modelValue="value => emit('filter', value)" :model-value="props.filterValue" />
                         <ListboxOption v-slot="{ active, selected }" v-for="option in props.options"
                             :key="option[valueProperty]" :value="option[valueProperty]" as="template">
                             <li
@@ -83,6 +83,10 @@ const props = defineProps({
     },
     searchable: {
         type: Boolean
+    },
+    filterValue: {
+        type: String,
+        default: ""
     },
     svClass: {
         type: Object
@@ -154,5 +158,5 @@ const getListboxOptionsClasses = () => {
 const displayProperty = props.displayProperty ?? "text";
 const valueProperty = props.valueProperty ?? "value";
 
-const emit = defineEmits(["update:modelValue", "searchValue"]);
+const emit = defineEmits(["update:modelValue", "filter"]);
 </script>

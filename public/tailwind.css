@@ -678,7 +678,7 @@
     }
 
     .sv-listbox__search {
-        @apply pl-7 pr-2 sticky w-full top-1 z-50;
+        @apply pl-7 pr-2 sticky w-full z-50;
     }
 
     .sv-listbox__option {

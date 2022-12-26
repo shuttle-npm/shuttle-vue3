@@ -15,19 +15,21 @@ const options = [
 ]
 
 const value = ref();
-const searchValue = ref("");
+const filterValue = ref("");
 
 const filter = (value) => {
-    searchValue.value = value;
+    filterValue.value = value;
 }
 
 const filteredOptions = computed(() => {
-    if (!searchValue.value) {
+    if (!filterValue.value) {
         return options;
     }
 
+    const value = filterValue.value.toLowerCase();
+
     const result = options.filter(option => {
-        return option.text.indexOf(searchValue.value) > -1;
+        return option.text.toLowerCase().indexOf(value) > -1;
     });
 
     return result;
@@ -81,8 +83,8 @@ const value = ref();
 
 ### Searchable
 
-<Listbox v-model="value" :options="filteredOptions" label="Block layout" searchable @searchValue="filter"/>
-<Listbox v-model="value" :options="filteredOptions" label="Inline layout" layout="inline" class="mt-2" searchable @searchValue="filter"/>
+<Listbox v-model="value" :options="filteredOptions" label="Block layout" searchable @filter="filter" :filterValue="filterValue" />
+<Listbox v-model="value" :options="filteredOptions" label="Inline layout" layout="inline" class="mt-2" searchable @filter="filter" :filterValue="filterValue" />
 
 ```vue
 <script setup>
@@ -102,19 +104,19 @@ const options = [
 ]
 
 const value = ref();
-const searchValue = ref("");
+const filterValue = ref("");
 
 const filter = (value) => {
-    searchValue.value = value;
+    filterValue.value = value;
 }
 
 const filteredOptions = computed(() => {
-    if (!searchValue.value) {
+    if (!filterValue.value) {
         return options;
     }
 
     const result = options.filter(option => {
-        return option.text.indexOf(searchValue.value) > -1;
+        return option.text.indexOf(filterValue.value) > -1;
     });
 
     return result;
@@ -122,8 +124,8 @@ const filteredOptions = computed(() => {
 </script>
 
 <template>
-    <Listbox v-model="value" :options="filteredOptions" label="Block layout" searchable @searchValue="filter"/>
-    <Listbox v-model="value" :options="filteredOptions" label="Inline layout" layout="inline" class="mt-2" searchable @searchValue="filter"/>
+    <Listbox v-model="value" :options="filteredOptions" label="Block layout" searchable @filter="filter" :filterValue="filterValue" />
+    <Listbox v-model="value" :options="filteredOptions" label="Inline layout" layout="inline" class="mt-2" searchable @filter="filter" :filterValue="filterValue" />
 </template>
 ```
 
