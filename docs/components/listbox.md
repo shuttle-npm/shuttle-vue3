@@ -153,15 +153,23 @@ const filteredOptions = computed(() => {
 
 ## Properties
 
-| Name              | Type     | Default | Description                                                                                                        |
-| ----------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| `displayProperty` | `String` | "text"  | The property in the option object containing the text to display.                                                  |
-| `label`           | `String` | ""      | The label to display for the input.                                                                                |
-| `layout`          | `String` | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
-| `options`         | `Array`  | `[]`    | The available options where each object has both a `valueProperty` and a `displayProperty`.                        |
-| `placeholder`     | `String` | ""      | The placeholder to display for the input.                                                                          |
-| `sv-class`        | `Object` | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
-| `valueProperty`   | `String` | "value" | The property in the option object containing the value.                                                            |
+| Name              | Type      | Default | Description                                                                                                        |
+| ----------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| `displayProperty` | `String`  | "text"  | The property in the option object containing the text to display.                                                  |
+| `filterValue`     | `String`  | ""      | The value to pass to the `filter` method.                                                                          |
+| `label`           | `String`  | ""      | The label to display for the input.                                                                                |
+| `layout`          | `String`  | `block` | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
+| `options`         | `Array`   | `[]`    | The available options where each object has both a `valueProperty` and a `displayProperty`.                        |
+| `placeholder`     | `String`  | ""      | The placeholder to display for the input.                                                                          |
+| `searchable`      | `Boolean` | `false` | Set to `true` in order to add a filter inbox.                                                                      |
+| `sv-class`        | `Object`  | `{}`    | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
+| `valueProperty`   | `String`  | "value" | The property in the option object containing the value.                                                            |
+
+## Methods
+
+| Name     | Description                                                             |
+| -------- | ----------------------------------------------------------------------- |
+| `filter` | This will be invoked when the `filterValue` is changed: `(filterValue)` |
 
 ## Classes
 
@@ -192,3 +200,4 @@ const filteredOptions = computed(() => {
 - `sv-listbox__message`
   - `sv-listbox__message--inline`
   - `sv-listbox__message--block`
+- `sv-listbox__filter`

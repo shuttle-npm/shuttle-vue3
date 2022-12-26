@@ -20,7 +20,7 @@
                 leave-to-class="opacity-0">
                 <ListboxOptions :class="getListboxOptionsClasses()">
                     <div class="relative">
-                        <Input v-if="props.searchable" class="sv-listbox__search" :icon-end="SearchIcon" @update:modelValue="value => emit('filter', value)" :model-value="props.filterValue" />
+                        <Input v-if="props.searchable" class="sv-listbox__filter" :icon-end="SearchIcon" @update:modelValue="value => emit('filter', value)" :model-value="props.filterValue" />
                         <ListboxOption v-slot="{ active, selected }" v-for="option in props.options"
                             :key="option[valueProperty]" :value="option[valueProperty]" as="template">
                             <li

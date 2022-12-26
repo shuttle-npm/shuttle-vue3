@@ -1163,6 +1163,7 @@
 }
 .sv-listbox__label {
     margin-right: 0.5rem;
+    align-self: center;
     white-space: nowrap;
     font-weight: 500;
     --tw-text-opacity: 1;
@@ -1282,7 +1283,7 @@
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity))
 }
-.sv-listbox__search {
+.sv-listbox__filter {
     position: -webkit-sticky;
     position: sticky;
     z-index: 50;

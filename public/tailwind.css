@@ -639,7 +639,7 @@
     }
 
     .sv-listbox__label {
-        @apply whitespace-nowrap mr-2 font-medium text-label;
+        @apply whitespace-nowrap mr-2 font-medium text-label self-center;
     }
 
     .sv-listbox__label--block {
@@ -677,7 +677,7 @@
         @apply sv-icon text-gray-400;
     }
 
-    .sv-listbox__search {
+    .sv-listbox__filter {
         @apply pl-7 pr-2 sticky w-full z-50;
     }
 
