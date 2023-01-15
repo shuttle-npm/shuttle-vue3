@@ -2,7 +2,7 @@ import { _ as _sfc_main$3 } from "./chunks/Alert.8f88d4e2.js";
 import { o as openBlock, c as createBlock, a as createVNode, f as computed, w as withCtx, g as createBaseVNode, n as normalizeClass, u as unref, h as createTextVNode, t as toDisplayString, d as createCommentVNode, b as createElementBlock, k as renderSlot, r as renderList, F as Fragment, J as Transition, e as ref, i as createStaticVNode } from "./app.c06a58f8.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
 import { P as Pa, D as Da, w as wa, I as Ia, L as La } from "./chunks/headlessui.esm.2f6fc0a2.js";
-import { _ as _sfc_main$2 } from "./chunks/Input.7bbccbb1.js";
+import { _ as _sfc_main$2 } from "./chunks/Input.1ffbbb7d.js";
 import { _ as _sfc_main$4 } from "./chunks/ValidationMessage.7d03ed6b.js";
 function render$2(_ctx, _cache) {
   return openBlock(), createBlock("svg", {
@@ -92,11 +92,15 @@ const _sfc_main$1 = {
     searchable: {
       type: Boolean
     },
+    filterValue: {
+      type: String,
+      default: ""
+    },
     svClass: {
       type: Object
     }
   },
-  emits: ["update:modelValue", "searchValue"],
+  emits: ["update:modelValue", "filter"],
   setup(__props, { emit }) {
     var _a, _b;
     const props = __props;
@@ -215,10 +219,11 @@ const _sfc_main$1 = {
                     createBaseVNode("div", _hoisted_4$1, [
                       props.searchable ? (openBlock(), createBlock(unref(_sfc_main$2), {
                         key: 0,
-                        class: "sv-listbox__search",
+                        class: "sv-listbox__filter",
                         "icon-end": unref(render$1),
-                        "onUpdate:modelValue": _cache[0] || (_cache[0] = (value) => emit("searchValue", value))
-                      }, null, 8, ["icon-end"])) : createCommentVNode("", true),
+                        "onUpdate:modelValue": _cache[0] || (_cache[0] = (value) => emit("filter", value)),
+                        "model-value": props.filterValue
+                      }, null, 8, ["icon-end", "model-value"])) : createCommentVNode("", true),
                       (openBlock(true), createElementBlock(Fragment, null, renderList(props.options, (option) => {
                         return openBlock(), createBlock(unref(La), {
                           key: option[unref(valueProperty)],
@@ -299,8 +304,8 @@ const _hoisted_3 = /* @__PURE__ */ createBaseVNode("h3", {
 ], -1);
 const _hoisted_4 = /* @__PURE__ */ createStaticVNode("", 2);
 const _hoisted_6 = /* @__PURE__ */ createStaticVNode("", 3);
-const _hoisted_9 = /* @__PURE__ */ createStaticVNode("", 5);
-const __pageData = '{"title":"Listbox","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Searchable","slug":"searchable"},{"level":3,"title":"Slot","slug":"slot"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/listbox.md"}';
+const _hoisted_9 = /* @__PURE__ */ createStaticVNode("", 7);
+const __pageData = '{"title":"Listbox","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Searchable","slug":"searchable"},{"level":3,"title":"Slot","slug":"slot"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Methods","slug":"methods"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/listbox.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
   setup(__props) {
@@ -316,16 +321,17 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
       { value: 8, text: "Hartwig Schierbaum" }
     ];
     const value = ref();
-    const searchValue = ref("");
+    const filterValue = ref("");
     const filter = (value2) => {
-      searchValue.value = value2;
+      filterValue.value = value2;
     };
     const filteredOptions = computed(() => {
-      if (!searchValue.value) {
+      if (!filterValue.value) {
         return options;
       }
+      const value2 = filterValue.value.toLowerCase();
       const result = options.filter((option) => {
-        return option.text.indexOf(searchValue.value) > -1;
+        return option.text.toLowerCase().indexOf(value2) > -1;
       });
       return result;
     });
@@ -361,8 +367,9 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           options: unref(filteredOptions),
           label: "Block layout",
           searchable: "",
-          onSearchValue: filter
-        }, null, 8, ["modelValue", "options"]),
+          onFilter: filter,
+          filterValue: filterValue.value
+        }, null, 8, ["modelValue", "options", "filterValue"]),
         createVNode(unref(_sfc_main$1), {
           modelValue: value.value,
           "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => value.value = $event),
@@ -371,8 +378,9 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           layout: "inline",
           class: "mt-2",
           searchable: "",
-          onSearchValue: filter
-        }, null, 8, ["modelValue", "options"]),
+          onFilter: filter,
+          filterValue: filterValue.value
+        }, null, 8, ["modelValue", "options", "filterValue"]),
         _hoisted_6,
         createVNode(unref(_sfc_main$1), {
           modelValue: value.value,

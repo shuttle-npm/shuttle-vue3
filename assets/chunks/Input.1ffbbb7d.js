@@ -1,6 +1,7 @@
 import { u as useCoreClass } from "./useCoreClass.4c1eebb8.js";
-import { o as openBlock, b as createElementBlock, n as normalizeClass, t as toDisplayString, d as createCommentVNode, g as createBaseVNode, c as createBlock, j as resolveDynamicComponent, k as renderSlot } from "../app.c06a58f8.js";
+import { f as computed, o as openBlock, b as createElementBlock, n as normalizeClass, t as toDisplayString, d as createCommentVNode, g as createBaseVNode, c as createBlock, j as resolveDynamicComponent, u as unref, k as renderSlot } from "../app.c06a58f8.js";
 const _hoisted_1 = ["type", "value", "placeholder", "autocomplete", "readonly"];
+const _hoisted_2 = ["value", "placeholder", "readonly"];
 const _sfc_main = {
   props: {
     autocomplete: {
@@ -40,6 +41,10 @@ const _sfc_main = {
       type: Boolean,
       default: false
     },
+    rows: {
+      type: Number,
+      default: 1
+    },
     svClass: {
       type: Object
     },
@@ -51,6 +56,10 @@ const _sfc_main = {
   emits: ["update:modelValue", "iconStartClick", "iconEndClick"],
   setup(__props, { emit }) {
     const props = __props;
+    const isInput = computed(() => {
+      var _a;
+      return ((_a = props.rows) != null ? _a : 1) < 2;
+    });
     const getIconStart = () => {
       return props.iconStart ? props.iconStart : null;
     };
@@ -135,7 +144,7 @@ const _sfc_main = {
       emit("iconEndClick");
     };
     return (_ctx, _cache) => {
-      var _a, _b;
+      var _a, _b, _c;
       return openBlock(), createElementBlock("div", {
         class: normalizeClass(getClasses())
       }, [
@@ -151,7 +160,8 @@ const _sfc_main = {
             class: normalizeClass(getIconStartClasses()),
             onClick: iconStartClick
           }, null, 8, ["class"])) : createCommentVNode("", true),
-          createBaseVNode("input", {
+          unref(isInput) ? (openBlock(), createElementBlock("input", {
+            key: 1,
             class: normalizeClass(getInputClasses()),
             type: (_a = props.type) != null ? _a : "text",
             value: props.modelValue,
@@ -159,9 +169,16 @@ const _sfc_main = {
             placeholder: (_b = props.placeholder) != null ? _b : "",
             autocomplete: __props.autocomplete,
             readonly: !!props.readonly
-          }, null, 42, _hoisted_1),
+          }, null, 42, _hoisted_1)) : (openBlock(), createElementBlock("textarea", {
+            key: 2,
+            class: normalizeClass(getInputClasses()),
+            value: props.modelValue,
+            onInput: _cache[1] || (_cache[1] = ($event) => emit("update:modelValue", $event.target.value)),
+            placeholder: (_c = props.placeholder) != null ? _c : "",
+            readonly: !!props.readonly
+          }, null, 42, _hoisted_2)),
           !!props.iconEnd ? (openBlock(), createBlock(resolveDynamicComponent(getIconEnd == null ? void 0 : getIconEnd()), {
-            key: 1,
+            key: 3,
             class: normalizeClass(getIconEndClasses()),
             onClick: iconEndClick
           }, null, 8, ["class"])) : createCommentVNode("", true)

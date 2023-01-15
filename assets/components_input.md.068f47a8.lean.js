@@ -1,6 +1,6 @@
 import { _ as _sfc_main$3 } from "./chunks/Alert.8f88d4e2.js";
 import { _ as _sfc_main$1 } from "./chunks/Checkbox.d2234ddc.js";
-import { _ as _sfc_main$2 } from "./chunks/Input.7bbccbb1.js";
+import { _ as _sfc_main$2 } from "./chunks/Input.1ffbbb7d.js";
 import { _ as _sfc_main$4 } from "./chunks/ValidationMessage.7d03ed6b.js";
 import { c as createBlock, a as createVNode, o as openBlock, e as ref, b as createElementBlock, g as createBaseVNode, t as toDisplayString, u as unref, h as createTextVNode, w as withCtx, i as createStaticVNode } from "./app.c06a58f8.js";
 import "./chunks/useCoreClass.4c1eebb8.js";
@@ -79,22 +79,12 @@ const _hoisted_2 = /* @__PURE__ */ createBaseVNode("h2", {
     "aria-hidden": "true"
   }, "#")
 ], -1);
-const _hoisted_3 = /* @__PURE__ */ createBaseVNode("h3", {
-  id: "label",
-  tabindex: "-1"
-}, [
-  /* @__PURE__ */ createTextVNode("Label "),
-  /* @__PURE__ */ createBaseVNode("a", {
-    class: "header-anchor",
-    href: "#label",
-    "aria-hidden": "true"
-  }, "#")
-], -1);
-const _hoisted_4 = /* @__PURE__ */ createStaticVNode("", 2);
-const _hoisted_6 = { class: "mb-4" };
-const _hoisted_7 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_8 = /* @__PURE__ */ createStaticVNode("", 3);
-const _hoisted_11 = /* @__PURE__ */ createStaticVNode("", 5);
+const _hoisted_3 = /* @__PURE__ */ createStaticVNode("", 2);
+const _hoisted_5 = /* @__PURE__ */ createStaticVNode("", 2);
+const _hoisted_7 = { class: "mb-4" };
+const _hoisted_8 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_9 = /* @__PURE__ */ createStaticVNode("", 3);
+const _hoisted_12 = /* @__PURE__ */ createStaticVNode("", 5);
 const __pageData = '{"title":"Input","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":3,"title":"Label","slug":"label"},{"level":3,"title":"Icon","slug":"icon"},{"level":3,"title":"Slot","slug":"slot"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/input.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
@@ -133,28 +123,51 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           placeholder: "Please type something here",
           readonly: readonly.value
         }, null, 8, ["modelValue", "readonly"]),
-        _hoisted_3,
         createVNode(unref(_sfc_main$2), {
           modelValue: value.value,
           "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => value.value = $event),
+          placeholder: "Please type something here (4 rows)",
+          readonly: readonly.value,
+          rows: "4",
+          class: "mt-2"
+        }, null, 8, ["modelValue", "readonly"]),
+        _hoisted_3,
+        createVNode(unref(_sfc_main$2), {
+          modelValue: value.value,
+          "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => value.value = $event),
           label: "Block layout"
         }, null, 8, ["modelValue"]),
         createVNode(unref(_sfc_main$2), {
           modelValue: value.value,
-          "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => value.value = $event),
+          "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => value.value = $event),
           label: "Inline layout",
           layout: "inline",
           class: "mt-2"
         }, null, 8, ["modelValue"]),
-        _hoisted_4,
-        createBaseVNode("div", _hoisted_6, [
+        createVNode(unref(_sfc_main$2), {
+          modelValue: value.value,
+          "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => value.value = $event),
+          label: "Block layout (4 rows)",
+          rows: "4",
+          class: "mt-2"
+        }, null, 8, ["modelValue"]),
+        createVNode(unref(_sfc_main$2), {
+          modelValue: value.value,
+          "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => value.value = $event),
+          label: "Inline layout (4 rows)",
+          layout: "inline",
+          rows: "4",
+          class: "mt-2"
+        }, null, 8, ["modelValue"]),
+        _hoisted_5,
+        createBaseVNode("div", _hoisted_7, [
           createTextVNode(" Icon start click count: " + toDisplayString(iconStartClickCount.value) + " ", 1),
-          _hoisted_7,
+          _hoisted_8,
           createTextVNode(" Icon end click count: " + toDisplayString(iconEndClickCount.value), 1)
         ]),
         createVNode(unref(_sfc_main$2), {
           modelValue: value.value,
-          "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => value.value = $event),
+          "onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => value.value = $event),
           label: "Block layout",
           "icon-start": unref(render),
           "icon-start-clickable": "",
@@ -166,7 +179,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         }, null, 8, ["modelValue", "icon-start", "icon-end", "type"]),
         createVNode(unref(_sfc_main$2), {
           modelValue: value.value,
-          "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => value.value = $event),
+          "onUpdate:modelValue": _cache[8] || (_cache[8] = ($event) => value.value = $event),
           label: "Inline layout",
           layout: "inline",
           class: "mt-2",
@@ -178,10 +191,39 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           onIconEndClick: iconEndClick,
           type: getInputType()
         }, null, 8, ["modelValue", "icon-start", "icon-end", "type"]),
-        _hoisted_8,
+        createVNode(unref(_sfc_main$2), {
+          modelValue: value.value,
+          "onUpdate:modelValue": _cache[9] || (_cache[9] = ($event) => value.value = $event),
+          label: "Block layout",
+          class: "mt-2",
+          "icon-start": unref(render),
+          "icon-start-clickable": "",
+          onIconStartClick: iconStartClick,
+          "icon-end": getEndIcon(),
+          "icon-end-clickable": "",
+          onIconEndClick: iconEndClick,
+          type: getInputType(),
+          rows: "4"
+        }, null, 8, ["modelValue", "icon-start", "icon-end", "type"]),
+        createVNode(unref(_sfc_main$2), {
+          modelValue: value.value,
+          "onUpdate:modelValue": _cache[10] || (_cache[10] = ($event) => value.value = $event),
+          label: "Inline layout",
+          layout: "inline",
+          class: "mt-2",
+          "icon-start": unref(render),
+          "icon-start-clickable": "",
+          onIconStartClick: iconStartClick,
+          "icon-end": getEndIcon(),
+          "icon-end-clickable": "",
+          onIconEndClick: iconEndClick,
+          type: getInputType(),
+          rows: "4"
+        }, null, 8, ["modelValue", "icon-start", "icon-end", "type"]),
+        _hoisted_9,
         createVNode(unref(_sfc_main$2), {
           modelValue: message.value,
-          "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => message.value = $event),
+          "onUpdate:modelValue": _cache[11] || (_cache[11] = ($event) => message.value = $event),
           label: "Block layout"
         }, {
           message: withCtx(() => [
@@ -197,7 +239,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
         }, 8, ["modelValue"]),
         createVNode(unref(_sfc_main$2), {
           modelValue: message.value,
-          "onUpdate:modelValue": _cache[7] || (_cache[7] = ($event) => message.value = $event),
+          "onUpdate:modelValue": _cache[12] || (_cache[12] = ($event) => message.value = $event),
           label: "Inline layout",
           layout: "inline",
           class: "mt-2"
@@ -207,7 +249,38 @@ const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
           ]),
           _: 1
         }, 8, ["modelValue"]),
-        _hoisted_11
+        createVNode(unref(_sfc_main$2), {
+          modelValue: message.value,
+          "onUpdate:modelValue": _cache[13] || (_cache[13] = ($event) => message.value = $event),
+          label: "Block layout (4 rows)",
+          rows: "4",
+          class: "mt-2"
+        }, {
+          message: withCtx(() => [
+            createVNode(unref(_sfc_main$3), {
+              message: "This is a danger alert.",
+              size: "sm",
+              outline: "",
+              class: "mt-2",
+              variant: "danger"
+            })
+          ]),
+          _: 1
+        }, 8, ["modelValue"]),
+        createVNode(unref(_sfc_main$2), {
+          modelValue: message.value,
+          "onUpdate:modelValue": _cache[14] || (_cache[14] = ($event) => message.value = $event),
+          label: "Inline layout (4 rows)",
+          rows: "4",
+          layout: "inline",
+          class: "mt-2"
+        }, {
+          message: withCtx(() => [
+            createVNode(unref(_sfc_main$4), { message: "This is a validation message." })
+          ]),
+          _: 1
+        }, 8, ["modelValue"]),
+        _hoisted_12
       ]);
     };
   }
