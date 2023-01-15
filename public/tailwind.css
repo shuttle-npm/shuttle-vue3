@@ -654,7 +654,7 @@
     }
 
     .sv-listbox__options {
-        @apply sv-border z-50 absolute w-full py-1 mt-1 overflow-auto text-base shadow-lg max-h-60 bg-input border-input text-input placeholder-input;
+        @apply sv-border z-[100] absolute w-full py-1 mt-1 overflow-auto text-base shadow-lg max-h-60 bg-input border-input text-input placeholder-input;
     }
 
     .sv-listbox__options--searchable {

@@ -78,9 +78,7 @@ const props = defineProps({
         type: String,
         default: "Please select..."
     },
-    modelValue: {
-        type: [String, Number]
-    },
+    modelValue: null,
     searchable: {
         type: Boolean
     },

@@ -36,16 +36,28 @@ Value: {{ value }}
 <Checkbox v-model="readonly" label="Readonly?" class="mb-2" />
 
 <Input v-model="value" placeholder="Please type something here" :readonly="readonly" />
+<Input v-model="value" placeholder="Please type something here (4 rows)" :readonly="readonly" rows=4 class="mt-2" />
+
+```vue
+<template>
+    <Input v-model="value" placeholder="Please type something here" :readonly="readonly" />
+    <Input v-model="value" placeholder="Please type something here (4 rows)" :readonly="readonly" rows=4 />
+</template>
+```
 
 ### Label
 
 <Input v-model="value" label="Block layout" />
 <Input v-model="value" label="Inline layout" layout="inline" class="mt-2" />
+<Input v-model="value" label="Block layout (4 rows)" rows=4 class="mt-2" />
+<Input v-model="value" label="Inline layout (4 rows)" layout="inline" rows=4 class="mt-2" />
 
 ```vue
 <template>
     <Input v-model="value" label="Block layout" />
     <Input v-model="value" label="Inline layout" layout="inline" />
+    <Input v-model="value" label="Block layout (4 rows)" rows=4  />
+    <Input v-model="value" label="Inline layout (4 rows)" layout="inline" rows=4 />
 </template>
 ```
 
@@ -67,6 +79,16 @@ Value: {{ value }}
     :icon-end="getEndIcon()" icon-end-clickable @icon-end-click="iconEndClick"
     :type="getInputType()"
 />
+<Input v-model="value" label="Block layout" class="mt-2" 
+    :icon-start="ShieldExclamationIcon" icon-start-clickable @icon-start-click="iconStartClick" 
+    :icon-end="getEndIcon()" icon-end-clickable @icon-end-click="iconEndClick"
+    :type="getInputType()" rows=4
+/>
+<Input v-model="value" label="Inline layout" layout="inline" class="mt-2" 
+    :icon-start="ShieldExclamationIcon" icon-start-clickable @icon-start-click="iconStartClick" 
+    :icon-end="getEndIcon()" icon-end-clickable @icon-end-click="iconEndClick"
+    :type="getInputType()" rows=4
+/>
 
 ```vue
 <template>
@@ -84,6 +106,16 @@ Value: {{ value }}
             icon-end-clickable @icon-end-click="iconEndClick"
         :type="getInputType()"
     />
+    <Input v-model="value" label="Block layout" 
+        :icon-start="ShieldExclamationIcon" icon-start-clickable @icon-start-click="iconStartClick" 
+        :icon-end="getEndIcon()" icon-end-clickable @icon-end-click="iconEndClick"
+        :type="getInputType()" rows=4
+    />
+    <Input v-model="value" label="Inline layout" layout="inline" 
+        :icon-start="ShieldExclamationIcon" icon-start-clickable @icon-start-click="iconStartClick" 
+        :icon-end="getEndIcon()" icon-end-clickable @icon-end-click="iconEndClick"
+        :type="getInputType()" rows=4
+    />
 </template>
 ```
 
@@ -93,6 +125,8 @@ Value: {{ value }}
 
 <Input v-model="message" label="Block layout"><template #message><Alert message="This is a danger alert." size="sm" outline class="mt-2" variant="danger"/></template></Input>
 <Input v-model="message" label="Inline layout" layout="inline" class="mt-2"><template #message><ValidationMessage message="This is a validation message." /></template></Input>
+<Input v-model="message" label="Block layout (4 rows)" rows=4 class="mt-2"><template #message><Alert message="This is a danger alert." size="sm" outline class="mt-2" variant="danger"/></template></Input>
+<Input v-model="message" label="Inline layout (4 rows)" rows=4 layout="inline" class="mt-2"><template #message><ValidationMessage message="This is a validation message." /></template></Input>
 
 ```vue
 <template>
@@ -102,6 +136,16 @@ Value: {{ value }}
         </template>
     </Input>
     <Input v-model="message" label="Inline layout" layout="inline">
+        <template #message>
+            <ValidationMessage message="This is a validation message." />
+        </template>
+    </Input>
+    <Input v-model="message" label="Block layout (4 rows)" rows=4>
+        <template #message>
+            <Alert message="This is a danger alert." size="sm" variant="danger" outline />
+        </template>
+    </Input>
+    <Input v-model="message" label="Inline layout (4 rows)" rows=4 layout="inline">
         <template #message>
             <ValidationMessage message="This is a validation message." />
         </template>
@@ -121,6 +165,7 @@ Value: {{ value }}
 | `layout`               | `String`  | `block`     | The layout of the input when a label is included:<br/>- `block`<br/>- `inline`                                     |
 | `placeholder`          | `String`  | ""          | The placeholder to display for the input.                                                                          |
 | `readonly`             | `Boolean` | `false`     | When `true` the input value cannot be changed.                                                                     |
+| `rows`             | `Number` | `1`     | When `rows` is more than 1 the `input` is replaced by a `textarea`.                                                                     |
 | `sv-class`             | `Object`  | `{}`        | The [core class object](/components/core-class) that will render classes along with the corresponding BEM entries. |
 | `type`                 | `String`  | `text`      | The type of the input value (same as native typres).                                                               |
 

@@ -1219,7 +1219,7 @@
     border-width: 1px;
     border-style: solid;
     position: absolute;
-    z-index: 50;
+    z-index: 100;
     margin-top: 0.25rem;
     max-height: 15rem;
     width: 100%;

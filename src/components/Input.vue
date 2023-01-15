@@ -4,9 +4,12 @@
         <div :class="getInputContainerClasses()">
             <component v-if="!!props.iconStart" :is="getIconStart?.()" :class="getIconStartClasses()"
                 @click="iconStartClick" />
-            <input :class="getInputClasses()" :type="props.type ?? 'text'" :value="props.modelValue"
+            <input v-if="isInput" :class="getInputClasses()" :type="props.type ?? 'text'" :value="props.modelValue"
                 @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''"
                 :autocomplete="autocomplete" :readonly="!!props.readonly"/>
+            <textarea v-else :class="getInputClasses()" :value="props.modelValue"
+                @input="emit('update:modelValue', $event.target.value)" :placeholder="props.placeholder ?? ''" :rows="props.rows"
+                :readonly="!!props.readonly"></textarea>
             <component v-if="!!props.iconEnd" :is="getIconEnd?.()" :class="getIconEndClasses()" @click="iconEndClick" />
         </div>
         <div :class="getMessageClasses()">
@@ -17,6 +20,7 @@
 
 <script setup>
 import { useCoreClass } from "@/composables/useCoreClass";
+import { computed } from "vue";
 
 const props = defineProps({
     autocomplete: {
@@ -56,6 +60,10 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+    rows: {
+        type: Number,
+        default: 1
+    },
     svClass: {
         type: Object
     },
@@ -64,6 +72,10 @@ const props = defineProps({
         default: "text"
     }
 })
+
+const isInput = computed(() => {
+    return (props.rows ?? 1) < 2;
+});
 
 const getIconStart = () => {
     return props.iconStart ? props.iconStart : null;
