@@ -1,7 +1,7 @@
 import { u as useCoreClass } from "./useCoreClass.4c1eebb8.js";
 import { f as computed, o as openBlock, b as createElementBlock, n as normalizeClass, t as toDisplayString, d as createCommentVNode, g as createBaseVNode, c as createBlock, j as resolveDynamicComponent, u as unref, k as renderSlot } from "../app.c06a58f8.js";
 const _hoisted_1 = ["type", "value", "placeholder", "autocomplete", "readonly"];
-const _hoisted_2 = ["value", "placeholder", "readonly"];
+const _hoisted_2 = ["value", "placeholder", "rows", "readonly"];
 const _sfc_main = {
   props: {
     autocomplete: {
@@ -175,6 +175,7 @@ const _sfc_main = {
             value: props.modelValue,
             onInput: _cache[1] || (_cache[1] = ($event) => emit("update:modelValue", $event.target.value)),
             placeholder: (_c = props.placeholder) != null ? _c : "",
+            rows: props.rows,
             readonly: !!props.readonly
           }, null, 42, _hoisted_2)),
           !!props.iconEnd ? (openBlock(), createBlock(resolveDynamicComponent(getIconEnd == null ? void 0 : getIconEnd()), {

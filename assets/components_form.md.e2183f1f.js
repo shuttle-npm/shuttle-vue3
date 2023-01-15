@@ -3,7 +3,7 @@ import { _ as _sfc_main$3 } from "./chunks/Alert.8f88d4e2.js";
 import { _ as _sfc_main$5 } from "./chunks/Button.7f5d353a.js";
 import { _ as _sfc_main$2 } from "./chunks/ButtonGroup.ebee39ac.js";
 import { u as useCoreClass } from "./chunks/useCoreClass.4c1eebb8.js";
-import { _ as _sfc_main$4 } from "./chunks/Input.1ffbbb7d.js";
+import { _ as _sfc_main$4 } from "./chunks/Input.556978e3.js";
 import { r as render } from "./chunks/ThumbDownIcon.f1e37a9f.js";
 const _sfc_main$1 = {
   props: {
@@ -64,7 +64,7 @@ const _hoisted_2 = /* @__PURE__ */ createBaseVNode("h2", {
 ], -1);
 const _hoisted_3 = /* @__PURE__ */ createBaseVNode("div", null, null, -1);
 const _hoisted_4 = /* @__PURE__ */ createTextVNode("Submit");
-const _hoisted_5 = /* @__PURE__ */ createStaticVNode("", 6);
+const _hoisted_5 = /* @__PURE__ */ createStaticVNode('<h2 id="properties" tabindex="-1">Properties <a class="header-anchor" href="#properties" aria-hidden="true">#</a></h2><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>size</code></td><td><code>String</code></td><td><code>&quot;&quot;</code></td><td>The size of the form:<br>- <code>sm</code><br>- <code>md</code><br>- <code>lg</code><br>- an empty value would be the full width.</td></tr><tr><td><code>sv-class</code></td><td><code>Object</code></td><td><code>{}</code></td><td>The <a href="/shuttle-vue3/components/core-class.html">core class object</a> that will render classes along with the corresponding BEM entries.</td></tr></tbody></table><h2 id="events" tabindex="-1">Events <a class="header-anchor" href="#events" aria-hidden="true">#</a></h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td><code>submit</code></td><td>Called when the form is submitted (enter is pressed within the form).</td></tr></tbody></table><h2 id="classes" tabindex="-1">Classes <a class="header-anchor" href="#classes" aria-hidden="true">#</a></h2><ul><li><code>sv-form</code><ul><li><code>sv-form--sm</code></li><li><code>sv-form--md</code></li><li><code>sv-form--lg</code></li></ul></li></ul>', 6);
 const __pageData = '{"title":"Form","description":"","frontmatter":{},"headers":[{"level":2,"title":"Examples","slug":"examples"},{"level":2,"title":"Properties","slug":"properties"},{"level":2,"title":"Events","slug":"events"},{"level":2,"title":"Classes","slug":"classes"}],"relativePath":"components/form.md"}';
 const __default__ = {};
 const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
